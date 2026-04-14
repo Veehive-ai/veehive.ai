@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVGKWGPNGY"></script>
+    <script>
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-VVGKWGPNGY');
+    document.addEventListener('click',function(e){var a=e.target.closest('a,button');if(!a)return;var href=a.getAttribute('href')||'';var text=a.textContent.trim().substring(0,50);var isExternal=href.startsWith('http')&&!href.includes('veehive.ai');var evName='click';if(href.includes('wa.me'))evName='click_whatsapp';else if(href.includes('mailto:'))evName='click_email';else if(href.includes('community.veehive.ai'))evName='click_try_free';else if(href.includes('snapapro.com'))evName='click_product_snapapro';else if(href.includes('mpliphi.com'))evName='click_product_mpliphi';else if(href.includes('veehivestudio.com'))evName='click_product_studio';else if(href.includes('hivelink.html'))evName='click_product_hivelink';else if(href.includes('about.html'))evName='click_about';else if(href.includes('team.html'))evName='click_team';else if(href.includes('#contact'))evName='click_contact';else if(href.includes('veehivelabs.com'))evName='click_custom_dev';else if(isExternal)evName='click_external';else evName='click_internal';gtag('event',evName,{link_text:text,link_url:href,page_location:window.location.pathname});});
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Veehive - 10 AI Specialists Building GenAI Products</title>
+    <meta name="description" content="Meet the Veehive team: 10 AI specialists in engineering, product, delivery, and creative. Led by Sathish (CEO), Taj (COO), Dixon (CGO), Chakir (CTO), and Fahim (Head of Engineering).">
+    <meta name="keywords" content="Veehive team, AI engineers, Dubai AI company, GenAI team, Sathish Veehive, AI specialists">
+    <meta name="author" content="Veehive.ai">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://veehive.ai/team.html">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://veehive.ai/team.html">
+    <meta property="og:title" content="Our Team | Veehive - AI Specialists">
+    <meta property="og:description" content="Meet the 10-person team building GenAI products faster and smarter at Veehive.">
+    <meta property="og:image" content="https://veehive.ai/og-image.png">
+    <meta property="og:site_name" content="Veehive.ai">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Team | Veehive">
+    <meta name="twitter:description" content="Meet the 10-person team building GenAI products faster and smarter.">
+    <meta name="twitter:site" content="@letsveehive">
+
+    <!-- Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veehive.ai/"},
+            {"@type": "ListItem", "position": 2, "name": "About", "item": "https://veehive.ai/about.html"},
+            {"@type": "ListItem", "position": 3, "name": "Team", "item": "https://veehive.ai/team.html"}
+        ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Satoshi:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], display: ['Satoshi', 'Inter', 'sans-serif'] } } }
+        }
+    </script>
+    <style>
+        /* ═══ THEME SYSTEM ═══ */
+        :root {
+            --bg: #0F1A20; --bg-nav: rgba(15,26,32,0.85); --bg-mobile: rgba(15,26,32,0.95);
+            --text: #ffffff; --text-secondary: #A6B0C3; --text-tertiary: rgba(166,176,195,0.60);
+            --text-muted: rgba(166,176,195,0.40); --text-faint: rgba(166,176,195,0.25);
+            --border: rgba(59,91,255,0.10); --border-hover: rgba(59,91,255,0.20);
+            --surface: rgba(59,91,255,0.04); --surface-hover: rgba(59,91,255,0.08); --surface-raised: rgba(59,91,255,0.06);
+            --dot-color: rgba(59,91,255,0.06); --divider: rgba(59,91,255,0.08);
+            --logo-filter: brightness(0) invert(1); --logo-opacity: 0.9;
+            --gradient-text-a: #6B82FF; --gradient-text-b: #3B5BFF; --gradient-text-c: #8B5CFF;
+            --cta-text: #ffffff;
+            --shimmer-a: rgba(255,255,255,0); --shimmer-b: rgba(255,255,255,0.04); --shimmer-c: rgba(255,255,255,0.08);
+        }
+        html.light {
+            --bg: #FFFFFF; --bg-nav: rgba(255,255,255,0.90); --bg-mobile: rgba(255,255,255,0.97);
+            --text: #0F1A20; --text-secondary: rgba(15,26,32,0.60); --text-tertiary: rgba(15,26,32,0.45);
+            --text-muted: rgba(15,26,32,0.30); --text-faint: rgba(15,26,32,0.15);
+            --border: rgba(59,91,255,0.10); --border-hover: rgba(59,91,255,0.18);
+            --surface: rgba(15,26,32,0.03); --surface-hover: rgba(15,26,32,0.06); --surface-raised: rgba(15,26,32,0.05);
+            --dot-color: rgba(15,26,32,0.04); --divider: rgba(15,26,32,0.08);
+            --logo-filter: none; --logo-opacity: 1;
+            --gradient-text-a: #3B5BFF; --gradient-text-b: #2A45CC; --gradient-text-c: #6B3FA0;
+            --cta-text: #ffffff;
+            --shimmer-a: rgba(15,26,32,0); --shimmer-b: rgba(15,26,32,0.03); --shimmer-c: rgba(15,26,32,0.06);
+        }
+        .theme-toggle { width: 36px; height: 20px; border-radius: 10px; background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.15); position: relative; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; padding: 0 2px; }
+        html.light .theme-toggle { background: rgba(15,26,32,0.08); border-color: rgba(15,26,32,0.15); }
+        .theme-toggle-knob { width: 14px; height: 14px; border-radius: 50%; background: #3B5BFF; transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+        html.light .theme-toggle-knob { transform: translateX(16px); }
+        .theme-icon-dark, .theme-icon-light { width: 10px; height: 10px; transition: opacity 0.3s ease; }
+        .theme-icon-dark { opacity: 1; } .theme-icon-light { opacity: 0; position: absolute; }
+        html.light .theme-icon-dark { opacity: 0; } html.light .theme-icon-light { opacity: 1; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); transition: background 0.5s cubic-bezier(0.4,0,0.2,1), color 0.4s ease; }
+        .dot-pattern { background-image: radial-gradient(var(--dot-color) 1px, transparent 1px); background-size: 24px 24px; }
+        @keyframes fade-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse-glow { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.7; } }
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+        .animate-fade-up { animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+        .animate-pulse-glow { animation: pulse-glow 6s ease-in-out infinite; }
+        .delay-100 { animation-delay: 0.1s; } .delay-200 { animation-delay: 0.2s; } .delay-300 { animation-delay: 0.3s; }
+        .text-gradient { background: linear-gradient(135deg, var(--gradient-text-a) 0%, var(--gradient-text-b) 40%, var(--gradient-text-c) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-blur { backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
+        .divider-gradient { height: 1px; background: linear-gradient(90deg, transparent, var(--divider) 50%, transparent); }
+        .trust-card { background: var(--surface); border: 1px solid var(--border); backdrop-filter: blur(12px); transition: all 0.3s ease; }
+        .trust-card:hover { background: var(--surface-raised); border-color: var(--border-hover); }
+        .reveal { opacity: 0; transform: translateY(32px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-item.active .faq-answer { max-height: 500px; }
+        .faq-item.active .faq-chevron { transform: rotate(180deg); }
+        html.light .text-white { color: #0F1A20 !important; }
+        html.light .text-white\/90 { color: rgba(15,26,32,0.90) !important; }
+        html.light .text-white\/80 { color: rgba(15,26,32,0.80) !important; }
+        html.light .text-white\/70 { color: rgba(15,26,32,0.70) !important; }
+        html.light .text-white\/60 { color: rgba(15,26,32,0.60) !important; }
+        html.light .text-white\/50 { color: rgba(15,26,32,0.55) !important; }
+        html.light .text-white\/45 { color: rgba(15,26,32,0.50) !important; }
+        html.light .text-white\/40 { color: rgba(15,26,32,0.45) !important; }
+        html.light .text-white\/35 { color: rgba(15,26,32,0.40) !important; }
+        html.light .text-white\/30 { color: rgba(15,26,32,0.35) !important; }
+        html.light .text-white\/25 { color: rgba(15,26,32,0.28) !important; }
+        html.light .text-white\/20 { color: rgba(15,26,32,0.22) !important; }
+        html.light .bg-white { background-color: #0F1A20 !important; color: #FFFFFF !important; }
+        html.light .bg-\[\#0F1A20\] { background-color: #FFFFFF !important; }
+        html.light .border-white\/\[0\.06\] { border-color: rgba(15,26,32,0.08) !important; }
+        html.light .border-white\/\[0\.08\] { border-color: rgba(15,26,32,0.10) !important; }
+        html.light .border-white\/\[0\.1\] { border-color: rgba(15,26,32,0.12) !important; }
+        html.light .border-white\/\[0\.12\] { border-color: rgba(15,26,32,0.15) !important; }
+        html.light .border-t { border-color: rgba(15,26,32,0.08); }
+        html.light .bg-white\/\[0\.02\] { background-color: rgba(15,26,32,0.02) !important; }
+        html.light .bg-white\/\[0\.03\] { background-color: rgba(15,26,32,0.03) !important; }
+        html.light .bg-white\/\[0\.04\] { background-color: rgba(15,26,32,0.03) !important; }
+        html.light .bg-white\/\[0\.06\] { background-color: rgba(15,26,32,0.04) !important; }
+        html.light .bg-white\/\[0\.08\] { background-color: rgba(15,26,32,0.06) !important; }
+        html.light img[alt="Veehive"] { filter: none !important; opacity: 1 !important; }
+        html.light .bg-\[\#3B5BFF\] { color: #ffffff !important; }
+        *, *::before, *::after { transition-property: background-color, border-color, color, box-shadow, opacity; transition-duration: 0s; }
+        html.theme-transitioning *, html.theme-transitioning *::before, html.theme-transitioning *::after { transition-duration: 0.4s !important; transition-timing-function: cubic-bezier(0.4,0,0.2,1) !important; }
+    </style>
+</head>
+<body class="min-h-screen overflow-x-hidden antialiased" style="color: var(--text);">
+
+    <div class="fixed inset-0 pointer-events-none" aria-hidden="true">
+        <div class="absolute top-[-20%] left-[20%] w-[600px] h-[600px] bg-rose-500/[0.05] rounded-full blur-[150px] animate-pulse-glow"></div>
+        <div class="absolute bottom-[-10%] right-[10%] w-[500px] h-[500px] bg-violet-500/[0.05] rounded-full blur-[130px] animate-pulse-glow" style="animation-delay:2s"></div>
+        <div class="absolute inset-0 dot-pattern opacity-40"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur" style="background: var(--bg-nav);">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="/" class="flex items-center gap-2.5">
+                    <img src="/Veehive.ai.svg" alt="Veehive" class="h-6 w-auto" style="filter: var(--logo-filter); opacity: var(--logo-opacity);">
+                </a>
+                <div class="hidden md:flex items-center gap-1">
+                    <a href="about.html" class="px-3 py-1.5 text-[13px] text-white/50 hover:text-white transition-colors rounded-md hover:bg-white/[0.04]">About</a>
+                    <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] text-white/50 hover:text-white transition-colors rounded-md hover:bg-white/[0.04]">Custom Dev</a>
+                    <a href="team.html" class="px-3 py-1.5 text-[13px] text-white hover:text-white transition-colors rounded-md bg-white/[0.06]">Team</a>
+                    <div class="w-px h-4 bg-white/10 mx-2"></div>
+                    <button onclick="toggleTheme()" class="theme-toggle mr-2" aria-label="Toggle theme" title="Toggle theme">
+                        <div class="theme-toggle-knob">
+                            <svg class="theme-icon-dark" viewBox="0 0 16 16" fill="none"><path d="M8 3a5 5 0 000 10 5 5 0 000-10z" fill="#0F1A20" opacity="0.7"/><circle cx="8" cy="8" r="2" fill="#0F1A20"/></svg>
+                            <svg class="theme-icon-light" viewBox="0 0 16 16" fill="none"><path d="M8 1v2m0 10v2m5-7h2M1 8h2m9.07-4.07l1.41-1.41M2.52 13.48l1.41-1.41m0-8.14L2.52 2.52m10.96 10.96l-1.41-1.41" stroke="#0F1A20" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="8" r="2.5" fill="#0F1A20"/></svg>
+                        </div>
+                    </button>
+                    <a href="about.html#contact" class="px-4 py-1.5 text-[13px] font-medium text-white bg-white/[0.08] border border-white/[0.1] rounded-full hover:bg-white/[0.14] transition-all">Book a Demo</a>
+                </div>
+                <button onclick="toggleTheme()" class="theme-toggle mr-2 md:hidden" aria-label="Toggle theme" title="Toggle theme">
+                    <div class="theme-toggle-knob">
+                        <svg class="theme-icon-dark" viewBox="0 0 16 16" fill="none"><path d="M8 3a5 5 0 000 10 5 5 0 000-10z" fill="#0F1A20" opacity="0.7"/><circle cx="8" cy="8" r="2" fill="#0F1A20"/></svg>
+                        <svg class="theme-icon-light" viewBox="0 0 16 16" fill="none"><path d="M8 1v2m0 10v2m5-7h2M1 8h2m9.07-4.07l1.41-1.41M2.52 13.48l1.41-1.41m0-8.14L2.52 2.52m10.96 10.96l-1.41-1.41" stroke="#0F1A20" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="8" r="2.5" fill="#0F1A20"/></svg>
+                    </div>
+                </button>
+                <button class="md:hidden text-white/60 hover:text-white p-1" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden nav-blur" style="background: var(--bg-mobile); border-top: 1px solid var(--border);">
+            <div class="px-6 py-4 flex flex-col gap-1">
+                <a href="/" class="py-2.5 text-[14px] text-white/60 hover:text-white">Home</a>
+                <a href="about.html" class="py-2.5 text-[14px] text-white/60 hover:text-white">About</a>
+                <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px] text-white/60 hover:text-white">Custom Dev</a>
+                <a href="team.html" class="py-2.5 text-[14px] text-white font-medium">Team</a>
+                <a href="about.html#contact" class="mt-2 py-2.5 text-[14px] font-medium text-center text-white bg-white/[0.08] border border-white/[0.1] rounded-full">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative z-10 pt-32 pb-16 lg:pt-40 lg:pb-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="animate-fade-up mb-6">
+                <a href="about.html" class="inline-flex items-center gap-2 text-[13px] text-white/40 hover:text-white/60 transition-colors">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                    Back to About
+                </a>
+            </div>
+            <h1 class="animate-fade-up delay-100">
+                <span class="block text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-white">Our <span class="font-display italic text-gradient">Team</span></span>
+            </h1>
+            <p class="animate-fade-up delay-200 mt-6 text-lg text-white/40 max-w-2xl leading-relaxed font-light">
+                Veehive designs and deploys advanced AI systems built for real world impact. With the mindset of a fast moving startup, we turn ideas into intelligent products.
+            </p>
+        </div>
+    </section>
+
+    <div class="divider-gradient"></div>
+
+    <!-- Core Team -->
+    <section class="relative z-10 py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="reveal mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#3B5BFF]/10 border border-[#3B5BFF]/15 mb-5">
+                    <span class="text-[12px] font-semibold text-[#3B5BFF] uppercase tracking-wider">Core Team</span>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-3">Leadership & Engineering</h2>
+                <p class="text-[15px] text-white/40 max-w-xl">The full-time team that designs, builds, and ships Veehive.ai's products and client solutions.</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="reveal trust-card rounded-2xl p-6 text-center hover:transform hover:-translate-y-1">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-gradient-to-br from-violet-500/30 to-indigo-500/20 border border-violet-500/20 flex items-center justify-center text-lg font-bold text-violet-300">S</div>
+                    <div class="text-[15px] font-bold">Sathish</div>
+                    <div class="text-[12px] text-indigo-400/70 mt-0.5">Founder & CEO</div>
+                </div>
+                <div class="reveal trust-card rounded-2xl p-6 text-center hover:transform hover:-translate-y-1">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-gradient-to-br from-emerald-500/30 to-teal-500/20 border border-emerald-500/20 flex items-center justify-center text-lg font-bold text-emerald-300">T</div>
+                    <div class="text-[15px] font-bold">Taj</div>
+                    <div class="text-[12px] text-emerald-400/70 mt-0.5">Delivery & COO</div>
+                </div>
+                <div class="reveal trust-card rounded-2xl p-6 text-center hover:transform hover:-translate-y-1">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-gradient-to-br from-amber-500/30 to-orange-500/20 border border-amber-500/20 flex items-center justify-center text-lg font-bold text-amber-300">D</div>
+                    <div class="text-[15px] font-bold">Dixon</div>
+                    <div class="text-[12px] text-amber-400/70 mt-0.5">Product & CGO</div>
+                </div>
+                <div class="reveal trust-card rounded-2xl p-6 text-center hover:transform hover:-translate-y-1">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-gradient-to-br from-cyan-500/30 to-blue-500/20 border border-cyan-500/20 flex items-center justify-center text-lg font-bold text-cyan-300">C</div>
+                    <div class="text-[15px] font-bold">Chakir</div>
+                    <div class="text-[12px] text-cyan-400/70 mt-0.5">Head of Technology</div>
+                </div>
+                <div class="reveal trust-card rounded-2xl p-6 text-center hover:transform hover:-translate-y-1">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-gradient-to-br from-rose-500/30 to-pink-500/20 border border-rose-500/20 flex items-center justify-center text-lg font-bold text-rose-300">F</div>
+                    <div class="text-[15px] font-bold">Fahim</div>
+                    <div class="text-[12px] text-rose-400/70 mt-0.5">Head of Engineering</div>
+                </div>
+                <div class="reveal trust-card rounded-2xl p-6 text-center hover:transform hover:-translate-y-1">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-gradient-to-br from-indigo-500/30 to-violet-500/20 border border-indigo-500/20 flex items-center justify-center text-lg font-bold text-indigo-300">N</div>
+                    <div class="text-[15px] font-bold">Nitesh</div>
+                    <div class="text-[12px] text-indigo-400/70 mt-0.5">AI Engineer MCP</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider-gradient"></div>
+
+    <!-- Extended Team Model -->
+    <section class="relative z-10 py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="reveal mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-3">How We Scale for Enterprise</h2>
+                <p class="text-[15px] text-white/40 max-w-2xl">Our core team is supported by a network of specialist consultants, advisors, and technology partners — allowing us to scale rapidly for projects of any size without compromising quality.</p>
+            </div>
+
+            <div class="reveal grid md:grid-cols-3 gap-5">
+                <div class="trust-card rounded-2xl p-7">
+                    <div class="w-10 h-10 rounded-xl bg-[#3B5BFF]/10 border border-[#3B5BFF]/20 flex items-center justify-center mb-5">
+                        <svg class="w-5 h-5 text-[#3B5BFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+                    </div>
+                    <h3 class="text-base font-bold tracking-tight mb-2">Specialist Consultants</h3>
+                    <p class="text-[13px] text-white/40 leading-relaxed">On-demand AI/ML specialists, data engineers, and domain experts who embed into project teams for specific deliverables. Vetted, NDA-covered, and experienced in regulated industries.</p>
+                </div>
+                <div class="trust-card rounded-2xl p-7">
+                    <div class="w-10 h-10 rounded-xl bg-[#3B5BFF]/10 border border-[#3B5BFF]/20 flex items-center justify-center mb-5">
+                        <svg class="w-5 h-5 text-[#3B5BFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+                    </div>
+                    <h3 class="text-base font-bold tracking-tight mb-2">Advisory Network</h3>
+                    <p class="text-[13px] text-white/40 leading-relaxed">Senior advisors from banking, government, and enterprise technology who provide strategic guidance, compliance insight, and market context for large-scale deployments.</p>
+                </div>
+                <div class="trust-card rounded-2xl p-7">
+                    <div class="w-10 h-10 rounded-xl bg-[#3B5BFF]/10 border border-[#3B5BFF]/20 flex items-center justify-center mb-5">
+                        <svg class="w-5 h-5 text-[#3B5BFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z"/></svg>
+                    </div>
+                    <h3 class="text-base font-bold tracking-tight mb-2">Partner Ecosystem</h3>
+                    <p class="text-[13px] text-white/40 leading-relaxed">Technology partnerships with NVIDIA, Microsoft, Google Cloud, and AWS give us access to enterprise infrastructure, GPU compute, and co-delivery capabilities for large-scale projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider-gradient"></div>
+
+    <!-- Testimonials -->
+    <section class="relative z-10 py-24 lg:py-32">
+        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+            <div class="reveal text-center mb-16">
+                <p class="text-[13px] font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-4">Testimonials</p>
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight">
+                    What Our <span class="font-display italic text-gradient">Clients</span> Say
+                </h2>
+            </div>
+            <div class="reveal grid md:grid-cols-2 gap-6">
+                <div class="trust-card rounded-2xl p-7">
+                    <div class="text-indigo-400/40 text-4xl leading-none mb-4">"</div>
+                    <p class="text-[15px] text-white/55 leading-relaxed italic mb-6">Veehive delivered our AI chatbot in record time. Their understanding of conversational AI and enterprise requirements is exceptional.</p>
+                    <div class="text-[13px] text-white/30 font-medium">— Head, Tours and Travel</div>
+                </div>
+                <div class="trust-card rounded-2xl p-7">
+                    <div class="text-emerald-400/40 text-4xl leading-none mb-4">"</div>
+                    <p class="text-[15px] text-white/55 leading-relaxed italic mb-6">The team's technical depth and startup agility helped us launch our platform months ahead of schedule. True partners in innovation.</p>
+                    <div class="text-[13px] text-white/30 font-medium">— Head, Recruiting Firm</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider-gradient"></div>
+
+    <!-- FAQ -->
+    <section id="faq" class="relative z-10 py-24 lg:py-32">
+        <div class="max-w-3xl mx-auto px-6 lg:px-8">
+            <div class="reveal text-center mb-16">
+                <p class="text-[13px] font-semibold uppercase tracking-[0.2em] text-violet-400 mb-4">FAQ</p>
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight">
+                    Frequently Asked <span class="font-display italic text-gradient">Questions</span>
+                </h2>
+            </div>
+
+            <div class="reveal space-y-3">
+                <div class="faq-item trust-card rounded-xl overflow-hidden">
+                    <button class="faq-question w-full px-6 py-5 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('active')">
+                        <span class="text-[15px] font-semibold text-white/80 pr-4">Who founded Veehive?</span>
+                        <svg class="faq-chevron w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Veehive was founded by Sathish, who serves as the Founder & CEO. The leadership team includes Taj (Delivery & COO), Dixon (Product & CGO), Chakir (Head of Technology), and Fahim (Head of Engineering). The team also includes Nitesh (AI Engineer MCP).</div>
+                    </div>
+                </div>
+                <div class="faq-item trust-card rounded-xl overflow-hidden">
+                    <button class="faq-question w-full px-6 py-5 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('active')">
+                        <span class="text-[15px] font-semibold text-white/80 pr-4">What AI products does Veehive build?</span>
+                        <svg class="faq-chevron w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Veehive builds four AI products: SnapaPro (AI project management), mpliphi (AI customer service for WhatsApp & Email), Studio (AI video creation with custom avatars), and HiveLink (TikTok for Business platform with calendars, events, forms, and social commerce).</div>
+                    </div>
+                </div>
+                <div class="faq-item trust-card rounded-xl overflow-hidden">
+                    <button class="faq-question w-full px-6 py-5 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('active')">
+                        <span class="text-[15px] font-semibold text-white/80 pr-4">What case studies does Veehive have?</span>
+                        <svg class="faq-chevron w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Veehive has delivered AI solutions for major clients including an outsourcing company (AI job matching for Emiratisation), Phoenix Tourism One (face recognition for 80+ theme parks), Rayna Tours (agentic chatbot on WhatsApp), Costa Cruises (AI-driven cruise booking), ARKA (AI reconciliation for restaurants), and ORMAE (financial covenant monitoring with a major US bank).</div>
+                    </div>
+                </div>
+                <div class="faq-item trust-card rounded-xl overflow-hidden">
+                    <button class="faq-question w-full px-6 py-5 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('active')">
+                        <span class="text-[15px] font-semibold text-white/80 pr-4">What are Veehive's core capabilities?</span>
+                        <svg class="faq-chevron w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Veehive specializes in AI/ML Development, Generative AI, Agentic AI, LLM & SLM Engineering, Conversational UI Platforms, Synthetic Media & AI Avatars, RAG & Vector Search, Multi-Agent Systems, MCP Architecture, Prompt Engineering, Fine-Tuning & RLHF, and Full Stack Development with MERN Stack and Framer.</div>
+                    </div>
+                </div>
+                <div class="faq-item trust-card rounded-xl overflow-hidden">
+                    <button class="faq-question w-full px-6 py-5 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('active')">
+                        <span class="text-[15px] font-semibold text-white/80 pr-4">What partners does Veehive work with?</span>
+                        <svg class="faq-chevron w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Veehive has technology and strategic partnerships with NVIDIA Inception, Microsoft Azure, Google Cloud, AWS, Lenovo AI Innovators, Crayon, and Presight.</div>
+                    </div>
+                </div>
+                <div class="faq-item trust-card rounded-xl overflow-hidden">
+                    <button class="faq-question w-full px-6 py-5 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('active')">
+                        <span class="text-[15px] font-semibold text-white/80 pr-4">Where is Veehive located?</span>
+                        <svg class="faq-chevron w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Veehive is headquartered in Dubai, UAE at In5 Tech in Dubai Internet City. They operate as Veehive Tech FZ LLC with an ADGM holding company. Contact: hello@veehive.ai.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/[0.06]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+            <div class="flex flex-wrap items-center justify-between gap-6">
+                <div class="flex items-center gap-2.5">
+                    <img src="/Veehive.ai.svg" alt="Veehive" class="h-5 w-auto brightness-0 invert opacity-80">
+                    <span class="text-[13px] text-white/40">&copy; 2026 Veehive.ai</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="/" class="text-[13px] text-white/35 hover:text-white transition-colors">Home</a>
+                    <a href="about.html" class="text-[13px] text-white/35 hover:text-white transition-colors">About</a>
+                    <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="text-[13px] text-white/35 hover:text-white transition-colors">Custom Development</a>
+                    <a href="about.html#contact" class="text-[13px] text-white/35 hover:text-white transition-colors">Contact</a>
+                </div>
+                <div class="flex gap-2">
+                    <a href="https://linkedin.com/company/letsveehive" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center hover:bg-white/[0.08] transition-all" aria-label="LinkedIn"><svg class="w-3.5 h-3.5 text-white/40" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                    <a href="https://twitter.com/letsveehive" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center hover:bg-white/[0.08] transition-all" aria-label="X/Twitter"><svg class="w-3.5 h-3.5 text-white/40" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                    <a href="https://instagram.com/letsveehive" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center hover:bg-white/[0.08] transition-all" aria-label="Instagram"><svg class="w-3.5 h-3.5 text-white/40" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    <a href="https://tiktok.com/@letsveehive" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center hover:bg-white/[0.08] transition-all" aria-label="TikTok"><svg class="w-3.5 h-3.5 text-white/40" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            html.classList.add('theme-transitioning');
+            html.classList.toggle('light');
+            localStorage.setItem('veehive-theme', html.classList.contains('light') ? 'light' : 'dark');
+            setTimeout(() => html.classList.remove('theme-transitioning'), 500);
+        }
+        (function() {
+            const saved = localStorage.getItem('veehive-theme');
+            if (saved === 'light') document.documentElement.classList.add('light');
+            else if (!saved && window.matchMedia('(prefers-color-scheme: light)').matches) document.documentElement.classList.add('light');
+        })();
+    </script>
+</body>
+</html>

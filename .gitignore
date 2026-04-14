@@ -1,0 +1,8 @@
+# Firebase
+.firebase/
+
+# Claude Code
+.claude/
+
+# OS files
+.DS_Store

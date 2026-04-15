@@ -700,6 +700,10 @@
             transition-duration: 0.4s !important;
             transition-timing-function: cubic-bezier(0.4,0,0.2,1) !important;
         }
+
+        /* FAQ accordion */
+        .faq-open > div:last-child { max-height: 500px !important; }
+        .faq-open > button svg { transform: rotate(180deg); }
     </style>
 </head>
 <body class="min-h-screen overflow-x-hidden antialiased" style="color: var(--text);">
@@ -1511,6 +1515,88 @@
                     </div>
                 </div>
             </a>
+        </div>
+    </section>
+
+    <div class="divider-gradient"></div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- FAQ -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="faq" class="relative z-10 py-24 lg:py-32">
+        <div class="max-w-3xl mx-auto px-6 lg:px-8">
+            <div class="reveal text-center mb-16">
+                <p class="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#3B5BFF]/60 mb-4">FAQ</p>
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight">
+                    Frequently Asked <span class="font-display italic text-gradient">Questions</span>
+                </h2>
+            </div>
+
+            <div class="reveal space-y-3">
+                <div class="trust-card rounded-xl overflow-hidden">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('faq-open')">
+                        <span class="text-[15px] font-semibold text-white/80 pr-4">What is Veehive.ai?</span>
+                        <svg class="w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" style="transform: var(--faq-rotate, rotate(0deg))" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Veehive.ai is an AI-powered marketing platform that plans, creates, distributes, and tracks your campaigns — all from a single prompt. Four integrated modules replace 7+ separate tools, giving marketing teams the speed of AI without the complexity.</div>
+                    </div>
+                </div>
+                <div class="trust-card rounded-xl overflow-hidden">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('faq-open')">
+                        <span class="text-[15px] font-semibold text-white/80 pr-4">What are the four modules?</span>
+                        <svg class="w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed"><strong class="text-white/60">SnapaPro</strong> — describe what you want in plain English and it creates a campaign plan with tasks, timelines, and assignments. <strong class="text-white/60">mpliphi</strong> — your AI customer service team, handling 50K+ WhatsApp and email conversations in 50+ languages. <strong class="text-white/60">Studio</strong> — turns any document into branded video with AI avatars and voiceover. <strong class="text-white/60">HiveLink</strong> — one platform for video hosting, social scheduling, community, and CRM.</div>
+                    </div>
+                </div>
+                <div class="trust-card rounded-xl overflow-hidden">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('faq-open')">
+                        <span class="text-[15px] font-semibold text-white/80 pr-4">How does it work?</span>
+                        <svg class="w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">You give one command describing what you want to achieve. SnapaPro creates a campaign plan. Studio produces all the content — videos, assets, multilingual versions. HiveLink distributes across your channels. mpliphi handles customer engagement automatically. From prompt to live campaign in minutes.</div>
+                    </div>
+                </div>
+                <div class="trust-card rounded-xl overflow-hidden">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('faq-open')">
+                        <span class="text-[15px] font-semibold text-white/80 pr-4">Who is Veehive built for?</span>
+                        <svg class="w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Marketing teams at mid-market and enterprise companies who need to run campaigns faster without adding headcount. Used by travel, hospitality, and financial services companies across the UAE and beyond.</div>
+                    </div>
+                </div>
+                <div class="trust-card rounded-xl overflow-hidden">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('faq-open')">
+                        <span class="text-[15px] font-semibold text-white/80 pr-4">Is Veehive secure and enterprise-ready?</span>
+                        <svg class="w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Yes. Veehive.ai is Dubai AI Seal Tier E certified, implements SOC 2 Type II controls, follows ISO 27001 aligned practices, and is GDPR-ready with data residency options in UAE, EU, and US. Your data never trains our models. End-to-end encryption, role-based access, and zero-trust architecture come standard.</div>
+                    </div>
+                </div>
+                <div class="trust-card rounded-xl overflow-hidden">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('faq-open')">
+                        <span class="text-[15px] font-semibold text-white/80 pr-4">Where is Veehive based?</span>
+                        <svg class="w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Dubai, UAE — at In5 Tech in Dubai Internet City. We operate as Veehive Tech FZ LLC. Contact us at sathish@veehive.ai or WhatsApp +971502753576.</div>
+                    </div>
+                </div>
+                <div class="trust-card rounded-xl overflow-hidden">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('faq-open')">
+                        <span class="text-[15px] font-semibold text-white/80 pr-4">What if I need custom AI development?</span>
+                        <svg class="w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Veehive.ai is our product platform — four modules you can use today. For custom AI development, SLM configuration, and enterprise integrations, visit our sister company <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="text-[#3B5BFF] hover:text-[#6B82FF] transition-colors">VeehiveLabs.com</a>.</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

@@ -9,3 +9,7 @@ node_modules/
 
 # OS files
 .DS_Store
+
+# Playwright
+test-results/
+playwright-report/

@@ -6,6 +6,13 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/hivelink.html",
+        "destination": "https://veehivelink.com",
+        "type": 301
+      }
+    ],
     "rewrites": [
       {
         "source": "**",

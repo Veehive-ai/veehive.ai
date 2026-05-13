@@ -909,26 +909,26 @@
                 <p class="mt-3 text-base text-white/40 max-w-xl mx-auto">Click the one that fits. We&rsquo;ll point you to the product built for it.</p>
             </div>
 
-            <div class="reveal grid sm:grid-cols-2 gap-4" id="problem-matcher-grid">
-                <button type="button" class="problem-card trust-card card-glow card-glow-orchestrator rounded-xl p-6 text-left transition-all" data-product="mpliphi">
+            <div class="reveal grid sm:grid-cols-2 gap-4" id="problem-matcher-grid" role="group" aria-label="Problem selector">
+                <button type="button" aria-pressed="false" class="problem-card trust-card card-glow card-glow-orchestrator rounded-xl p-6 text-left transition-all" data-product="mpliphi">
                     <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#16A34A">Support &amp; ops</span>
                     <span class="block text-[17px] font-semibold text-white/85 leading-snug">&ldquo;Customer replies are drowning us.&rdquo;</span>
                 </button>
-                <button type="button" class="problem-card trust-card card-glow card-glow-creator rounded-xl p-6 text-left transition-all" data-product="studio">
+                <button type="button" aria-pressed="false" class="problem-card trust-card card-glow card-glow-creator rounded-xl p-6 text-left transition-all" data-product="studio">
                     <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#A78BFA">Content &amp; marketing</span>
                     <span class="block text-[17px] font-semibold text-white/85 leading-snug">&ldquo;Content takes too long to produce.&rdquo;</span>
                 </button>
-                <button type="button" class="problem-card trust-card card-glow card-glow-planner rounded-xl p-6 text-left transition-all" data-product="snapapro">
+                <button type="button" aria-pressed="false" class="problem-card trust-card card-glow card-glow-planner rounded-xl p-6 text-left transition-all" data-product="snapapro">
                     <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#F87171">Project mgmt</span>
                     <span class="block text-[17px] font-semibold text-white/85 leading-snug">&ldquo;Projects slip through the cracks.&rdquo;</span>
                 </button>
-                <button type="button" class="problem-card trust-card card-glow card-glow-distributor rounded-xl p-6 text-left transition-all" data-product="veehive-link">
+                <button type="button" aria-pressed="false" class="problem-card trust-card card-glow card-glow-distributor rounded-xl p-6 text-left transition-all" data-product="veehive-link">
                     <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#60A5FA">Marketing &amp; community</span>
                     <span class="block text-[17px] font-semibold text-white/85 leading-snug">&ldquo;Distribution is a mess of tools.&rdquo;</span>
                 </button>
             </div>
 
-            <div id="problem-match-result" class="reveal mt-6 hidden trust-card rounded-xl p-6 md:p-8" aria-live="polite"></div>
+            <div id="problem-match-result" class="mt-6 hidden trust-card rounded-xl p-6 md:p-8" aria-live="polite"></div>
         </div>
     </section>
 
@@ -1849,6 +1849,7 @@
       for (var i = 0; i < cards.length; i++) {
         cards[i].style.borderColor = '';
         cards[i].style.boxShadow = '';
+        cards[i].setAttribute('aria-pressed', 'false');
       }
     }
 
@@ -1885,6 +1886,7 @@
         clearSelection();
         this.style.borderColor = p.color;
         this.style.boxShadow = '0 0 0 1px ' + p.color + ', 0 0 40px -12px ' + p.color;
+        this.setAttribute('aria-pressed', 'true');
         panel.classList.remove('hidden');
         renderPanel(p);
         if (panel.scrollIntoView) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

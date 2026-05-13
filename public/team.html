@@ -98,6 +98,11 @@
         .nav-blur { backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
         .nav-favicon { width: 14px; height: 14px; border-radius: 50%; margin-right: 6px; display: inline-block; vertical-align: -2px; }
         .nav-favicon-mobile { width: 18px; height: 18px; border-radius: 50%; margin-right: 10px; vertical-align: -4px; }
+        /* Brand logo — swap by theme */
+        .brand-logo-white { display: inline-block; }
+        .brand-logo-color { display: none; }
+        html.light .brand-logo-white { display: none; }
+        html.light .brand-logo-color { display: inline-block; }
         .divider-gradient { height: 1px; background: linear-gradient(90deg, transparent, var(--divider) 50%, transparent); }
         .trust-card { background: var(--surface); border: 1px solid var(--border); backdrop-filter: blur(12px); transition: all 0.3s ease; }
         .trust-card:hover { background: var(--surface-raised); border-color: var(--border-hover); }
@@ -149,7 +154,8 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <a href="/" class="flex items-center gap-2.5">
-                    <img src="/Veehive.ai.svg" alt="Veehive" class="h-6 w-auto" style="filter: var(--logo-filter); opacity: var(--logo-opacity);">
+                    <img src="/logo-veehive-white-192.png" alt="Veehive" class="brand-logo-white h-6 w-auto" style="opacity: var(--logo-opacity);">
+                    <img src="/logo-veehive-192.png" alt="Veehive" class="brand-logo-color h-6 w-auto">
                 </a>
                 <div class="hidden md:flex items-center gap-1">
                     <a href="about.html" class="px-3 py-1.5 text-[13px] text-white/50 hover:text-white transition-colors rounded-md hover:bg-white/[0.04]">About</a>
@@ -413,7 +419,8 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
             <div class="flex flex-wrap items-center justify-between gap-6">
                 <div class="flex items-center gap-2.5">
-                    <img src="/Veehive.ai.svg" alt="Veehive" class="h-5 w-auto brightness-0 invert opacity-80">
+                    <img src="/logo-veehive-white-192.png" alt="Veehive" class="brand-logo-white h-5 w-auto opacity-80">
+                    <img src="/logo-veehive-192.png" alt="Veehive" class="brand-logo-color h-5 w-auto">
                     <span class="text-[13px] text-white/40">&copy; 2026 Veehive.ai</span>
                 </div>
                 <div class="flex items-center gap-4">

@@ -158,6 +158,11 @@
         .nav-favicon-mobile { width: 18px; height: 18px; border-radius: 50%; margin-right: 10px; vertical-align: -4px; }
         .footer-product-link { display: inline-flex; align-items: center; gap: 10px; }
         .footer-favicon { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; }
+        /* Brand logo — swap by theme */
+        .brand-logo-white { display: inline-block; }
+        .brand-logo-color { display: none; }
+        html.light .brand-logo-white { display: none; }
+        html.light .brand-logo-color { display: inline-block; }
         .divider-gradient { height: 1px; background: linear-gradient(90deg, transparent, var(--divider) 50%, transparent); }
 
         .reveal { opacity: 0; transform: translateY(32px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -214,7 +219,8 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <a href="/" class="flex items-center gap-2.5">
-                    <img src="/Veehive.ai.svg" alt="Veehive" class="h-6 w-auto" style="filter: var(--logo-filter); opacity: var(--logo-opacity);">
+                    <img src="/logo-veehive-white-192.png" alt="Veehive" class="brand-logo-white h-6 w-auto" style="opacity: var(--logo-opacity);">
+                    <img src="/logo-veehive-192.png" alt="Veehive" class="brand-logo-color h-6 w-auto">
                 </a>
                 <div class="hidden lg:flex items-center gap-1">
                     <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-snapapro-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">SnapaPro</a>
@@ -522,7 +528,8 @@
             <div class="grid md:grid-cols-4 gap-12 mb-14">
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-2.5 mb-4">
-                        <img src="/Veehive.ai.svg" alt="Veehive" class="h-5 w-auto brightness-0 invert opacity-80">
+                        <img src="/logo-veehive-white-192.png" alt="Veehive" class="brand-logo-white h-5 w-auto opacity-80">
+                        <img src="/logo-veehive-192.png" alt="Veehive" class="brand-logo-color h-5 w-auto">
                     </div>
                     <p class="text-[14px] text-white/35 mb-6 max-w-xs leading-relaxed">
                         The agentic operating system for marketing execution. Built in Dubai, trusted globally.

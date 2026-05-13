@@ -556,10 +556,33 @@
         html.light .trust-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
 
         /* Partner logo cards — white tiles holding colored logos, work on both themes */
-        .partner-logo-card { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+        .partner-logo-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 64px;
+            width: 140px;
+            padding: 12px 16px;
+            background: #ffffff;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            flex-shrink: 0;
+        }
+        .partner-logo-card img {
+            max-height: 36px;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
         .partner-logo-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px -8px rgba(0,0,0,0.4); border-color: rgba(255,255,255,0.18); }
         html.light .partner-logo-card { border-color: rgba(15,26,32,0.08); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
         html.light .partner-logo-card:hover { box-shadow: 0 8px 24px -8px rgba(0,0,0,0.12); border-color: rgba(15,26,32,0.15); }
+        @media (max-width: 640px) {
+            .partner-logo-card { width: 118px; height: 56px; padding: 10px 12px; }
+            .partner-logo-card img { max-height: 30px; }
+        }
 
         /* Nav blur */
         .nav-blur {
@@ -929,23 +952,23 @@
             <div class="reveal">
                 <p class="text-center text-[12px] font-semibold uppercase tracking-[0.2em] text-white/25 mb-8">Partners &amp; Accelerators</p>
                 <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-                    <div class="partner-logo-card flex items-center justify-center h-16 w-32 sm:w-36 rounded-xl bg-white border border-white/[0.08]">
-                        <img src="/partners/nvidia-inception.png" alt="NVIDIA Inception" class="max-h-9 max-w-[80%] object-contain" loading="lazy" decoding="async">
+                    <div class="partner-logo-card">
+                        <img src="/partners/nvidia-inception.png" alt="NVIDIA Inception" loading="lazy" decoding="async">
                     </div>
-                    <div class="partner-logo-card flex items-center justify-center h-16 w-32 sm:w-36 rounded-xl bg-white border border-white/[0.08]">
-                        <img src="/partners/aws.png" alt="AWS" class="max-h-9 max-w-[70%] object-contain" loading="lazy" decoding="async">
+                    <div class="partner-logo-card">
+                        <img src="/partners/aws.png" alt="AWS" loading="lazy" decoding="async">
                     </div>
-                    <div class="partner-logo-card flex items-center justify-center h-16 w-32 sm:w-36 rounded-xl bg-white border border-white/[0.08]">
-                        <img src="/partners/google-cloud.webp" alt="Google Cloud for Startups" class="max-h-10 max-w-[85%] object-contain" loading="lazy" decoding="async">
+                    <div class="partner-logo-card">
+                        <img src="/partners/google-cloud.webp" alt="Google Cloud for Startups" loading="lazy" decoding="async">
                     </div>
-                    <div class="partner-logo-card flex items-center justify-center h-16 w-32 sm:w-36 rounded-xl bg-white border border-white/[0.08]">
-                        <img src="/partners/microsoft-for-startups.webp" alt="Microsoft for Startups" class="max-h-10 max-w-[85%] object-contain" loading="lazy" decoding="async">
+                    <div class="partner-logo-card">
+                        <img src="/partners/microsoft-for-startups.webp" alt="Microsoft for Startups" loading="lazy" decoding="async">
                     </div>
-                    <div class="partner-logo-card flex items-center justify-center h-16 w-32 sm:w-36 rounded-xl bg-white border border-white/[0.08]">
-                        <img src="/partners/lenovo-ai-innovators.webp" alt="Lenovo AI Innovators" class="max-h-9 max-w-[85%] object-contain" loading="lazy" decoding="async">
+                    <div class="partner-logo-card">
+                        <img src="/partners/lenovo-ai-innovators.webp" alt="Lenovo AI Innovators" loading="lazy" decoding="async">
                     </div>
-                    <div class="partner-logo-card flex items-center justify-center h-16 w-32 sm:w-36 rounded-xl bg-white border border-white/[0.08]">
-                        <img src="/partners/in5.svg" alt="in5 Tech Dubai" class="max-h-9 max-w-[60%] object-contain" loading="lazy" decoding="async">
+                    <div class="partner-logo-card">
+                        <img src="/partners/in5.svg" alt="in5 Tech Dubai" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>

@@ -448,6 +448,29 @@
         .footer-product-link { display: inline-flex; align-items: center; gap: 10px; }
         .footer-favicon { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; }
 
+        /* Partner logo cards — white tiles holding colored logos, work on both themes */
+        .partner-logo-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 64px;
+            width: 140px;
+            padding: 12px 16px;
+            background: #ffffff;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            flex-shrink: 0;
+        }
+        .partner-logo-card img { max-height: 36px; max-width: 100%; width: auto; height: auto; object-fit: contain; }
+        .partner-logo-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px -8px rgba(0,0,0,0.4); border-color: rgba(255,255,255,0.18); }
+        html.light .partner-logo-card { border-color: rgba(15,26,32,0.08); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        html.light .partner-logo-card:hover { box-shadow: 0 8px 24px -8px rgba(0,0,0,0.12); border-color: rgba(15,26,32,0.15); }
+        @media (max-width: 640px) {
+            .partner-logo-card { width: 118px; height: 56px; padding: 10px 12px; }
+            .partner-logo-card img { max-height: 30px; }
+        }
+
         .nav-blur {
             backdrop-filter: saturate(180%) blur(20px);
             -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -589,7 +612,7 @@
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3B5BFF] opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-[#3B5BFF]"></span>
                     </span>
-                    <span class="text-[13px] text-white/60 font-medium">Dubai AI Seal Certified &middot; Agentic Architecture</span>
+                    <span class="text-[13px] text-white/60 font-medium">Dubai AI Seal Certified &middot; Applied AI from Dubai</span>
                 </div>
             </div>
 
@@ -601,7 +624,7 @@
             </h1>
 
             <p class="animate-fade-up delay-200 mt-8 text-lg md:text-xl text-white/40 max-w-2xl leading-relaxed font-light">
-                A Dubai-based AI company that helps marketing teams reduce time-to-launch, consolidate fragmented workflows, and speed up multilingual campaign execution. Four products, one platform.
+                A Dubai-based applied-AI company. We build four independent AI products &mdash; mpliphi, Veehive Studio, SnapaPro, and Veehive Link &mdash; for different teams, under one roof.
             </p>
 
             <!-- Quick navigation cards -->
@@ -633,7 +656,7 @@
                     </div>
                     <div>
                         <div class="stat-value text-3xl md:text-4xl font-bold text-white">4</div>
-                        <div class="mt-1 text-[13px] text-white/30 font-medium uppercase tracking-wider">Products, 1 Platform</div>
+                        <div class="mt-1 text-[13px] text-white/30 font-medium uppercase tracking-wider">Independent Products</div>
                     </div>
                 </div>
             </div>
@@ -643,18 +666,17 @@
     <div class="divider-gradient"></div>
 
     <!-- Partners Bar -->
-    <section class="relative z-10 py-10">
+    <section class="relative z-10 py-12 border-y border-white/[0.04]">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="reveal text-center">
-                <p class="text-[11px] font-semibold uppercase tracking-[0.25em] text-white/25 mb-6">Technology & Strategic Partners</p>
-                <div class="flex justify-center items-center gap-8 md:gap-12 flex-wrap">
-                    <span class="text-[13px] font-semibold text-white/30 hover:text-white/60 transition-colors">NVIDIA Inception</span>
-                    <span class="text-[13px] font-semibold text-white/30 hover:text-white/60 transition-colors">Microsoft Azure</span>
-                    <span class="text-[13px] font-semibold text-white/30 hover:text-white/60 transition-colors">Google Cloud</span>
-                    <span class="text-[13px] font-semibold text-white/30 hover:text-white/60 transition-colors">AWS</span>
-                    <span class="text-[13px] font-semibold text-white/30 hover:text-white/60 transition-colors">Lenovo AI Innovators</span>
-                    <span class="text-[13px] font-semibold text-white/30 hover:text-white/60 transition-colors">Crayon</span>
-                    <span class="text-[13px] font-semibold text-white/30 hover:text-white/60 transition-colors">Presight</span>
+            <div class="reveal">
+                <p class="text-center text-[12px] font-semibold uppercase tracking-[0.2em] text-white/25 mb-8">Technology &amp; Strategic Partners</p>
+                <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+                    <div class="partner-logo-card"><img src="/partners/nvidia-inception.png" alt="NVIDIA Inception" loading="lazy" decoding="async"></div>
+                    <div class="partner-logo-card"><img src="/partners/aws.png" alt="AWS" loading="lazy" decoding="async"></div>
+                    <div class="partner-logo-card"><img src="/partners/google-cloud.webp" alt="Google Cloud for Startups" loading="lazy" decoding="async"></div>
+                    <div class="partner-logo-card"><img src="/partners/microsoft-for-startups.webp" alt="Microsoft for Startups" loading="lazy" decoding="async"></div>
+                    <div class="partner-logo-card"><img src="/partners/lenovo-ai-innovators.webp" alt="Lenovo AI Innovators" loading="lazy" decoding="async"></div>
+                    <div class="partner-logo-card"><img src="/partners/in5.svg" alt="in5 Tech Dubai" loading="lazy" decoding="async"></div>
                 </div>
             </div>
         </div>
@@ -724,14 +746,14 @@
                         <svg class="w-5 h-5 text-[#3B5BFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                     </div>
                     <h3 class="text-xl font-bold tracking-tight mb-3">Our Vision</h3>
-                    <p class="text-[15px] text-white/45 leading-relaxed">To make every marketing team 10x more effective by replacing fragmented tools and manual processes with a single, autonomous AI operating system that handles the full lifecycle — from strategy to execution.</p>
+                    <p class="text-[15px] text-white/45 leading-relaxed">A world where every team &mdash; support, content, project, community &mdash; has an AI tool built specifically for the work they do. Not one platform that pretends to do everything; four focused products that each solve one thing well.</p>
                 </div>
                 <div class="trust-card rounded-2xl p-8">
                     <div class="w-10 h-10 rounded-xl bg-[#3B5BFF]/10 border border-[#3B5BFF]/20 flex items-center justify-center mb-5">
                         <svg class="w-5 h-5 text-[#3B5BFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
                     </div>
                     <h3 class="text-xl font-bold tracking-tight mb-3">Our Mission</h3>
-                    <p class="text-[15px] text-white/45 leading-relaxed">Build marketing tools that make AI practical. Our four products give marketing teams the speed of AI without the complexity — plan, create, distribute, and track from one platform.</p>
+                    <p class="text-[15px] text-white/45 leading-relaxed">Build AI that actually ships. Each of our products &mdash; mpliphi for customer conversations, Veehive Studio for video, SnapaPro for project management, Veehive Link for content and community &mdash; goes deep on one problem instead of broad on many.</p>
                 </div>
             </div>
         </div>
@@ -748,7 +770,7 @@
                         <span class="text-[12px] font-semibold text-[#8B5CFF] uppercase tracking-wider">Services</span>
                     </div>
                     <h3 class="text-xl font-bold tracking-tight mb-2">Custom Development</h3>
-                    <p class="text-[14px] text-white/40 leading-relaxed mb-5">Veehive.ai is our product platform — four AI modules you can use today. Need something custom-built? VeehiveLabs handles bespoke AI development, SLM configuration, and enterprise integrations.</p>
+                    <p class="text-[14px] text-white/40 leading-relaxed mb-5">Veehive ships four AI products you can use today. Need something custom-built instead? VeehiveLabs handles bespoke AI development, SLM configuration, and enterprise integrations.</p>
                     <div class="flex items-center gap-2 text-[13px] font-medium text-white/50 group-hover:text-white transition-all">
                         veehivelabs.com
                         <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
@@ -826,7 +848,7 @@
                         <img src="/Veehive.ai.svg" alt="Veehive" class="h-5 w-auto" style="filter: var(--logo-filter); opacity: var(--logo-opacity);">
                     </div>
                     <p class="text-[14px] text-white/35 mb-6 max-w-xs leading-relaxed">
-                        The agentic operating system for marketing execution. Built in Dubai, trusted globally.
+                        Applied AI from Dubai. Four independent products: mpliphi, Veehive Studio, SnapaPro, Veehive Link.
                     </p>
                     <div class="flex gap-2">
                         <a href="https://linkedin.com/company/letsveehive" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center hover:bg-white/[0.08] hover:border-white/[0.12] transition-all" aria-label="LinkedIn">

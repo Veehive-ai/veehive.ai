@@ -179,15 +179,17 @@
                     </button>
                     <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 text-[13px] font-medium text-white bg-white/[0.08] border border-white/[0.1] rounded-full hover:bg-white/[0.14] transition-all">Book a Demo</a>
                 </div>
-                <button onclick="toggleTheme()" class="theme-toggle mr-2 md:hidden" aria-label="Toggle theme" title="Toggle theme">
-                    <div class="theme-toggle-knob">
-                        <svg class="theme-icon-dark" viewBox="0 0 16 16" fill="none"><path d="M8 3a5 5 0 000 10 5 5 0 000-10z" fill="#0F1A20" opacity="0.7"/><circle cx="8" cy="8" r="2" fill="#0F1A20"/></svg>
-                        <svg class="theme-icon-light" viewBox="0 0 16 16" fill="none"><path d="M8 1v2m0 10v2m5-7h2M1 8h2m9.07-4.07l1.41-1.41M2.52 13.48l1.41-1.41m0-8.14L2.52 2.52m10.96 10.96l-1.41-1.41" stroke="#0F1A20" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="8" r="2.5" fill="#0F1A20"/></svg>
-                    </div>
-                </button>
-                <button class="md:hidden text-white/60 hover:text-white p-1" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                </button>
+                <div class="md:hidden flex items-center gap-3">
+                    <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+                        <div class="theme-toggle-knob">
+                            <svg class="theme-icon-dark" viewBox="0 0 16 16" fill="none"><path d="M8 3a5 5 0 000 10 5 5 0 000-10z" fill="#0F1A20" opacity="0.7"/><circle cx="8" cy="8" r="2" fill="#0F1A20"/></svg>
+                            <svg class="theme-icon-light" viewBox="0 0 16 16" fill="none"><path d="M8 1v2m0 10v2m5-7h2M1 8h2m9.07-4.07l1.41-1.41M2.52 13.48l1.41-1.41m0-8.14L2.52 2.52m10.96 10.96l-1.41-1.41" stroke="#0F1A20" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="8" r="2.5" fill="#0F1A20"/></svg>
+                        </div>
+                    </button>
+                    <button class="text-white/60 hover:text-white p-1" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden nav-blur" style="background: var(--bg-mobile); border-top: 1px solid var(--border);">

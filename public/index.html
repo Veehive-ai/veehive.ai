@@ -584,6 +584,26 @@
             .partner-logo-card img { max-height: 30px; }
         }
 
+        /* Hero product pills — asymmetric padding (icon sits closer to edge) */
+        .product-pill { padding: 8px 20px 8px 10px; }
+
+        /* Nav favicons — tiny brand mark before each product link */
+        .nav-favicon {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            margin-right: 6px;
+            display: inline-block;
+            vertical-align: -2px;
+        }
+        .nav-favicon-mobile {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            margin-right: 10px;
+            vertical-align: -4px;
+        }
+
         /* Nav blur */
         .nav-blur {
             backdrop-filter: saturate(180%) blur(20px);
@@ -802,10 +822,10 @@
                 </a>
 
                 <div class="hidden lg:flex items-center gap-1">
-                    <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">SnapaPro</a>
-                    <a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">mpliphi</a>
-                    <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">Studio</a>
-                    <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">Veehive Link</a>
+                    <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-snapapro-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">SnapaPro</a>
+                    <a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-mpliphi-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">mpliphi</a>
+                    <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-studio-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">Studio</a>
+                    <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-hivelink-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">Veehive Link</a>
                     <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">Need Custom AI?</a>
                     <a href="about.html" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">About</a>
                     <div class="w-px h-4 mx-2" style="background: var(--border);"></div>
@@ -836,10 +856,10 @@
 
         <div id="mobile-menu" class="hidden lg:hidden nav-blur" style="border-top: 1px solid var(--border); background: var(--bg-mobile);">
             <div class="px-6 py-4 flex flex-col gap-1">
-                <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">SnapaPro</a>
-                <a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">mpliphi</a>
-                <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">Studio</a>
-                <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">Veehive Link</a>
+                <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-snapapro-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">SnapaPro</a>
+                <a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-mpliphi-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">mpliphi</a>
+                <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-studio-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">Studio</a>
+                <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-hivelink-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">Veehive Link</a>
                 <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">Need Custom AI?</a>
                 <a href="about.html" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">About</a>
                 <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="mt-2 py-2.5 text-[14px] font-medium text-center bg-[#3B5BFF] rounded-full" style="color: var(--cta-text);">Book a Demo</a>
@@ -877,20 +897,20 @@
             </p>
 
             <!-- Product pills (anchor links into showcases below) -->
-            <div class="animate-fade-up delay-300 mt-10 flex flex-wrap gap-3">
-                <a href="#mpliphi" class="inline-flex items-center gap-2.5 pl-3 pr-5 py-2 rounded-full border border-white/[0.1] bg-white/[0.04] text-[14px] font-semibold text-white hover:bg-white/[0.08] hover:border-white/[0.18] transition-all">
+            <div class="animate-fade-up delay-300 mt-10 flex flex-wrap gap-4">
+                <a href="#mpliphi" class="product-pill inline-flex items-center gap-3 rounded-full border border-white/[0.1] bg-white/[0.04] text-[14px] font-semibold text-white hover:bg-white/[0.08] hover:border-white/[0.18] transition-all">
                     <img src="/favicon-mpliphi-32.png" alt="" class="w-5 h-5 rounded-full" loading="lazy" decoding="async">
                     mpliphi
                 </a>
-                <a href="#studio" class="inline-flex items-center gap-2.5 pl-3 pr-5 py-2 rounded-full border border-white/[0.1] bg-white/[0.04] text-[14px] font-semibold text-white hover:bg-white/[0.08] hover:border-white/[0.18] transition-all">
+                <a href="#studio" class="product-pill inline-flex items-center gap-3 rounded-full border border-white/[0.1] bg-white/[0.04] text-[14px] font-semibold text-white hover:bg-white/[0.08] hover:border-white/[0.18] transition-all">
                     <img src="/favicon-studio-32.png" alt="" class="w-5 h-5 rounded-full" loading="lazy" decoding="async">
                     Studio
                 </a>
-                <a href="#snapapro" class="inline-flex items-center gap-2.5 pl-3 pr-5 py-2 rounded-full border border-white/[0.1] bg-white/[0.04] text-[14px] font-semibold text-white hover:bg-white/[0.08] hover:border-white/[0.18] transition-all">
+                <a href="#snapapro" class="product-pill inline-flex items-center gap-3 rounded-full border border-white/[0.1] bg-white/[0.04] text-[14px] font-semibold text-white hover:bg-white/[0.08] hover:border-white/[0.18] transition-all">
                     <img src="/favicon-snapapro-32.png" alt="" class="w-5 h-5 rounded-full" loading="lazy" decoding="async">
                     SnapaPro
                 </a>
-                <a href="#veehive-link" class="inline-flex items-center gap-2.5 pl-3 pr-5 py-2 rounded-full border border-white/[0.1] bg-white/[0.04] text-[14px] font-semibold text-white hover:bg-white/[0.08] hover:border-white/[0.18] transition-all">
+                <a href="#veehive-link" class="product-pill inline-flex items-center gap-3 rounded-full border border-white/[0.1] bg-white/[0.04] text-[14px] font-semibold text-white hover:bg-white/[0.08] hover:border-white/[0.18] transition-all">
                     <img src="/favicon-hivelink-32.png" alt="" class="w-5 h-5 rounded-full" loading="lazy" decoding="async">
                     Link
                 </a>

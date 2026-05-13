@@ -96,6 +96,8 @@
         .delay-100 { animation-delay: 0.1s; } .delay-200 { animation-delay: 0.2s; } .delay-300 { animation-delay: 0.3s; }
         .text-gradient { background: linear-gradient(135deg, var(--gradient-text-a) 0%, var(--gradient-text-b) 40%, var(--gradient-text-c) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; padding-right: 0.1em; }
         .nav-blur { backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
+        .nav-favicon { width: 14px; height: 14px; border-radius: 50%; margin-right: 6px; display: inline-block; vertical-align: -2px; }
+        .nav-favicon-mobile { width: 18px; height: 18px; border-radius: 50%; margin-right: 10px; vertical-align: -4px; }
         .divider-gradient { height: 1px; background: linear-gradient(90deg, transparent, var(--divider) 50%, transparent); }
         .trust-card { background: var(--surface); border: 1px solid var(--border); backdrop-filter: blur(12px); transition: all 0.3s ease; }
         .trust-card:hover { background: var(--surface-raised); border-color: var(--border-hover); }
@@ -151,7 +153,7 @@
                 </a>
                 <div class="hidden md:flex items-center gap-1">
                     <a href="about.html" class="px-3 py-1.5 text-[13px] text-white/50 hover:text-white transition-colors rounded-md hover:bg-white/[0.04]">About</a>
-                    <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] text-white/50 hover:text-white transition-colors rounded-md hover:bg-white/[0.04]">Need Custom AI?</a>
+                    <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] text-white/50 hover:text-white transition-colors rounded-md hover:bg-white/[0.04]"><img src="/favicon-veehivelabs-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">Need Custom AI?</a>
                     <a href="team.html" class="px-3 py-1.5 text-[13px] text-white hover:text-white transition-colors rounded-md bg-white/[0.06]">Team</a>
                     <div class="w-px h-4 bg-white/10 mx-2"></div>
                     <button onclick="toggleTheme()" class="theme-toggle mr-2" aria-label="Toggle theme" title="Toggle theme">
@@ -177,7 +179,7 @@
             <div class="px-6 py-4 flex flex-col gap-1">
                 <a href="/" class="py-2.5 text-[14px] text-white/60 hover:text-white">Home</a>
                 <a href="about.html" class="py-2.5 text-[14px] text-white/60 hover:text-white">About</a>
-                <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px] text-white/60 hover:text-white">Need Custom AI?</a>
+                <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px] text-white/60 hover:text-white"><img src="/favicon-veehivelabs-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">Need Custom AI?</a>
                 <a href="team.html" class="py-2.5 text-[14px] text-white font-medium">Team</a>
                 <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="mt-2 py-2.5 text-[14px] font-medium text-center text-white bg-white/[0.08] border border-white/[0.1] rounded-full">Book a Demo</a>
             </div>

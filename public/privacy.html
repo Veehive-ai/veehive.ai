@@ -154,6 +154,8 @@
         html.light .trust-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
 
         .nav-blur { backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
+        .nav-favicon { width: 14px; height: 14px; border-radius: 50%; margin-right: 6px; display: inline-block; vertical-align: -2px; }
+        .nav-favicon-mobile { width: 18px; height: 18px; border-radius: 50%; margin-right: 10px; vertical-align: -4px; }
         .divider-gradient { height: 1px; background: linear-gradient(90deg, transparent, var(--divider) 50%, transparent); }
 
         .reveal { opacity: 0; transform: translateY(32px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -213,11 +215,11 @@
                     <img src="/Veehive.ai.svg" alt="Veehive" class="h-6 w-auto" style="filter: var(--logo-filter); opacity: var(--logo-opacity);">
                 </a>
                 <div class="hidden lg:flex items-center gap-1">
-                    <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">SnapaPro</a>
-                    <a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">mpliphi</a>
-                    <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">Studio</a>
-                    <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">Veehive Link</a>
-                    <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">Need Custom AI?</a>
+                    <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-snapapro-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">SnapaPro</a>
+                    <a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-mpliphi-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">mpliphi</a>
+                    <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-studio-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">Studio</a>
+                    <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-hivelink-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">Veehive Link</a>
+                    <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-veehivelabs-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">Need Custom AI?</a>
                     <a href="about.html" class="px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">About</a>
                     <div class="w-px h-4 mx-2" style="background: var(--border);"></div>
                     <button onclick="toggleTheme()" class="theme-toggle mr-2" aria-label="Toggle light/dark mode" title="Toggle theme">
@@ -243,11 +245,11 @@
         </div>
         <div id="mobile-menu" class="hidden lg:hidden nav-blur" style="border-top: 1px solid var(--border); background: var(--bg-mobile);">
             <div class="px-6 py-4 flex flex-col gap-1">
-                <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">SnapaPro</a>
-                <a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">mpliphi</a>
-                <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">Studio</a>
-                <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">Veehive Link</a>
-                <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">Need Custom AI?</a>
+                <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-snapapro-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">SnapaPro</a>
+                <a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-mpliphi-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">mpliphi</a>
+                <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-studio-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">Studio</a>
+                <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-hivelink-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">Veehive Link</a>
+                <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-veehivelabs-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">Need Custom AI?</a>
                 <a href="about.html" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">About</a>
                 <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="mt-2 py-2.5 text-[14px] font-medium text-center bg-[#3B5BFF] rounded-full" style="color: var(--cta-text);">Book a Demo</a>
             </div>

@@ -665,6 +665,101 @@
             .hero-carousel-slide.is-active { transform: none; }
         }
 
+        /* Hero card stack — 3 visible, center forward, side cards receded/tilted */
+        .card-stack {
+            position: relative;
+            width: 100%;
+            min-height: 460px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1400px;
+        }
+        @media (max-width: 1023px) { .card-stack { min-height: 380px; } }
+        @media (max-width: 640px)  { .card-stack { min-height: 340px; } }
+        .stack-card {
+            position: absolute;
+            width: 280px;
+            height: 380px;
+            border-radius: 22px;
+            padding: 22px 22px 26px 22px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 50px -20px rgba(0,0,0,0.55), 0 6px 16px -8px rgba(0,0,0,0.35);
+            transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s ease, filter 0.7s ease, z-index 0s linear 0.35s;
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+        }
+        @media (max-width: 1023px) { .stack-card { width: 240px; height: 320px; padding: 18px 18px 22px 18px; } }
+        @media (max-width: 640px)  { .stack-card { width: 215px; height: 290px; padding: 16px 16px 20px 16px; } }
+
+        /* Position: data-pos = 'center' | 'left' | 'right' | 'hidden' */
+        .stack-card[data-pos="center"] { transform: translate3d(0, 0, 0) rotate(-1.5deg) scale(1.02); z-index: 3; opacity: 1; filter: none; transition-delay: 0s; }
+        .stack-card[data-pos="left"]   { transform: translate3d(-58%, 14px, -60px) rotate(-9deg)  scale(0.92); z-index: 2; opacity: 0.95; }
+        .stack-card[data-pos="right"]  { transform: translate3d( 58%, 14px, -60px) rotate( 9deg)  scale(0.92); z-index: 2; opacity: 0.95; }
+        .stack-card[data-pos="hidden"]{ transform: translate3d(0, 30px, -180px) rotate(0) scale(0.7); z-index: 0; opacity: 0; pointer-events: none; }
+        @media (max-width: 640px) {
+            .stack-card[data-pos="left"]  { transform: translate3d(-46%, 10px, -60px) rotate(-9deg) scale(0.9); }
+            .stack-card[data-pos="right"] { transform: translate3d( 46%, 10px, -60px) rotate( 9deg) scale(0.9); }
+        }
+
+        .stack-card-eyebrow {
+            align-self: flex-start;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.18);
+            color: #fff;
+        }
+        .stack-card-title {
+            margin-top: auto;
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+        .stack-card-body {
+            font-size: 13px;
+            line-height: 1.5;
+            color: rgba(255,255,255,0.85);
+            margin-top: 8px;
+        }
+        .stack-card-stats {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+        .stack-card-stat { display: flex; flex-direction: column; }
+        .stack-card-stat-value { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+        .stack-card-stat-label { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-top: 6px; }
+
+        /* Per-product card themes */
+        .stack-card[data-product="mpliphi"]      { background: linear-gradient(160deg, #1f4534 0%, #2c573e 50%, #3a6e4f 100%); }
+        .stack-card[data-product="studio"]       { background: linear-gradient(160deg, #5b21b6 0%, #7c3aed 55%, #9b6bff 100%); }
+        .stack-card[data-product="snapapro"]     { background: linear-gradient(160deg, #991b1b 0%, #dc2626 55%, #f87171 100%); }
+        .stack-card[data-product="veehive-link"] { background: linear-gradient(160deg, #1e3a8a 0%, #2563eb 55%, #60a5fa 100%); }
+
+        /* Stack indicator dots */
+        .stack-dots { display: flex; gap: 8px; justify-content: center; margin-top: 24px; }
+        .stack-dot {
+            width: 22px; height: 3px; border-radius: 2px;
+            background: rgba(255,255,255,0.18);
+            border: none; padding: 0; cursor: pointer;
+            transition: background 0.3s ease, width 0.3s ease;
+        }
+        html.light .stack-dot { background: rgba(15,26,32,0.15); }
+        .stack-dot.is-active { width: 38px; background: rgba(255,255,255,0.7); }
+        html.light .stack-dot.is-active { background: rgba(15,26,32,0.7); }
+        .stack-dot:hover:not(.is-active) { background: rgba(255,255,255,0.35); }
+
         /* Infinite marquee — partners ticker */
         .marquee {
             position: relative;
@@ -686,7 +781,39 @@
         @media (prefers-reduced-motion: reduce) {
             .marquee-track { animation: none; }
             .marquee { mask-image: none; -webkit-mask-image: none; overflow-x: auto; }
+            .stack-card { transition: none; }
         }
+
+        /* Pill-chip variant for the partners marquee (Certavixx-style) */
+        .partner-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 18px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.03);
+            flex-shrink: 0;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        .partner-chip:hover { border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.06); }
+        html.light .partner-chip { border-color: rgba(15,26,32,0.08); background: rgba(15,26,32,0.02); }
+        html.light .partner-chip:hover { border-color: rgba(15,26,32,0.18); background: rgba(15,26,32,0.05); }
+        .partner-chip-dot {
+            width: 7px; height: 7px; border-radius: 50%;
+            background: #3B5BFF;
+            box-shadow: 0 0 8px rgba(59,91,255,0.5);
+            flex-shrink: 0;
+        }
+        .partner-chip-text {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.55);
+            white-space: nowrap;
+        }
+        html.light .partner-chip-text { color: rgba(15,26,32,0.6); }
 
         /* Hero product pills — asymmetric padding (icon sits closer to edge) */
         .product-pill { padding: 8px 20px 8px 10px; }
@@ -1032,126 +1159,152 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- HERO SECTION -->
     <!-- ═══════════════════════════════════════ -->
-    <section class="relative z-10 pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <section class="relative z-10 pt-32 pb-12 lg:pt-40 lg:pb-16">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <!-- Status badge -->
-            <div class="animate-fade-up mb-10">
-                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/[0.08] bg-white/[0.03] shimmer-badge">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3B5BFF] opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-[#3B5BFF]"></span>
-                    </span>
-                    <span class="text-[13px] text-white/60 font-medium">Dubai AI Seal Certified &middot; Applied AI from Dubai</span>
-                </div>
-            </div>
-
-            <!-- Heading -->
-            <h1 class="animate-fade-up delay-100">
-                <span class="block text-[clamp(2.4rem,6.5vw,5rem)] font-display font-bold leading-[1.05] tracking-[-0.02em] text-white">We build AI</span>
-                <span class="block text-[clamp(2.4rem,6.5vw,5rem)] font-display font-bold leading-[1.05] tracking-[-0.02em]">
-                    <span class="text-gradient">that works.</span>
-                </span>
-            </h1>
-
-            <!-- Subheading -->
-            <p class="animate-fade-up delay-200 mt-8 text-lg md:text-xl max-w-2xl leading-relaxed font-light" style="color: var(--text-secondary);">
-                Four independent AI products. Four different teams. Pick the one for your problem &mdash; or talk to us about all four.
-            </p>
-
-            <!-- Rotating product carousel -->
-            <div class="animate-fade-up delay-300 mt-10 max-w-2xl">
-                <div class="hero-carousel" id="hero-carousel" aria-roledescription="carousel" aria-label="Veehive products">
-                    <div class="hero-carousel-track">
-                        <div class="hero-carousel-slide is-active" data-slide="0" style="--accent:#2c573e" role="group" aria-roledescription="slide" aria-label="1 of 4: mpliphi">
-                            <span class="accent-bar" aria-hidden="true"></span>
-                            <div class="flex items-center gap-3 mb-3">
-                                <img src="/favicon-mpliphi-32.png?v=2" alt="" class="w-8 h-8 rounded-lg" loading="lazy" decoding="async">
-                                <span class="hero-carousel-eyebrow">Customer conversations &middot; AI Agents</span>
-                            </div>
-                            <h3 class="hero-carousel-title mb-2">mpliphi</h3>
-                            <p class="hero-carousel-tagline mb-4">AI agents that handle WhatsApp and email conversations &mdash; autonomously or as copilots. 50+ languages.</p>
-                            <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-4">
-                                <span class="hero-carousel-stat"><strong>50K+</strong> conversations / month</span>
-                                <span class="hero-carousel-stat"><strong>50+</strong> languages</span>
-                            </div>
-                            <a href="#mpliphi" class="hero-carousel-cta">Explore mpliphi <span aria-hidden="true">&rarr;</span></a>
-                        </div>
-
-                        <div class="hero-carousel-slide" data-slide="1" style="--accent:#A78BFA" role="group" aria-roledescription="slide" aria-label="2 of 4: Veehive Studio">
-                            <span class="accent-bar" aria-hidden="true"></span>
-                            <div class="flex items-center gap-3 mb-3">
-                                <img src="/favicon-studio-32.png" alt="" class="w-8 h-8 rounded-lg" loading="lazy" decoding="async">
-                                <span class="hero-carousel-eyebrow">Content &amp; marketing &middot; AI Video</span>
-                            </div>
-                            <h3 class="hero-carousel-title mb-2">Veehive Studio</h3>
-                            <p class="hero-carousel-tagline mb-4">Turn documents and PDFs into branded videos with AI avatars and voiceover. 30+ languages.</p>
-                            <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-4">
-                                <span class="hero-carousel-stat"><strong>10&times;</strong> faster creation</span>
-                                <span class="hero-carousel-stat"><strong>30+</strong> languages</span>
-                            </div>
-                            <a href="#studio" class="hero-carousel-cta">Explore Veehive Studio <span aria-hidden="true">&rarr;</span></a>
-                        </div>
-
-                        <div class="hero-carousel-slide" data-slide="2" style="--accent:#F87171" role="group" aria-roledescription="slide" aria-label="3 of 4: SnapaPro">
-                            <span class="accent-bar" aria-hidden="true"></span>
-                            <div class="flex items-center gap-3 mb-3">
-                                <img src="/favicon-snapapro-32.png" alt="" class="w-8 h-8 rounded-lg" loading="lazy" decoding="async">
-                                <span class="hero-carousel-eyebrow">Project management &middot; AI Planning</span>
-                            </div>
-                            <h3 class="hero-carousel-title mb-2">SnapaPro</h3>
-                            <p class="hero-carousel-tagline mb-4">AI project management with three agents &mdash; planning, engagement, time tracking. Natural-language tasks.</p>
-                            <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-4">
-                                <span class="hero-carousel-stat"><strong>3</strong> AI agents</span>
-                                <span class="hero-carousel-stat"><strong>NL</strong> task creation</span>
-                            </div>
-                            <a href="#snapapro" class="hero-carousel-cta">Explore SnapaPro <span aria-hidden="true">&rarr;</span></a>
-                        </div>
-
-                        <div class="hero-carousel-slide" data-slide="3" style="--accent:#60A5FA" role="group" aria-roledescription="slide" aria-label="4 of 4: Veehive Link">
-                            <span class="accent-bar" aria-hidden="true"></span>
-                            <div class="flex items-center gap-3 mb-3">
-                                <img src="/favicon-hivelink-32.png" alt="" class="w-8 h-8 rounded-lg" loading="lazy" decoding="async">
-                                <span class="hero-carousel-eyebrow">Marketing &amp; community &middot; AI Distribution</span>
-                            </div>
-                            <h3 class="hero-carousel-title mb-2">Veehive Link</h3>
-                            <p class="hero-carousel-tagline mb-4">Six modules in one: video hosting, social scheduling, community, events, CRM, campaigns. White-label.</p>
-                            <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-4">
-                                <span class="hero-carousel-stat"><strong>6</strong> modules in one</span>
-                                <span class="hero-carousel-stat"><strong>WL</strong> + on-prem</span>
-                            </div>
-                            <a href="#veehive-link" class="hero-carousel-cta">Explore Veehive Link <span aria-hidden="true">&rarr;</span></a>
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-10 items-center">
+                <!-- LEFT COLUMN: copy + CTAs -->
+                <div>
+                    <!-- Status badge -->
+                    <div class="animate-fade-up mb-8">
+                        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/[0.08] bg-white/[0.03] shimmer-badge">
+                            <span class="relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3B5BFF] opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#3B5BFF]"></span>
+                            </span>
+                            <span class="text-[13px] text-white/60 font-medium">Dubai AI Seal Certified &middot; Applied AI from Dubai</span>
                         </div>
                     </div>
 
-                    <div class="hero-carousel-controls">
-                        <div class="hero-carousel-dots" role="tablist" aria-label="Choose product">
-                            <button class="hero-carousel-dot is-active" data-dot="0" role="tab" aria-selected="true" aria-label="mpliphi"></button>
-                            <button class="hero-carousel-dot" data-dot="1" role="tab" aria-selected="false" aria-label="Veehive Studio"></button>
-                            <button class="hero-carousel-dot" data-dot="2" role="tab" aria-selected="false" aria-label="SnapaPro"></button>
-                            <button class="hero-carousel-dot" data-dot="3" role="tab" aria-selected="false" aria-label="Veehive Link"></button>
+                    <!-- Heading -->
+                    <h1 class="animate-fade-up delay-100">
+                        <span class="block text-[clamp(2.2rem,5.5vw,4.25rem)] font-display font-bold leading-[1.05] tracking-[-0.02em] text-white">We build AI</span>
+                        <span class="block text-[clamp(2.2rem,5.5vw,4.25rem)] font-display font-bold leading-[1.05] tracking-[-0.02em]">
+                            <span class="text-gradient">that works.</span>
+                        </span>
+                    </h1>
+
+                    <!-- Subheading -->
+                    <p class="animate-fade-up delay-200 mt-7 text-lg md:text-xl max-w-xl leading-relaxed font-light" style="color: var(--text-secondary);">
+                        Four independent AI products. Four different teams. Pick the one for your problem &mdash; or talk to us about all four.
+                    </p>
+
+                    <!-- Primary CTA -->
+                    <div class="animate-fade-up delay-300 flex flex-wrap gap-3 mt-8">
+                        <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 px-7 py-3.5 bg-[#3B5BFF] text-white text-[14px] font-semibold rounded-full hover:bg-[#6B82FF] transition-all hover:-translate-y-0.5 shadow-lg shadow-[#3B5BFF]/20">
+                            Book a Demo
+                            <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                        </a>
+                        <a href="#contact" class="group inline-flex items-center gap-2 px-7 py-3.5 text-[14px] font-medium text-white/80 border border-white/[0.12] rounded-full hover:bg-white/[0.05] hover:border-white/[0.2] transition-all">
+                            See how it works
+                            <svg class="w-3.5 h-3.5 opacity-40 group-hover:opacity-70 group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Micro-credibility line -->
+                    <p class="animate-fade-up delay-400 mt-8 text-[11px] font-semibold tracking-[0.2em] uppercase text-white/30">
+                        Dubai-based &middot; 50+ languages &middot; Enterprise-ready
+                    </p>
+                </div>
+
+                <!-- RIGHT COLUMN: rotating card stack -->
+                <div class="animate-fade-up delay-200">
+                    <div class="card-stack" id="hero-card-stack" aria-roledescription="carousel" aria-label="Veehive products">
+                        <div class="stack-card" data-slide="0" data-product="mpliphi" data-pos="left" role="group" aria-roledescription="slide" aria-label="1 of 4: mpliphi">
+                            <span class="stack-card-eyebrow">AI Agents &middot; 10% weight</span>
+                            <h3 class="stack-card-title mt-auto">mpliphi</h3>
+                            <p class="stack-card-body">Customer conversations on WhatsApp &amp; email &mdash; autonomous or copilot.</p>
+                            <div class="stack-card-stats">
+                                <div class="stack-card-stat">
+                                    <span class="stack-card-stat-value">50K+</span>
+                                    <span class="stack-card-stat-label">Conversations / mo</span>
+                                </div>
+                                <div class="stack-card-stat">
+                                    <span class="stack-card-stat-value">50+</span>
+                                    <span class="stack-card-stat-label">Languages</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="hero-carousel-arrows">
-                            <button class="hero-carousel-arrow" data-dir="-1" aria-label="Previous product">
-                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-                            </button>
-                            <button class="hero-carousel-arrow" data-dir="1" aria-label="Next product">
-                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-                            </button>
+
+                        <div class="stack-card" data-slide="1" data-product="studio" data-pos="center" role="group" aria-roledescription="slide" aria-label="2 of 4: Veehive Studio">
+                            <span class="stack-card-eyebrow">AI Video &middot; 25% weight</span>
+                            <h3 class="stack-card-title mt-auto">Veehive Studio</h3>
+                            <p class="stack-card-body">Documents &amp; PDFs into branded videos with AI avatars and voiceover.</p>
+                            <div class="stack-card-stats">
+                                <div class="stack-card-stat">
+                                    <span class="stack-card-stat-value">10&times;</span>
+                                    <span class="stack-card-stat-label">Faster</span>
+                                </div>
+                                <div class="stack-card-stat">
+                                    <span class="stack-card-stat-value">30+</span>
+                                    <span class="stack-card-stat-label">Languages</span>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="stack-card" data-slide="2" data-product="snapapro" data-pos="right" role="group" aria-roledescription="slide" aria-label="3 of 4: SnapaPro">
+                            <span class="stack-card-eyebrow">AI Planning &middot; 25% weight</span>
+                            <h3 class="stack-card-title mt-auto">SnapaPro</h3>
+                            <p class="stack-card-body">Three agents that plan, engage, and track time. Natural-language tasks.</p>
+                            <div class="stack-card-stats">
+                                <div class="stack-card-stat">
+                                    <span class="stack-card-stat-value">3</span>
+                                    <span class="stack-card-stat-label">AI agents</span>
+                                </div>
+                                <div class="stack-card-stat">
+                                    <span class="stack-card-stat-value">NL</span>
+                                    <span class="stack-card-stat-label">Tasks</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stack-card" data-slide="3" data-product="veehive-link" data-pos="hidden" role="group" aria-roledescription="slide" aria-label="4 of 4: Veehive Link">
+                            <span class="stack-card-eyebrow">AI Distribution &middot; 40% weight</span>
+                            <h3 class="stack-card-title mt-auto">Veehive Link</h3>
+                            <p class="stack-card-body">Six modules in one: hosting, scheduling, community, events, CRM, campaigns.</p>
+                            <div class="stack-card-stats">
+                                <div class="stack-card-stat">
+                                    <span class="stack-card-stat-value">6</span>
+                                    <span class="stack-card-stat-label">Modules</span>
+                                </div>
+                                <div class="stack-card-stat">
+                                    <span class="stack-card-stat-value">WL</span>
+                                    <span class="stack-card-stat-label">+ on-prem</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dot indicators -->
+                    <div class="stack-dots" id="hero-stack-dots" role="tablist" aria-label="Choose product">
+                        <button class="stack-dot is-active" data-dot="0" role="tab" aria-selected="true" aria-label="mpliphi"></button>
+                        <button class="stack-dot" data-dot="1" role="tab" aria-selected="false" aria-label="Veehive Studio"></button>
+                        <button class="stack-dot" data-dot="2" role="tab" aria-selected="false" aria-label="SnapaPro"></button>
+                        <button class="stack-dot" data-dot="3" role="tab" aria-selected="false" aria-label="Veehive Link"></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Primary CTA -->
-            <div class="animate-fade-up delay-400 flex flex-wrap gap-3 mt-10">
-                <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 px-7 py-3.5 bg-[#3B5BFF] text-white text-[14px] font-semibold rounded-full hover:bg-[#6B82FF] transition-all hover:-translate-y-0.5 shadow-lg shadow-[#3B5BFF]/20">
-                    Book a Demo
-                    <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-                </a>
-                <a href="#contact" class="group inline-flex items-center gap-2 px-7 py-3.5 text-[14px] font-medium text-white/80 border border-white/[0.12] rounded-full hover:bg-white/[0.05] hover:border-white/[0.2] transition-all">
-                    Get in touch
-                    <svg class="w-3.5 h-3.5 opacity-40 group-hover:opacity-70 group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-                </a>
+            <!-- Partners marquee — Certavixx-style chips -->
+            <div class="reveal mt-20 lg:mt-24">
+                <p class="text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-white/35 mb-6">Partners &amp; Accelerators</p>
+                <div class="marquee" aria-label="Partners and accelerators" role="region">
+                    <div class="marquee-track">
+                        <!-- Set 1 -->
+                        <div class="partner-chip"><span class="partner-chip-dot"></span><span class="partner-chip-text">NVIDIA Inception</span></div>
+                        <div class="partner-chip"><span class="partner-chip-dot"></span><span class="partner-chip-text">AWS Startups</span></div>
+                        <div class="partner-chip"><span class="partner-chip-dot"></span><span class="partner-chip-text">Google Cloud for Startups</span></div>
+                        <div class="partner-chip"><span class="partner-chip-dot"></span><span class="partner-chip-text">Microsoft for Startups</span></div>
+                        <div class="partner-chip"><span class="partner-chip-dot"></span><span class="partner-chip-text">Lenovo AI Innovators</span></div>
+                        <div class="partner-chip"><span class="partner-chip-dot"></span><span class="partner-chip-text">in5 Tech Dubai</span></div>
+                        <!-- Set 2 (duplicate for seamless loop) -->
+                        <div class="partner-chip" aria-hidden="true"><span class="partner-chip-dot"></span><span class="partner-chip-text">NVIDIA Inception</span></div>
+                        <div class="partner-chip" aria-hidden="true"><span class="partner-chip-dot"></span><span class="partner-chip-text">AWS Startups</span></div>
+                        <div class="partner-chip" aria-hidden="true"><span class="partner-chip-dot"></span><span class="partner-chip-text">Google Cloud for Startups</span></div>
+                        <div class="partner-chip" aria-hidden="true"><span class="partner-chip-dot"></span><span class="partner-chip-text">Microsoft for Startups</span></div>
+                        <div class="partner-chip" aria-hidden="true"><span class="partner-chip-dot"></span><span class="partner-chip-text">Lenovo AI Innovators</span></div>
+                        <div class="partner-chip" aria-hidden="true"><span class="partner-chip-dot"></span><span class="partner-chip-text">in5 Tech Dubai</span></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1187,35 +1340,6 @@
             </div>
 
             <div id="problem-match-result" class="mt-6 hidden trust-card rounded-xl p-6 md:p-8" aria-live="polite"></div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════ -->
-    <!-- PARTNERS & ACCELERATORS -->
-    <!-- ═══════════════════════════════════════ -->
-    <section class="relative z-10 py-14 border-y border-white/[0.04]">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="reveal">
-                <p class="text-center text-[12px] font-semibold uppercase tracking-[0.2em] text-white/25 mb-8">Partners &amp; Accelerators</p>
-                <div class="marquee" aria-label="Partners and accelerators" role="region">
-                    <div class="marquee-track">
-                        <!-- Set 1 -->
-                        <div class="partner-logo-card"><img src="/partners/nvidia-inception.png" alt="NVIDIA Inception" loading="lazy" decoding="async"></div>
-                        <div class="partner-logo-card"><img src="/partners/aws.png" alt="AWS" loading="lazy" decoding="async"></div>
-                        <div class="partner-logo-card"><img src="/partners/google-cloud.webp" alt="Google Cloud for Startups" loading="lazy" decoding="async"></div>
-                        <div class="partner-logo-card"><img src="/partners/microsoft-for-startups.webp" alt="Microsoft for Startups" loading="lazy" decoding="async"></div>
-                        <div class="partner-logo-card"><img src="/partners/lenovo-ai-innovators.webp" alt="Lenovo AI Innovators" loading="lazy" decoding="async"></div>
-                        <div class="partner-logo-card"><img src="/partners/in5.svg" alt="in5 Tech Dubai" loading="lazy" decoding="async"></div>
-                        <!-- Set 2 (duplicate for seamless loop) -->
-                        <div class="partner-logo-card" aria-hidden="true"><img src="/partners/nvidia-inception.png" alt="" loading="lazy" decoding="async"></div>
-                        <div class="partner-logo-card" aria-hidden="true"><img src="/partners/aws.png" alt="" loading="lazy" decoding="async"></div>
-                        <div class="partner-logo-card" aria-hidden="true"><img src="/partners/google-cloud.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="partner-logo-card" aria-hidden="true"><img src="/partners/microsoft-for-startups.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="partner-logo-card" aria-hidden="true"><img src="/partners/lenovo-ai-innovators.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="partner-logo-card" aria-hidden="true"><img src="/partners/in5.svg" alt="" loading="lazy" decoding="async"></div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1797,36 +1921,49 @@
   })();
     </script>
 
-    <!-- Hero rotating carousel — auto-advances every 5s, pauses on hover/focus -->
+    <!-- Hero rotating card-stack — auto-advances every 4s, pauses on hover/focus -->
     <script>
     (function(){
-        const root = document.getElementById('hero-carousel');
+        const root = document.getElementById('hero-card-stack');
         if (!root) return;
-        const slides = root.querySelectorAll('.hero-carousel-slide');
-        const dots = root.querySelectorAll('.hero-carousel-dot');
-        const arrows = root.querySelectorAll('.hero-carousel-arrow');
-        if (!slides.length) return;
+        const cards = Array.from(root.querySelectorAll('.stack-card'));
+        const dotsContainer = document.getElementById('hero-stack-dots');
+        const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.stack-dot')) : [];
+        if (!cards.length) return;
 
-        let idx = 0;
+        const ORDER = ['center', 'right', 'hidden', 'left'];
+        let activeIdx = 1;
         let timer = null;
-        const INTERVAL = 5000;
+        const INTERVAL = 4000;
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        function show(n){
-            idx = (n + slides.length) % slides.length;
-            slides.forEach((s,i) => s.classList.toggle('is-active', i === idx));
-            dots.forEach((d,i) => {
-                d.classList.toggle('is-active', i === idx);
-                d.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+        function arrange(){
+            const n = cards.length;
+            cards.forEach((card, i) => {
+                const slot = ((i - activeIdx) % n + n) % n;
+                card.dataset.pos = ORDER[slot] || 'hidden';
+            });
+            dots.forEach((d, i) => {
+                const isActive = i === activeIdx;
+                d.classList.toggle('is-active', isActive);
+                d.setAttribute('aria-selected', isActive ? 'true' : 'false');
             });
         }
-        function next(){ show(idx + 1); }
+
+        function show(n){
+            activeIdx = ((n % cards.length) + cards.length) % cards.length;
+            arrange();
+        }
+        function next(){ show(activeIdx + 1); }
 
         function start(){ if (reduceMotion) return; stop(); timer = setInterval(next, INTERVAL); }
         function stop(){ if (timer){ clearInterval(timer); timer = null; } }
 
         dots.forEach(d => d.addEventListener('click', () => { show(parseInt(d.dataset.dot, 10)); start(); }));
-        arrows.forEach(a => a.addEventListener('click', () => { show(idx + parseInt(a.dataset.dir, 10)); start(); }));
+        cards.forEach((card, i) => card.addEventListener('click', () => {
+            if (card.dataset.pos === 'left')  { show(activeIdx - 1); start(); }
+            if (card.dataset.pos === 'right') { show(activeIdx + 1); start(); }
+        }));
 
         root.addEventListener('mouseenter', stop);
         root.addEventListener('mouseleave', start);
@@ -1834,6 +1971,7 @@
         root.addEventListener('focusout', start);
         document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
 
+        arrange();
         start();
     })();
     </script>

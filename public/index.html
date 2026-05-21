@@ -587,6 +587,107 @@
             .partner-logo-card img { max-height: 30px; }
         }
 
+        /* Hero rotating product carousel */
+        .hero-carousel {
+            position: relative;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            overflow: hidden;
+        }
+        html.light .hero-carousel { border-color: rgba(15,26,32,0.08); background: linear-gradient(180deg, rgba(15,26,32,0.02) 0%, rgba(15,26,32,0.005) 100%); }
+        .hero-carousel-track { position: relative; min-height: 220px; }
+        .hero-carousel-slide {
+            position: absolute;
+            inset: 0;
+            padding: 28px 32px;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero-carousel-slide.is-active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .hero-carousel-slide .accent-bar {
+            position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent, #3B5BFF), transparent);
+            opacity: 0.55;
+        }
+        .hero-carousel-eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent, #3B5BFF); }
+        .hero-carousel-title { font-size: clamp(1.6rem, 3.3vw, 2.25rem); font-weight: 700; letter-spacing: -0.02em; color: #fff; }
+        html.light .hero-carousel-title { color: #0F1A20; }
+        .hero-carousel-tagline { font-size: 15px; line-height: 1.55; color: rgba(255,255,255,0.55); max-width: 560px; }
+        html.light .hero-carousel-tagline { color: rgba(15,26,32,0.65); }
+        .hero-carousel-stat { display: inline-flex; align-items: baseline; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.45); }
+        html.light .hero-carousel-stat { color: rgba(15,26,32,0.55); }
+        .hero-carousel-stat strong { font-size: 18px; font-weight: 700; color: #fff; }
+        html.light .hero-carousel-stat strong { color: #0F1A20; }
+        .hero-carousel-cta { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--accent, #3B5BFF); }
+        .hero-carousel-cta:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+        .hero-carousel-controls { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-top: 1px solid rgba(255,255,255,0.06); background: rgba(0,0,0,0.18); }
+        html.light .hero-carousel-controls { border-top-color: rgba(15,26,32,0.06); background: rgba(15,26,32,0.02); }
+        .hero-carousel-dots { display: flex; gap: 8px; align-items: center; }
+        .hero-carousel-dot {
+            width: 24px; height: 3px; border-radius: 2px;
+            background: rgba(255,255,255,0.15);
+            border: none; padding: 0; cursor: pointer;
+            transition: background 0.3s ease, width 0.3s ease;
+        }
+        html.light .hero-carousel-dot { background: rgba(15,26,32,0.15); }
+        .hero-carousel-dot.is-active { background: var(--accent, #3B5BFF); width: 36px; }
+        .hero-carousel-dot:hover:not(.is-active) { background: rgba(255,255,255,0.3); }
+        html.light .hero-carousel-dot:hover:not(.is-active) { background: rgba(15,26,32,0.3); }
+        .hero-carousel-arrows { display: flex; gap: 8px; }
+        .hero-carousel-arrow {
+            width: 32px; height: 32px; border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.6);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        html.light .hero-carousel-arrow { background: rgba(15,26,32,0.03); border-color: rgba(15,26,32,0.08); color: rgba(15,26,32,0.6); }
+        .hero-carousel-arrow:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.18); }
+        html.light .hero-carousel-arrow:hover { background: rgba(15,26,32,0.06); color: #0F1A20; border-color: rgba(15,26,32,0.18); }
+        .hero-carousel-arrow svg { width: 14px; height: 14px; }
+
+        @media (max-width: 640px) {
+            .hero-carousel-slide { padding: 22px 20px; }
+            .hero-carousel-track { min-height: 240px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-carousel-slide { transition: opacity 0.2s linear; transform: none; }
+            .hero-carousel-slide.is-active { transform: none; }
+        }
+
+        /* Infinite marquee — partners ticker */
+        .marquee {
+            position: relative;
+            overflow: hidden;
+            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+        }
+        .marquee-track {
+            display: flex;
+            gap: 16px;
+            width: max-content;
+            animation: marquee-scroll 40s linear infinite;
+        }
+        .marquee:hover .marquee-track { animation-play-state: paused; }
+        @keyframes marquee-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .marquee-track { animation: none; }
+            .marquee { mask-image: none; -webkit-mask-image: none; overflow-x: auto; }
+        }
+
         /* Hero product pills — asymmetric padding (icon sits closer to edge) */
         .product-pill { padding: 8px 20px 8px 10px; }
 
@@ -957,24 +1058,88 @@
                 Four independent AI products. Four different teams. Pick the one for your problem &mdash; or talk to us about all four.
             </p>
 
-            <!-- Product pills (anchor links into showcases below) -->
-            <div class="animate-fade-up delay-300 mt-10 flex flex-wrap gap-4">
-                <a href="#mpliphi" class="product-pill inline-flex items-center gap-3 rounded-full border border-white/[0.1] bg-white/[0.04] text-[14px] font-semibold text-white hover:bg-white/[0.08] hover:border-white/[0.18] transition-all">
-                    <img src="/favicon-mpliphi-32.png?v=2" alt="" class="w-5 h-5 rounded-full" loading="lazy" decoding="async">
-                    mpliphi
-                </a>
-                <a href="#studio" class="product-pill inline-flex items-center gap-3 rounded-full border border-white/[0.1] bg-white/[0.04] text-[14px] font-semibold text-white hover:bg-white/[0.08] hover:border-white/[0.18] transition-all">
-                    <img src="/favicon-studio-32.png" alt="" class="w-5 h-5 rounded-full" loading="lazy" decoding="async">
-                    Studio
-                </a>
-                <a href="#snapapro" class="product-pill inline-flex items-center gap-3 rounded-full border border-white/[0.1] bg-white/[0.04] text-[14px] font-semibold text-white hover:bg-white/[0.08] hover:border-white/[0.18] transition-all">
-                    <img src="/favicon-snapapro-32.png" alt="" class="w-5 h-5 rounded-full" loading="lazy" decoding="async">
-                    SnapaPro
-                </a>
-                <a href="#veehive-link" class="product-pill inline-flex items-center gap-3 rounded-full border border-white/[0.1] bg-white/[0.04] text-[14px] font-semibold text-white hover:bg-white/[0.08] hover:border-white/[0.18] transition-all">
-                    <img src="/favicon-hivelink-32.png" alt="" class="w-5 h-5 rounded-full" loading="lazy" decoding="async">
-                    Link
-                </a>
+            <!-- Rotating product carousel -->
+            <div class="animate-fade-up delay-300 mt-10 max-w-2xl">
+                <div class="hero-carousel" id="hero-carousel" aria-roledescription="carousel" aria-label="Veehive products">
+                    <div class="hero-carousel-track">
+                        <div class="hero-carousel-slide is-active" data-slide="0" style="--accent:#2c573e" role="group" aria-roledescription="slide" aria-label="1 of 4: mpliphi">
+                            <span class="accent-bar" aria-hidden="true"></span>
+                            <div class="flex items-center gap-3 mb-3">
+                                <img src="/favicon-mpliphi-32.png?v=2" alt="" class="w-8 h-8 rounded-lg" loading="lazy" decoding="async">
+                                <span class="hero-carousel-eyebrow">Customer conversations &middot; AI Agents</span>
+                            </div>
+                            <h3 class="hero-carousel-title mb-2">mpliphi</h3>
+                            <p class="hero-carousel-tagline mb-4">AI agents that handle WhatsApp and email conversations &mdash; autonomously or as copilots. 50+ languages.</p>
+                            <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-4">
+                                <span class="hero-carousel-stat"><strong>50K+</strong> conversations / month</span>
+                                <span class="hero-carousel-stat"><strong>50+</strong> languages</span>
+                            </div>
+                            <a href="#mpliphi" class="hero-carousel-cta">Explore mpliphi <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+
+                        <div class="hero-carousel-slide" data-slide="1" style="--accent:#A78BFA" role="group" aria-roledescription="slide" aria-label="2 of 4: Veehive Studio">
+                            <span class="accent-bar" aria-hidden="true"></span>
+                            <div class="flex items-center gap-3 mb-3">
+                                <img src="/favicon-studio-32.png" alt="" class="w-8 h-8 rounded-lg" loading="lazy" decoding="async">
+                                <span class="hero-carousel-eyebrow">Content &amp; marketing &middot; AI Video</span>
+                            </div>
+                            <h3 class="hero-carousel-title mb-2">Veehive Studio</h3>
+                            <p class="hero-carousel-tagline mb-4">Turn documents and PDFs into branded videos with AI avatars and voiceover. 30+ languages.</p>
+                            <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-4">
+                                <span class="hero-carousel-stat"><strong>10&times;</strong> faster creation</span>
+                                <span class="hero-carousel-stat"><strong>30+</strong> languages</span>
+                            </div>
+                            <a href="#studio" class="hero-carousel-cta">Explore Veehive Studio <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+
+                        <div class="hero-carousel-slide" data-slide="2" style="--accent:#F87171" role="group" aria-roledescription="slide" aria-label="3 of 4: SnapaPro">
+                            <span class="accent-bar" aria-hidden="true"></span>
+                            <div class="flex items-center gap-3 mb-3">
+                                <img src="/favicon-snapapro-32.png" alt="" class="w-8 h-8 rounded-lg" loading="lazy" decoding="async">
+                                <span class="hero-carousel-eyebrow">Project management &middot; AI Planning</span>
+                            </div>
+                            <h3 class="hero-carousel-title mb-2">SnapaPro</h3>
+                            <p class="hero-carousel-tagline mb-4">AI project management with three agents &mdash; planning, engagement, time tracking. Natural-language tasks.</p>
+                            <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-4">
+                                <span class="hero-carousel-stat"><strong>3</strong> AI agents</span>
+                                <span class="hero-carousel-stat"><strong>NL</strong> task creation</span>
+                            </div>
+                            <a href="#snapapro" class="hero-carousel-cta">Explore SnapaPro <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+
+                        <div class="hero-carousel-slide" data-slide="3" style="--accent:#60A5FA" role="group" aria-roledescription="slide" aria-label="4 of 4: Veehive Link">
+                            <span class="accent-bar" aria-hidden="true"></span>
+                            <div class="flex items-center gap-3 mb-3">
+                                <img src="/favicon-hivelink-32.png" alt="" class="w-8 h-8 rounded-lg" loading="lazy" decoding="async">
+                                <span class="hero-carousel-eyebrow">Marketing &amp; community &middot; AI Distribution</span>
+                            </div>
+                            <h3 class="hero-carousel-title mb-2">Veehive Link</h3>
+                            <p class="hero-carousel-tagline mb-4">Six modules in one: video hosting, social scheduling, community, events, CRM, campaigns. White-label.</p>
+                            <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-4">
+                                <span class="hero-carousel-stat"><strong>6</strong> modules in one</span>
+                                <span class="hero-carousel-stat"><strong>WL</strong> + on-prem</span>
+                            </div>
+                            <a href="#veehive-link" class="hero-carousel-cta">Explore Veehive Link <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </div>
+
+                    <div class="hero-carousel-controls">
+                        <div class="hero-carousel-dots" role="tablist" aria-label="Choose product">
+                            <button class="hero-carousel-dot is-active" data-dot="0" role="tab" aria-selected="true" aria-label="mpliphi"></button>
+                            <button class="hero-carousel-dot" data-dot="1" role="tab" aria-selected="false" aria-label="Veehive Studio"></button>
+                            <button class="hero-carousel-dot" data-dot="2" role="tab" aria-selected="false" aria-label="SnapaPro"></button>
+                            <button class="hero-carousel-dot" data-dot="3" role="tab" aria-selected="false" aria-label="Veehive Link"></button>
+                        </div>
+                        <div class="hero-carousel-arrows">
+                            <button class="hero-carousel-arrow" data-dir="-1" aria-label="Previous product">
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <button class="hero-carousel-arrow" data-dir="1" aria-label="Next product">
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Primary CTA -->
@@ -1032,24 +1197,22 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="reveal">
                 <p class="text-center text-[12px] font-semibold uppercase tracking-[0.2em] text-white/25 mb-8">Partners &amp; Accelerators</p>
-                <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-                    <div class="partner-logo-card">
-                        <img src="/partners/nvidia-inception.png" alt="NVIDIA Inception" loading="lazy" decoding="async">
-                    </div>
-                    <div class="partner-logo-card">
-                        <img src="/partners/aws.png" alt="AWS" loading="lazy" decoding="async">
-                    </div>
-                    <div class="partner-logo-card">
-                        <img src="/partners/google-cloud.webp" alt="Google Cloud for Startups" loading="lazy" decoding="async">
-                    </div>
-                    <div class="partner-logo-card">
-                        <img src="/partners/microsoft-for-startups.webp" alt="Microsoft for Startups" loading="lazy" decoding="async">
-                    </div>
-                    <div class="partner-logo-card">
-                        <img src="/partners/lenovo-ai-innovators.webp" alt="Lenovo AI Innovators" loading="lazy" decoding="async">
-                    </div>
-                    <div class="partner-logo-card">
-                        <img src="/partners/in5.svg" alt="in5 Tech Dubai" loading="lazy" decoding="async">
+                <div class="marquee" aria-label="Partners and accelerators" role="region">
+                    <div class="marquee-track">
+                        <!-- Set 1 -->
+                        <div class="partner-logo-card"><img src="/partners/nvidia-inception.png" alt="NVIDIA Inception" loading="lazy" decoding="async"></div>
+                        <div class="partner-logo-card"><img src="/partners/aws.png" alt="AWS" loading="lazy" decoding="async"></div>
+                        <div class="partner-logo-card"><img src="/partners/google-cloud.webp" alt="Google Cloud for Startups" loading="lazy" decoding="async"></div>
+                        <div class="partner-logo-card"><img src="/partners/microsoft-for-startups.webp" alt="Microsoft for Startups" loading="lazy" decoding="async"></div>
+                        <div class="partner-logo-card"><img src="/partners/lenovo-ai-innovators.webp" alt="Lenovo AI Innovators" loading="lazy" decoding="async"></div>
+                        <div class="partner-logo-card"><img src="/partners/in5.svg" alt="in5 Tech Dubai" loading="lazy" decoding="async"></div>
+                        <!-- Set 2 (duplicate for seamless loop) -->
+                        <div class="partner-logo-card" aria-hidden="true"><img src="/partners/nvidia-inception.png" alt="" loading="lazy" decoding="async"></div>
+                        <div class="partner-logo-card" aria-hidden="true"><img src="/partners/aws.png" alt="" loading="lazy" decoding="async"></div>
+                        <div class="partner-logo-card" aria-hidden="true"><img src="/partners/google-cloud.webp" alt="" loading="lazy" decoding="async"></div>
+                        <div class="partner-logo-card" aria-hidden="true"><img src="/partners/microsoft-for-startups.webp" alt="" loading="lazy" decoding="async"></div>
+                        <div class="partner-logo-card" aria-hidden="true"><img src="/partners/lenovo-ai-innovators.webp" alt="" loading="lazy" decoding="async"></div>
+                        <div class="partner-logo-card" aria-hidden="true"><img src="/partners/in5.svg" alt="" loading="lazy" decoding="async"></div>
                     </div>
                 </div>
             </div>
@@ -1632,6 +1795,47 @@
       });
     }
   })();
+    </script>
+
+    <!-- Hero rotating carousel — auto-advances every 5s, pauses on hover/focus -->
+    <script>
+    (function(){
+        const root = document.getElementById('hero-carousel');
+        if (!root) return;
+        const slides = root.querySelectorAll('.hero-carousel-slide');
+        const dots = root.querySelectorAll('.hero-carousel-dot');
+        const arrows = root.querySelectorAll('.hero-carousel-arrow');
+        if (!slides.length) return;
+
+        let idx = 0;
+        let timer = null;
+        const INTERVAL = 5000;
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function show(n){
+            idx = (n + slides.length) % slides.length;
+            slides.forEach((s,i) => s.classList.toggle('is-active', i === idx));
+            dots.forEach((d,i) => {
+                d.classList.toggle('is-active', i === idx);
+                d.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+            });
+        }
+        function next(){ show(idx + 1); }
+
+        function start(){ if (reduceMotion) return; stop(); timer = setInterval(next, INTERVAL); }
+        function stop(){ if (timer){ clearInterval(timer); timer = null; } }
+
+        dots.forEach(d => d.addEventListener('click', () => { show(parseInt(d.dataset.dot, 10)); start(); }));
+        arrows.forEach(a => a.addEventListener('click', () => { show(idx + parseInt(a.dataset.dir, 10)); start(); }));
+
+        root.addEventListener('mouseenter', stop);
+        root.addEventListener('mouseleave', start);
+        root.addEventListener('focusin', stop);
+        root.addEventListener('focusout', start);
+        document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
+
+        start();
+    })();
     </script>
 
     <!-- WhatsApp floating button -->

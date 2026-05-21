@@ -42,7 +42,7 @@
     <text x="700" y="520" text-anchor="middle">SnapaPro</text>
 
     <rect x="795" y="490" width="170" height="48" rx="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <text x="880" y="520" text-anchor="middle">Veehive Link</text>
+    <text x="880" y="520" text-anchor="middle">HiveLink</text>
   </g>
 
   <text x="600" y="595" text-anchor="middle" font-family="-apple-system, system-ui, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="500" fill="#5B6671" letter-spacing="3">VEEHIVE.AI</text>

@@ -665,100 +665,244 @@
             .hero-carousel-slide.is-active { transform: none; }
         }
 
-        /* Hero card stack — 3 visible, center forward, side cards receded/tilted */
-        .card-stack {
+        /* Hero product window — browser-style frame showing each product's agent UI */
+        .product-window {
             position: relative;
             width: 100%;
-            min-height: 420px;
+            max-width: 540px;
+            margin: 0 auto;
+            border-radius: 16px;
+            background: #0c151a;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 30px 80px -30px rgba(0,0,0,0.6), 0 6px 24px -12px rgba(0,0,0,0.4);
+            overflow: hidden;
+        }
+        html.light .product-window { background: #ffffff; border-color: rgba(15,26,32,0.10); box-shadow: 0 30px 70px -30px rgba(15,26,32,0.18), 0 6px 20px -10px rgba(15,26,32,0.10); }
+
+        .product-window-chrome {
             display: flex;
             align-items: center;
-            justify-content: center;
-            perspective: 1400px;
+            gap: 10px;
+            padding: 11px 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.02);
         }
-        @media (max-width: 1023px) { .card-stack { min-height: 360px; } }
-        @media (max-width: 640px)  { .card-stack { min-height: 320px; } }
-        .stack-card {
-            position: absolute;
-            width: 280px;
-            height: 380px;
-            border-radius: 22px;
-            padding: 22px 22px 26px 22px;
+        html.light .product-window-chrome { border-bottom-color: rgba(15,26,32,0.06); background: rgba(15,26,32,0.02); }
+        .product-window-dots { display: flex; gap: 6px; }
+        .product-window-dots span { width: 10px; height: 10px; border-radius: 50%; }
+        .product-window-dots span:nth-child(1) { background: #ff5f56; }
+        .product-window-dots span:nth-child(2) { background: #ffbd2e; }
+        .product-window-dots span:nth-child(3) { background: #27c93f; }
+
+        .product-window-tabs {
+            display: flex;
+            gap: 4px;
+            margin-left: 12px;
+            flex: 1;
+            min-width: 0;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .product-window-tabs::-webkit-scrollbar { display: none; }
+        .product-window-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 11.5px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.45);
+            background: transparent;
+            border: 1px solid transparent;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+        html.light .product-window-tab { color: rgba(15,26,32,0.5); }
+        .product-window-tab:hover { color: rgba(255,255,255,0.7); }
+        html.light .product-window-tab:hover { color: rgba(15,26,32,0.75); }
+        .product-window-tab.is-active {
             color: #fff;
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.10);
+        }
+        html.light .product-window-tab.is-active { color: #0F1A20; background: rgba(15,26,32,0.05); border-color: rgba(15,26,32,0.10); }
+        .product-window-tab-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+        .product-window-body {
+            position: relative;
+            min-height: 380px;
+            padding: 22px;
+            background:
+                radial-gradient(circle at 20% 0%, rgba(139,92,255,0.06), transparent 60%),
+                radial-gradient(circle at 80% 100%, rgba(59,91,255,0.05), transparent 50%);
+        }
+        html.light .product-window-body { background: radial-gradient(circle at 20% 0%, rgba(139,92,255,0.04), transparent 60%), radial-gradient(circle at 80% 100%, rgba(59,91,255,0.03), transparent 50%); }
+        @media (max-width: 1023px) { .product-window-body { min-height: 340px; padding: 18px; } }
+        @media (max-width: 640px)  { .product-window-body { min-height: 320px; padding: 16px; } }
+
+        .product-pane {
+            position: absolute;
+            inset: 22px;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            pointer-events: none;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 20px 50px -20px rgba(0,0,0,0.55), 0 6px 16px -8px rgba(0,0,0,0.35);
-            transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s ease, filter 0.7s ease, z-index 0s linear 0.35s;
-            will-change: transform, opacity;
-            backface-visibility: hidden;
-        }
-        @media (max-width: 1023px) { .stack-card { width: 240px; height: 320px; padding: 18px 18px 22px 18px; } }
-        @media (max-width: 640px)  { .stack-card { width: 215px; height: 290px; padding: 16px 16px 20px 16px; } }
-
-        /* Position: data-pos = 'center' | 'left' | 'right' | 'hidden' */
-        .stack-card[data-pos="center"] { transform: translate3d(0, 0, 0) rotate(-1.5deg) scale(1.02); z-index: 3; opacity: 1; filter: none; transition-delay: 0s; }
-        .stack-card[data-pos="left"]   { transform: translate3d(-58%, 14px, -60px) rotate(-9deg)  scale(0.92); z-index: 2; opacity: 0.95; }
-        .stack-card[data-pos="right"]  { transform: translate3d( 58%, 14px, -60px) rotate( 9deg)  scale(0.92); z-index: 2; opacity: 0.95; }
-        .stack-card[data-pos="hidden"]{ transform: translate3d(0, 30px, -180px) rotate(0) scale(0.7); z-index: 0; opacity: 0; pointer-events: none; }
-        @media (max-width: 640px) {
-            .stack-card[data-pos="left"]  { transform: translate3d(-46%, 10px, -60px) rotate(-9deg) scale(0.9); }
-            .stack-card[data-pos="right"] { transform: translate3d( 46%, 10px, -60px) rotate( 9deg) scale(0.9); }
-        }
-
-        .stack-card-eyebrow {
-            align-self: flex-start;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            padding: 5px 10px;
-            border-radius: 999px;
-            background: rgba(255,255,255,0.18);
-            color: #fff;
-        }
-        .stack-card-title {
-            margin-top: auto;
-            font-size: 26px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.15;
-        }
-        .stack-card-body {
-            font-size: 13px;
-            line-height: 1.5;
-            color: rgba(255,255,255,0.85);
-            margin-top: 8px;
-        }
-        .stack-card-stats {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
             gap: 12px;
+        }
+        @media (max-width: 1023px) { .product-pane { inset: 18px; } }
+        @media (max-width: 640px)  { .product-pane { inset: 16px; gap: 10px; } }
+        .product-pane.is-active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+        /* Agent prompt / command bar */
+        .agent-prompt {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 14px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            font-size: 13px;
+            line-height: 1.45;
+            color: rgba(255,255,255,0.85);
+        }
+        html.light .agent-prompt { background: rgba(15,26,32,0.03); border-color: rgba(15,26,32,0.08); color: rgba(15,26,32,0.85); }
+        .agent-prompt-icon {
+            flex-shrink: 0;
+            width: 22px; height: 22px;
+            border-radius: 6px;
+            background: linear-gradient(135deg, #8B5CFF, #3B5BFF);
+            display: inline-flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 11px; font-weight: 700;
+        }
+        .agent-prompt-text { flex: 1; }
+        .agent-prompt-text strong { color: #fff; font-weight: 600; }
+        html.light .agent-prompt-text strong { color: #0F1A20; }
+
+        /* Agent step list — shows reasoning/actions */
+        .agent-steps { display: flex; flex-direction: column; gap: 8px; }
+        .agent-step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 12px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.025);
+            border: 1px solid rgba(255,255,255,0.05);
+            font-size: 12px;
+            color: rgba(255,255,255,0.75);
+        }
+        html.light .agent-step { background: rgba(15,26,32,0.02); border-color: rgba(15,26,32,0.06); color: rgba(15,26,32,0.75); }
+        .agent-step.is-running { border-color: rgba(139,92,255,0.35); background: rgba(139,92,255,0.06); }
+        .agent-step-mark {
+            flex-shrink: 0;
+            width: 16px; height: 16px;
+            border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 10px; font-weight: 700;
+        }
+        .agent-step.is-done .agent-step-mark { background: rgba(34,197,94,0.18); color: #4ade80; }
+        .agent-step.is-running .agent-step-mark { background: rgba(139,92,255,0.25); color: #c4b5fd; animation: agent-spin 1.4s linear infinite; }
+        .agent-step.is-pending .agent-step-mark { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5); }
+        html.light .agent-step.is-pending .agent-step-mark { background: rgba(15,26,32,0.06); color: rgba(15,26,32,0.4); }
+        @keyframes agent-spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+
+        .agent-result {
             margin-top: auto;
-            padding-top: 16px;
-            border-top: 1px solid rgba(255,255,255,0.15);
+            padding: 12px 14px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(139,92,255,0.10), rgba(59,91,255,0.08));
+            border: 1px solid rgba(139,92,255,0.20);
+            font-size: 12.5px;
+            color: rgba(255,255,255,0.9);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .stack-card-stat { display: flex; flex-direction: column; }
-        .stack-card-stat-value { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
-        .stack-card-stat-label { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-top: 6px; }
-
-        /* Per-product card themes */
-        .stack-card[data-product="mpliphi"]      { background: linear-gradient(160deg, #1f4534 0%, #2c573e 50%, #3a6e4f 100%); }
-        .stack-card[data-product="studio"]       { background: linear-gradient(160deg, #5b21b6 0%, #7c3aed 55%, #9b6bff 100%); }
-        .stack-card[data-product="snapapro"]     { background: linear-gradient(160deg, #991b1b 0%, #dc2626 55%, #f87171 100%); }
-        .stack-card[data-product="veehive-link"] { background: linear-gradient(160deg, #1e3a8a 0%, #2563eb 55%, #60a5fa 100%); }
-
-        /* Stack indicator dots */
-        .stack-dots { display: flex; gap: 8px; justify-content: center; margin-top: 24px; }
-        .stack-dot {
-            width: 22px; height: 3px; border-radius: 2px;
-            background: rgba(255,255,255,0.18);
-            border: none; padding: 0; cursor: pointer;
-            transition: background 0.3s ease, width 0.3s ease;
+        html.light .agent-result { color: rgba(15,26,32,0.85); border-color: rgba(139,92,255,0.30); }
+        .agent-result-tag {
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 999px;
+            background: rgba(139,92,255,0.25);
+            color: #d6c8ff;
+            flex-shrink: 0;
         }
-        html.light .stack-dot { background: rgba(15,26,32,0.15); }
-        .stack-dot.is-active { width: 38px; background: rgba(255,255,255,0.7); }
-        html.light .stack-dot.is-active { background: rgba(15,26,32,0.7); }
-        .stack-dot:hover:not(.is-active) { background: rgba(255,255,255,0.35); }
+        html.light .agent-result-tag { color: #6d4ed9; background: rgba(139,92,255,0.15); }
+
+        /* mpliphi: conversation thread */
+        .agent-chat { display: flex; flex-direction: column; gap: 8px; }
+        .agent-msg {
+            max-width: 78%;
+            padding: 9px 12px;
+            border-radius: 14px;
+            font-size: 12.5px;
+            line-height: 1.45;
+        }
+        .agent-msg.is-customer { align-self: flex-start; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.85); border-bottom-left-radius: 4px; }
+        html.light .agent-msg.is-customer { background: rgba(15,26,32,0.04); border-color: rgba(15,26,32,0.06); color: rgba(15,26,32,0.85); }
+        .agent-msg.is-agent { align-self: flex-end; background: linear-gradient(135deg, #2c573e, #3a6e4f); color: #fff; border-bottom-right-radius: 4px; }
+        .agent-msg-label {
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            opacity: 0.7;
+        }
+        .agent-msg.is-agent .agent-msg-label { color: rgba(255,255,255,0.85); }
+
+        /* Live indicator */
+        .agent-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(74,222,128,0.9);
+        }
+        .agent-live::before {
+            content: '';
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #4ade80;
+            box-shadow: 0 0 0 0 rgba(74,222,128,0.5);
+            animation: agent-pulse 1.6s ease-out infinite;
+        }
+        @keyframes agent-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(74,222,128,0.5); }
+            70% { box-shadow: 0 0 0 8px rgba(74,222,128,0); }
+            100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+        }
+
+        /* Tab dot accents — match product brand colors */
+        .product-window-tab[data-product="mpliphi"] .product-window-tab-dot     { background: #4ade80; }
+        .product-window-tab[data-product="studio"] .product-window-tab-dot      { background: #A78BFA; }
+        .product-window-tab[data-product="snapapro"] .product-window-tab-dot    { background: #F87171; }
+        .product-window-tab[data-product="hivelink"] .product-window-tab-dot    { background: #60A5FA; }
+
+        /* Per-product accent on result/agent message */
+        .product-pane[data-product="studio"] .agent-result { background: linear-gradient(135deg, rgba(167,139,250,0.14), rgba(124,58,237,0.10)); border-color: rgba(167,139,250,0.28); }
+        .product-pane[data-product="studio"] .agent-result-tag { background: rgba(167,139,250,0.25); color: #ddd0ff; }
+        .product-pane[data-product="snapapro"] .agent-result { background: linear-gradient(135deg, rgba(248,113,113,0.12), rgba(220,38,38,0.10)); border-color: rgba(248,113,113,0.26); }
+        .product-pane[data-product="snapapro"] .agent-result-tag { background: rgba(248,113,113,0.25); color: #ffd2d2; }
+        .product-pane[data-product="hivelink"] .agent-result { background: linear-gradient(135deg, rgba(96,165,250,0.14), rgba(37,99,235,0.10)); border-color: rgba(96,165,250,0.28); }
+        .product-pane[data-product="hivelink"] .agent-result-tag { background: rgba(96,165,250,0.25); color: #cfe3ff; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .product-pane { transition: opacity 0.2s linear; transform: none; }
+            .agent-step.is-running .agent-step-mark { animation: none; }
+            .agent-live::before { animation: none; }
+        }
 
         /* Infinite marquee — partners ticker */
         .marquee {
@@ -1206,80 +1350,133 @@
                     </p>
                 </div>
 
-                <!-- RIGHT COLUMN: rotating card stack -->
+                <!-- RIGHT COLUMN: agent-native product window -->
                 <div class="animate-fade-up delay-200">
-                    <div class="card-stack" id="hero-card-stack" aria-roledescription="carousel" aria-label="Veehive products">
-                        <div class="stack-card" data-slide="0" data-product="mpliphi" data-pos="left" role="group" aria-roledescription="slide" aria-label="1 of 4: mpliphi">
-                            <span class="stack-card-eyebrow">AI Agents &middot; 10% weight</span>
-                            <h3 class="stack-card-title mt-auto">mpliphi</h3>
-                            <p class="stack-card-body">Customer conversations on WhatsApp &amp; email &mdash; autonomous or copilot.</p>
-                            <div class="stack-card-stats">
-                                <div class="stack-card-stat">
-                                    <span class="stack-card-stat-value">50K+</span>
-                                    <span class="stack-card-stat-label">Conversations / mo</span>
-                                </div>
-                                <div class="stack-card-stat">
-                                    <span class="stack-card-stat-value">50+</span>
-                                    <span class="stack-card-stat-label">Languages</span>
-                                </div>
+                    <div class="product-window" id="hero-window" aria-roledescription="carousel" aria-label="Veehive products">
+                        <!-- Chrome / tab bar -->
+                        <div class="product-window-chrome">
+                            <div class="product-window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                            <div class="product-window-tabs" role="tablist" aria-label="Choose product">
+                                <button class="product-window-tab is-active" data-product="mpliphi" data-tab="0" role="tab" aria-selected="true">
+                                    <span class="product-window-tab-dot"></span>mpliphi
+                                </button>
+                                <button class="product-window-tab" data-product="studio" data-tab="1" role="tab" aria-selected="false">
+                                    <span class="product-window-tab-dot"></span>Studio
+                                </button>
+                                <button class="product-window-tab" data-product="snapapro" data-tab="2" role="tab" aria-selected="false">
+                                    <span class="product-window-tab-dot"></span>SnapaPro
+                                </button>
+                                <button class="product-window-tab" data-product="hivelink" data-tab="3" role="tab" aria-selected="false">
+                                    <span class="product-window-tab-dot"></span>HiveLink
+                                </button>
                             </div>
                         </div>
 
-                        <div class="stack-card" data-slide="1" data-product="studio" data-pos="center" role="group" aria-roledescription="slide" aria-label="2 of 4: Veehive Studio">
-                            <span class="stack-card-eyebrow">AI Video &middot; 25% weight</span>
-                            <h3 class="stack-card-title mt-auto">Veehive Studio</h3>
-                            <p class="stack-card-body">Documents &amp; PDFs into branded videos with AI avatars and voiceover.</p>
-                            <div class="stack-card-stats">
-                                <div class="stack-card-stat">
-                                    <span class="stack-card-stat-value">10&times;</span>
-                                    <span class="stack-card-stat-label">Faster</span>
+                        <!-- Body — agent-native panes -->
+                        <div class="product-window-body">
+
+                            <!-- mpliphi: customer conversation, agent replies autonomously -->
+                            <div class="product-pane is-active" data-product="mpliphi" data-tab="0" role="tabpanel" aria-label="mpliphi: AI agent handles customer conversations">
+                                <span class="agent-live">Agent active</span>
+                                <div class="agent-chat">
+                                    <div class="agent-msg is-customer">
+                                        <div class="agent-msg-label">Customer &middot; WhatsApp</div>
+                                        Hi, can I reschedule my delivery to Saturday morning?
+                                    </div>
+                                    <div class="agent-msg is-agent">
+                                        <div class="agent-msg-label">mpliphi agent &middot; autonomous</div>
+                                        Done &mdash; rescheduled to Sat 9&ndash;11 AM. You&rsquo;ll get a confirmation SMS shortly.
+                                    </div>
+                                    <div class="agent-msg is-customer">
+                                        <div class="agent-msg-label">Customer</div>
+                                        Perfect, thanks!
+                                    </div>
                                 </div>
-                                <div class="stack-card-stat">
-                                    <span class="stack-card-stat-value">30+</span>
-                                    <span class="stack-card-stat-label">Languages</span>
+                                <div class="agent-result">
+                                    <span class="agent-result-tag">No human touched</span>
+                                    Resolved in 11s &middot; logged to CRM &middot; satisfaction tagged
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="stack-card" data-slide="2" data-product="snapapro" data-pos="right" role="group" aria-roledescription="slide" aria-label="3 of 4: SnapaPro">
-                            <span class="stack-card-eyebrow">AI Planning &middot; 25% weight</span>
-                            <h3 class="stack-card-title mt-auto">SnapaPro</h3>
-                            <p class="stack-card-body">Three agents that plan, engage, and track time. Natural-language tasks.</p>
-                            <div class="stack-card-stats">
-                                <div class="stack-card-stat">
-                                    <span class="stack-card-stat-value">3</span>
-                                    <span class="stack-card-stat-label">AI agents</span>
+                            <!-- Studio: prompt → agent reasoning → video output -->
+                            <div class="product-pane" data-product="studio" data-tab="1" role="tabpanel" aria-label="Studio: agent turns documents into video">
+                                <div class="agent-prompt">
+                                    <span class="agent-prompt-icon">U</span>
+                                    <span class="agent-prompt-text">Turn the new <strong>policy update PDF</strong> into a 60-second Arabic explainer with our brand avatar.</span>
                                 </div>
-                                <div class="stack-card-stat">
-                                    <span class="stack-card-stat-value">NL</span>
-                                    <span class="stack-card-stat-label">Tasks</span>
+                                <div class="agent-steps">
+                                    <div class="agent-step is-done">
+                                        <span class="agent-step-mark">&check;</span>
+                                        Parsed PDF &middot; extracted 4 key points
+                                    </div>
+                                    <div class="agent-step is-done">
+                                        <span class="agent-step-mark">&check;</span>
+                                        Drafted script &middot; translated EN &rarr; AR
+                                    </div>
+                                    <div class="agent-step is-running">
+                                        <span class="agent-step-mark">&#8635;</span>
+                                        Rendering avatar &middot; voiceover &middot; captions
+                                    </div>
+                                </div>
+                                <div class="agent-result">
+                                    <span class="agent-result-tag">Output ready in</span>
+                                    ~90s &middot; 3 language variants queued automatically
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="stack-card" data-slide="3" data-product="veehive-link" data-pos="hidden" role="group" aria-roledescription="slide" aria-label="4 of 4: HiveLink">
-                            <span class="stack-card-eyebrow">AI Distribution &middot; 40% weight</span>
-                            <h3 class="stack-card-title mt-auto">HiveLink</h3>
-                            <p class="stack-card-body">Six modules in one: hosting, scheduling, community, events, CRM, campaigns.</p>
-                            <div class="stack-card-stats">
-                                <div class="stack-card-stat">
-                                    <span class="stack-card-stat-value">6</span>
-                                    <span class="stack-card-stat-label">Modules</span>
+                            <!-- SnapaPro: prompt → agent breaks down work autonomously -->
+                            <div class="product-pane" data-product="snapapro" data-tab="2" role="tabpanel" aria-label="SnapaPro: agent plans projects from natural language">
+                                <div class="agent-prompt">
+                                    <span class="agent-prompt-icon">U</span>
+                                    <span class="agent-prompt-text"><strong>Plan the launch for next week</strong> &mdash; landing page, 3 social posts, email sequence.</span>
                                 </div>
-                                <div class="stack-card-stat">
-                                    <span class="stack-card-stat-value">WL</span>
-                                    <span class="stack-card-stat-label">+ on-prem</span>
+                                <div class="agent-steps">
+                                    <div class="agent-step is-done">
+                                        <span class="agent-step-mark">&check;</span>
+                                        Created 7 tasks &middot; assigned owners by skill
+                                    </div>
+                                    <div class="agent-step is-done">
+                                        <span class="agent-step-mark">&check;</span>
+                                        Detected capacity conflict &middot; rescheduled 2 items
+                                    </div>
+                                    <div class="agent-step is-running">
+                                        <span class="agent-step-mark">&#8635;</span>
+                                        Tracking time &middot; nudging blockers in Slack
+                                    </div>
+                                </div>
+                                <div class="agent-result">
+                                    <span class="agent-result-tag">3 agents working</span>
+                                    Taj plans &middot; Noor engages &middot; Sats tracks
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- Dot indicators -->
-                    <div class="stack-dots" id="hero-stack-dots" role="tablist" aria-label="Choose product">
-                        <button class="stack-dot is-active" data-dot="0" role="tab" aria-selected="true" aria-label="mpliphi"></button>
-                        <button class="stack-dot" data-dot="1" role="tab" aria-selected="false" aria-label="Veehive Studio"></button>
-                        <button class="stack-dot" data-dot="2" role="tab" aria-selected="false" aria-label="SnapaPro"></button>
-                        <button class="stack-dot" data-dot="3" role="tab" aria-selected="false" aria-label="HiveLink"></button>
+                            <!-- HiveLink: prompt → agent distributes across channels -->
+                            <div class="product-pane" data-product="hivelink" data-tab="3" role="tabpanel" aria-label="HiveLink: agent distributes content across channels">
+                                <div class="agent-prompt">
+                                    <span class="agent-prompt-icon">U</span>
+                                    <span class="agent-prompt-text"><strong>Distribute the launch announcement</strong> across LinkedIn, X, WhatsApp, and email.</span>
+                                </div>
+                                <div class="agent-steps">
+                                    <div class="agent-step is-done">
+                                        <span class="agent-step-mark">&check;</span>
+                                        Generated 4 channel-specific variants
+                                    </div>
+                                    <div class="agent-step is-done">
+                                        <span class="agent-step-mark">&check;</span>
+                                        Scheduled by audience timezone
+                                    </div>
+                                    <div class="agent-step is-running">
+                                        <span class="agent-step-mark">&#8635;</span>
+                                        Monitoring replies &middot; triaging to mpliphi
+                                    </div>
+                                </div>
+                                <div class="agent-result">
+                                    <span class="agent-result-tag">14 channels</span>
+                                    One prompt &middot; six modules &middot; one timeline
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1921,49 +2118,35 @@
   })();
     </script>
 
-    <!-- Hero rotating card-stack — auto-advances every 4s, pauses on hover/focus -->
+    <!-- Hero product window — tab switcher, auto-rotates every 5s, pauses on hover/focus -->
     <script>
     (function(){
-        const root = document.getElementById('hero-card-stack');
+        const root = document.getElementById('hero-window');
         if (!root) return;
-        const cards = Array.from(root.querySelectorAll('.stack-card'));
-        const dotsContainer = document.getElementById('hero-stack-dots');
-        const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.stack-dot')) : [];
-        if (!cards.length) return;
+        const tabs = Array.from(root.querySelectorAll('.product-window-tab'));
+        const panes = Array.from(root.querySelectorAll('.product-pane'));
+        if (!tabs.length || !panes.length) return;
 
-        const ORDER = ['center', 'right', 'hidden', 'left'];
-        let activeIdx = 1;
+        let idx = 0;
         let timer = null;
-        const INTERVAL = 4000;
+        const INTERVAL = 5000;
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        function arrange(){
-            const n = cards.length;
-            cards.forEach((card, i) => {
-                const slot = ((i - activeIdx) % n + n) % n;
-                card.dataset.pos = ORDER[slot] || 'hidden';
-            });
-            dots.forEach((d, i) => {
-                const isActive = i === activeIdx;
-                d.classList.toggle('is-active', isActive);
-                d.setAttribute('aria-selected', isActive ? 'true' : 'false');
-            });
-        }
-
         function show(n){
-            activeIdx = ((n % cards.length) + cards.length) % cards.length;
-            arrange();
+            idx = ((n % tabs.length) + tabs.length) % tabs.length;
+            tabs.forEach((t, i) => {
+                const active = i === idx;
+                t.classList.toggle('is-active', active);
+                t.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+            panes.forEach((p, i) => p.classList.toggle('is-active', i === idx));
         }
-        function next(){ show(activeIdx + 1); }
+        function next(){ show(idx + 1); }
 
         function start(){ if (reduceMotion) return; stop(); timer = setInterval(next, INTERVAL); }
         function stop(){ if (timer){ clearInterval(timer); timer = null; } }
 
-        dots.forEach(d => d.addEventListener('click', () => { show(parseInt(d.dataset.dot, 10)); start(); }));
-        cards.forEach((card, i) => card.addEventListener('click', () => {
-            if (card.dataset.pos === 'left')  { show(activeIdx - 1); start(); }
-            if (card.dataset.pos === 'right') { show(activeIdx + 1); start(); }
-        }));
+        tabs.forEach(t => t.addEventListener('click', () => { show(parseInt(t.dataset.tab, 10)); start(); }));
 
         root.addEventListener('mouseenter', stop);
         root.addEventListener('mouseleave', start);
@@ -1971,7 +2154,6 @@
         root.addEventListener('focusout', start);
         document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
 
-        arrange();
         start();
     })();
     </script>

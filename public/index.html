@@ -669,14 +669,14 @@
         .card-stack {
             position: relative;
             width: 100%;
-            min-height: 460px;
+            min-height: 420px;
             display: flex;
             align-items: center;
             justify-content: center;
             perspective: 1400px;
         }
-        @media (max-width: 1023px) { .card-stack { min-height: 380px; } }
-        @media (max-width: 640px)  { .card-stack { min-height: 340px; } }
+        @media (max-width: 1023px) { .card-stack { min-height: 360px; } }
+        @media (max-width: 640px)  { .card-stack { min-height: 320px; } }
         .stack-card {
             position: absolute;
             width: 280px;
@@ -1161,9 +1161,9 @@
     <!-- ═══════════════════════════════════════ -->
     <section class="relative z-10 pt-32 pb-12 lg:pt-40 lg:pb-16">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-10 items-center">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <!-- LEFT COLUMN: copy + CTAs -->
-                <div>
+                <div class="min-w-0">
                     <!-- Status badge -->
                     <div class="animate-fade-up mb-8">
                         <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/[0.08] bg-white/[0.03] shimmer-badge">
@@ -1177,8 +1177,8 @@
 
                     <!-- Heading -->
                     <h1 class="animate-fade-up delay-100">
-                        <span class="block text-[clamp(2.2rem,5.5vw,4.25rem)] font-display font-bold leading-[1.05] tracking-[-0.02em] text-white">We build AI</span>
-                        <span class="block text-[clamp(2.2rem,5.5vw,4.25rem)] font-display font-bold leading-[1.05] tracking-[-0.02em]">
+                        <span class="block text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold leading-[1.05] tracking-[-0.02em] text-white">We build AI</span>
+                        <span class="block text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold leading-[1.05] tracking-[-0.02em]">
                             <span class="text-gradient">that works.</span>
                         </span>
                     </h1>

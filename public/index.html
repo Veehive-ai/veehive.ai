@@ -684,7 +684,6 @@
         .product-window {
             position: relative;
             width: 100%;
-            max-width: 540px;
             margin: 0 auto;
             border-radius: 16px;
             background: #0c151a;
@@ -1320,54 +1319,53 @@
     <!-- ═══════════════════════════════════════ -->
     <section class="relative z-10 pt-32 pb-12 lg:pt-40 lg:pb-16">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <!-- LEFT COLUMN: copy + CTAs -->
-                <div class="min-w-0">
-                    <!-- Status badge -->
-                    <div class="animate-fade-up mb-8">
-                        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/[0.08] bg-white/[0.03] shimmer-badge">
-                            <span class="relative flex h-2 w-2">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3B5BFF] opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#3B5BFF]"></span>
-                            </span>
-                            <span class="text-[13px] text-white/60 font-medium">Dubai AI Seal Certified &middot; Enterprise Agentic Workforce Platform</span>
-                        </div>
-                    </div>
-
-                    <!-- Heading -->
-                    <h1 class="animate-fade-up delay-100">
-                        <span class="block text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold leading-[1.05] tracking-[-0.02em] text-white">Your Agentic Workforce,</span>
-                        <span class="block text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold leading-[1.05] tracking-[-0.02em]">
-                            <span class="text-gradient">ready to deploy.</span>
+            <!-- Hero text block — centered above the product showcase -->
+            <div class="text-center max-w-4xl mx-auto">
+                <!-- Status badge -->
+                <div class="animate-fade-up mb-8">
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/[0.08] bg-white/[0.03] shimmer-badge">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3B5BFF] opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-[#3B5BFF]"></span>
                         </span>
-                    </h1>
-
-                    <!-- Subheading -->
-                    <p class="animate-fade-up delay-200 mt-7 text-lg md:text-xl max-w-xl leading-relaxed font-light" style="color: var(--text-secondary);">
-                        Veehive gives your organization a coordinated team of specialized AI agents &mdash; for customer operations, content, project management, and distribution. Deploy one function or build out the full workforce.
-                    </p>
-
-                    <!-- Primary CTA -->
-                    <div class="animate-fade-up delay-300 flex flex-wrap gap-3 mt-8">
-                        <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 px-7 py-3.5 bg-[#3B5BFF] text-white text-[14px] font-semibold rounded-full hover:bg-[#6B82FF] transition-all hover:-translate-y-0.5 shadow-lg shadow-[#3B5BFF]/20">
-                            Book a Demo
-                            <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-                        </a>
-                        <a href="#contact" class="group inline-flex items-center gap-2 px-7 py-3.5 text-[14px] font-medium text-white/80 border border-white/[0.12] rounded-full hover:bg-white/[0.05] hover:border-white/[0.2] transition-all">
-                            See how it works
-                            <svg class="w-3.5 h-3.5 opacity-40 group-hover:opacity-70 group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-                        </a>
+                        <span class="text-[13px] text-white/60 font-medium">Dubai AI Seal Certified &middot; Enterprise Agentic Workforce Platform</span>
                     </div>
-
-                    <!-- Micro-credibility line -->
-                    <p class="animate-fade-up delay-400 mt-8 text-[11px] font-semibold tracking-[0.2em] uppercase text-white/30">
-                        Enterprise-grade &middot; 50+ languages &middot; Autonomous &middot; Around the clock
-                    </p>
                 </div>
 
-                <!-- RIGHT COLUMN: agent-native product window -->
-                <div class="animate-fade-up delay-200">
-                    <div class="product-window" id="hero-window" aria-roledescription="carousel" aria-label="Veehive products">
+                <!-- Heading -->
+                <h1 class="animate-fade-up delay-100">
+                    <span class="block text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold leading-[1.05] tracking-[-0.02em] text-white">Your Agentic Workforce,</span>
+                    <span class="block text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold leading-[1.05] tracking-[-0.02em]">
+                        <span class="text-gradient">ready to deploy.</span>
+                    </span>
+                </h1>
+
+                <!-- Subheading -->
+                <p class="animate-fade-up delay-200 mt-7 mx-auto text-lg md:text-xl max-w-2xl leading-relaxed font-light" style="color: var(--text-secondary);">
+                    Veehive gives your organization a coordinated team of specialized AI agents &mdash; for customer operations, content, project management, and distribution. Deploy one function or build out the full workforce.
+                </p>
+
+                <!-- Primary CTA -->
+                <div class="animate-fade-up delay-300 flex flex-wrap justify-center gap-3 mt-8">
+                    <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 px-7 py-3.5 bg-[#3B5BFF] text-white text-[14px] font-semibold rounded-full hover:bg-[#6B82FF] transition-all hover:-translate-y-0.5 shadow-lg shadow-[#3B5BFF]/20">
+                        Book a Demo
+                        <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    </a>
+                    <a href="#contact" class="group inline-flex items-center gap-2 px-7 py-3.5 text-[14px] font-medium text-white/80 border border-white/[0.12] rounded-full hover:bg-white/[0.05] hover:border-white/[0.2] transition-all">
+                        See how it works
+                        <svg class="w-3.5 h-3.5 opacity-40 group-hover:opacity-70 group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    </a>
+                </div>
+
+                <!-- Micro-credibility line -->
+                <p class="animate-fade-up delay-400 mt-8 text-[11px] font-semibold tracking-[0.2em] uppercase text-white/30">
+                    Enterprise-grade &middot; 50+ languages &middot; Autonomous &middot; Around the clock
+                </p>
+            </div>
+
+            <!-- Agent-native product window — full-width feature below the hero text -->
+            <div class="animate-fade-up delay-500 mt-16 lg:mt-20 max-w-5xl mx-auto">
+                <div class="product-window" id="hero-window" aria-roledescription="carousel" aria-label="Veehive products">
                         <!-- Chrome / tab bar -->
                         <div class="product-window-chrome">
                             <div class="product-window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -1494,7 +1492,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
             <!-- Partners marquee — Certavixx-style chips -->
             <div class="reveal mt-20 lg:mt-24">

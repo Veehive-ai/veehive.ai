@@ -565,6 +565,132 @@
         html.light .bg-\[\#3B5BFF\] { color: #ffffff !important; }
         *, *::before, *::after { transition-property: background-color, border-color, color, box-shadow, opacity; transition-duration: 0s; }
         html.theme-transitioning *, html.theme-transitioning *::before, html.theme-transitioning *::after { transition-duration: 0.4s !important; transition-timing-function: cubic-bezier(0.4,0,0.2,1) !important; }
+
+        /* Recognition timeline — vertical, year-anchored */
+        .timeline { position: relative; max-width: 760px; margin: 0 auto; padding-left: 48px; }
+        @media (max-width: 640px) { .timeline { padding-left: 40px; } }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 8px;
+            bottom: 8px;
+            width: 1px;
+            background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.10) 8%, rgba(255,255,255,0.10) 92%, transparent 100%);
+        }
+        html.light .timeline::before { background: linear-gradient(180deg, transparent 0%, rgba(15,26,32,0.10) 8%, rgba(15,26,32,0.10) 92%, transparent 100%); }
+
+        .timeline-year {
+            position: relative;
+            margin-bottom: 28px;
+        }
+        .timeline-year:last-child { margin-bottom: 0; }
+        .timeline-year-label {
+            position: absolute;
+            left: -48px;
+            top: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 24px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: rgba(255,255,255,0.85);
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 6px;
+            backdrop-filter: blur(6px);
+        }
+        html.light .timeline-year-label { color: rgba(15,26,32,0.85); background: rgba(15,26,32,0.04); border-color: rgba(15,26,32,0.10); }
+        @media (max-width: 640px) {
+            .timeline-year-label { left: -40px; width: 34px; font-size: 10px; }
+        }
+
+        .timeline-awards { display: flex; flex-direction: column; gap: 10px; padding-top: 2px; }
+
+        .timeline-award {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.02);
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+        }
+        html.light .timeline-award { border-color: rgba(15,26,32,0.06); background: rgba(15,26,32,0.02); }
+        .timeline-award:hover {
+            transform: translateX(2px);
+            border-color: rgba(255,255,255,0.14);
+            background: rgba(255,255,255,0.04);
+        }
+        html.light .timeline-award:hover { border-color: rgba(15,26,32,0.14); background: rgba(15,26,32,0.04); }
+
+        /* Connector dot on the timeline rail */
+        .timeline-award::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 22px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #3B5BFF;
+            box-shadow: 0 0 0 3px rgba(59,91,255,0.18), 0 0 12px rgba(59,91,255,0.45);
+        }
+        @media (max-width: 640px) { .timeline-award::before { left: -25px; } }
+
+        .timeline-award-flag { font-size: 22px; flex-shrink: 0; line-height: 1; padding-top: 2px; }
+        .timeline-award-body { flex: 1; min-width: 0; }
+        .timeline-award-location {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: rgba(255,255,255,0.45);
+            margin-bottom: 3px;
+        }
+        html.light .timeline-award-location { color: rgba(15,26,32,0.55); }
+        .timeline-award-name {
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.92);
+            line-height: 1.4;
+        }
+        html.light .timeline-award-name { color: rgba(15,26,32,0.92); }
+        .timeline-award-context {
+            display: block;
+            font-size: 13px;
+            color: rgba(255,255,255,0.50);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+        html.light .timeline-award-context { color: rgba(15,26,32,0.55); }
+
+        /* Compact homepage teaser: stat row + flag strip */
+        .recognition-teaser {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 24px 36px;
+            padding: 24px 28px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.02);
+        }
+        html.light .recognition-teaser { border-color: rgba(15,26,32,0.08); background: rgba(15,26,32,0.02); }
+        .recognition-stat { text-align: center; }
+        .recognition-stat-value { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #fff; line-height: 1; }
+        html.light .recognition-stat-value { color: #0F1A20; }
+        .recognition-stat-label { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 6px; }
+        html.light .recognition-stat-label { color: rgba(15,26,32,0.55); }
+        .recognition-flags { font-size: 22px; letter-spacing: 4px; line-height: 1; }
     </style>
 </head>
 <body class="min-h-screen overflow-x-hidden antialiased" style="color: var(--text);">
@@ -706,6 +832,148 @@
                     <div class="partner-logo-card"><img src="/partners/microsoft-for-startups.webp" alt="Microsoft for Startups" loading="lazy" decoding="async"></div>
                     <div class="partner-logo-card"><img src="/partners/lenovo-ai-innovators.webp" alt="Lenovo AI Innovators" loading="lazy" decoding="async"></div>
                     <div class="partner-logo-card"><img src="/partners/in5.svg" alt="in5 Tech Dubai" loading="lazy" decoding="async"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider-gradient"></div>
+
+    <!-- Recognition Timeline -->
+    <section id="recognition" class="relative z-10 py-24 lg:py-32" style="scroll-margin-top:96px">
+        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+            <div class="reveal text-center mb-16">
+                <p class="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#3B5BFF]/70 mb-4">Recognized Globally</p>
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight">
+                    Five years. <span class="font-display italic text-gradient">Eight countries.</span>
+                </h2>
+                <p class="mt-4 text-base text-white/45 max-w-2xl mx-auto leading-relaxed">
+                    From IIT Bombay to Asia Pacific Rail &mdash; Veehive&rsquo;s agentic workforce has been selected, awarded, and accelerated by some of the most respected programs in tech.
+                </p>
+            </div>
+
+            <div class="reveal timeline">
+                <!-- 2022 -->
+                <div class="timeline-year">
+                    <span class="timeline-year-label">2022</span>
+                    <div class="timeline-awards">
+                        <div class="timeline-award">
+                            <span class="timeline-award-flag" aria-hidden="true">🇮🇳</span>
+                            <div class="timeline-award-body">
+                                <span class="timeline-award-location">India &middot; IIT Bombay</span>
+                                <span class="timeline-award-name">e-Ureka</span>
+                                <span class="timeline-award-context">National innovation challenge hosted at IIT Bombay.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="timeline-year">
+                    <span class="timeline-year-label">2023</span>
+                    <div class="timeline-awards">
+                        <div class="timeline-award">
+                            <span class="timeline-award-flag" aria-hidden="true">🇮🇳</span>
+                            <div class="timeline-award-body">
+                                <span class="timeline-award-location">India &middot; Chennai</span>
+                                <span class="timeline-award-name">Umagine</span>
+                                <span class="timeline-award-context">Tamil Nadu&rsquo;s flagship tech &amp; innovation summit.</span>
+                            </div>
+                        </div>
+                        <div class="timeline-award">
+                            <span class="timeline-award-flag" aria-hidden="true">🇯🇵</span>
+                            <div class="timeline-award-body">
+                                <span class="timeline-award-location">Japan &middot; Tokyo</span>
+                                <span class="timeline-award-name">CEATEC</span>
+                                <span class="timeline-award-context">Asia&rsquo;s premier consumer-electronics innovation exhibition.</span>
+                            </div>
+                        </div>
+                        <div class="timeline-award">
+                            <span class="timeline-award-flag" aria-hidden="true">🇲🇦</span>
+                            <div class="timeline-award-body">
+                                <span class="timeline-award-location">Morocco</span>
+                                <span class="timeline-award-name">Royal Air Maroc Bootcamp</span>
+                                <span class="timeline-award-context">Aviation-AI accelerator program by Morocco&rsquo;s flag carrier.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div class="timeline-year">
+                    <span class="timeline-year-label">2024</span>
+                    <div class="timeline-awards">
+                        <div class="timeline-award">
+                            <span class="timeline-award-flag" aria-hidden="true">🇭🇰</span>
+                            <div class="timeline-award-body">
+                                <span class="timeline-award-location">Hong Kong</span>
+                                <span class="timeline-award-name">InnoEX</span>
+                                <span class="timeline-award-context">Hong Kong&rsquo;s flagship technology &amp; innovation expo.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2025 -->
+                <div class="timeline-year">
+                    <span class="timeline-year-label">2025</span>
+                    <div class="timeline-awards">
+                        <div class="timeline-award">
+                            <span class="timeline-award-flag" aria-hidden="true">🇦🇪</span>
+                            <div class="timeline-award-body">
+                                <span class="timeline-award-location">UAE &middot; Dubai</span>
+                                <span class="timeline-award-name">Dubai AI Seal &mdash; Tier E Certified</span>
+                                <span class="timeline-award-context">Government-issued enterprise AI readiness certification.</span>
+                            </div>
+                        </div>
+                        <div class="timeline-award">
+                            <span class="timeline-award-flag" aria-hidden="true">🇦🇪</span>
+                            <div class="timeline-award-body">
+                                <span class="timeline-award-location">UAE &middot; Dubai</span>
+                                <span class="timeline-award-name">du Technovator</span>
+                                <span class="timeline-award-context">UAE national telecom&rsquo;s flagship innovation program.</span>
+                            </div>
+                        </div>
+                        <div class="timeline-award">
+                            <span class="timeline-award-flag" aria-hidden="true">🇷🇺</span>
+                            <div class="timeline-award-body">
+                                <span class="timeline-award-location">Russia &middot; Moscow</span>
+                                <span class="timeline-award-name">SberUnity Accelerator</span>
+                                <span class="timeline-award-context">Sberbank&rsquo;s corporate-venture accelerator.</span>
+                            </div>
+                        </div>
+                        <div class="timeline-award">
+                            <span class="timeline-award-flag" aria-hidden="true">🇦🇪</span>
+                            <div class="timeline-award-body">
+                                <span class="timeline-award-location">UAE &middot; Dubai</span>
+                                <span class="timeline-award-name">Red Bull Basement</span>
+                                <span class="timeline-award-context">Global student-founder program selecting top builders.</span>
+                            </div>
+                        </div>
+                        <div class="timeline-award">
+                            <span class="timeline-award-flag" aria-hidden="true">🇯🇴</span>
+                            <div class="timeline-award-body">
+                                <span class="timeline-award-location">Jordan &middot; Amman</span>
+                                <span class="timeline-award-name">Arab Bank AI Bootcamp</span>
+                                <span class="timeline-award-context">Regional banking-AI accelerator by Arab Bank.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2026 -->
+                <div class="timeline-year">
+                    <span class="timeline-year-label">2026</span>
+                    <div class="timeline-awards">
+                        <div class="timeline-award">
+                            <span class="timeline-award-flag" aria-hidden="true">🇹🇭</span>
+                            <div class="timeline-award-body">
+                                <span class="timeline-award-location">Thailand &middot; Bangkok</span>
+                                <span class="timeline-award-name">Asia Pacific Rail</span>
+                                <span class="timeline-award-context">APAC&rsquo;s leading rail-transport innovation forum.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

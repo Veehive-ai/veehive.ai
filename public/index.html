@@ -701,6 +701,32 @@
         html.light .stat-icon { background: rgba(15,26,32,0.03); border-color: rgba(15,26,32,0.06); }
         .stat-icon svg { width: 14px; height: 14px; stroke-width: 1.75; }
 
+        /* Compact homepage recognition teaser — links to /about.html#recognition */
+        .recognition-teaser {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 28px 40px;
+            padding: 28px 32px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.02);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        html.light .recognition-teaser { border-color: rgba(15,26,32,0.08); background: rgba(15,26,32,0.02); }
+        .recognition-teaser:hover { border-color: rgba(255,255,255,0.14); background: rgba(255,255,255,0.04); }
+        html.light .recognition-teaser:hover { border-color: rgba(15,26,32,0.14); background: rgba(15,26,32,0.04); }
+        .recognition-stat { text-align: center; }
+        .recognition-stat-value { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; color: #fff; line-height: 1; }
+        html.light .recognition-stat-value { color: #0F1A20; }
+        .recognition-stat-label { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 8px; }
+        html.light .recognition-stat-label { color: rgba(15,26,32,0.55); }
+        .recognition-flags { font-size: 24px; letter-spacing: 4px; line-height: 1; }
+        .recognition-divider { width: 1px; height: 36px; background: rgba(255,255,255,0.10); }
+        html.light .recognition-divider { background: rgba(15,26,32,0.10); }
+        @media (max-width: 640px) { .recognition-divider { display: none; } }
+
         /* Hero product window — browser-style frame showing each product's agent UI */
         .product-window {
             position: relative;
@@ -1806,6 +1832,47 @@
         </div>
     </section>
 
+
+    <div class="divider-gradient"></div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- RECOGNITION TEASER -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="relative z-10 py-16 lg:py-20">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+            <div class="reveal text-center mb-8">
+                <p class="text-[12px] font-semibold uppercase tracking-[0.2em] text-white/30 mb-3">Recognized Globally</p>
+                <h3 class="text-2xl md:text-3xl font-bold tracking-tight">
+                    Five years. <span class="font-display italic text-gradient">Eight countries.</span>
+                </h3>
+            </div>
+
+            <a href="about.html#recognition" class="reveal recognition-teaser block no-underline">
+                <div class="recognition-stat">
+                    <div class="recognition-stat-value">11</div>
+                    <div class="recognition-stat-label">Awards &amp; programs</div>
+                </div>
+                <div class="recognition-divider" aria-hidden="true"></div>
+                <div class="recognition-stat">
+                    <div class="recognition-stat-value">8</div>
+                    <div class="recognition-stat-label">Countries</div>
+                </div>
+                <div class="recognition-divider" aria-hidden="true"></div>
+                <div class="recognition-stat">
+                    <div class="recognition-stat-value">5</div>
+                    <div class="recognition-stat-label">Years running</div>
+                </div>
+                <div class="recognition-divider" aria-hidden="true"></div>
+                <div class="recognition-flags" aria-label="Countries: India, Japan, Morocco, Hong Kong, UAE, Russia, Jordan, Thailand">
+                    🇮🇳 🇯🇵 🇲🇦 🇭🇰 🇦🇪 🇷🇺 🇯🇴 🇹🇭
+                </div>
+            </a>
+
+            <p class="reveal text-center mt-6 text-[13px] text-white/40">
+                <a href="about.html#recognition" class="hover:text-white transition-colors">See the full timeline <span aria-hidden="true">&rarr;</span></a>
+            </p>
+        </div>
+    </section>
 
     <div class="divider-gradient"></div>
 

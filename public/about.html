@@ -705,14 +705,17 @@
             .timeline-award-thumb { width: 56px; height: 56px; }
         }
 
-        /* Popover preview — 2.5x bigger, appears on hover/focus */
+        /* Popover preview — 2.5x bigger, appears on hover/focus
+           Tailwind preflight applies `img { height: auto; max-width: 100% }` globally; override with !important
+           so the popover holds its square 280x280 frame and object-fit: cover crops content correctly. */
         .timeline-award-popover {
             position: absolute;
             right: calc(100% + 14px);
             top: 50%;
             transform: translateY(-50%) scale(0.9);
-            width: 280px;
-            height: 280px;
+            width: 280px !important;
+            height: 280px !important;
+            max-width: none !important;
             border-radius: 14px;
             object-fit: cover;
             border: 1px solid rgba(255,255,255,0.15);
@@ -744,8 +747,8 @@
                 top: auto;
                 bottom: calc(100% + 12px);
                 transform: translateX(-50%) scale(0.9);
-                width: 220px;
-                height: 220px;
+                width: 220px !important;
+                height: 220px !important;
             }
             .timeline-award-thumb-wrap:hover .timeline-award-popover,
             .timeline-award-thumb-wrap:focus-within .timeline-award-popover {

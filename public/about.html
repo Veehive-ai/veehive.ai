@@ -681,16 +681,80 @@
             object-fit: cover;
             border: 1px solid rgba(255,255,255,0.08);
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            -webkit-user-drag: none;
+            user-select: none;
+            -webkit-user-select: none;
         }
         html.light .timeline-award-thumb { border-color: rgba(15,26,32,0.10); }
-        .timeline-award-thumb-link { flex-shrink: 0; line-height: 0; align-self: center; }
-        .timeline-award-thumb-link:hover .timeline-award-thumb {
+
+        /* Hover container — holds the thumb + the popover */
+        .timeline-award-thumb-wrap {
+            position: relative;
+            flex-shrink: 0;
+            line-height: 0;
+            align-self: center;
+            cursor: zoom-in;
+        }
+        .timeline-award-thumb-wrap:hover .timeline-award-thumb,
+        .timeline-award-thumb-wrap:focus-within .timeline-award-thumb {
             transform: scale(1.06);
             border-color: rgba(59,91,255,0.45);
             box-shadow: 0 0 0 3px rgba(59,91,255,0.15), 0 8px 20px -6px rgba(0,0,0,0.4);
         }
         @media (max-width: 640px) {
             .timeline-award-thumb { width: 56px; height: 56px; }
+        }
+
+        /* Popover preview — 2.5x bigger, appears on hover/focus */
+        .timeline-award-popover {
+            position: absolute;
+            right: calc(100% + 14px);
+            top: 50%;
+            transform: translateY(-50%) scale(0.9);
+            width: 280px;
+            height: 280px;
+            border-radius: 14px;
+            object-fit: cover;
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 20px 50px -10px rgba(0,0,0,0.6), 0 8px 24px -8px rgba(0,0,0,0.4);
+            background: #0c151a;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 0.22s;
+            z-index: 50;
+            -webkit-user-drag: none;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        html.light .timeline-award-popover { border-color: rgba(15,26,32,0.15); background: #ffffff; box-shadow: 0 20px 50px -10px rgba(15,26,32,0.25), 0 8px 24px -8px rgba(15,26,32,0.15); }
+        .timeline-award-thumb-wrap:hover .timeline-award-popover,
+        .timeline-award-thumb-wrap:focus-within .timeline-award-popover {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-50%) scale(1);
+            transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 0s;
+        }
+
+        /* On narrow viewports, anchor the popover above the thumb instead of beside it */
+        @media (max-width: 760px) {
+            .timeline-award-popover {
+                right: auto;
+                left: 50%;
+                top: auto;
+                bottom: calc(100% + 12px);
+                transform: translateX(-50%) scale(0.9);
+                width: 220px;
+                height: 220px;
+            }
+            .timeline-award-thumb-wrap:hover .timeline-award-popover,
+            .timeline-award-thumb-wrap:focus-within .timeline-award-popover {
+                transform: translateX(-50%) scale(1);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .timeline-award-popover { transition: opacity 0.15s linear, visibility 0s linear 0s; }
         }
 
         /* Compact homepage teaser: stat row + flag strip */
@@ -885,9 +949,10 @@
                                 <span class="timeline-award-name">e-Ureka</span>
                                 <span class="timeline-award-context">National innovation challenge hosted at IIT Bombay.</span>
                             </div>
-                            <a class="timeline-award-thumb-link" href="/awards/2022/iit-bombay/full.jpg" target="_blank" rel="noopener" aria-label="Open larger photo from IIT Bombay e-Ureka">
-                                <img class="timeline-award-thumb" src="/awards/2022/iit-bombay/thumb.jpg" alt="Veehive team at IIT Bombay e-Ureka 2022" loading="lazy" decoding="async">
-                            </a>
+                            <span class="timeline-award-thumb-wrap" tabindex="0" aria-label="Open larger photo from IIT Bombay e-Ureka" oncontextmenu="return false" ondragstart="return false">
+                                <img class="timeline-award-thumb" src="/awards/2022/iit-bombay/thumb.jpg" alt="Veehive team at IIT Bombay e-Ureka 2022" loading="lazy" decoding="async" draggable="false">
+                                <img class="timeline-award-popover" src="/awards/2022/iit-bombay/full.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" draggable="false">
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -903,9 +968,10 @@
                                 <span class="timeline-award-name">Umagine</span>
                                 <span class="timeline-award-context">Tamil Nadu&rsquo;s flagship tech &amp; innovation summit.</span>
                             </div>
-                            <a class="timeline-award-thumb-link" href="/awards/2023/umagine-chennai/full.jpg" target="_blank" rel="noopener" aria-label="Open larger photo from Umagine Chennai">
-                                <img class="timeline-award-thumb" src="/awards/2023/umagine-chennai/thumb.jpg" alt="Veehive at Umagine Chennai 2023" loading="lazy" decoding="async">
-                            </a>
+                            <span class="timeline-award-thumb-wrap" tabindex="0" aria-label="Open larger photo from Umagine Chennai" oncontextmenu="return false" ondragstart="return false">
+                                <img class="timeline-award-thumb" src="/awards/2023/umagine-chennai/thumb.jpg" alt="Veehive at Umagine Chennai 2023" loading="lazy" decoding="async" draggable="false">
+                                <img class="timeline-award-popover" src="/awards/2023/umagine-chennai/full.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" draggable="false">
+                            </span>
                         </div>
                         <div class="timeline-award">
                             <span class="timeline-award-flag" aria-hidden="true">🇯🇵</span>
@@ -914,9 +980,10 @@
                                 <span class="timeline-award-name">CEATEC</span>
                                 <span class="timeline-award-context">Asia&rsquo;s premier consumer-electronics innovation exhibition.</span>
                             </div>
-                            <a class="timeline-award-thumb-link" href="/awards/2023/ceatec/full.jpg" target="_blank" rel="noopener" aria-label="Open larger photo from CEATEC Tokyo">
-                                <img class="timeline-award-thumb" src="/awards/2023/ceatec/thumb.jpg" alt="Veehive booth at CEATEC Tokyo 2023" loading="lazy" decoding="async">
-                            </a>
+                            <span class="timeline-award-thumb-wrap" tabindex="0" aria-label="Open larger photo from CEATEC Tokyo" oncontextmenu="return false" ondragstart="return false">
+                                <img class="timeline-award-thumb" src="/awards/2023/ceatec/thumb.jpg" alt="Veehive booth at CEATEC Tokyo 2023" loading="lazy" decoding="async" draggable="false">
+                                <img class="timeline-award-popover" src="/awards/2023/ceatec/full.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" draggable="false">
+                            </span>
                         </div>
                         <div class="timeline-award">
                             <span class="timeline-award-flag" aria-hidden="true">🇲🇦</span>
@@ -925,9 +992,10 @@
                                 <span class="timeline-award-name">Royal Air Maroc Bootcamp</span>
                                 <span class="timeline-award-context">Aviation-AI accelerator program by Morocco&rsquo;s flag carrier.</span>
                             </div>
-                            <a class="timeline-award-thumb-link" href="/awards/2023/royal-air-maroc/full.jpg" target="_blank" rel="noopener" aria-label="Open larger photo from Royal Air Maroc Bootcamp">
-                                <img class="timeline-award-thumb" src="/awards/2023/royal-air-maroc/thumb.jpg" alt="Veehive at Royal Air Maroc AI Bootcamp" loading="lazy" decoding="async">
-                            </a>
+                            <span class="timeline-award-thumb-wrap" tabindex="0" aria-label="Open larger photo from Royal Air Maroc Bootcamp" oncontextmenu="return false" ondragstart="return false">
+                                <img class="timeline-award-thumb" src="/awards/2023/royal-air-maroc/thumb.jpg" alt="Veehive at Royal Air Maroc AI Bootcamp" loading="lazy" decoding="async" draggable="false">
+                                <img class="timeline-award-popover" src="/awards/2023/royal-air-maroc/full.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" draggable="false">
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -943,9 +1011,10 @@
                                 <span class="timeline-award-name">InnoEX</span>
                                 <span class="timeline-award-context">Hong Kong&rsquo;s flagship technology &amp; innovation expo.</span>
                             </div>
-                            <a class="timeline-award-thumb-link" href="/awards/2024/innoex/full.jpg" target="_blank" rel="noopener" aria-label="Open larger photo from InnoEX Hong Kong">
-                                <img class="timeline-award-thumb" src="/awards/2024/innoex/thumb.jpg" alt="Veehive team at InnoEX Hong Kong 2024" loading="lazy" decoding="async">
-                            </a>
+                            <span class="timeline-award-thumb-wrap" tabindex="0" aria-label="Open larger photo from InnoEX Hong Kong" oncontextmenu="return false" ondragstart="return false">
+                                <img class="timeline-award-thumb" src="/awards/2024/innoex/thumb.jpg" alt="Veehive team at InnoEX Hong Kong 2024" loading="lazy" decoding="async" draggable="false">
+                                <img class="timeline-award-popover" src="/awards/2024/innoex/full.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" draggable="false">
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -961,9 +1030,10 @@
                                 <span class="timeline-award-name">Dubai AI Seal &mdash; Tier E Certified</span>
                                 <span class="timeline-award-context">Government-issued enterprise AI readiness certification.</span>
                             </div>
-                            <a class="timeline-award-thumb-link" href="/dubai-ai-seal.png" target="_blank" rel="noopener" aria-label="Open larger Dubai AI Seal image">
-                                <img class="timeline-award-thumb" src="/dubai-ai-seal.png" alt="Dubai AI Seal Tier E certificate" loading="lazy" decoding="async">
-                            </a>
+                            <span class="timeline-award-thumb-wrap" tabindex="0" aria-label="Open larger Dubai AI Seal image" oncontextmenu="return false" ondragstart="return false">
+                                <img class="timeline-award-thumb" src="/dubai-ai-seal.png" alt="Dubai AI Seal Tier E certificate" loading="lazy" decoding="async" draggable="false">
+                                <img class="timeline-award-popover" src="/dubai-ai-seal.png" alt="" aria-hidden="true" loading="lazy" decoding="async" draggable="false">
+                            </span>
                         </div>
                         <div class="timeline-award">
                             <span class="timeline-award-flag" aria-hidden="true">🇦🇪</span>
@@ -972,9 +1042,10 @@
                                 <span class="timeline-award-name">du Technovator</span>
                                 <span class="timeline-award-context">UAE national telecom&rsquo;s flagship innovation program.</span>
                             </div>
-                            <a class="timeline-award-thumb-link" href="/awards/2025/du-technovator/full.jpg" target="_blank" rel="noopener" aria-label="Open larger photo from du Technovator pitch">
-                                <img class="timeline-award-thumb" src="/awards/2025/du-technovator/thumb.jpg" alt="Veehive at the du Technovator pitch event" loading="lazy" decoding="async">
-                            </a>
+                            <span class="timeline-award-thumb-wrap" tabindex="0" aria-label="Open larger photo from du Technovator pitch" oncontextmenu="return false" ondragstart="return false">
+                                <img class="timeline-award-thumb" src="/awards/2025/du-technovator/thumb.jpg" alt="Veehive at the du Technovator pitch event" loading="lazy" decoding="async" draggable="false">
+                                <img class="timeline-award-popover" src="/awards/2025/du-technovator/full.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" draggable="false">
+                            </span>
                         </div>
                         <div class="timeline-award">
                             <span class="timeline-award-flag" aria-hidden="true">🇷🇺</span>
@@ -983,9 +1054,10 @@
                                 <span class="timeline-award-name">SberUnity Accelerator</span>
                                 <span class="timeline-award-context">Sberbank&rsquo;s corporate-venture accelerator.</span>
                             </div>
-                            <a class="timeline-award-thumb-link" href="/awards/2025/sberunity/full.jpg" target="_blank" rel="noopener" aria-label="Open larger photo from SberUnity Accelerator">
-                                <img class="timeline-award-thumb" src="/awards/2025/sberunity/thumb.jpg" alt="Veehive presenting at SberUnity Accelerator" loading="lazy" decoding="async">
-                            </a>
+                            <span class="timeline-award-thumb-wrap" tabindex="0" aria-label="Open larger photo from SberUnity Accelerator" oncontextmenu="return false" ondragstart="return false">
+                                <img class="timeline-award-thumb" src="/awards/2025/sberunity/thumb.jpg" alt="Veehive presenting at SberUnity Accelerator" loading="lazy" decoding="async" draggable="false">
+                                <img class="timeline-award-popover" src="/awards/2025/sberunity/full.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" draggable="false">
+                            </span>
                         </div>
                         <div class="timeline-award">
                             <span class="timeline-award-flag" aria-hidden="true">🇦🇪</span>
@@ -994,9 +1066,10 @@
                                 <span class="timeline-award-name">Red Bull Basement</span>
                                 <span class="timeline-award-context">Global student-founder program selecting top builders.</span>
                             </div>
-                            <a class="timeline-award-thumb-link" href="/awards/2025/red-bull-basement/full.jpg?v=2" target="_blank" rel="noopener" aria-label="Open larger photo from Red Bull Basement">
-                                <img class="timeline-award-thumb" src="/awards/2025/red-bull-basement/thumb.jpg?v=2" alt="Veehive receiving the certificate at Red Bull Basement" loading="lazy" decoding="async">
-                            </a>
+                            <span class="timeline-award-thumb-wrap" tabindex="0" aria-label="Open larger photo from Red Bull Basement" oncontextmenu="return false" ondragstart="return false">
+                                <img class="timeline-award-thumb" src="/awards/2025/red-bull-basement/thumb.jpg?v=2" alt="Veehive receiving the certificate at Red Bull Basement" loading="lazy" decoding="async" draggable="false">
+                                <img class="timeline-award-popover" src="/awards/2025/red-bull-basement/full.jpg?v=2" alt="" aria-hidden="true" loading="lazy" decoding="async" draggable="false">
+                            </span>
                         </div>
                         <div class="timeline-award">
                             <span class="timeline-award-flag" aria-hidden="true">🇯🇴</span>
@@ -1005,9 +1078,10 @@
                                 <span class="timeline-award-name">Arab Bank AI Bootcamp</span>
                                 <span class="timeline-award-context">Regional banking-AI accelerator by Arab Bank.</span>
                             </div>
-                            <a class="timeline-award-thumb-link" href="/awards/2025/arab-bank/full.jpg" target="_blank" rel="noopener" aria-label="Open larger photo from Arab Bank AI Bootcamp">
-                                <img class="timeline-award-thumb" src="/awards/2025/arab-bank/thumb.jpg" alt="Veehive accepting Third Place Winner at Arab Bank AI Bootcamp" loading="lazy" decoding="async">
-                            </a>
+                            <span class="timeline-award-thumb-wrap" tabindex="0" aria-label="Open larger photo from Arab Bank AI Bootcamp" oncontextmenu="return false" ondragstart="return false">
+                                <img class="timeline-award-thumb" src="/awards/2025/arab-bank/thumb.jpg" alt="Veehive accepting Third Place Winner at Arab Bank AI Bootcamp" loading="lazy" decoding="async" draggable="false">
+                                <img class="timeline-award-popover" src="/awards/2025/arab-bank/full.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" draggable="false">
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -1023,9 +1097,10 @@
                                 <span class="timeline-award-name">Asia Pacific Rail</span>
                                 <span class="timeline-award-context">APAC&rsquo;s leading rail-transport innovation forum.</span>
                             </div>
-                            <a class="timeline-award-thumb-link" href="/awards/2026/asia-pacific-rail/full.jpg" target="_blank" rel="noopener" aria-label="Open larger photo from Asia Pacific Rail">
-                                <img class="timeline-award-thumb" src="/awards/2026/asia-pacific-rail/thumb.jpg" alt="Veehive at Asia Pacific Rail 2026 Bangkok" loading="lazy" decoding="async">
-                            </a>
+                            <span class="timeline-award-thumb-wrap" tabindex="0" aria-label="Open larger photo from Asia Pacific Rail" oncontextmenu="return false" ondragstart="return false">
+                                <img class="timeline-award-thumb" src="/awards/2026/asia-pacific-rail/thumb.jpg" alt="Veehive at Asia Pacific Rail 2026 Bangkok" loading="lazy" decoding="async" draggable="false">
+                                <img class="timeline-award-popover" src="/awards/2026/asia-pacific-rail/full.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" draggable="false">
+                            </span>
                         </div>
                     </div>
                 </div>

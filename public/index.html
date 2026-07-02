@@ -701,6 +701,46 @@
         html.light .stat-icon { background: rgba(15,26,32,0.03); border-color: rgba(15,26,32,0.06); }
         .stat-icon svg { width: 14px; height: 14px; stroke-width: 1.75; }
 
+        /* Product-showcase 2-col grid — copy on one side, embedded agent demo on the other, alternates per card */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        @media (min-width: 1024px) {
+            .showcase-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3rem; }
+            .showcase-grid.is-flipped .showcase-copy { order: 2; }
+            .showcase-grid.is-flipped .showcase-demo { order: 1; }
+        }
+
+        /* Embedded agent demo — smaller, calmer version of the hero-window pane. Static (no auto-rotate, no live pulse). */
+        .agent-demo {
+            position: relative;
+            padding: 20px;
+            border-radius: 16px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+            border: 1px solid rgba(255,255,255,0.06);
+            box-shadow: 0 20px 50px -20px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.03);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-height: 340px;
+        }
+        html.light .agent-demo { background: linear-gradient(180deg, rgba(15,26,32,0.02), rgba(15,26,32,0.005)); border-color: rgba(15,26,32,0.08); box-shadow: 0 20px 50px -20px rgba(15,26,32,0.18), inset 0 1px 0 rgba(255,255,255,0.5); }
+
+        /* Reuse hero-pane child classes (agent-live, agent-prompt, agent-steps, agent-result, agent-chat, agent-msg)
+           but scale a bit smaller when inside .agent-demo so it doesn't dwarf the card copy */
+        .agent-demo .agent-msg { max-width: 88%; font-size: 12px; }
+        .agent-demo .agent-msg-label { font-size: 9px; }
+        .agent-demo .agent-prompt { font-size: 12px; padding: 10px 12px; }
+        .agent-demo .agent-prompt-icon { width: 20px; height: 20px; font-size: 10px; }
+        .agent-demo .agent-step { font-size: 11px; padding: 8px 11px; }
+        .agent-demo .agent-step-mark { width: 15px; height: 15px; font-size: 9px; }
+        .agent-demo .agent-result { font-size: 11.5px; padding: 10px 12px; }
+        .agent-demo .agent-result-tag { font-size: 9px; padding: 2px 7px; }
+        .agent-demo .agent-live { font-size: 10px; }
+
         /* Compact homepage recognition teaser — links to /about.html#recognition */
         .recognition-teaser {
             display: flex;
@@ -1650,165 +1690,316 @@
 
     <!-- mpliphi -->
     <section id="mpliphi" class="relative z-10 py-20 lg:py-24" style="scroll-margin-top:96px">
-        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
             <div class="reveal card-glow card-glow-orchestrator rounded-2xl p-8 md:p-12">
-                <img src="/favicon-mpliphi-64.png?v=2" alt="mpliphi" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
-                <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#2c573e">Your AI customer-operations agent</p>
-                <div class="flex flex-wrap items-baseline gap-3 mb-5">
-                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">mpliphi</h2>
-                    <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(44,87,62,0.15); color:#2c573e">AI Agents</span>
+                <div class="showcase-grid is-flipped">
+                    <div class="showcase-copy">
+                        <img src="/favicon-mpliphi-64.png?v=2" alt="mpliphi" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
+                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#2c573e">Your AI customer-operations agent</p>
+                        <div class="flex flex-wrap items-baseline gap-3 mb-5">
+                            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">mpliphi</h2>
+                            <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(44,87,62,0.15); color:#2c573e">AI Agents</span>
+                        </div>
+                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👨‍💼</span> <strong class="text-white/80">Nitesh</strong> &mdash; mpliphi runs as your always-on customer-operations agent, handling conversations on WhatsApp and email autonomously or alongside your staff. Escalates when needed, logs to your CRM, speaks 50+ languages.</p>
+                        <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
+                            <div>
+                                <span class="stat-icon" style="color:#2c573e" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.86 9.86 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">50K+</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Conversations / month</div>
+                            </div>
+                            <div>
+                                <span class="stat-icon" style="color:#2c573e" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18zm0 0a8.997 8.997 0 007.843-4.582M12 21a8.997 8.997 0 01-7.843-4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74 1.1-7.843 2.918m15.686 0A8.959 8.959 0 0121 12c0-.778-.099-1.533-.284-2.253m-15.432 7.835A8.959 8.959 0 013 12c0-.778.099-1.533.284-2.253m0 0A11.978 11.978 0 0112 8c2.998 0 5.74-1.1 7.843-2.918"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">50+</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Languages</div>
+                            </div>
+                            <div>
+                                <span class="stat-icon" style="color:#2c573e" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">24/7</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Always-on coverage</div>
+                            </div>
+                        </div>
+                        <a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#2c573e">Explore mpliphi <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                    <div class="showcase-demo">
+                        <div class="agent-demo" data-product="mpliphi">
+                            <span class="agent-live"><span aria-hidden="true">👨‍💼</span> Nitesh &middot; mpliphi agent</span>
+                            <div class="agent-chat">
+                                <div class="agent-msg is-customer">
+                                    <div class="agent-msg-label">Customer &middot; WhatsApp</div>
+                                    Hi, can I reschedule my delivery to Saturday morning?
+                                </div>
+                                <div class="agent-msg is-agent">
+                                    <div class="agent-msg-label">Nitesh &middot; autonomous</div>
+                                    Done &mdash; rescheduled to Sat 9&ndash;11 AM. You&rsquo;ll get a confirmation SMS shortly.
+                                </div>
+                                <div class="agent-msg is-customer">
+                                    <div class="agent-msg-label">Customer</div>
+                                    Perfect, thanks!
+                                </div>
+                            </div>
+                            <div class="agent-result">
+                                <span class="agent-result-tag">No human touched</span>
+                                Resolved in 11s &middot; logged to CRM &middot; satisfaction tagged
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed max-w-2xl mb-8">Meet <span aria-hidden="true">👨‍💼</span> <strong class="text-white/80">Nitesh</strong> &mdash; mpliphi runs as your always-on customer-operations agent, handling conversations on WhatsApp and email autonomously or alongside your staff. Escalates when needed, logs to your CRM, speaks 50+ languages.</p>
-                <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
-                    <div>
-                        <span class="stat-icon" style="color:#2c573e" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.86 9.86 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></span>
-                        <div class="text-2xl md:text-3xl font-bold text-white">50K+</div>
-                        <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Conversations / month</div>
-                    </div>
-                    <div>
-                        <span class="stat-icon" style="color:#2c573e" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18zm0 0a8.997 8.997 0 007.843-4.582M12 21a8.997 8.997 0 01-7.843-4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74 1.1-7.843 2.918m15.686 0A8.959 8.959 0 0121 12c0-.778-.099-1.533-.284-2.253m-15.432 7.835A8.959 8.959 0 013 12c0-.778.099-1.533.284-2.253m0 0A11.978 11.978 0 0112 8c2.998 0 5.74-1.1 7.843-2.918"/></svg></span>
-                        <div class="text-2xl md:text-3xl font-bold text-white">50+</div>
-                        <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Languages</div>
-                    </div>
-                    <div>
-                        <span class="stat-icon" style="color:#2c573e" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
-                        <div class="text-2xl md:text-3xl font-bold text-white">24/7</div>
-                        <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Always-on coverage</div>
-                    </div>
-                </div>
-                <a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#2c573e">Explore mpliphi <span aria-hidden="true">&rarr;</span></a>
             </div>
         </div>
     </section>
 
     <!-- Studio -->
     <section id="studio" class="relative z-10 py-20 lg:py-24" style="scroll-margin-top:96px">
-        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
             <div class="reveal card-glow card-glow-creator rounded-2xl p-8 md:p-12">
-                <img src="/favicon-studio-64.png" alt="Veehive Studio" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
-                <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#A78BFA">Your AI content-production agent</p>
-                <div class="flex flex-wrap items-baseline gap-3 mb-5">
-                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Veehive Studio</h2>
-                    <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(124,58,237,0.18); color:#A78BFA">AI Video</span>
+                <div class="showcase-grid">
+                    <div class="showcase-copy">
+                        <img src="/favicon-studio-64.png" alt="Veehive Studio" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
+                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#A78BFA">Your AI content-production agent</p>
+                        <div class="flex flex-wrap items-baseline gap-3 mb-5">
+                            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Veehive Studio</h2>
+                            <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(124,58,237,0.18); color:#A78BFA">AI Video</span>
+                        </div>
+                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👨‍🎨</span> <strong class="text-white/80">Chaks</strong> &mdash; the Studio content agent that turns your documents, PDFs, and briefs into publish-ready branded videos with AI avatars in 30+ languages. What used to take a content team a week now takes about 90 seconds.</p>
+                        <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
+                            <div>
+                                <span class="stat-icon" style="color:#A78BFA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">10&times;</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Faster creation</div>
+                            </div>
+                            <div>
+                                <span class="stat-icon" style="color:#A78BFA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18zm0 0a8.997 8.997 0 007.843-4.582M12 21a8.997 8.997 0 01-7.843-4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74 1.1-7.843 2.918m15.686 0A8.959 8.959 0 0121 12c0-.778-.099-1.533-.284-2.253m-15.432 7.835A8.959 8.959 0 013 12c0-.778.099-1.533.284-2.253m0 0A11.978 11.978 0 0112 8c2.998 0 5.74-1.1 7.843-2.918"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">30+</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Languages</div>
+                            </div>
+                            <div>
+                                <span class="stat-icon" style="color:#A78BFA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">~90s</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Time to first video</div>
+                            </div>
+                        </div>
+                        <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#A78BFA">Explore Veehive Studio <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                    <div class="showcase-demo">
+                        <div class="agent-demo" data-product="studio">
+                            <span class="agent-live"><span aria-hidden="true">👨‍🎨</span> Chaks &middot; Studio content agent</span>
+                            <div class="agent-prompt">
+                                <span class="agent-prompt-icon">U</span>
+                                <span class="agent-prompt-text">Turn the new <strong>policy update PDF</strong> into a 60-second Arabic explainer with our brand avatar.</span>
+                            </div>
+                            <div class="agent-steps">
+                                <div class="agent-step is-done">
+                                    <span class="agent-step-mark">&check;</span>
+                                    Parsed PDF &middot; extracted 4 key points
+                                </div>
+                                <div class="agent-step is-done">
+                                    <span class="agent-step-mark">&check;</span>
+                                    Drafted script &middot; translated EN &rarr; AR
+                                </div>
+                                <div class="agent-step is-running">
+                                    <span class="agent-step-mark">&#8635;</span>
+                                    Rendering avatar &middot; voiceover &middot; captions
+                                </div>
+                            </div>
+                            <div class="agent-result">
+                                <span class="agent-result-tag">Output ready in</span>
+                                ~90s &middot; 3 language variants queued automatically
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed max-w-2xl mb-8">Meet <span aria-hidden="true">👨‍🎨</span> <strong class="text-white/80">Chaks</strong> &mdash; the Studio content agent that turns your documents, PDFs, and briefs into publish-ready branded videos with AI avatars in 30+ languages. What used to take a content team a week now takes about 90 seconds.</p>
-                <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
-                    <div>
-                        <span class="stat-icon" style="color:#A78BFA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></span>
-                        <div class="text-2xl md:text-3xl font-bold text-white">10&times;</div>
-                        <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Faster creation</div>
-                    </div>
-                    <div>
-                        <span class="stat-icon" style="color:#A78BFA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18zm0 0a8.997 8.997 0 007.843-4.582M12 21a8.997 8.997 0 01-7.843-4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74 1.1-7.843 2.918m15.686 0A8.959 8.959 0 0121 12c0-.778-.099-1.533-.284-2.253m-15.432 7.835A8.959 8.959 0 013 12c0-.778.099-1.533.284-2.253m0 0A11.978 11.978 0 0112 8c2.998 0 5.74-1.1 7.843-2.918"/></svg></span>
-                        <div class="text-2xl md:text-3xl font-bold text-white">30+</div>
-                        <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Languages</div>
-                    </div>
-                    <div>
-                        <span class="stat-icon" style="color:#A78BFA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
-                        <div class="text-2xl md:text-3xl font-bold text-white">~90s</div>
-                        <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Time to first video</div>
-                    </div>
-                </div>
-                <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#A78BFA">Explore Veehive Studio <span aria-hidden="true">&rarr;</span></a>
             </div>
         </div>
     </section>
 
     <!-- SnapaPro -->
     <section id="snapapro" class="relative z-10 py-20 lg:py-24" style="scroll-margin-top:96px">
-        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
             <div class="reveal card-glow card-glow-planner rounded-2xl p-8 md:p-12">
-                <img src="/favicon-snapapro-64.png" alt="SnapaPro" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
-                <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#F87171">Your AI project-management agent</p>
-                <div class="flex flex-wrap items-baseline gap-3 mb-5">
-                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">SnapaPro</h2>
-                    <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(220,38,38,0.18); color:#F87171">AI Planning</span>
+                <div class="showcase-grid is-flipped">
+                    <div class="showcase-copy">
+                        <img src="/favicon-snapapro-64.png" alt="SnapaPro" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
+                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#F87171">Your AI project-management agent</p>
+                        <div class="flex flex-wrap items-baseline gap-3 mb-5">
+                            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">SnapaPro</h2>
+                            <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(220,38,38,0.18); color:#F87171">AI Planning</span>
+                        </div>
+                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👨‍💻</span> <strong class="text-white/80">Taj</strong>, <span aria-hidden="true">👩</span> <strong class="text-white/80">Noor</strong>, and <span aria-hidden="true">👨</span> <strong class="text-white/80">Sats</strong> &mdash; SnapaPro&rsquo;s three-agent system that plans your projects, engages your team, and tracks time. No manual follow-ups, no capacity blind spots.</p>
+                        <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
+                            <div>
+                                <span class="stat-icon" style="color:#F87171" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">3</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">AI agents</div>
+                            </div>
+                            <div>
+                                <span class="stat-icon" style="color:#F87171" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">NL</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Natural-language tasks</div>
+                            </div>
+                            <div>
+                                <span class="stat-icon" style="color:#F87171" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12a3 3 0 11-6 0 3 3 0 016 0zm0 0a3 3 0 016 0m0 0a3 3 0 11-6 0m6 0a3 3 0 116 0m-6 0a3 3 0 11-6 0"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">&infin;</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Capacity planning</div>
+                            </div>
+                        </div>
+                        <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#F87171">Explore SnapaPro <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                    <div class="showcase-demo">
+                        <div class="agent-demo" data-product="snapapro">
+                            <span class="agent-live"><span aria-hidden="true">👨‍💻 👩 👨</span> Taj, Noor &amp; Sats &middot; SnapaPro agents</span>
+                            <div class="agent-prompt">
+                                <span class="agent-prompt-icon">U</span>
+                                <span class="agent-prompt-text"><strong>Plan the launch for next week</strong> &mdash; landing page, 3 social posts, email sequence.</span>
+                            </div>
+                            <div class="agent-steps">
+                                <div class="agent-step is-done">
+                                    <span class="agent-step-mark">&check;</span>
+                                    Created 7 tasks &middot; assigned owners by skill
+                                </div>
+                                <div class="agent-step is-done">
+                                    <span class="agent-step-mark">&check;</span>
+                                    Detected capacity conflict &middot; rescheduled 2 items
+                                </div>
+                                <div class="agent-step is-running">
+                                    <span class="agent-step-mark">&#8635;</span>
+                                    Tracking time &middot; nudging blockers in Slack
+                                </div>
+                            </div>
+                            <div class="agent-result">
+                                <span class="agent-result-tag">3 agents working</span>
+                                Taj plans &middot; Noor engages &middot; Sats tracks
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed max-w-2xl mb-8">Meet <span aria-hidden="true">👨‍💻</span> <strong class="text-white/80">Taj</strong>, <span aria-hidden="true">👩</span> <strong class="text-white/80">Noor</strong>, and <span aria-hidden="true">👨</span> <strong class="text-white/80">Sats</strong> &mdash; SnapaPro&rsquo;s three-agent system that plans your projects, engages your team, and tracks time. No manual follow-ups, no capacity blind spots.</p>
-                <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
-                    <div>
-                        <span class="stat-icon" style="color:#F87171" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></span>
-                        <div class="text-2xl md:text-3xl font-bold text-white">3</div>
-                        <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">AI agents</div>
-                    </div>
-                    <div>
-                        <span class="stat-icon" style="color:#F87171" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></span>
-                        <div class="text-2xl md:text-3xl font-bold text-white">NL</div>
-                        <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Natural-language tasks</div>
-                    </div>
-                    <div>
-                        <span class="stat-icon" style="color:#F87171" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12a3 3 0 11-6 0 3 3 0 016 0zm0 0a3 3 0 016 0m0 0a3 3 0 11-6 0m6 0a3 3 0 116 0m-6 0a3 3 0 11-6 0"/></svg></span>
-                        <div class="text-2xl md:text-3xl font-bold text-white">&infin;</div>
-                        <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Capacity planning</div>
-                    </div>
-                </div>
-                <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#F87171">Explore SnapaPro <span aria-hidden="true">&rarr;</span></a>
             </div>
         </div>
     </section>
 
     <!-- HiveLink -->
     <section id="veehive-link" class="relative z-10 py-20 lg:py-24" style="scroll-margin-top:96px">
-        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
             <div class="reveal card-glow card-glow-distributor rounded-2xl p-8 md:p-12">
-                <img src="/favicon-hivelink-64.png" alt="HiveLink" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
-                <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#60A5FA">Your AI community-growth agent</p>
-                <div class="flex flex-wrap items-baseline gap-3 mb-5">
-                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">HiveLink</h2>
-                    <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(37,99,235,0.18); color:#60A5FA">AI Community</span>
+                <div class="showcase-grid">
+                    <div class="showcase-copy">
+                        <img src="/favicon-hivelink-64.png" alt="HiveLink" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
+                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#60A5FA">Your AI community-growth agent</p>
+                        <div class="flex flex-wrap items-baseline gap-3 mb-5">
+                            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">HiveLink</h2>
+                            <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(37,99,235,0.18); color:#60A5FA">AI Community</span>
+                        </div>
+                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👩‍💻</span> <strong class="text-white/80">AK</strong> &mdash; the HiveLink community-growth agent that runs your branded video community end-to-end. HiveLink gives you one branded destination (your hive) where video, conversation, events, and CRM live together; AK organises content, approves submissions, and publishes across channels automatically. Embed in your app, on your website, or run it as a standalone portal. White-label and on-premise ready.</p>
+                        <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
+                            <div>
+                                <span class="stat-icon" style="color:#60A5FA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">1</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Your branded hive</div>
+                            </div>
+                            <div>
+                                <span class="stat-icon" style="color:#60A5FA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">AI</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Content + approvals</div>
+                            </div>
+                            <div>
+                                <span class="stat-icon" style="color:#60A5FA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">Yours</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Domain, brand, rules</div>
+                            </div>
+                        </div>
+                        <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#60A5FA">Explore HiveLink <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                    <div class="showcase-demo">
+                        <div class="agent-demo" data-product="hivelink">
+                            <span class="agent-live"><span aria-hidden="true">👩‍💻</span> AK &middot; HiveLink community-growth agent</span>
+                            <div class="agent-prompt">
+                                <span class="agent-prompt-icon">U</span>
+                                <span class="agent-prompt-text">Run a campaign to <strong>increase footfall by 20% next week</strong> at our Dubai Mall store.</span>
+                            </div>
+                            <div class="agent-steps">
+                                <div class="agent-step is-done">
+                                    <span class="agent-step-mark">&check;</span>
+                                    Drafted offer &middot; 4 channel-specific variants
+                                </div>
+                                <div class="agent-step is-done">
+                                    <span class="agent-step-mark">&check;</span>
+                                    Geo-targeted 12km radius &middot; scheduled by daypart
+                                </div>
+                                <div class="agent-step is-running">
+                                    <span class="agent-step-mark">&#8635;</span>
+                                    Tracking footfall hourly &middot; reallocating spend
+                                </div>
+                            </div>
+                            <div class="agent-result">
+                                <span class="agent-result-tag">Day 3 of 7</span>
+                                +14% footfall vs. baseline &middot; on pace for +22%
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed max-w-2xl mb-8">Meet <span aria-hidden="true">👩‍💻</span> <strong class="text-white/80">AK</strong> &mdash; the HiveLink community-growth agent that runs your branded video community end-to-end. HiveLink gives you one branded destination (your hive) where video, conversation, events, and CRM live together; AK organises content, approves submissions, and publishes across channels automatically. Embed in your app, on your website, or run it as a standalone portal. White-label and on-premise ready.</p>
-                <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
-                    <div>
-                        <span class="stat-icon" style="color:#60A5FA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></span>
-                        <div class="text-2xl md:text-3xl font-bold text-white">1</div>
-                        <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Your branded hive</div>
-                    </div>
-                    <div>
-                        <span class="stat-icon" style="color:#60A5FA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg></span>
-                        <div class="text-2xl md:text-3xl font-bold text-white">AI</div>
-                        <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Content + approvals</div>
-                    </div>
-                    <div>
-                        <span class="stat-icon" style="color:#60A5FA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg></span>
-                        <div class="text-2xl md:text-3xl font-bold text-white">Yours</div>
-                        <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Domain, brand, rules</div>
-                    </div>
-                </div>
-                <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#60A5FA">Explore HiveLink <span aria-hidden="true">&rarr;</span></a>
             </div>
         </div>
     </section>
 
     <!-- Veehive Mind -->
     <section id="mind" class="relative z-10 py-20 lg:py-24" style="scroll-margin-top:96px">
-        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
             <div class="reveal card-glow card-glow-mind rounded-2xl p-8 md:p-12">
-                <img src="/favicon-mind-64.png" alt="Veehive Mind" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
-                <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#ffb020">Your AI campaign-execution hive</p>
-                <div class="flex flex-wrap items-baseline gap-3 mb-5">
-                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Veehive Mind</h2>
-                    <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(255,176,32,0.18); color:#ffb020">AI Campaigns</span>
+                <div class="showcase-grid is-flipped">
+                    <div class="showcase-copy">
+                        <img src="/favicon-mind-64.png" alt="Veehive Mind" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
+                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#ffb020">Your AI campaign-execution hive</p>
+                        <div class="flex flex-wrap items-baseline gap-3 mb-5">
+                            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Veehive Mind</h2>
+                            <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(255,176,32,0.18); color:#ffb020">AI Campaigns</span>
+                        </div>
+                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👩‍🦰</span> <strong class="text-white/80">Mira</strong> &mdash; the Veehive Mind campaign hive. Nine specialist agents (trend intelligence, calendar, copy, creative, brand memory, compliance, publishing, learning, and orchestration) collaborate from a single brief to launch and run marketing campaigns end-to-end. Website to first campaign in minutes. One click from approval to publishing.</p>
+                        <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
+                            <div>
+                                <span class="stat-icon" style="color:#ffb020" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">9+</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Specialist agents</div>
+                            </div>
+                            <div>
+                                <span class="stat-icon" style="color:#ffb020" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">Mins</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Website &rarr; campaign</div>
+                            </div>
+                            <div>
+                                <span class="stat-icon" style="color:#ffb020" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">1-click</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Multi-channel publish</div>
+                            </div>
+                        </div>
+                        <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#ffb020">Explore Veehive Mind <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                    <div class="showcase-demo">
+                        <div class="agent-demo" data-product="mind">
+                            <span class="agent-live"><span aria-hidden="true">👩‍🦰</span> Mira &middot; Mind campaign hive</span>
+                            <div class="agent-prompt">
+                                <span class="agent-prompt-icon">U</span>
+                                <span class="agent-prompt-text">Launch a <strong>Ramadan campaign</strong> for our F&amp;B brand &mdash; 30-day calendar, multi-channel, on-brand.</span>
+                            </div>
+                            <div class="agent-steps">
+                                <div class="agent-step is-done">
+                                    <span class="agent-step-mark">&check;</span>
+                                    Live trend scan &middot; 7 cited signals &middot; brand voice learned
+                                </div>
+                                <div class="agent-step is-done">
+                                    <span class="agent-step-mark">&check;</span>
+                                    30-day calendar &middot; 42 assets generated &middot; reviewed for compliance
+                                </div>
+                                <div class="agent-step is-running">
+                                    <span class="agent-step-mark">&#8635;</span>
+                                    9 specialist agents collaborating &middot; learning from performance
+                                </div>
+                            </div>
+                            <div class="agent-result">
+                                <span class="agent-result-tag">One brief in</span>
+                                Website &rarr; full campaign in minutes &middot; one click to publish
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed max-w-2xl mb-8">Meet <span aria-hidden="true">👩‍🦰</span> <strong class="text-white/80">Mira</strong> &mdash; the Veehive Mind campaign hive. Nine specialist agents (trend intelligence, calendar, copy, creative, brand memory, compliance, publishing, learning, and orchestration) collaborate from a single brief to launch and run marketing campaigns end-to-end. Website to first campaign in minutes. One click from approval to publishing.</p>
-                <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
-                    <div>
-                        <span class="stat-icon" style="color:#ffb020" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></span>
-                        <div class="text-2xl md:text-3xl font-bold text-white">9+</div>
-                        <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Specialist agents</div>
-                    </div>
-                    <div>
-                        <span class="stat-icon" style="color:#ffb020" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></span>
-                        <div class="text-2xl md:text-3xl font-bold text-white">Mins</div>
-                        <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Website &rarr; campaign</div>
-                    </div>
-                    <div>
-                        <span class="stat-icon" style="color:#ffb020" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg></span>
-                        <div class="text-2xl md:text-3xl font-bold text-white">1-click</div>
-                        <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Multi-channel publish</div>
-                    </div>
-                </div>
-                <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#ffb020">Explore Veehive Mind <span aria-hidden="true">&rarr;</span></a>
             </div>
         </div>
     </section>

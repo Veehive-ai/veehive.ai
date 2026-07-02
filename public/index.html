@@ -701,6 +701,25 @@
         html.light .stat-icon { background: rgba(15,26,32,0.03); border-color: rgba(15,26,32,0.06); }
         .stat-icon svg { width: 14px; height: 14px; stroke-width: 1.75; }
 
+        /* Homepage press teaser strip — publication names in a subtle band, links to /about.html#news */
+        .press-strip {
+            display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+            gap: 14px 22px; padding: 22px 30px;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.02);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        html.light .press-strip { border-color: rgba(15,26,32,0.06); background: rgba(15,26,32,0.02); }
+        .press-strip:hover { border-color: rgba(59,91,255,0.25); background: rgba(59,91,255,0.03); }
+        .press-name {
+            font-size: 13px; font-weight: 600; letter-spacing: 0.02em;
+            color: rgba(255,255,255,0.55); white-space: nowrap;
+        }
+        html.light .press-name { color: rgba(15,26,32,0.6); }
+        .press-strip-divider { color: rgba(255,255,255,0.15); font-size: 11px; }
+        html.light .press-strip-divider { color: rgba(15,26,32,0.15); }
+
         /* Meet the Agentic Workforce — 5 team-style cards, fluid auto-fit grid */
         .workforce-grid {
             display: grid;
@@ -2092,19 +2111,36 @@
     <div class="divider-gradient"></div>
 
     <!-- ═══════════════════════════════════════ -->
-    <!-- PRESS & MEDIA -->
+    <!-- PRESS & MEDIA TEASER -->
     <!-- ═══════════════════════════════════════ -->
-    <section class="relative z-10 py-14">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="reveal flex flex-col md:flex-row items-center justify-between gap-8">
-                <p class="text-[12px] font-semibold uppercase tracking-[0.2em] text-white/25 shrink-0">As Seen In</p>
-                <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-5">
-                    <span class="text-[14px] font-semibold tracking-tight text-white/25 hover:text-white/40 transition-colors">The Hindu</span>
-                    <span class="text-[14px] font-semibold tracking-tight text-white/25 hover:text-white/40 transition-colors">Dubai One</span>
-                    <span class="text-[14px] font-semibold tracking-tight text-white/25 hover:text-white/40 transition-colors">Red Bull</span>
-                    <span class="text-[14px] font-semibold tracking-tight text-white/25 hover:text-white/40 transition-colors">World Economic Forum</span>
-                </div>
+    <section class="relative z-10 py-16 lg:py-20">
+        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+            <div class="reveal text-center mb-6">
+                <p class="text-[12px] font-semibold uppercase tracking-[0.2em] text-white/30 mb-3">As Featured In</p>
+                <h3 class="text-xl md:text-2xl font-bold tracking-tight">
+                    <span class="text-white/70">21 press mentions.</span> <span class="font-display italic text-gradient">One story.</span>
+                </h3>
             </div>
+            <a href="about.html#news" class="reveal press-strip block no-underline">
+                <span class="press-name">Entrepreneur ME</span>
+                <span class="press-strip-divider" aria-hidden="true">&bull;</span>
+                <span class="press-name">Gulf Business</span>
+                <span class="press-strip-divider" aria-hidden="true">&bull;</span>
+                <span class="press-name">WAM</span>
+                <span class="press-strip-divider" aria-hidden="true">&bull;</span>
+                <span class="press-name">TahawulTech</span>
+                <span class="press-strip-divider" aria-hidden="true">&bull;</span>
+                <span class="press-name">Zawya</span>
+                <span class="press-strip-divider" aria-hidden="true">&bull;</span>
+                <span class="press-name">Hindu Business Line</span>
+                <span class="press-strip-divider" aria-hidden="true">&bull;</span>
+                <span class="press-name">Times of India</span>
+                <span class="press-strip-divider" aria-hidden="true">&bull;</span>
+                <span class="press-name">Dubai One TV</span>
+            </a>
+            <p class="reveal text-center mt-4 text-[13px] text-white/40">
+                <a href="about.html#news" class="hover:text-white transition-colors">See all 21 press mentions <span aria-hidden="true">&rarr;</span></a>
+            </p>
         </div>
     </section>
 

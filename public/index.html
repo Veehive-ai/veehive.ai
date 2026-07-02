@@ -701,6 +701,39 @@
         html.light .stat-icon { background: rgba(15,26,32,0.03); border-color: rgba(15,26,32,0.06); }
         .stat-icon svg { width: 14px; height: 14px; stroke-width: 1.75; }
 
+        /* Meet the Agentic Workforce — 5 team-style cards, fluid auto-fit grid */
+        .workforce-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 18px;
+        }
+        .workforce-card {
+            padding: 24px 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.02);
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        html.light .workforce-card { border-color: rgba(15,26,32,0.08); background: rgba(15,26,32,0.02); }
+        .workforce-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.16); background: rgba(255,255,255,0.04); box-shadow: 0 12px 30px -12px rgba(0,0,0,0.4); }
+        html.light .workforce-card:hover { border-color: rgba(15,26,32,0.16); background: rgba(15,26,32,0.04); box-shadow: 0 12px 30px -12px rgba(15,26,32,0.12); }
+        .workforce-face { font-size: 44px; line-height: 1; margin-bottom: 10px; user-select: none; }
+        .workforce-face.is-trio { font-size: 30px; letter-spacing: 4px; }
+        .workforce-name { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; color: #fff; }
+        html.light .workforce-name { color: #0F1A20; }
+        .workforce-product { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-top: 8px; }
+        .workforce-role { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 6px; line-height: 1.5; max-width: 200px; }
+        html.light .workforce-role { color: rgba(15,26,32,0.6); }
+        @media (prefers-reduced-motion: reduce) {
+            .workforce-card { transition: border-color 0.2s ease, background 0.2s ease; }
+            .workforce-card:hover { transform: none; }
+        }
+
         /* Product-showcase 2-col grid — copy on one side, embedded agent demo on the other, alternates per card */
         .showcase-grid {
             display: grid;
@@ -1435,7 +1468,7 @@
 
                 <!-- Subheading -->
                 <p class="animate-fade-up delay-200 mt-10 mx-auto text-lg md:text-xl max-w-2xl font-light" style="color: var(--text-secondary); line-height: 1.75;">
-                    Veehive gives your organization a coordinated team of specialized AI agents &mdash; <strong class="text-white/80 font-medium">Nitesh</strong> handles customer operations, <strong class="text-white/80 font-medium">Chaks</strong> creates content, <strong class="text-white/80 font-medium">Taj</strong> plans projects, <strong class="text-white/80 font-medium">AK</strong> grows community, <strong class="text-white/80 font-medium">Mira</strong> runs campaigns. Deploy one or build out the full workforce.
+                    Veehive gives your organization a coordinated team of specialized AI agents &mdash; <strong class="text-white/80 font-medium">ND</strong> handles customer operations, <strong class="text-white/80 font-medium">Chaks</strong> creates content, <strong class="text-white/80 font-medium">Taj</strong> plans projects, <strong class="text-white/80 font-medium">AK</strong> grows community, <strong class="text-white/80 font-medium">Mira</strong> runs campaigns. Deploy one or build out the full workforce.
                 </p>
 
                 <!-- Primary CTA -->
@@ -1486,14 +1519,14 @@
 
                             <!-- mpliphi: customer conversation, agent replies autonomously -->
                             <div class="product-pane is-active" data-product="mpliphi" data-tab="0" role="tabpanel" aria-label="mpliphi: AI agent handles customer conversations">
-                                <span class="agent-live"><span aria-hidden="true">👨‍💼</span> Nitesh &middot; mpliphi agent</span>
+                                <span class="agent-live"><span aria-hidden="true">👨‍💼</span> ND &middot; mpliphi agent</span>
                                 <div class="agent-chat">
                                     <div class="agent-msg is-customer">
                                         <div class="agent-msg-label">Customer &middot; WhatsApp</div>
                                         Hi, can I reschedule my delivery to Saturday morning?
                                     </div>
                                     <div class="agent-msg is-agent">
-                                        <div class="agent-msg-label">Nitesh &middot; autonomous</div>
+                                        <div class="agent-msg-label">ND &middot; autonomous</div>
                                         Done &mdash; rescheduled to Sat 9&ndash;11 AM. You&rsquo;ll get a confirmation SMS shortly.
                                     </div>
                                     <div class="agent-msg is-customer">
@@ -1700,7 +1733,7 @@
                             <h2 class="text-3xl md:text-5xl font-bold tracking-tight">mpliphi</h2>
                             <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(44,87,62,0.15); color:#2c573e">AI Agents</span>
                         </div>
-                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👨‍💼</span> <strong class="text-white/80">Nitesh</strong> &mdash; mpliphi runs as your always-on customer-operations agent, handling conversations on WhatsApp and email autonomously or alongside your staff. Escalates when needed, logs to your CRM, speaks 50+ languages.</p>
+                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👨‍💼</span> <strong class="text-white/80">ND</strong> &mdash; mpliphi runs as your always-on customer-operations agent, handling conversations on WhatsApp and email autonomously or alongside your staff. Escalates when needed, logs to your CRM, speaks 50+ languages.</p>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
                                 <span class="stat-icon" style="color:#2c573e" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.86 9.86 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></span>
@@ -1722,14 +1755,14 @@
                     </div>
                     <div class="showcase-demo">
                         <div class="agent-demo" data-product="mpliphi">
-                            <span class="agent-live"><span aria-hidden="true">👨‍💼</span> Nitesh &middot; mpliphi agent</span>
+                            <span class="agent-live"><span aria-hidden="true">👨‍💼</span> ND &middot; mpliphi agent</span>
                             <div class="agent-chat">
                                 <div class="agent-msg is-customer">
                                     <div class="agent-msg-label">Customer &middot; WhatsApp</div>
                                     Hi, can I reschedule my delivery to Saturday morning?
                                 </div>
                                 <div class="agent-msg is-agent">
-                                    <div class="agent-msg-label">Nitesh &middot; autonomous</div>
+                                    <div class="agent-msg-label">ND &middot; autonomous</div>
                                     Done &mdash; rescheduled to Sat 9&ndash;11 AM. You&rsquo;ll get a confirmation SMS shortly.
                                 </div>
                                 <div class="agent-msg is-customer">
@@ -1999,6 +2032,58 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider-gradient"></div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- MEET THE AGENTIC WORKFORCE -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="workforce" class="relative z-10 py-20 lg:py-24" style="scroll-margin-top:96px">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="reveal text-center mb-12">
+                <p class="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#3B5BFF]/70 mb-4">The Team</p>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Meet the <span class="font-display italic text-gradient">Agentic Workforce.</span></h2>
+                <p class="mt-4 text-base text-white/45 max-w-xl mx-auto leading-relaxed">Five specialized AI agents, one coordinated team. Each with a name, a role, and a job they do around the clock.</p>
+            </div>
+
+            <div class="reveal workforce-grid">
+                <div class="workforce-card">
+                    <div class="workforce-face" aria-hidden="true">👨‍💼</div>
+                    <div class="workforce-name">ND</div>
+                    <div class="workforce-product" style="color:#2c573e">mpliphi</div>
+                    <div class="workforce-role">Customer-operations agent</div>
+                </div>
+
+                <div class="workforce-card">
+                    <div class="workforce-face" aria-hidden="true">👨‍🎨</div>
+                    <div class="workforce-name">Chaks</div>
+                    <div class="workforce-product" style="color:#A78BFA">Studio</div>
+                    <div class="workforce-role">Content-production agent</div>
+                </div>
+
+                <div class="workforce-card">
+                    <div class="workforce-face is-trio" aria-hidden="true">👨‍💻 👩 👨</div>
+                    <div class="workforce-name">Taj &middot; Noor &middot; Sats</div>
+                    <div class="workforce-product" style="color:#F87171">SnapaPro</div>
+                    <div class="workforce-role">Plan, engage, and track</div>
+                </div>
+
+                <div class="workforce-card">
+                    <div class="workforce-face" aria-hidden="true">👩‍💻</div>
+                    <div class="workforce-name">AK</div>
+                    <div class="workforce-product" style="color:#60A5FA">HiveLink</div>
+                    <div class="workforce-role">Community-growth agent</div>
+                </div>
+
+                <div class="workforce-card">
+                    <div class="workforce-face" aria-hidden="true">👩‍🦰</div>
+                    <div class="workforce-name">Mira</div>
+                    <div class="workforce-product" style="color:#ffb020">Mind</div>
+                    <div class="workforce-role">Campaign-execution hive (9 agents)</div>
                 </div>
             </div>
         </div>
@@ -2424,12 +2509,10 @@
             setTimeout(() => html.classList.remove('theme-transitioning'), 500);
         }
 
-        // Restore saved theme (or respect system preference)
+        // Default = light. Respect the user's explicit toggle choice only when they've picked dark.
         (function() {
             const saved = localStorage.getItem('veehive-theme');
-            if (saved === 'light') {
-                document.documentElement.classList.add('light');
-            } else if (!saved && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            if (saved !== 'dark') {
                 document.documentElement.classList.add('light');
             }
         })();

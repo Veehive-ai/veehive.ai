@@ -566,52 +566,60 @@
         *, *::before, *::after { transition-property: background-color, border-color, color, box-shadow, opacity; transition-duration: 0s; }
         html.theme-transitioning *, html.theme-transitioning *::before, html.theme-transitioning *::after { transition-duration: 0.4s !important; transition-timing-function: cubic-bezier(0.4,0,0.2,1) !important; }
 
-        /* Recognition timeline — vertical, year-anchored */
-        .timeline { position: relative; max-width: 760px; margin: 0 auto; padding-left: 48px; }
-        @media (max-width: 640px) { .timeline { padding-left: 40px; } }
+        /* Recognition timeline — zig-zag: center rail, year badges on the rail,
+           awards alternate left/right on desktop. On <768px it collapses to a
+           left-rail single-column layout. */
+        .timeline { position: relative; max-width: 960px; margin: 0 auto; padding: 0; }
+
+        /* The vertical rail — center on desktop, left on mobile */
         .timeline::before {
             content: '';
             position: absolute;
-            left: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             top: 8px;
             bottom: 8px;
             width: 1px;
-            background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.10) 8%, rgba(255,255,255,0.10) 92%, transparent 100%);
+            background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.10) 5%, rgba(255,255,255,0.10) 95%, transparent 100%);
         }
-        html.light .timeline::before { background: linear-gradient(180deg, transparent 0%, rgba(15,26,32,0.10) 8%, rgba(15,26,32,0.10) 92%, transparent 100%); }
+        html.light .timeline::before { background: linear-gradient(180deg, transparent 0%, rgba(15,26,32,0.10) 5%, rgba(15,26,32,0.10) 95%, transparent 100%); }
 
         .timeline-year {
             position: relative;
-            margin-bottom: 28px;
+            margin-bottom: 32px;
         }
         .timeline-year:last-child { margin-bottom: 0; }
+
+        /* Year badge sits centered ON the rail (desktop) — wrapper element used to center */
+        .timeline-year-anchor {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 2;
+        }
         .timeline-year-label {
-            position: absolute;
-            left: -48px;
-            top: 0;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 24px;
-            font-size: 11px;
+            padding: 5px 14px;
+            font-size: 12px;
             font-weight: 700;
-            letter-spacing: 0.04em;
-            color: rgba(255,255,255,0.85);
+            letter-spacing: 0.06em;
+            color: rgba(255,255,255,0.90);
             background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.10);
-            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 999px;
             backdrop-filter: blur(6px);
         }
-        html.light .timeline-year-label { color: rgba(15,26,32,0.85); background: rgba(15,26,32,0.04); border-color: rgba(15,26,32,0.10); }
-        @media (max-width: 640px) {
-            .timeline-year-label { left: -40px; width: 34px; font-size: 10px; }
-        }
+        html.light .timeline-year-label { color: rgba(15,26,32,0.90); background: rgba(255,255,255,0.9); border-color: rgba(15,26,32,0.12); }
 
-        .timeline-awards { display: flex; flex-direction: column; gap: 10px; padding-top: 2px; }
+        .timeline-awards { display: flex; flex-direction: column; gap: 18px; padding-top: 2px; }
 
+        /* Each award — full width on desktop; centered card is 42% wide on either side of the rail */
         .timeline-award {
             position: relative;
+            width: 42%;
             display: flex;
             align-items: flex-start;
             gap: 14px;
@@ -623,25 +631,59 @@
         }
         html.light .timeline-award { border-color: rgba(15,26,32,0.06); background: rgba(15,26,32,0.02); }
         .timeline-award:hover {
-            transform: translateX(2px);
             border-color: rgba(255,255,255,0.14);
             background: rgba(255,255,255,0.04);
         }
         html.light .timeline-award:hover { border-color: rgba(15,26,32,0.14); background: rgba(15,26,32,0.04); }
 
-        /* Connector dot on the timeline rail */
+        /* Alternation: odd-indexed → left of rail; even → right */
+        .timeline-award:nth-child(odd)  { margin-right: auto; }
+        .timeline-award:nth-child(even) { margin-left: auto; }
+        .timeline-award:nth-child(odd):hover  { transform: translateX(-3px); }
+        .timeline-award:nth-child(even):hover { transform: translateX(3px); }
+
+        /* Connector dot — sits on the rail (50% of the container), horizontally aligned to the card top */
         .timeline-award::before {
             content: '';
             position: absolute;
-            left: -33px;
             top: 22px;
-            width: 9px;
-            height: 9px;
+            width: 11px;
+            height: 11px;
             border-radius: 50%;
             background: #3B5BFF;
-            box-shadow: 0 0 0 3px rgba(59,91,255,0.18), 0 0 12px rgba(59,91,255,0.45);
+            box-shadow: 0 0 0 3px rgba(59,91,255,0.15), 0 0 14px rgba(59,91,255,0.5);
+            z-index: 1;
         }
-        @media (max-width: 640px) { .timeline-award::before { left: -25px; } }
+        /* Odd (left card): dot juts out from right edge of card, onto the rail */
+        .timeline-award:nth-child(odd)::before  { right: -30px; }
+        /* Even (right card): dot juts out from left edge, onto the rail */
+        .timeline-award:nth-child(even)::before { left: -30px; }
+
+        /* Thin horizontal connector line from card edge to the rail */
+        .timeline-award::after {
+            content: '';
+            position: absolute;
+            top: 27px;
+            width: 24px;
+            height: 1px;
+            background: rgba(59,91,255,0.35);
+            z-index: 0;
+        }
+        .timeline-award:nth-child(odd)::after  { right: -24px; }
+        .timeline-award:nth-child(even)::after { left: -24px; }
+
+        /* Mobile fallback: single column, left rail */
+        @media (max-width: 767px) {
+            .timeline::before { left: 20px; transform: none; }
+            .timeline-year-anchor { justify-content: flex-start; padding-left: 4px; }
+            .timeline-award { width: auto; margin-left: 48px !important; margin-right: 0 !important; }
+            .timeline-award:nth-child(odd)::before,
+            .timeline-award:nth-child(even)::before  { right: auto; left: -33px; }
+            .timeline-award:nth-child(odd)::after,
+            .timeline-award:nth-child(even)::after   { right: auto; left: -22px; width: 20px; }
+            .timeline-award:nth-child(odd):hover,
+            .timeline-award:nth-child(even):hover    { transform: translateX(2px); }
+        }
 
         .timeline-award-flag { font-size: 22px; flex-shrink: 0; line-height: 1; padding-top: 2px; }
         .timeline-award-body { flex: 1; min-width: 0; }
@@ -943,7 +985,7 @@
             <div class="reveal timeline">
                 <!-- 2022 -->
                 <div class="timeline-year">
-                    <span class="timeline-year-label">2022</span>
+                    <div class="timeline-year-anchor"><span class="timeline-year-label">2022</span></div>
                     <div class="timeline-awards">
                         <div class="timeline-award">
                             <span class="timeline-award-flag" aria-hidden="true">🇮🇳</span>
@@ -962,7 +1004,7 @@
 
                 <!-- 2023 -->
                 <div class="timeline-year">
-                    <span class="timeline-year-label">2023</span>
+                    <div class="timeline-year-anchor"><span class="timeline-year-label">2023</span></div>
                     <div class="timeline-awards">
                         <div class="timeline-award">
                             <span class="timeline-award-flag" aria-hidden="true">🇮🇳</span>
@@ -1005,7 +1047,7 @@
 
                 <!-- 2024 -->
                 <div class="timeline-year">
-                    <span class="timeline-year-label">2024</span>
+                    <div class="timeline-year-anchor"><span class="timeline-year-label">2024</span></div>
                     <div class="timeline-awards">
                         <div class="timeline-award">
                             <span class="timeline-award-flag" aria-hidden="true">🇭🇰</span>
@@ -1024,7 +1066,7 @@
 
                 <!-- 2025 -->
                 <div class="timeline-year">
-                    <span class="timeline-year-label">2025</span>
+                    <div class="timeline-year-anchor"><span class="timeline-year-label">2025</span></div>
                     <div class="timeline-awards">
                         <div class="timeline-award">
                             <span class="timeline-award-flag" aria-hidden="true">🇦🇪</span>
@@ -1091,7 +1133,7 @@
 
                 <!-- 2026 -->
                 <div class="timeline-year">
-                    <span class="timeline-year-label">2026</span>
+                    <div class="timeline-year-anchor"><span class="timeline-year-label">2026</span></div>
                     <div class="timeline-awards">
                         <div class="timeline-award">
                             <span class="timeline-award-flag" aria-hidden="true">🇹🇭</span>
@@ -1353,8 +1395,7 @@
         }
         (function() {
             const saved = localStorage.getItem('veehive-theme');
-            if (saved === 'light') document.documentElement.classList.add('light');
-            else if (!saved && window.matchMedia('(prefers-color-scheme: light)').matches) document.documentElement.classList.add('light');
+            if (saved !== 'dark') document.documentElement.classList.add('light');
         })();
     </script>
 

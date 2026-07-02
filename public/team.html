@@ -468,8 +468,7 @@
         }
         (function() {
             const saved = localStorage.getItem('veehive-theme');
-            if (saved === 'light') document.documentElement.classList.add('light');
-            else if (!saved && window.matchMedia('(prefers-color-scheme: light)').matches) document.documentElement.classList.add('light');
+            if (saved !== 'dark') document.documentElement.classList.add('light');
         })();
     </script>
 

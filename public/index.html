@@ -701,6 +701,44 @@
         html.light .stat-icon { background: rgba(15,26,32,0.03); border-color: rgba(15,26,32,0.06); }
         .stat-icon svg { width: 14px; height: 14px; stroke-width: 1.75; }
 
+        /* F6S #1 Top Company badge — pairs the F6S badge image with a small caption. Card links to f6s.com/letsveehive */
+        .f6s-badge-card {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px 28px;
+            padding: 20px 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,176,32,0.20);
+            background: linear-gradient(135deg, rgba(255,122,24,0.06), rgba(255,176,32,0.02));
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+        html.light .f6s-badge-card { border-color: rgba(255,122,24,0.25); background: linear-gradient(135deg, rgba(255,122,24,0.05), rgba(255,176,32,0.02)); }
+        .f6s-badge-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255,122,24,0.45);
+            box-shadow: 0 12px 30px -12px rgba(255,122,24,0.30);
+            background: linear-gradient(135deg, rgba(255,122,24,0.09), rgba(255,176,32,0.04));
+        }
+        .f6s-badge-wrap { flex: 0 0 auto; }
+        .f6s-badge-img {
+            display: block;
+            width: 100%;
+            max-width: 340px;
+            height: auto !important;
+            border-radius: 10px;
+            background: #ffffff;
+            padding: 8px 14px;
+        }
+        html.light .f6s-badge-img { background: rgba(255,255,255,0.6); }
+        .f6s-badge-text { flex: 1 1 260px; min-width: 220px; }
+        @media (max-width: 600px) {
+            .f6s-badge-card { flex-direction: column; text-align: center; padding: 18px 20px; }
+            .f6s-badge-img { max-width: 300px; }
+        }
+
         /* Homepage press teaser strip — publication names in a subtle band, links to /about.html#news */
         .press-strip {
             display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
@@ -2161,8 +2199,8 @@
 
             <a href="about.html#recognition" class="reveal recognition-teaser block no-underline">
                 <div class="recognition-stat">
-                    <div class="recognition-stat-value">11</div>
-                    <div class="recognition-stat-label">Awards &amp; programs</div>
+                    <div class="recognition-stat-value">12</div>
+                    <div class="recognition-stat-label">Awards &amp; rankings</div>
                 </div>
                 <div class="recognition-divider" aria-hidden="true"></div>
                 <div class="recognition-stat">
@@ -2187,6 +2225,23 @@
     </section>
 
     <div class="divider-gradient"></div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- F6S #1 TOP COMPANY BADGE -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="relative z-10 py-10 lg:py-14">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+            <a href="https://www.f6s.com/letsveehive" target="_blank" rel="external noopener" class="reveal f6s-badge-card block group" aria-label="View Veehive.ai's F6S profile — ranked #1 Top Company in AI, June 2025">
+                <div class="f6s-badge-wrap">
+                    <img src="/awards/2025/f6s/badge.png" alt="F6S #1 Top Company in AI (Artificial Intelligence), June 2025" class="f6s-badge-img" width="815" height="152" loading="lazy" decoding="async">
+                </div>
+                <div class="f6s-badge-text">
+                    <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#ff7a18] mb-1">Global Ranking</p>
+                    <p class="text-[14px] text-white/70">Ranked <strong class="text-white/90">#1 AI company</strong> on <strong class="text-white/90">F6S</strong> &mdash; the world's largest founder network. <span class="text-[#6B82FF]">View profile <span aria-hidden="true">&rarr;</span></span></p>
+                </div>
+            </a>
+        </div>
+    </section>
 
     <!-- ═══════════════════════════════════════ -->
     <!-- DUBAI AI SEAL -->

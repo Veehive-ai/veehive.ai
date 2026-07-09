@@ -701,6 +701,56 @@
         html.light .stat-icon { background: rgba(15,26,32,0.03); border-color: rgba(15,26,32,0.06); }
         .stat-icon svg { width: 14px; height: 14px; stroke-width: 1.75; }
 
+        /* Hero trust bar — Dubai AI Seal + F6S ranking chips sitting between subhead and CTAs */
+        .hero-trust-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 28px;
+        }
+        .hero-trust-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.10);
+            background: rgba(255,255,255,0.03);
+            font-size: 12px;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+            white-space: nowrap;
+        }
+        html.light .hero-trust-chip { border-color: rgba(15,26,32,0.10); background: rgba(15,26,32,0.02); }
+        .hero-trust-chip--link:hover {
+            border-color: rgba(255,122,24,0.45);
+            background: rgba(255,122,24,0.06);
+            transform: translateY(-1px);
+        }
+        html.light .hero-trust-chip--link:hover { border-color: rgba(255,122,24,0.45); background: rgba(255,122,24,0.06); }
+        .hero-trust-flag {
+            font-size: 15px;
+            line-height: 1;
+            display: inline-flex;
+        }
+        .hero-trust-flag--star { color: #ff7a18; font-size: 14px; }
+        .hero-trust-label {
+            font-weight: 500;
+            color: rgba(255,255,255,0.55);
+            letter-spacing: 0.01em;
+        }
+        html.light .hero-trust-label { color: rgba(15,26,32,0.60); }
+        .hero-trust-value {
+            font-weight: 700;
+            color: rgba(255,255,255,0.90);
+            letter-spacing: 0.01em;
+        }
+        html.light .hero-trust-value { color: rgba(15,26,32,0.90); }
+        .hero-trust-chip--link .hero-trust-value { color: #ff7a18; }
+
         /* F6S #1 Top Company badge — pairs the F6S badge image with a small caption. Card links to f6s.com/letsveehive */
         .f6s-badge-card {
             display: flex;
@@ -1523,13 +1573,27 @@
                     </span>
                 </h1>
 
-                <!-- Subheading -->
+                <!-- Subheading — function-first + outcome, names moved to product cards below -->
                 <p class="animate-fade-up delay-200 mt-10 mx-auto text-lg md:text-xl max-w-2xl font-light" style="color: var(--text-secondary); line-height: 1.75;">
-                    Veehive gives your organization a coordinated team of specialized AI agents &mdash; <strong class="text-white/80 font-medium">ND</strong> handles customer operations, <strong class="text-white/80 font-medium">Chaks</strong> creates content, <strong class="text-white/80 font-medium">Taj</strong> plans projects, <strong class="text-white/80 font-medium">AK</strong> grows community, <strong class="text-white/80 font-medium">Mira</strong> runs campaigns. Deploy one or build out the full workforce.
+                    Give every core function a specialist AI agent &mdash; for <strong class="text-white/80 font-medium">customer operations</strong>, <strong class="text-white/80 font-medium">content</strong>, <strong class="text-white/80 font-medium">project management</strong>, <strong class="text-white/80 font-medium">community</strong>, and <strong class="text-white/80 font-medium">campaigns</strong>. Each goes deep on one job and runs around the clock. Deploy one, or build out the full workforce.
                 </p>
 
+                <!-- Hero trust bar — Dubai AI Seal + F6S ranking as inline chips -->
+                <div class="animate-fade-up delay-300 hero-trust-bar" aria-label="Certifications and rankings">
+                    <span class="hero-trust-chip" aria-label="Dubai AI Seal Tier E Certified">
+                        <span class="hero-trust-flag" aria-hidden="true">🇦🇪</span>
+                        <span class="hero-trust-label">Dubai AI Seal &middot;</span>
+                        <span class="hero-trust-value">Tier E</span>
+                    </span>
+                    <a href="https://www.f6s.com/letsveehive" target="_blank" rel="external noopener" class="hero-trust-chip hero-trust-chip--link" aria-label="Ranked #1 AI Company on F6S, June 2025">
+                        <span class="hero-trust-flag hero-trust-flag--star" aria-hidden="true">★</span>
+                        <span class="hero-trust-label">#1 AI Company on F6S &middot;</span>
+                        <span class="hero-trust-value">Jun 2025</span>
+                    </a>
+                </div>
+
                 <!-- Primary CTA -->
-                <div class="animate-fade-up delay-300 flex flex-wrap justify-center gap-3 mt-12">
+                <div class="animate-fade-up delay-400 flex flex-wrap justify-center gap-3 mt-12">
                     <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 px-7 py-3.5 bg-[#3B5BFF] text-white text-[14px] font-semibold rounded-full hover:bg-[#6B82FF] transition-all hover:-translate-y-0.5 shadow-lg shadow-[#3B5BFF]/20">
                         Book a Demo
                         <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
@@ -1540,9 +1604,10 @@
                     </a>
                 </div>
 
-                <!-- Micro-credibility line -->
-                <p class="animate-fade-up delay-400 mt-12 text-[11px] font-semibold tracking-[0.2em] uppercase text-white/30">
-                    Enterprise-grade &middot; 50+ languages &middot; Autonomous &middot; Around the clock
+                <!-- Outcome micro-line — deployment-flavored: enterprise buyers care about where AI runs.
+                     On-prem + private LLM + air-gapped is a real differentiator vs cloud-only competitors. -->
+                <p class="animate-fade-up delay-500 mt-10 text-[11px] font-semibold tracking-[0.2em] uppercase text-white/30">
+                    On-premise ready &middot; Private LLM &middot; Air-gapped deployment
                 </p>
             </div>
 

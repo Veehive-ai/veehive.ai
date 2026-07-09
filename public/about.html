@@ -800,11 +800,13 @@
         }
         html.light .timeline-award:hover { border-color: rgba(15,26,32,0.14); background: rgba(15,26,32,0.04); }
 
-        /* Alternation: odd-indexed → left of rail; even → right */
-        .timeline-award:nth-child(odd)  { margin-right: auto; }
-        .timeline-award:nth-child(even) { margin-left: auto; }
-        .timeline-award:nth-child(odd):hover  { transform: translateX(-3px); }
-        .timeline-award:nth-child(even):hover { transform: translateX(3px); }
+        /* Alternation: side is set by JS via .is-left / .is-right classes so we can alternate globally
+           across ALL awards (not just within each year's .timeline-awards group, which is what
+           nth-child would give us). */
+        .timeline-award.is-left  { margin-right: auto; }
+        .timeline-award.is-right { margin-left: auto; }
+        .timeline-award.is-left:hover  { transform: translateX(-3px); }
+        .timeline-award.is-right:hover { transform: translateX(3px); }
 
         /* Connector dot — sits on the rail (50% of the container), horizontally aligned to the card top */
         .timeline-award::before {
@@ -818,10 +820,10 @@
             box-shadow: 0 0 0 3px rgba(59,91,255,0.15), 0 0 14px rgba(59,91,255,0.5);
             z-index: 1;
         }
-        /* Odd (left card): dot juts out from right edge of card, onto the rail */
-        .timeline-award:nth-child(odd)::before  { right: -30px; }
-        /* Even (right card): dot juts out from left edge, onto the rail */
-        .timeline-award:nth-child(even)::before { left: -30px; }
+        /* Left card: dot juts out from right edge of card, onto the rail */
+        .timeline-award.is-left::before  { right: -30px; }
+        /* Right card: dot juts out from left edge, onto the rail */
+        .timeline-award.is-right::before { left: -30px; }
 
         /* Thin horizontal connector line from card edge to the rail */
         .timeline-award::after {
@@ -833,20 +835,20 @@
             background: rgba(59,91,255,0.35);
             z-index: 0;
         }
-        .timeline-award:nth-child(odd)::after  { right: -24px; }
-        .timeline-award:nth-child(even)::after { left: -24px; }
+        .timeline-award.is-left::after  { right: -24px; }
+        .timeline-award.is-right::after { left: -24px; }
 
         /* Mobile fallback: single column, left rail */
         @media (max-width: 767px) {
             .timeline::before { left: 20px; transform: none; }
             .timeline-year-anchor { justify-content: flex-start; padding-left: 4px; }
             .timeline-award { width: auto; margin-left: 48px !important; margin-right: 0 !important; }
-            .timeline-award:nth-child(odd)::before,
-            .timeline-award:nth-child(even)::before  { right: auto; left: -33px; }
-            .timeline-award:nth-child(odd)::after,
-            .timeline-award:nth-child(even)::after   { right: auto; left: -22px; width: 20px; }
-            .timeline-award:nth-child(odd):hover,
-            .timeline-award:nth-child(even):hover    { transform: translateX(2px); }
+            .timeline-award.is-left::before,
+            .timeline-award.is-right::before { right: auto; left: -33px; }
+            .timeline-award.is-left::after,
+            .timeline-award.is-right::after  { right: auto; left: -22px; width: 20px; }
+            .timeline-award.is-left:hover,
+            .timeline-award.is-right:hover   { transform: translateX(2px); }
         }
 
         .timeline-award-flag { font-size: 22px; flex-shrink: 0; line-height: 1; padding-top: 2px; }
@@ -1874,6 +1876,14 @@
         (function() {
             const saved = localStorage.getItem('veehive-theme');
             if (saved !== 'dark') document.documentElement.classList.add('light');
+        })();
+
+        // Timeline zig-zag: assign .is-left / .is-right in global DOM order across ALL awards
+        // (each year has its own .timeline-awards wrapper, so nth-child would reset per year —
+        // we want strict left-right alternation across the whole timeline).
+        (function(){
+            const awards = document.querySelectorAll('.timeline .timeline-award');
+            awards.forEach((el, i) => el.classList.add(i % 2 === 0 ? 'is-left' : 'is-right'));
         })();
 
         // News filter — hide/show cards by data-type

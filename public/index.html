@@ -64,8 +64,8 @@
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png?v=2">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=2">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
-    <title>Veehive.ai — Your Agentic Workforce. Built for Enterprise.</title>
-    <meta name="description" content="Veehive is an enterprise agentic workforce platform from Dubai. Specialized AI agents for customer operations, content production, project management, distribution, and campaign execution. Dubai AI Seal Tier E certified.">
+    <title>Veehive.ai | Ready-to-Deploy AI Products for Enterprise</title>
+    <meta name="description" content="Veehive.ai delivers ready-to-deploy AI products for enterprise. mpliphi, Veehive Studio, SnapaPro, HiveLink, Veehive Mind — agents for customer operations, content, project management, community, and campaigns. Dubai AI Seal Tier E.">
     <meta name="keywords" content="applied AI, AI agents, agentic workforce, AI video, AI project management, AI campaigns, mpliphi, Veehive Studio, SnapaPro, HiveLink, Veehive Mind, Veehive Tech, Dubai AI, enterprise AI">
     <meta name="author" content="Veehive.ai">
     <meta name="robots" content="index, follow">
@@ -76,9 +76,9 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://veehive.ai/">
     <meta property="og:title" content="Veehive.ai — Your Agentic Workforce. Built for Enterprise.">
-    <meta property="og:description" content="Veehive is an enterprise agentic workforce platform from Dubai. Specialized AI agents for customer operations, content production, project management, distribution, and campaign execution. Dubai AI Seal Tier E certified.">
+    <meta property="og:description" content="Veehive.ai delivers ready-to-deploy AI products for enterprise. mpliphi, Veehive Studio, SnapaPro, HiveLink, Veehive Mind — agents for customer operations, content, project management, community, and campaigns. Dubai AI Seal Tier E.">
     <meta property="og:image" content="https://veehive.ai/og-image.png?v=3">
-    <meta property="og:site_name" content="Veehive.ai">
+    <meta property="og:site_name" content="Veehive">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
@@ -101,9 +101,10 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Veehive.ai",
+        "legalName": "Veehive Tech FZ-LLC",
         "url": "https://veehive.ai",
         "logo": "https://veehive.ai/logo.png",
-        "description": "Veehive is an enterprise agentic workforce platform from Dubai. Specialized AI agents for customer operations, content production, project management, distribution, and campaign execution. Dubai AI Seal Tier E certified.",
+        "description": "Veehive.ai delivers ready-to-deploy AI products from Dubai. Specialized AI agents for customer operations, content production, project management, distribution, and campaign execution. Dubai AI Seal Tier E certified.",
         "foundingDate": "2023",
         "numberOfEmployees": "10",
         "areaServed": ["AE", "US", "EU", "GB", "SA", "IN"],
@@ -122,6 +123,7 @@
             "availableLanguage": ["English", "Arabic"]
         },
         "sameAs": [
+            "https://veehivelabs.com",
             "https://linkedin.com/company/letsveehive",
             "https://twitter.com/letsveehive",
             "https://youtube.com/@letsveehive",
@@ -255,7 +257,7 @@
         "name": "Veehive.ai",
         "alternateName": "Veehive",
         "url": "https://veehive.ai",
-        "description": "Veehive is an enterprise agentic workforce platform from Dubai — specialized AI agents: mpliphi, Veehive Studio, SnapaPro, HiveLink, and Veehive Mind.",
+        "description": "Veehive.ai delivers ready-to-deploy AI products from Dubai — specialized AI agents: mpliphi, Veehive Studio, SnapaPro, HiveLink, and Veehive Mind.",
         "publisher": {
             "@type": "Organization",
             "name": "Veehive.ai",
@@ -348,7 +350,7 @@
                 "name": "What is Veehive.ai?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Veehive is an enterprise agentic workforce platform from Dubai. We deploy specialized AI agents across an organization's core functions — customer operations, content production, project management, distribution, and campaign execution. Deploy one agent or build out the full agentic workforce."
+                    "text": "Veehive.ai delivers ready-to-deploy AI products from Dubai. We deploy specialized AI agents across an organization's core functions — customer operations, content production, project management, distribution, and campaign execution. Deploy one agent or build out the full agentic workforce."
                 }
             },
             {
@@ -385,16 +387,25 @@
             },
             {
                 "@type": "Question",
-                "name": "What if I need custom AI development?",
+                "name": "Do you build custom AI?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Veehive Labs (veehivelabs.com) is our applied-AI consulting arm for bespoke builds."
+                    "text": "Yes — through Veehive Labs, our solutions and services team. Veehive.ai is where you buy and deploy our products. Veehive Labs is where we build something that belongs to you: custom development, consulting, integration, implementation and training."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the difference between Veehive.ai and Veehive Labs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Same company, two ways to buy. Veehive.ai is our product site — you deploy our AI and we configure it to your business. Veehive Labs builds solutions that belong to you, and trains your team to run them. Most clients use both."
                 }
             }
         ]
     }
     </script>
 
+    <link rel="stylesheet" href="/brand/tokens.css">
     <link rel="stylesheet" href="/tailwind.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1586,6 +1597,25 @@
             .vh-consent-btn:hover { transform: none; }
         }
 
+
+        /* Site switcher — shared component (Products / Labs), identical to veehivelabs.com */
+        .vh-site-switch{display:inline-flex;gap:2px;padding:2px;border-radius:var(--vh-radius-md);background:var(--vh-color-surface);border:1px solid var(--vh-color-border);margin-left:12px}
+        .vh-site-switch__item{padding:6px 14px;border-radius:calc(var(--vh-radius-md) - 2px);font-size:var(--vh-text-sm);font-weight:var(--vh-weight-medium);color:var(--vh-color-text-muted);text-decoration:none;transition:all var(--vh-duration) var(--vh-ease);white-space:nowrap}
+        .vh-site-switch__item:hover{color:var(--vh-color-text)}
+        .vh-site-switch__item.is-active{background:var(--vh-color-bg);color:var(--vh-color-text);box-shadow:var(--vh-shadow-sm)}
+        @media (max-width:640px){.vh-site-switch__item{padding:5px 10px;font-size:var(--vh-text-xs)}.vh-site-switch{margin-left:8px}}
+
+        /* §4.4 Cross-site block — under hero CTA row */
+        .vh-cross-site{margin:56px auto 0;max-width:560px;padding:20px 24px;border:1px solid var(--vh-color-border);border-radius:var(--vh-radius-lg);background:var(--vh-color-surface);text-align:center}
+        .vh-cross-site__lead{font-size:var(--vh-text-base);font-weight:var(--vh-weight-medium);color:var(--vh-color-text);margin:0 0 6px}
+        .vh-cross-site__body{font-size:var(--vh-text-sm);color:var(--vh-color-text-muted);margin:0 0 16px;line-height:var(--vh-leading-normal)}
+        .vh-cross-site__ctas{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+        .vh-cross-site__btn{display:inline-flex;align-items:center;padding:9px 18px;border-radius:999px;font-size:var(--vh-text-sm);font-weight:var(--vh-weight-medium);text-decoration:none;transition:all var(--vh-duration) var(--vh-ease);white-space:nowrap}
+        .vh-cross-site__btn--primary{background:var(--vh-color-brand);color:var(--vh-color-cta-text)}
+        .vh-cross-site__btn--primary:hover{background:var(--vh-color-brand-hover)}
+        .vh-cross-site__btn--secondary{background:transparent;color:var(--vh-color-text);border:1px solid var(--vh-color-border)}
+        .vh-cross-site__btn--secondary:hover{border-color:var(--vh-color-border-hover);background:var(--vh-color-surface-raised)}
+
     </style>
 </head>
 <body class="min-h-screen overflow-x-hidden antialiased" style="color: var(--text);">
@@ -1609,13 +1639,17 @@
                     <img src="/logo-veehive-192.png" alt="Veehive" class="brand-logo-color h-6 w-auto">
                 </a>
 
+                <nav class="vh-site-switch" aria-label="Veehive sites">
+                    <a href="https://veehive.ai" class="vh-site-switch__item is-active" aria-current="page">Products</a>
+                    <a href="https://veehivelabs.com" class="vh-site-switch__item">Labs</a>
+                </nav>
+
                 <div class="hidden lg:flex items-center gap-1">
                     <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-snapapro-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">SnapaPro</a>
                     <a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-mpliphi-32.png?v=2" alt="" class="nav-favicon" loading="lazy" decoding="async">mpliphi</a>
                     <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-studio-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">Studio</a>
                     <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-hivelink-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">HiveLink</a>
                     <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-mind-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">Mind</a>
-                    <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-veehivelabs-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">Need Custom AI?</a>
                     <a href="about.html" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">About</a>
                     <div class="w-px h-4 mx-2" style="background: var(--border);"></div>
                     <!-- Theme Toggle -->
@@ -1625,7 +1659,7 @@
                             <svg class="theme-icon-light" viewBox="0 0 16 16" fill="none"><path d="M8 1v2m0 10v2m5-7h2M1 8h2m9.07-4.07l1.41-1.41M2.52 13.48l1.41-1.41m0-8.14L2.52 2.52m10.96 10.96l-1.41-1.41" stroke="#0F1A20" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="8" r="2.5" fill="#0F1A20"/></svg>
                         </div>
                     </button>
-                    <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 text-[13px] font-medium bg-[#3B5BFF] rounded-full hover:bg-[#6B82FF] transition-all" style="color: var(--cta-text);">Book a Demo</a>
+                    <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 text-[13px] font-medium bg-[#3B5BFF] rounded-full hover:bg-[#6B82FF] transition-all" style="color: var(--cta-text);">Book a Product Demo</a>
                 </div>
 
                 <div class="lg:hidden flex items-center gap-3">
@@ -1650,9 +1684,8 @@
                 <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-studio-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">Studio</a>
                 <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-hivelink-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">HiveLink</a>
                 <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-mind-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">Mind</a>
-                <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-veehivelabs-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">Need Custom AI?</a>
                 <a href="about.html" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">About</a>
-                <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="mt-2 py-2.5 text-[14px] font-medium text-center bg-[#3B5BFF] rounded-full" style="color: var(--cta-text);">Book a Demo</a>
+                <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="mt-2 py-2.5 text-[14px] font-medium text-center bg-[#3B5BFF] rounded-full" style="color: var(--cta-text);">Book a Product Demo</a>
             </div>
         </div>
     </nav>
@@ -1671,7 +1704,7 @@
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3B5BFF] opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-2 w-2 bg-[#3B5BFF]"></span>
                         </span>
-                        <span class="text-[13px] text-white/60 font-medium">Dubai AI Seal Certified &middot; Enterprise Agentic Workforce Platform</span>
+                        <span class="text-[13px] text-white/60 font-medium">Dubai AI Seal Certified &middot; Ready-to-Deploy AI Products</span>
                     </div>
                 </div>
 
@@ -1705,13 +1738,23 @@
                 <!-- Primary CTA -->
                 <div class="animate-fade-up delay-400 flex flex-wrap justify-center gap-3 mt-12">
                     <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 px-7 py-3.5 bg-[#3B5BFF] text-white text-[14px] font-semibold rounded-full hover:bg-[#6B82FF] transition-all hover:-translate-y-0.5 shadow-lg shadow-[#3B5BFF]/20">
-                        Book a Demo
+                        Book a Product Demo
                         <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
                     </a>
                     <a href="#contact" class="group inline-flex items-center gap-2 px-7 py-3.5 text-[14px] font-medium text-white/80 border border-white/[0.12] rounded-full hover:bg-white/[0.05] hover:border-white/[0.2] transition-all">
                         See how it works
                         <svg class="w-3.5 h-3.5 opacity-40 group-hover:opacity-70 group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
                     </a>
+                </div>
+
+                <!-- §4.4 Cross-site block — sends "need custom" visitors to Veehive Labs without leaving the two-brand story -->
+                <div class="animate-fade-up delay-450 vh-cross-site" role="complementary" aria-label="Custom builds via Veehive Labs">
+                    <p class="vh-cross-site__lead">Need it built around your organisation?</p>
+                    <p class="vh-cross-site__body">Veehive Labs handles custom builds, consulting, implementation and training.</p>
+                    <div class="vh-cross-site__ctas">
+                        <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="vh-cross-site__btn vh-cross-site__btn--primary">Book a Product Demo</a>
+                        <a href="https://veehivelabs.com" class="vh-cross-site__btn vh-cross-site__btn--secondary">Go to Labs</a>
+                    </div>
                 </div>
 
                 <!-- Outcome micro-line — deployment-flavored: enterprise buyers care about where AI runs.
@@ -2587,7 +2630,7 @@
                         <svg class="w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="max-h-0 overflow-hidden transition-all duration-300">
-                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Veehive is an enterprise agentic workforce platform from Dubai. We deploy specialized AI agents across an organization&rsquo;s core functions &mdash; customer operations, content production, project management, distribution, and campaign execution. Deploy one agent or build out the full agentic workforce.</div>
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Veehive.ai delivers ready-to-deploy AI products from Dubai. We deploy specialized AI agents across an organization&rsquo;s core functions &mdash; customer operations, content production, project management, distribution, and campaign execution. Deploy one agent or build out the full agentic workforce.</div>
                     </div>
                 </div>
                 <div class="trust-card rounded-xl overflow-hidden">
@@ -2628,11 +2671,20 @@
                 </div>
                 <div class="trust-card rounded-xl overflow-hidden">
                     <button class="w-full px-6 py-5 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('faq-open')">
-                        <span class="text-[15px] font-semibold text-white/80 pr-4">What if I need custom AI development?</span>
+                        <span class="text-[15px] font-semibold text-white/80 pr-4">Do you build custom AI?</span>
                         <svg class="w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="max-h-0 overflow-hidden transition-all duration-300">
-                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">That&rsquo;s <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="text-[#3B5BFF] hover:text-[#6B82FF] transition-colors">VeehiveLabs</a> &mdash; our applied-AI consulting arm for bespoke builds.</div>
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Yes &mdash; through <a href="https://veehivelabs.com" class="text-[#3B5BFF] hover:text-[#6B82FF] transition-colors">Veehive Labs</a>, our solutions and services team. Veehive.ai is where you buy and deploy our products. Veehive Labs is where we build something that belongs to you: custom development, consulting, integration, implementation and training.</div>
+                    </div>
+                </div>
+                <div class="trust-card rounded-xl overflow-hidden">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('faq-open')">
+                        <span class="text-[15px] font-semibold text-white/80 pr-4">What&rsquo;s the difference between Veehive.ai and Veehive Labs?</span>
+                        <svg class="w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Same company, two ways to buy. <strong class="text-white/70">Veehive.ai</strong> is our product site &mdash; you deploy our AI and we configure it to your business. <a href="https://veehivelabs.com" class="text-[#3B5BFF] hover:text-[#6B82FF] transition-colors"><strong>Veehive Labs</strong></a> builds solutions that belong to you, and trains your team to run them. Most clients use both.</div>
                     </div>
                 </div>
             </div>
@@ -2679,7 +2731,7 @@
     <!-- ═══════════════════════════════════════ -->
     <footer class="relative z-10 border-t border-white/[0.06]">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-            <div class="grid md:grid-cols-4 gap-12 mb-14">
+            <div class="grid md:grid-cols-5 gap-12 mb-14">
                 <!-- Brand -->
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-2.5 mb-4">
@@ -2718,8 +2770,18 @@
                         <li><a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="footer-product-link text-[14px] text-white/45 hover:text-white transition-colors"><img src="/favicon-snapapro-32.png" alt="" class="footer-favicon" loading="lazy" decoding="async"><span>SnapaPro <span class="text-white/20 text-[11px]">AI Planning</span></span></a></li>
                         <li><a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="footer-product-link text-[14px] text-white/45 hover:text-white transition-colors"><img src="/favicon-hivelink-32.png" alt="" class="footer-favicon" loading="lazy" decoding="async"><span>HiveLink <span class="text-white/20 text-[11px]">AI Distribution</span></span></a></li>
                         <li><a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer" class="footer-product-link text-[14px] text-white/45 hover:text-white transition-colors"><img src="/favicon-mind-32.png" alt="" class="footer-favicon" loading="lazy" decoding="async"><span>Mind <span class="text-white/20 text-[11px]">AI Campaigns</span></span></a></li>
-                        <li><a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="footer-product-link text-[14px] text-white/45 hover:text-white transition-colors"><img src="/favicon-veehivelabs-32.png" alt="" class="footer-favicon" loading="lazy" decoding="async"><span>Custom Development <span class="text-white/20 text-[11px]">veehivelabs.com</span></span></a></li>
-                        <li><a href="https://veehive.ai" target="_blank" rel="noopener noreferrer" class="footer-product-link text-[14px] text-white/45 hover:text-white transition-colors"><img src="/favicon-veehive-32.png" alt="" class="footer-favicon" loading="lazy" decoding="async"><span>Veehive.ai</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Veehive Labs — sister site, services column per §7 -->
+                <div>
+                    <h4 class="text-[12px] font-semibold uppercase tracking-[0.15em] text-white/30 mb-5">Veehive Labs</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://veehivelabs.com/custom-ai-development" class="text-[14px] text-white/45 hover:text-white transition-colors">Custom AI Development</a></li>
+                        <li><a href="https://veehivelabs.com/ai-consulting" class="text-[14px] text-white/45 hover:text-white transition-colors">AI Consulting &amp; Strategy</a></li>
+                        <li><a href="https://veehivelabs.com/ai-training" class="text-[14px] text-white/45 hover:text-white transition-colors">AI Training &amp; Enablement</a></li>
+                        <li><a href="https://veehivelabs.com/embedded-ai-teams" class="text-[14px] text-white/45 hover:text-white transition-colors">Embedded AI Teams</a></li>
+                        <li><a href="https://veehivelabs.com/implementation" class="text-[14px] text-white/45 hover:text-white transition-colors">Implementation &amp; Integration</a></li>
                     </ul>
                 </div>
 
@@ -2738,7 +2800,7 @@
 
             <!-- Bottom bar -->
             <div class="pt-8 border-t border-white/[0.06] flex flex-wrap items-center justify-between gap-4">
-                <p class="text-[13px] text-white/25">&copy; 2026 Veehive.ai &middot; Veehive Tech FZ LLC. All rights reserved.</p>
+                <p class="text-[13px] text-white/25">&copy; 2026 Veehive Tech FZ-LLC &middot; Dubai, United Arab Emirates</p>
                 <div class="flex items-center gap-5">
                     <span class="flex items-center gap-1.5 text-[12px] text-white/25">
                         <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>

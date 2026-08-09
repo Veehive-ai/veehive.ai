@@ -1,0 +1,96 @@
+/*
+ * Veehive brand design tokens
+ * -----------------------------------------------------------
+ * Source of truth for Veehive.ai + Veehivelabs.com.
+ * Update here, never inline. Consumed by both sites via
+ * <link rel="stylesheet" href="https://veehive.ai/brand/tokens.css">.
+ *
+ * Values reflect the live veehive.ai palette.
+ * Default = dark values on :root (matches the site's untoggled state).
+ * Light overrides live in html.light (the site's default class).
+ * -----------------------------------------------------------
+ */
+
+:root {
+  /* ── COLOUR ─────────────────────────────────────────────── */
+  --vh-color-bg:              #0F1A20;
+  --vh-color-surface:         rgba(59,91,255,0.04);
+  --vh-color-surface-raised:  rgba(59,91,255,0.06);
+  --vh-color-text:            #FFFFFF;
+  --vh-color-text-muted:      #A6B0C3;
+  --vh-color-brand:           #3B5BFF;
+  --vh-color-brand-hover:     #6B82FF;
+  --vh-color-accent:          #8B5CFF;
+  --vh-color-border:          rgba(59,91,255,0.10);
+  --vh-color-border-hover:    rgba(59,91,255,0.20);
+  --vh-color-cta-text:        #FFFFFF;
+
+  /* Gradient stops used in headline text-gradient */
+  --vh-gradient-text-a:       #6B82FF;
+  --vh-gradient-text-b:       #3B5BFF;
+  --vh-gradient-text-c:       #8B5CFF;
+
+  /* ── TYPE ───────────────────────────────────────────────── */
+  --vh-font-sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --vh-font-mono:  ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
+
+  --vh-text-xs:    0.75rem;    /* 12px */
+  --vh-text-sm:    0.875rem;   /* 14px */
+  --vh-text-base:  1rem;       /* 16px */
+  --vh-text-lg:    1.125rem;   /* 18px */
+  --vh-text-xl:    1.25rem;    /* 20px */
+  --vh-text-2xl:   1.5rem;     /* 24px */
+  --vh-text-3xl:   1.875rem;   /* 30px */
+  --vh-text-4xl:   2.25rem;    /* 36px */
+  --vh-text-5xl:   3rem;       /* 48px */
+
+  --vh-weight-regular: 400;
+  --vh-weight-medium:  500;
+  --vh-weight-bold:    700;
+
+  --vh-leading-tight:  1.15;
+  --vh-leading-normal: 1.55;
+
+  /* ── SPACE ──────────────────────────────────────────────── */
+  --vh-space-1:  0.25rem;   /*   4px */
+  --vh-space-2:  0.5rem;    /*   8px */
+  --vh-space-3:  0.75rem;   /*  12px */
+  --vh-space-4:  1rem;      /*  16px */
+  --vh-space-5:  1.25rem;   /*  20px */
+  --vh-space-6:  1.5rem;    /*  24px */
+  --vh-space-8:  2rem;      /*  32px */
+  --vh-space-10: 2.5rem;    /*  40px */
+  --vh-space-12: 3rem;      /*  48px */
+  --vh-space-16: 4rem;      /*  64px */
+
+  /* ── SHAPE ──────────────────────────────────────────────── */
+  --vh-radius-sm: 8px;
+  --vh-radius-md: 12px;
+  --vh-radius-lg: 16px;
+
+  --vh-shadow-sm: 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.25);
+  --vh-shadow-md: 0 8px 24px -8px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.3);
+
+  /* ── MOTION ─────────────────────────────────────────────── */
+  --vh-ease:     cubic-bezier(0.22, 1, 0.36, 1);
+  --vh-duration: 0.25s;
+}
+
+/*
+ * Light-mode overrides.
+ * Veehive.ai toggles light by adding `html.light` (default on first visit).
+ * Downstream sites can activate light by adding either class or attribute.
+ */
+html.light,
+html[data-theme="light"] {
+  --vh-color-bg:              #FFFFFF;
+  --vh-color-surface:         rgba(59,91,255,0.04);
+  --vh-color-surface-raised:  rgba(59,91,255,0.05);
+  --vh-color-text:            #0F1A20;
+  --vh-color-text-muted:      rgba(15,26,32,0.60);
+  --vh-color-border:          rgba(59,91,255,0.10);
+  --vh-color-border-hover:    rgba(59,91,255,0.18);
+
+  --vh-shadow-sm: 0 1px 3px rgba(15,26,32,0.06), 0 1px 2px rgba(15,26,32,0.04);
+  --vh-shadow-md: 0 8px 24px -8px rgba(15,26,32,0.12), 0 2px 6px rgba(15,26,32,0.06);
+}

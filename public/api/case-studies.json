@@ -1,0 +1,68 @@
+{
+  "version": "1.0",
+  "source": "veehive.ai",
+  "updated": "2026-05-13",
+  "note": "Product deployment case studies from Veehive.ai. Consumed by veehivelabs.com to surface production evidence next to services listings.",
+  "case_studies": [
+    {
+      "slug": "emirates-nbd-customer-ops",
+      "customer": "Emirates NBD",
+      "region": "UAE",
+      "industry": "Banking",
+      "product": "mpliphi",
+      "function": "customer operations",
+      "headline": "Autonomous WhatsApp resolution across retail banking",
+      "summary": "mpliphi handles customer conversations across WhatsApp, resolving routine banking queries without human handoff and escalating exceptions with full context.",
+      "outcome": "Reduced average handling time; large share of inbound resolved by the agent.",
+      "url": "https://veehive.ai/#customers"
+    },
+    {
+      "slug": "du-innovators-council",
+      "customer": "du Innovators Council",
+      "region": "UAE",
+      "industry": "Telecommunications",
+      "product": "SnapaPro",
+      "function": "project management",
+      "headline": "AI project planning for corporate innovation cohorts",
+      "summary": "SnapaPro assists the du Innovators Council with autonomous plan generation, milestone tracking, and executive summaries for portfolio startups.",
+      "outcome": "Faster program cadence and consolidated cohort reporting.",
+      "url": "https://veehive.ai/#customers"
+    },
+    {
+      "slug": "sber-mena-content",
+      "customer": "Sber (MENA)",
+      "region": "MENA",
+      "industry": "Financial Services",
+      "product": "Veehive Studio",
+      "function": "content",
+      "headline": "Document-to-video product education at scale",
+      "summary": "Veehive Studio converts internal policy and product docs into localized explainer videos with brand avatars and multilingual voiceovers.",
+      "outcome": "Turnaround from days to minutes on new product launches.",
+      "url": "https://veehive.ai/#customers"
+    },
+    {
+      "slug": "red-bull-basement-community",
+      "customer": "Red Bull Basement",
+      "region": "Global",
+      "industry": "Consumer / Innovation",
+      "product": "HiveLink",
+      "function": "community",
+      "headline": "Community + CRM for global innovation program",
+      "summary": "HiveLink powers content, community, and CRM for a global creator and founder program, keeping engagement live across time zones.",
+      "outcome": "Unified operator surface for community + campaign flow.",
+      "url": "https://veehive.ai/#customers"
+    },
+    {
+      "slug": "accenture-mind-campaigns",
+      "customer": "Accenture",
+      "region": "Global",
+      "industry": "Consulting",
+      "product": "Veehive Mind",
+      "function": "campaigns",
+      "headline": "Multi-agent campaign execution",
+      "summary": "Veehive Mind orchestrates multiple product agents for always-on campaign execution — planning, publishing, and reporting run as a workforce.",
+      "outcome": "Continuous campaign cadence with a single operator in the loop.",
+      "url": "https://veehive.ai/#customers"
+    }
+  ]
+}

@@ -98,6 +98,7 @@
     }
     </script>
 
+    <link rel="stylesheet" href="/brand/tokens.css">
     <link rel="stylesheet" href="/tailwind.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -259,6 +260,14 @@
             .vh-consent-btn:hover { transform: none; }
         }
 
+
+        /* Site switcher — shared component (Products / Labs), identical to veehivelabs.com */
+        .vh-site-switch{display:inline-flex;gap:2px;padding:2px;border-radius:var(--vh-radius-md);background:var(--vh-color-surface);border:1px solid var(--vh-color-border);margin-left:12px}
+        .vh-site-switch__item{padding:6px 14px;border-radius:calc(var(--vh-radius-md) - 2px);font-size:var(--vh-text-sm);font-weight:var(--vh-weight-medium);color:var(--vh-color-text-muted);text-decoration:none;transition:all var(--vh-duration) var(--vh-ease);white-space:nowrap}
+        .vh-site-switch__item:hover{color:var(--vh-color-text)}
+        .vh-site-switch__item.is-active{background:var(--vh-color-bg);color:var(--vh-color-text);box-shadow:var(--vh-shadow-sm)}
+        @media (max-width:640px){.vh-site-switch__item{padding:5px 10px;font-size:var(--vh-text-xs)}.vh-site-switch{margin-left:8px}}
+
     </style>
 </head>
 <body class="min-h-screen overflow-x-hidden antialiased" style="color: var(--text);">
@@ -277,9 +286,13 @@
                     <img src="/logo-veehive-white-192.png" alt="Veehive" class="brand-logo-white h-6 w-auto" style="opacity: var(--logo-opacity);">
                     <img src="/logo-veehive-192.png" alt="Veehive" class="brand-logo-color h-6 w-auto">
                 </a>
+
+                <nav class="vh-site-switch" aria-label="Veehive sites">
+                    <a href="https://veehive.ai" class="vh-site-switch__item is-active" aria-current="page">Products</a>
+                    <a href="https://veehivelabs.com" class="vh-site-switch__item">Labs</a>
+                </nav>
                 <div class="hidden md:flex items-center gap-1">
                     <a href="about.html" class="px-3 py-1.5 text-[13px] text-white/50 hover:text-white transition-colors rounded-md hover:bg-white/[0.04]">About</a>
-                    <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] text-white/50 hover:text-white transition-colors rounded-md hover:bg-white/[0.04]"><img src="/favicon-veehivelabs-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">Need Custom AI?</a>
                     <a href="team.html" class="px-3 py-1.5 text-[13px] text-white hover:text-white transition-colors rounded-md bg-white/[0.06]">Team</a>
                     <div class="w-px h-4 bg-white/10 mx-2"></div>
                     <button onclick="toggleTheme()" class="theme-toggle mr-2" aria-label="Toggle theme" title="Toggle theme">
@@ -288,7 +301,7 @@
                             <svg class="theme-icon-light" viewBox="0 0 16 16" fill="none"><path d="M8 1v2m0 10v2m5-7h2M1 8h2m9.07-4.07l1.41-1.41M2.52 13.48l1.41-1.41m0-8.14L2.52 2.52m10.96 10.96l-1.41-1.41" stroke="#0F1A20" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="8" r="2.5" fill="#0F1A20"/></svg>
                         </div>
                     </button>
-                    <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 text-[13px] font-medium text-white bg-white/[0.08] border border-white/[0.1] rounded-full hover:bg-white/[0.14] transition-all">Book a Demo</a>
+                    <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 text-[13px] font-medium text-white bg-white/[0.08] border border-white/[0.1] rounded-full hover:bg-white/[0.14] transition-all">Book a Product Demo</a>
                 </div>
                 <div class="md:hidden flex items-center gap-3">
                     <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
@@ -307,9 +320,8 @@
             <div class="px-6 py-4 flex flex-col gap-1">
                 <a href="/" class="py-2.5 text-[14px] text-white/60 hover:text-white">Home</a>
                 <a href="about.html" class="py-2.5 text-[14px] text-white/60 hover:text-white">About</a>
-                <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px] text-white/60 hover:text-white"><img src="/favicon-veehivelabs-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">Need Custom AI?</a>
                 <a href="team.html" class="py-2.5 text-[14px] text-white font-medium">Team</a>
-                <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="mt-2 py-2.5 text-[14px] font-medium text-center text-white bg-white/[0.08] border border-white/[0.1] rounded-full">Book a Demo</a>
+                <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="mt-2 py-2.5 text-[14px] font-medium text-center text-white bg-white/[0.08] border border-white/[0.1] rounded-full">Book a Product Demo</a>
             </div>
         </div>
     </nav>
@@ -488,7 +500,7 @@
                         <svg class="faq-chevron w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Most marketing teams use 7+ separate tools for planning, content creation, distribution, and engagement. Veehive replaces all of them with one AI-powered platform. You give one command, and four integrated modules handle the entire campaign — from plan to published, with customer engagement on autopilot.</div>
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Most marketing teams use 7+ separate tools for planning, content creation, distribution, and engagement. Veehive replaces all of them with one agentic workforce. You give one command, and four integrated modules handle the entire campaign — from plan to published, with customer engagement on autopilot.</div>
                     </div>
                 </div>
                 <div class="faq-item trust-card rounded-xl overflow-hidden">
@@ -543,12 +555,12 @@
                 <div class="flex items-center gap-2.5">
                     <img src="/logo-veehive-white-192.png" alt="Veehive" class="brand-logo-white h-5 w-auto opacity-80">
                     <img src="/logo-veehive-192.png" alt="Veehive" class="brand-logo-color h-5 w-auto">
-                    <span class="text-[13px] text-white/40">&copy; 2026 Veehive.ai</span>
+                    <span class="text-[13px] text-white/40">&copy; 2026 Veehive Tech FZ-LLC &middot; Dubai, United Arab Emirates</span>
                 </div>
                 <div class="flex items-center gap-4">
                     <a href="/" class="text-[13px] text-white/35 hover:text-white transition-colors">Home</a>
                     <a href="about.html" class="text-[13px] text-white/35 hover:text-white transition-colors">About</a>
-                    <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="text-[13px] text-white/35 hover:text-white transition-colors">Custom Development</a>
+                    <a href="https://veehivelabs.com" class="text-[13px] text-white/35 hover:text-white transition-colors">Labs</a>
                     <a href="about.html#contact" class="text-[13px] text-white/35 hover:text-white transition-colors">Contact</a>
                     <a href="privacy.html" class="text-[13px] text-white/35 hover:text-white transition-colors">Privacy</a>
                     <a href="terms.html" class="text-[13px] text-white/35 hover:text-white transition-colors">Terms</a>

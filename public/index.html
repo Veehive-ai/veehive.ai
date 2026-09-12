@@ -64,7 +64,7 @@
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png?v=2">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=2">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
-    <title>Veehive.ai | Ready-to-Deploy AI Products for Enterprise</title>
+    <title>Veehive.ai — Power Your People. Scale With an Agentic Workforce.</title>
     <meta name="description" content="Veehive.ai delivers ready-to-deploy AI products for enterprise. mpliphi, Veehive Studio, SnapaPro, HiveLink, Veehive Mind — agents for customer operations, content, project management, community, and campaigns. Dubai AI Seal Tier E.">
     <meta name="keywords" content="applied AI, AI agents, agentic workforce, AI video, AI project management, AI campaigns, mpliphi, Veehive Studio, SnapaPro, HiveLink, Veehive Mind, Veehive Tech, Dubai AI, enterprise AI">
     <meta name="author" content="Veehive.ai">
@@ -75,7 +75,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://veehive.ai/">
-    <meta property="og:title" content="Veehive.ai — Your Agentic Workforce. Built for Enterprise.">
+    <meta property="og:title" content="Veehive.ai — Power Your People. Scale With an Agentic Workforce.">
     <meta property="og:description" content="Veehive.ai delivers ready-to-deploy AI products for enterprise. mpliphi, Veehive Studio, SnapaPro, HiveLink, Veehive Mind — agents for customer operations, content, project management, community, and campaigns. Dubai AI Seal Tier E.">
     <meta property="og:image" content="https://veehive.ai/og-image.png?v=3">
     <meta property="og:site_name" content="Veehive">
@@ -84,7 +84,7 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://veehive.ai/">
-    <meta name="twitter:title" content="Veehive.ai — Your Agentic Workforce. Built for Enterprise.">
+    <meta name="twitter:title" content="Veehive.ai — Power Your People. Scale With an Agentic Workforce.">
     <meta name="twitter:description" content="An agentic workforce, ready to deploy. AI agents for customer operations, content production, project management, distribution, and campaign execution. Dubai AI Seal Tier E certified.">
     <meta name="twitter:image" content="https://veehive.ai/og-image.png?v=3">
     <meta name="twitter:site" content="@letsveehive">
@@ -1281,6 +1281,9 @@
             border-radius: 50%;
             margin-right: 10px;
             vertical-align: -4px;
+            /* Tailwind preflight sets img{display:block}; without this the icon
+               lands on its own line above the product name. */
+            display: inline-block;
         }
 
         /* Footer Products list — brand mark before each name */
@@ -1606,19 +1609,327 @@
         @media (max-width:640px){.vh-site-switch__item{padding:5px 10px;font-size:var(--vh-text-xs)}.vh-site-switch{margin-left:8px}}
 
         /* §4.4 Cross-site block — under hero CTA row */
-        .vh-cross-site{margin:56px auto 0;max-width:560px;padding:20px 24px;border:1px solid var(--vh-color-border);border-radius:var(--vh-radius-lg);background:var(--vh-color-surface);text-align:center}
-        .vh-cross-site__lead{font-size:var(--vh-text-base);font-weight:var(--vh-weight-medium);color:var(--vh-color-text);margin:0 0 6px}
-        .vh-cross-site__body{font-size:var(--vh-text-sm);color:var(--vh-color-text-muted);margin:0 0 16px;line-height:var(--vh-leading-normal)}
-        .vh-cross-site__ctas{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-        .vh-cross-site__btn{display:inline-flex;align-items:center;padding:9px 18px;border-radius:999px;font-size:var(--vh-text-sm);font-weight:var(--vh-weight-medium);text-decoration:none;transition:all var(--vh-duration) var(--vh-ease);white-space:nowrap}
-        .vh-cross-site__btn--primary{background:var(--vh-color-brand);color:var(--vh-color-cta-text)}
-        .vh-cross-site__btn--primary:hover{background:var(--vh-color-brand-hover)}
-        .vh-cross-site__btn--secondary{background:transparent;color:var(--vh-color-text);border:1px solid var(--vh-color-border)}
-        .vh-cross-site__btn--secondary:hover{border-color:var(--vh-color-border-hover);background:var(--vh-color-surface-raised)}
+
+
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* AGENTIC APPS PANEL — product launcher (hero + nav dropdown)  */
+        /* Built on the shared --vh-* brand tokens so both themes       */
+        /* resolve for free. No new Tailwind utilities: the site's       */
+        /* tailwind.min.css is a prebuilt file and would not contain     */
+        /* classes invented here.                                        */
+        /* ═══════════════════════════════════════════════════════════ */
+        .vh-apps{
+            display:grid;
+            grid-template-columns:minmax(0,0.8fr) minmax(0,1.2fr);
+            border:1px solid var(--vh-color-border);
+            border-radius:var(--vh-radius-lg);
+            background:var(--vh-color-bg);
+            box-shadow:var(--vh-shadow-md);
+            overflow:hidden;
+        }
+        @media (max-width:900px){ .vh-apps{grid-template-columns:1fr;} }
+
+        /* Left — the "Introducing" promo card */
+        .vh-apps__promo{
+            position:relative;
+            padding:36px 30px;
+            display:flex; flex-direction:column; justify-content:center; gap:10px;
+            background:linear-gradient(155deg,#2E45D6 0%,#3B5BFF 42%,#8B5CFF 100%);
+            color:#fff; overflow:hidden;
+        }
+        .vh-apps__promo::after{
+            content:''; position:absolute; inset:0; pointer-events:none;
+            background:radial-gradient(120% 90% at 82% 8%, rgba(255,255,255,.20), transparent 62%);
+        }
+        .vh-apps__promo > *{position:relative; z-index:1;}
+        /* Solid white tile so the multicolour mark reads cleanly on the
+           purple gradient — its purple petal would otherwise disappear. */
+        .vh-apps__promo-mark{
+            width:54px; height:54px; border-radius:15px; margin-bottom:8px;
+            background:#fff; border:1px solid rgba(255,255,255,.5);
+            display:flex; align-items:center; justify-content:center;
+            box-shadow:0 10px 26px -10px rgba(0,0,0,.5);
+        }
+        .vh-apps__promo-mark img{width:34px; height:34px;}
+        .vh-apps__promo-title{
+            font-family:'Satoshi','Inter',sans-serif;
+            font-size:clamp(1.35rem,2.1vw,1.75rem); font-weight:700;
+            line-height:1.2; letter-spacing:-0.02em; color:#fff; margin:0;
+        }
+        .vh-apps__promo-body{
+            font-size:var(--vh-text-sm); line-height:var(--vh-leading-normal);
+            color:rgba(255,255,255,.82); margin:0; max-width:32ch;
+        }
+        .vh-apps__promo-cta{
+            display:inline-flex; align-items:center; gap:7px; align-self:flex-start;
+            margin-top:10px; padding:9px 18px; border-radius:999px;
+            border:1px solid rgba(255,255,255,.45); background:rgba(255,255,255,.10);
+            color:#fff; font-size:var(--vh-text-sm); font-weight:var(--vh-weight-medium);
+            text-decoration:none; transition:all var(--vh-duration) var(--vh-ease);
+        }
+        .vh-apps__promo-cta:hover{background:rgba(255,255,255,.20); border-color:rgba(255,255,255,.7);}
+        .vh-apps__promo-cta svg{width:13px; height:13px; transition:transform var(--vh-duration) var(--vh-ease);}
+        .vh-apps__promo-cta:hover svg{transform:translateX(2px);}
+
+        /* Right — the app grid */
+        .vh-apps__grid-wrap{padding:26px 26px 22px;}
+        .vh-apps__grid-head{
+            display:flex; align-items:center; justify-content:space-between; gap:16px;
+            margin-bottom:18px; padding-bottom:14px;
+            border-bottom:1px solid var(--vh-color-border);
+        }
+        .vh-apps__grid-label{
+            font-size:var(--vh-text-xs); font-weight:600; letter-spacing:.15em;
+            text-transform:uppercase; color:var(--vh-color-text-muted); margin:0;
+        }
+        .vh-apps__grid-link{
+            display:inline-flex; align-items:center; gap:5px; white-space:nowrap;
+            font-size:var(--vh-text-xs); font-weight:600; letter-spacing:.08em;
+            text-transform:uppercase; color:var(--vh-color-brand); text-decoration:none;
+            transition:color var(--vh-duration) var(--vh-ease);
+        }
+        .vh-apps__grid-link:hover{color:var(--vh-color-brand-hover);}
+        .vh-apps__grid-link svg{width:12px; height:12px;}
+
+        .vh-apps__grid{display:grid; grid-template-columns:1fr 1fr; gap:6px;}
+        @media (max-width:620px){ .vh-apps__grid{grid-template-columns:1fr;} }
+
+        .vh-app{
+            display:flex; gap:12px; align-items:flex-start;
+            padding:12px; border-radius:var(--vh-radius-md);
+            text-decoration:none; border:1px solid transparent;
+            transition:background var(--vh-duration) var(--vh-ease), border-color var(--vh-duration) var(--vh-ease);
+        }
+        .vh-app:hover{background:var(--vh-color-surface); border-color:var(--vh-color-border);}
+        .vh-app__icon{width:30px; height:30px; flex-shrink:0; border-radius:8px; margin-top:1px; object-fit:contain;}
+        .vh-app__name{
+            display:block; font-size:var(--vh-text-base); font-weight:600;
+            color:var(--vh-color-text); line-height:1.3;
+        }
+        /* Own line, not inline after the name: the descriptors are long enough
+           ("AI Internal Communication and Engagement") that sitting them beside
+           the product name overflows the grid column. */
+        .vh-app__tag{
+            display:block; margin:3px 0 5px;
+            font-size:10px; font-weight:600; letter-spacing:.11em; text-transform:uppercase;
+            line-height:1.35; color:var(--vh-color-brand);
+        }
+        .vh-app__desc{display:block; font-size:13px; line-height:1.5; color:var(--vh-color-text-muted);}
+
+        .vh-apps--hero{max-width:1000px; margin-left:auto; margin-right:auto;}
+
+        /* ═══ NAV PRODUCTS DROPDOWN ═══ */
+        .vh-navmenu{position:relative;}
+        .vh-navmenu__btn{
+            display:inline-flex; align-items:center; gap:5px;
+            padding:6px 12px; border-radius:6px; background:none; border:0;
+            font-size:13px; color:var(--text-secondary); cursor:pointer;
+            font-family:inherit; transition:color var(--vh-duration) var(--vh-ease);
+        }
+        .vh-navmenu__btn:hover, .vh-navmenu__btn[aria-expanded="true"]{color:var(--vh-color-text);}
+        .vh-navmenu__btn svg{width:10px; height:10px; transition:transform var(--vh-duration) var(--vh-ease);}
+        .vh-navmenu__btn[aria-expanded="true"] svg{transform:rotate(180deg);}
+        .vh-navmenu__panel{
+            position:absolute; top:calc(100% + 14px); left:50%;
+            transform:translateX(-50%) translateY(-6px);
+            width:min(920px,calc(100vw - 48px)); z-index:60;
+            opacity:0; visibility:hidden; pointer-events:none;
+            transition:opacity var(--vh-duration) var(--vh-ease),
+                       transform var(--vh-duration) var(--vh-ease),
+                       visibility var(--vh-duration);
+        }
+        .vh-navmenu.is-open .vh-navmenu__panel{
+            opacity:1; visibility:visible; pointer-events:auto; transform:translateX(-50%) translateY(0);
+        }
+        /* Right-align the panel when centring would push it off-screen */
+        @media (max-width:1280px){
+            .vh-navmenu__panel{left:auto; right:-40px; transform:translateY(-6px);}
+            .vh-navmenu.is-open .vh-navmenu__panel{transform:translateY(0);}
+        }
+        .vh-navmenu__panel .vh-apps{
+            box-shadow:0 24px 60px -20px rgba(0,0,0,.55), 0 4px 12px rgba(0,0,0,.2);
+            /* narrower promo in the menu so the app names keep one line */
+            grid-template-columns:minmax(0,0.68fr) minmax(0,1.32fr);
+        }
+        @media (prefers-reduced-motion:reduce){ .vh-navmenu__panel{transition:none;} }
+
+        .vh-mobilemenu__label{
+            font-size:11px; font-weight:600; letter-spacing:.15em; text-transform:uppercase;
+            color:var(--text-muted); margin:8px 0 2px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* FOOTER — matched to the product landing pages (snapapro,     */
+        /* mpliphi, studio, hivelink, mind). Deliberately dark in both  */
+        /* themes so every page in the family shares one footer bar.    */
+        /* ═══════════════════════════════════════════════════════════ */
+        .vh-footer{background:#0a0a0b; color:rgba(255,255,255,.7); padding:64px 0 32px; position:relative; overflow:hidden;}
+        html.light .vh-footer{background:#0a0a0b; color:rgba(255,255,255,.7);}
+        .vh-footer__wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+        .vh-footer__top{display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr 0.8fr; gap:36px;}
+        .vh-footer__brand{display:flex; align-items:center; gap:9px; margin-bottom:16px;}
+        .vh-footer__brand img{height:20px; width:auto;}
+        .vh-footer__tagline{font-size:13.5px; line-height:1.6; max-width:32ch; color:rgba(255,255,255,.7); margin:0;}
+        .vh-footer__social{display:flex; gap:8px; margin-top:18px;}
+        .vh-footer__social a{
+            width:34px; height:34px; border-radius:9px;
+            background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.09);
+            display:flex; align-items:center; justify-content:center;
+            transition:background var(--vh-duration) var(--vh-ease), border-color var(--vh-duration) var(--vh-ease);
+        }
+        .vh-footer__social a:hover{background:rgba(255,255,255,.11); border-color:rgba(255,255,255,.2);}
+        .vh-footer__social svg{width:15px; height:15px; fill:rgba(255,255,255,.6);}
+        .vh-footer__handle{font-size:12.5px; color:#6B82FF; margin-top:14px; font-weight:600;}
+        .vh-footer__col h4{font-size:12.5px; color:#fff; font-weight:700; margin:0 0 14px; text-transform:uppercase; letter-spacing:.04em;}
+        .vh-footer__col a{
+            display:flex; align-items:center; gap:8px;
+            font-size:13px; color:rgba(255,255,255,.6); margin-bottom:10px;
+            text-decoration:none; transition:color .15s ease;
+        }
+        .vh-footer__col a:hover{color:#fff;}
+        .vh-footer__col a img{width:15px; height:15px; flex-shrink:0;}
+        .vh-footer__ticker-wrap{
+            overflow:hidden; height:220px; position:relative;
+            -webkit-mask-image:linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+            mask-image:linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+        }
+        .vh-footer__ticker{display:flex; flex-direction:column; gap:14px; animation:vhTickerScroll 14s linear infinite;}
+        .vh-footer__ticker-item{display:flex; align-items:center; gap:8px; font-size:12.5px; color:rgba(255,255,255,.55); white-space:nowrap;}
+        .vh-footer__ticker-item img{width:16px; height:16px;}
+        @keyframes vhTickerScroll{ from{transform:translateY(0);} to{transform:translateY(-50%);} }
+        @media (prefers-reduced-motion:reduce){ .vh-footer__ticker{animation:none;} }
+
+        .vh-footer__map-row{
+            display:flex; align-items:center; justify-content:space-between; gap:24px;
+            margin-top:36px; padding-top:28px; border-top:1px solid rgba(255,255,255,.1); flex-wrap:wrap;
+        }
+        .vh-footer__map-info{font-size:13px; color:rgba(255,255,255,.6); line-height:1.7;}
+        .vh-footer__map-info a{color:#6B82FF; text-decoration:underline;}
+        .vh-footer__map-frame{border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.12); width:280px; height:150px; flex-shrink:0;}
+        .vh-footer__map-frame iframe{width:100%; height:100%; border:0; filter:grayscale(.3) contrast(1.05);}
+
+        .vh-footer__bottom{
+            border-top:1px solid rgba(255,255,255,.1); margin-top:44px; padding-top:24px;
+            font-size:12.5px; color:rgba(255,255,255,.45);
+            display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+        }
+        .vh-footer__badges{display:flex; align-items:center; gap:20px; flex-wrap:wrap;}
+        .vh-footer__badges span{display:inline-flex; align-items:center; gap:6px; font-size:12px; color:rgba(255,255,255,.35);}
+        .vh-footer__badges svg{width:14px; height:14px;}
+
+        @media (max-width:980px){ .vh-footer__top{grid-template-columns:1fr 1fr 1fr;} .vh-footer__ticker-wrap{display:none;} }
+        @media (max-width:700px){
+            .vh-footer__top{grid-template-columns:1fr 1fr;}
+            .vh-footer__map-row{flex-direction:column; align-items:flex-start;}
+            .vh-footer__map-frame{width:100%;}
+            .vh-footer__bottom{flex-direction:column; align-items:flex-start;}
+        }
+
+
+        /* ── Hero apps panel entrance ──────────────────────────────
+           Scoped to --hero on purpose: the nav dropdown reuses .vh-apps
+           and must never start hidden. Transitions, not keyframes, so
+           replaying on re-entry needs no forced reflow. */
+        .vh-apps--hero{
+            opacity:0; transform:translateY(30px) scale(.985);
+            transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+        }
+        .vh-apps--hero.is-in{opacity:1; transform:none;}
+
+        .vh-apps--hero .vh-apps__promo > *,
+        .vh-apps--hero .vh-apps__grid-head,
+        .vh-apps--hero .vh-app{
+            opacity:0; transform:translateY(16px);
+            transition:opacity .55s ease, transform .55s cubic-bezier(.16,1,.3,1);
+        }
+        .vh-apps--hero.is-in .vh-apps__promo > *,
+        .vh-apps--hero.is-in .vh-apps__grid-head,
+        .vh-apps--hero.is-in .vh-app{opacity:1; transform:none;}
+
+        .vh-apps--hero.is-in .vh-apps__promo > *:nth-child(1){transition-delay:.14s}
+        .vh-apps--hero.is-in .vh-apps__promo > *:nth-child(2){transition-delay:.20s}
+        .vh-apps--hero.is-in .vh-apps__promo > *:nth-child(3){transition-delay:.26s}
+        .vh-apps--hero.is-in .vh-apps__promo > *:nth-child(4){transition-delay:.32s}
+        .vh-apps--hero.is-in .vh-apps__grid-head{transition-delay:.18s}
+        .vh-apps--hero.is-in .vh-app:nth-child(1){transition-delay:.26s}
+        .vh-apps--hero.is-in .vh-app:nth-child(2){transition-delay:.34s}
+        .vh-apps--hero.is-in .vh-app:nth-child(3){transition-delay:.42s}
+        .vh-apps--hero.is-in .vh-app:nth-child(4){transition-delay:.50s}
+        .vh-apps--hero.is-in .vh-app:nth-child(5){transition-delay:.58s}
+
+        @media (prefers-reduced-motion:reduce){
+            .vh-apps--hero,
+            .vh-apps--hero .vh-apps__promo > *,
+            .vh-apps--hero .vh-apps__grid-head,
+            .vh-apps--hero .vh-app{
+                opacity:1; transform:none; transition:none;
+            }
+        }
+
+        /* ── SCROLL PROGRESS BAR + SCROLLSPY RAIL ──────────────────
+           Ported from the product landing pages. */
+        .vh-scroll-progress{
+            position:fixed; top:0; left:0; height:3px; width:0%;
+            background:linear-gradient(90deg, var(--vh-color-brand), var(--vh-color-accent));
+            z-index:200; transition:width .1s linear; pointer-events:none;
+        }
+
+        .vh-scrollspy{
+            position:fixed; right:26px; top:50%; transform:translateY(-50%);
+            z-index:90; display:flex; flex-direction:column; align-items:flex-end; gap:20px;
+        }
+        .vh-scrollspy-item{
+            display:flex; align-items:center; gap:10px; cursor:pointer;
+            background:none; border:0; padding:0; font-family:inherit;
+        }
+        .vh-scrollspy-item .sslabel{
+            font-size:13px; font-weight:600; color:var(--vh-color-text);
+            opacity:0; max-width:0; overflow:hidden; white-space:nowrap;
+            transition:opacity .2s ease, max-width .25s ease;
+        }
+        .vh-scrollspy-item.active .sslabel{opacity:1; max-width:170px;}
+        .vh-scrollspy-item:hover .sslabel{opacity:.55; max-width:170px;}
+        .vh-scrollspy-dot{
+            width:10px; height:10px; border-radius:50%; flex-shrink:0;
+            border:1.5px solid var(--vh-color-border-hover); background:var(--vh-color-bg);
+            transition:all .2s ease;
+        }
+        .vh-scrollspy-item.active .vh-scrollspy-dot{
+            background:var(--vh-color-brand); border-color:var(--vh-color-brand); transform:scale(1.35);
+        }
+        .vh-scrollspy-item:focus-visible .vh-scrollspy-dot{outline:2px solid var(--vh-color-brand); outline-offset:3px;}
+        /* clears the WhatsApp float and the narrower layouts */
+        @media (max-width:1100px){ .vh-scrollspy{display:none;} }
+
+        /* Hero headline cap — line two ("Scale with an agentic workforce.")
+           overflows the column at the default 4.5rem. */
+        #home h1 > span{font-size:clamp(1.95rem,4.2vw,3.25rem) !important;}
+
+
+        /* ── SCROLLING GLOW BLOBS ───────────────────────────────────
+           Same treatment as the five product landing pages: soft brand
+           circles down alternating edges, drifting slower than the content.
+           Sits at z-index 0 rather than the product pages' -1, because this
+           page paints its own body background and a negative layer would
+           land behind it. Every section here is z-10, so content stays clear. */
+        :root{ --vh-glow-a:rgba(59,91,255,.17); --vh-glow-b:rgba(139,92,255,.14); }
+        html.light{ --vh-glow-a:rgba(59,91,255,.10); --vh-glow-b:rgba(139,92,255,.085); }
+        .vh-glow{
+            position:absolute; width:420px; height:420px; border-radius:50%;
+            pointer-events:none;
+            background:radial-gradient(circle, var(--vh-glow-a) 0%, transparent 72%);
+        }
+        .vh-glow--alt{ background:radial-gradient(circle, var(--vh-glow-b) 0%, transparent 72%); }
+        @media (prefers-reduced-motion:reduce){ #glowLayer{display:none;} }
 
     </style>
 </head>
 <body class="min-h-screen overflow-x-hidden antialiased" style="color: var(--text);">
+
+    <!-- Top scroll-progress bar + right-hand section rail (same pair as the product pages) -->
+    <div class="vh-scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <nav class="vh-scrollspy" id="scrollspy" aria-label="Section navigation"></nav>
 
     <!-- Ambient background -->
     <div class="fixed inset-0 pointer-events-none" aria-hidden="true">
@@ -1645,11 +1956,42 @@
                 </nav>
 
                 <div class="hidden lg:flex items-center gap-1">
-                    <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-snapapro-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">SnapaPro</a>
-                    <a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-mpliphi-32.png?v=2" alt="" class="nav-favicon" loading="lazy" decoding="async">mpliphi</a>
-                    <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-studio-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">Studio</a>
-                    <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-hivelink-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">HiveLink</a>
-                    <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);"><img src="/favicon-mind-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">Mind</a>
+                    <div class="vh-navmenu" id="products-menu">
+                        <!-- Labelled "Apps", not "Products": the Products/Labs pill to the
+                             left is the site switcher, so two "Products" in one bar reads
+                             as a bug. "Apps" also matches "Veehive Agentic Apps" below. -->
+                        <button type="button" class="vh-navmenu__btn" id="products-menu-btn" aria-expanded="false" aria-controls="products-menu-panel" aria-haspopup="true">
+                            Apps
+                            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 4.5L6 8l3.5-3.5"/></svg>
+                        </button>
+                        <div class="vh-navmenu__panel" id="products-menu-panel" role="region" aria-labelledby="products-menu-btn">
+                            <div class="vh-apps">
+                                <div class="vh-apps__promo">
+                                    <div class="vh-apps__promo-mark"><img src="/favicon-192.png" alt="" loading="lazy" decoding="async"></div>
+                                    <p class="vh-apps__promo-title">Introducing Veehive Agentic Apps</p>
+                                    <p class="vh-apps__promo-body">Five specialist AI agents, one workforce. Each one goes deep on a single business function and runs around the clock.</p>
+                                    <a class="vh-apps__promo-cta" href="#matcher">Find your first agent <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></a>
+                                </div>
+                                <div class="vh-apps__grid-wrap">
+                                    <div class="vh-apps__grid-head">
+                                        <p class="vh-apps__grid-label">The apps</p>
+                                        <a class="vh-apps__grid-link" href="#workforce">Meet the workforce <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></a>
+                                    </div>
+                                    <div class="vh-apps__grid">
+                                        <a class="vh-app" href="https://mpliphi.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-mpliphi-32.png?v=2" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">mpliphi<span class="vh-app__tag">AI customer service agent</span></span><span class="vh-app__desc">Customer conversations on WhatsApp and email, handled autonomously.</span></span></a>
+                                        <a class="vh-app" href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-studio-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">Veehive Studio<span class="vh-app__tag">Agentic content generation platform</span></span><span class="vh-app__desc">Documents, PDFs and briefs turned into branded videos with AI avatars.</span></span></a>
+                                        <a class="vh-app" href="https://snapapro.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-snapapro-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">SnapaPro<span class="vh-app__tag">Agentic project management tool</span></span><span class="vh-app__desc">Three agents that plan projects, engage the team and track time.</span></span></a>
+                                        <a class="vh-app" href="https://veehivelink.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-hivelink-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">HiveLink<span class="vh-app__tag">Internal communication &amp; engagement platform</span></span><span class="vh-app__desc">Your branded hive — video, conversation, events and CRM in one place.</span></span></a>
+                                        <a class="vh-app" href="https://veehivemind.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-mind-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">Veehive Mind<span class="vh-app__tag">AI campaign management tool</span></span><span class="vh-app__desc">Nine specialist agents running campaigns end-to-end from one brief.</span></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#matcher" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">Find your agent</a>
+                    <a href="#workforce" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">Workforce</a>
+                    <a href="#trust" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">Trust</a>
+                    <a href="#faq" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">FAQ</a>
                     <a href="about.html" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">About</a>
                     <div class="w-px h-4 mx-2" style="background: var(--border);"></div>
                     <!-- Theme Toggle -->
@@ -1679,13 +2021,19 @@
 
         <div id="mobile-menu" class="hidden lg:hidden nav-blur" style="border-top: 1px solid var(--border); background: var(--bg-mobile);">
             <div class="px-6 py-4 flex flex-col gap-1">
-                <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-snapapro-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">SnapaPro</a>
+                <p class="vh-mobilemenu__label">Veehive Agentic Apps</p>
                 <a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-mpliphi-32.png?v=2" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">mpliphi</a>
-                <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-studio-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">Studio</a>
+                <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-studio-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">Veehive Studio</a>
+                <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-snapapro-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">SnapaPro</a>
                 <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-hivelink-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">HiveLink</a>
-                <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-mind-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">Mind</a>
+                <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-mind-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">Veehive Mind</a>
+                <p class="vh-mobilemenu__label">Explore</p>
+                <a href="#matcher" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">Find your agent</a>
+                <a href="#workforce" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">Workforce</a>
+                <a href="#trust" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">Trust</a>
+                <a href="#faq" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">FAQ</a>
                 <a href="about.html" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">About</a>
-                <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="mt-2 py-2.5 text-[14px] font-medium text-center bg-[#3B5BFF] rounded-full" style="color: var(--cta-text);">Book a Product Demo</a>
+                <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&amp;ismsaljsauthenabled&amp;ep=plink" target="_blank" rel="noopener noreferrer" class="mt-2 py-2.5 text-[14px] font-medium text-center bg-[#3B5BFF] rounded-full" style="color: var(--cta-text);">Book a Product Demo</a>
             </div>
         </div>
     </nav>
@@ -1693,7 +2041,7 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- HERO SECTION -->
     <!-- ═══════════════════════════════════════ -->
-    <section class="relative z-10 pt-32 pb-20 lg:pt-40 lg:pb-20">
+    <section id="home" class="relative z-10 pt-32 pb-20 lg:pt-40 lg:pb-20" style="scroll-margin-top:96px">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <!-- Hero text block — centered above the product showcase -->
             <div class="text-center max-w-4xl mx-auto">
@@ -1710,15 +2058,15 @@
 
                 <!-- Heading -->
                 <h1 class="animate-fade-up delay-100">
-                    <span class="block text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold leading-[1.05] tracking-[-0.02em] text-white">Your Agentic Workforce,</span>
+                    <span class="block text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold leading-[1.05] tracking-[-0.02em] text-white">Power your people.</span>
                     <span class="block text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold leading-[1.05] tracking-[-0.02em]">
-                        <span class="text-gradient">ready to deploy.</span>
+                        <span class="text-gradient">Scale with an agentic workforce.</span>
                     </span>
                 </h1>
 
                 <!-- Subheading — function-first + outcome, names moved to product cards below -->
                 <p class="animate-fade-up delay-200 mt-10 mx-auto text-lg md:text-xl max-w-2xl font-light" style="color: var(--text-secondary); line-height: 1.75;">
-                    Give every core function a specialist AI agent &mdash; for <strong class="text-white/80 font-medium">customer operations</strong>, <strong class="text-white/80 font-medium">content</strong>, <strong class="text-white/80 font-medium">project management</strong>, <strong class="text-white/80 font-medium">community</strong>, and <strong class="text-white/80 font-medium">campaigns</strong>. Each goes deep on one job and runs around the clock. Deploy one, or build out the full workforce.
+                    A specialist AI agent for every core function &mdash; <strong class="text-white/80 font-medium">support</strong>, <strong class="text-white/80 font-medium">content</strong>, <strong class="text-white/80 font-medium">projects</strong>, <strong class="text-white/80 font-medium">community</strong>, <strong class="text-white/80 font-medium">campaigns</strong> &mdash; running around the clock so your team gets their time back to create. Deploy one, or build the full workforce.
                 </p>
 
                 <!-- Hero trust bar — Dubai AI Seal + F6S ranking as inline chips -->
@@ -1747,15 +2095,7 @@
                     </a>
                 </div>
 
-                <!-- §4.4 Cross-site block — sends "need custom" visitors to Veehive Labs without leaving the two-brand story -->
-                <div class="animate-fade-up delay-450 vh-cross-site" role="complementary" aria-label="Custom builds via Veehive Labs">
-                    <p class="vh-cross-site__lead">Need it built around your organisation?</p>
-                    <p class="vh-cross-site__body">Veehive Labs handles custom builds, consulting, implementation and training.</p>
-                    <div class="vh-cross-site__ctas">
-                        <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="vh-cross-site__btn vh-cross-site__btn--primary">Book a Product Demo</a>
-                        <a href="https://veehivelabs.com" class="vh-cross-site__btn vh-cross-site__btn--secondary">Go to Labs</a>
-                    </div>
-                </div>
+
 
                 <!-- Outcome micro-line — deployment-flavored: enterprise buyers care about where AI runs.
                      On-prem + private LLM + air-gapped is a real differentiator vs cloud-only competitors. -->
@@ -1764,168 +2104,32 @@
                 </p>
             </div>
 
-            <!-- Agent-native product window — full-width feature below the hero text -->
-            <div class="animate-fade-up delay-500 max-w-5xl mx-auto" style="margin-top: clamp(6rem, 10vw, 9rem);">
-                <div class="product-window" id="hero-window" aria-roledescription="carousel" aria-label="Veehive products">
-                        <!-- Chrome / tab bar -->
-                        <div class="product-window-chrome">
-                            <div class="product-window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-                            <div class="product-window-tabs" role="tablist" aria-label="Choose product">
-                                <button class="product-window-tab is-active" data-product="mpliphi" data-tab="0" role="tab" aria-selected="true">
-                                    <span class="product-window-tab-dot"></span>mpliphi
-                                </button>
-                                <button class="product-window-tab" data-product="studio" data-tab="1" role="tab" aria-selected="false">
-                                    <span class="product-window-tab-dot"></span>Studio
-                                </button>
-                                <button class="product-window-tab" data-product="snapapro" data-tab="2" role="tab" aria-selected="false">
-                                    <span class="product-window-tab-dot"></span>SnapaPro
-                                </button>
-                                <button class="product-window-tab" data-product="hivelink" data-tab="3" role="tab" aria-selected="false">
-                                    <span class="product-window-tab-dot"></span>HiveLink
-                                </button>
-                                <button class="product-window-tab" data-product="mind" data-tab="4" role="tab" aria-selected="false">
-                                    <span class="product-window-tab-dot"></span>Mind
-                                </button>
-                            </div>
+            <!-- Agentic apps launcher — every product, one click to its landing page.
+                 Replaces the old tabbed demo window: those five panes are repeated
+                 verbatim in the product sections below, so this was duplicate content. -->
+            <div class="animate-fade-up delay-500" style="margin-top: clamp(5rem, 8vw, 7rem);">
+                <div class="vh-apps vh-apps--hero">
+                    <div class="vh-apps__promo">
+                        <div class="vh-apps__promo-mark"><img src="/favicon-192.png" alt="" loading="lazy" decoding="async"></div>
+                        <p class="vh-apps__promo-title">Introducing Veehive Agentic Apps</p>
+                        <p class="vh-apps__promo-body">Five specialist AI agents, one workforce. Each one goes deep on a single business function and runs around the clock.</p>
+                        <a class="vh-apps__promo-cta" href="#matcher">Find your first agent <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></a>
+                    </div>
+                    <div class="vh-apps__grid-wrap">
+                        <div class="vh-apps__grid-head">
+                            <p class="vh-apps__grid-label">The apps</p>
+                            <a class="vh-apps__grid-link" href="#workforce">Meet the workforce <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></a>
                         </div>
-
-                        <!-- Body — agent-native panes -->
-                        <div class="product-window-body">
-
-                            <!-- mpliphi: customer conversation, agent replies autonomously -->
-                            <div class="product-pane is-active" data-product="mpliphi" data-tab="0" role="tabpanel" aria-label="mpliphi: AI agent handles customer conversations">
-                                <span class="agent-live"><span aria-hidden="true">👨‍💼</span> ND &middot; mpliphi agent</span>
-                                <div class="agent-chat">
-                                    <div class="agent-msg is-customer">
-                                        <div class="agent-msg-label">Customer &middot; WhatsApp</div>
-                                        Hi, can I reschedule my delivery to Saturday morning?
-                                    </div>
-                                    <div class="agent-msg is-agent">
-                                        <div class="agent-msg-label">ND &middot; autonomous</div>
-                                        Done &mdash; rescheduled to Sat 9&ndash;11 AM. You&rsquo;ll get a confirmation SMS shortly.
-                                    </div>
-                                    <div class="agent-msg is-customer">
-                                        <div class="agent-msg-label">Customer</div>
-                                        Perfect, thanks!
-                                    </div>
-                                </div>
-                                <div class="agent-result">
-                                    <span class="agent-result-tag">No human touched</span>
-                                    Resolved in 11s &middot; logged to CRM &middot; satisfaction tagged
-                                </div>
-                            </div>
-
-                            <!-- Studio: prompt → agent reasoning → video output -->
-                            <div class="product-pane" data-product="studio" data-tab="1" role="tabpanel" aria-label="Studio: agent turns documents into video">
-                                <span class="agent-live"><span aria-hidden="true">👨‍🎨</span> Chaks &middot; Studio content agent</span>
-                                <div class="agent-prompt">
-                                    <span class="agent-prompt-icon">U</span>
-                                    <span class="agent-prompt-text">Turn the new <strong>policy update PDF</strong> into a 60-second Arabic explainer with our brand avatar.</span>
-                                </div>
-                                <div class="agent-steps">
-                                    <div class="agent-step is-done">
-                                        <span class="agent-step-mark">&check;</span>
-                                        Parsed PDF &middot; extracted 4 key points
-                                    </div>
-                                    <div class="agent-step is-done">
-                                        <span class="agent-step-mark">&check;</span>
-                                        Drafted script &middot; translated EN &rarr; AR
-                                    </div>
-                                    <div class="agent-step is-running">
-                                        <span class="agent-step-mark">&#8635;</span>
-                                        Rendering avatar &middot; voiceover &middot; captions
-                                    </div>
-                                </div>
-                                <div class="agent-result">
-                                    <span class="agent-result-tag">Output ready in</span>
-                                    ~90s &middot; 3 language variants queued automatically
-                                </div>
-                            </div>
-
-                            <!-- SnapaPro: prompt → agent breaks down work autonomously -->
-                            <div class="product-pane" data-product="snapapro" data-tab="2" role="tabpanel" aria-label="SnapaPro: agent plans projects from natural language">
-                                <span class="agent-live"><span aria-hidden="true">👨‍💻 👩 👨</span> Taj, Noor &amp; Sats &middot; SnapaPro agents</span>
-                                <div class="agent-prompt">
-                                    <span class="agent-prompt-icon">U</span>
-                                    <span class="agent-prompt-text"><strong>Plan the launch for next week</strong> &mdash; landing page, 3 social posts, email sequence.</span>
-                                </div>
-                                <div class="agent-steps">
-                                    <div class="agent-step is-done">
-                                        <span class="agent-step-mark">&check;</span>
-                                        Created 7 tasks &middot; assigned owners by skill
-                                    </div>
-                                    <div class="agent-step is-done">
-                                        <span class="agent-step-mark">&check;</span>
-                                        Detected capacity conflict &middot; rescheduled 2 items
-                                    </div>
-                                    <div class="agent-step is-running">
-                                        <span class="agent-step-mark">&#8635;</span>
-                                        Tracking time &middot; nudging blockers in Slack
-                                    </div>
-                                </div>
-                                <div class="agent-result">
-                                    <span class="agent-result-tag">3 agents working</span>
-                                    Taj plans &middot; Noor engages &middot; Sats tracks
-                                </div>
-                            </div>
-
-                            <!-- HiveLink: prompt → agent runs an outcome-driven campaign across channels -->
-                            <div class="product-pane" data-product="hivelink" data-tab="3" role="tabpanel" aria-label="HiveLink: agent runs an outcome-driven campaign across channels">
-                                <span class="agent-live"><span aria-hidden="true">👩‍💻</span> AK &middot; HiveLink community-growth agent</span>
-                                <div class="agent-prompt">
-                                    <span class="agent-prompt-icon">U</span>
-                                    <span class="agent-prompt-text">Run a campaign to <strong>increase footfall by 20% next week</strong> at our Dubai Mall store.</span>
-                                </div>
-                                <div class="agent-steps">
-                                    <div class="agent-step is-done">
-                                        <span class="agent-step-mark">&check;</span>
-                                        Drafted offer &middot; 4 channel-specific variants
-                                    </div>
-                                    <div class="agent-step is-done">
-                                        <span class="agent-step-mark">&check;</span>
-                                        Geo-targeted 12km radius &middot; scheduled by daypart
-                                    </div>
-                                    <div class="agent-step is-running">
-                                        <span class="agent-step-mark">&#8635;</span>
-                                        Tracking footfall hourly &middot; reallocating spend
-                                    </div>
-                                </div>
-                                <div class="agent-result">
-                                    <span class="agent-result-tag">Day 3 of 7</span>
-                                    +14% footfall vs. baseline &middot; on pace for +22%
-                                </div>
-                            </div>
-
-                            <!-- Mind: prompt → hive of agents collaborates on a marketing campaign -->
-                            <div class="product-pane" data-product="mind" data-tab="4" role="tabpanel" aria-label="Mind: a hive of agents collaborates on a marketing campaign">
-                                <span class="agent-live"><span aria-hidden="true">👩‍🦰</span> Mira &middot; Mind campaign hive</span>
-                                <div class="agent-prompt">
-                                    <span class="agent-prompt-icon">U</span>
-                                    <span class="agent-prompt-text">Launch a <strong>Ramadan campaign</strong> for our F&amp;B brand &mdash; 30-day calendar, multi-channel, on-brand.</span>
-                                </div>
-                                <div class="agent-steps">
-                                    <div class="agent-step is-done">
-                                        <span class="agent-step-mark">&check;</span>
-                                        Live trend scan &middot; 7 cited signals &middot; brand voice learned
-                                    </div>
-                                    <div class="agent-step is-done">
-                                        <span class="agent-step-mark">&check;</span>
-                                        30-day calendar &middot; 42 assets generated &middot; reviewed for compliance
-                                    </div>
-                                    <div class="agent-step is-running">
-                                        <span class="agent-step-mark">&#8635;</span>
-                                        9 specialist agents collaborating &middot; learning from performance
-                                    </div>
-                                </div>
-                                <div class="agent-result">
-                                    <span class="agent-result-tag">One brief in</span>
-                                    Website &rarr; full campaign in minutes &middot; one click to publish
-                                </div>
-                            </div>
-
+                        <div class="vh-apps__grid">
+                            <a class="vh-app" href="https://mpliphi.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-mpliphi-32.png?v=2" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">mpliphi<span class="vh-app__tag">AI customer service agent</span></span><span class="vh-app__desc">Customer conversations on WhatsApp and email, handled autonomously.</span></span></a>
+                            <a class="vh-app" href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-studio-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">Veehive Studio<span class="vh-app__tag">Agentic content generation platform</span></span><span class="vh-app__desc">Documents, PDFs and briefs turned into branded videos with AI avatars.</span></span></a>
+                            <a class="vh-app" href="https://snapapro.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-snapapro-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">SnapaPro<span class="vh-app__tag">Agentic project management tool</span></span><span class="vh-app__desc">Three agents that plan projects, engage the team and track time.</span></span></a>
+                            <a class="vh-app" href="https://veehivelink.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-hivelink-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">HiveLink<span class="vh-app__tag">Internal communication &amp; engagement platform</span></span><span class="vh-app__desc">Your branded hive — video, conversation, events and CRM in one place.</span></span></a>
+                            <a class="vh-app" href="https://veehivemind.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-mind-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">Veehive Mind<span class="vh-app__tag">AI campaign management tool</span></span><span class="vh-app__desc">Nine specialist agents running campaigns end-to-end from one brief.</span></span></a>
                         </div>
                     </div>
                 </div>
+            </div>
 
             <!-- Partners marquee — Certavixx-style chips -->
             <div class="reveal" style="margin-top: clamp(5rem, 8vw, 7rem);">
@@ -1955,7 +2159,7 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- PROBLEM MATCHER -->
     <!-- ═══════════════════════════════════════ -->
-    <section class="relative z-10 py-20 lg:py-28">
+    <section id="matcher" class="relative z-10 py-20 lg:py-28" style="scroll-margin-top:96px">
         <div class="max-w-5xl mx-auto px-6 lg:px-8">
             <div class="reveal text-center mb-12">
                 <p class="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#3B5BFF]/60 mb-4">Workforce Matcher</p>
@@ -2003,11 +2207,8 @@
                 <div class="showcase-grid is-flipped">
                     <div class="showcase-copy">
                         <img src="/favicon-mpliphi-64.png?v=2" alt="mpliphi" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
-                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#2c573e">Your AI customer-operations agent</p>
-                        <div class="flex flex-wrap items-baseline gap-3 mb-5">
-                            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">mpliphi</h2>
-                            <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(44,87,62,0.15); color:#2c573e">AI Agents</span>
-                        </div>
+                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#2c573e">Your AI customer service agent</p>
+                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">mpliphi</h2>
                         <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👨‍💼</span> <strong class="text-white/80">ND</strong> &mdash; mpliphi runs as your always-on customer-operations agent, handling conversations on WhatsApp and email autonomously or alongside your staff. Escalates when needed, logs to your CRM, speaks 50+ languages.</p>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
@@ -2063,11 +2264,8 @@
                 <div class="showcase-grid">
                     <div class="showcase-copy">
                         <img src="/favicon-studio-64.png" alt="Veehive Studio" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
-                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#A78BFA">Your AI content-production agent</p>
-                        <div class="flex flex-wrap items-baseline gap-3 mb-5">
-                            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Veehive Studio</h2>
-                            <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(124,58,237,0.18); color:#A78BFA">AI Video</span>
-                        </div>
+                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#A78BFA">Your agentic content generation platform</p>
+                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">Veehive Studio</h2>
                         <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👨‍🎨</span> <strong class="text-white/80">Chaks</strong> &mdash; the Studio content agent that turns your documents, PDFs, and briefs into publish-ready branded videos with AI avatars in 30+ languages. What used to take a content team a week now takes about 90 seconds.</p>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
@@ -2127,11 +2325,8 @@
                 <div class="showcase-grid is-flipped">
                     <div class="showcase-copy">
                         <img src="/favicon-snapapro-64.png" alt="SnapaPro" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
-                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#F87171">Your AI project-management agent</p>
-                        <div class="flex flex-wrap items-baseline gap-3 mb-5">
-                            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">SnapaPro</h2>
-                            <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(220,38,38,0.18); color:#F87171">AI Planning</span>
-                        </div>
+                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#F87171">Your agentic project management tool</p>
+                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">SnapaPro</h2>
                         <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👨‍💻</span> <strong class="text-white/80">Taj</strong>, <span aria-hidden="true">👩</span> <strong class="text-white/80">Noor</strong>, and <span aria-hidden="true">👨</span> <strong class="text-white/80">Sats</strong> &mdash; SnapaPro&rsquo;s three-agent system that plans your projects, engages your team, and tracks time. No manual follow-ups, no capacity blind spots.</p>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
@@ -2191,11 +2386,8 @@
                 <div class="showcase-grid">
                     <div class="showcase-copy">
                         <img src="/favicon-hivelink-64.png" alt="HiveLink" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
-                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#60A5FA">Your AI community-growth agent</p>
-                        <div class="flex flex-wrap items-baseline gap-3 mb-5">
-                            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">HiveLink</h2>
-                            <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(37,99,235,0.18); color:#60A5FA">AI Community</span>
-                        </div>
+                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#60A5FA">Your internal communication &amp; engagement platform</p>
+                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">HiveLink</h2>
                         <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👩‍💻</span> <strong class="text-white/80">AK</strong> &mdash; the HiveLink community-growth agent that runs your branded video community end-to-end. HiveLink gives you one branded destination (your hive) where video, conversation, events, and CRM live together; AK organises content, approves submissions, and publishes across channels automatically. Embed in your app, on your website, or run it as a standalone portal. White-label and on-premise ready.</p>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
@@ -2218,7 +2410,7 @@
                     </div>
                     <div class="showcase-demo">
                         <div class="agent-demo" data-product="hivelink">
-                            <span class="agent-live"><span aria-hidden="true">👩‍💻</span> AK &middot; HiveLink community-growth agent</span>
+                            <span class="agent-live"><span aria-hidden="true">👩‍💻</span> AK &middot; HiveLink agent</span>
                             <div class="agent-prompt">
                                 <span class="agent-prompt-icon">U</span>
                                 <span class="agent-prompt-text">Run a campaign to <strong>increase footfall by 20% next week</strong> at our Dubai Mall store.</span>
@@ -2255,11 +2447,8 @@
                 <div class="showcase-grid is-flipped">
                     <div class="showcase-copy">
                         <img src="/favicon-mind-64.png" alt="Veehive Mind" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
-                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#ffb020">Your AI campaign-execution hive</p>
-                        <div class="flex flex-wrap items-baseline gap-3 mb-5">
-                            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Veehive Mind</h2>
-                            <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(255,176,32,0.18); color:#ffb020">AI Campaigns</span>
-                        </div>
+                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#ffb020">Your AI campaign management tool</p>
+                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">Veehive Mind</h2>
                         <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👩‍🦰</span> <strong class="text-white/80">Mira</strong> &mdash; the Veehive Mind campaign hive. Nine specialist agents (trend intelligence, calendar, copy, creative, brand memory, compliance, publishing, learning, and orchestration) collaborate from a single brief to launch and run marketing campaigns end-to-end. Website to first campaign in minutes. One click from approval to publishing.</p>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
@@ -2464,7 +2653,7 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- DUBAI AI SEAL -->
     <!-- ═══════════════════════════════════════ -->
-    <section class="relative z-10 py-24 lg:py-32 overflow-hidden">
+    <section id="trust" class="relative z-10 py-24 lg:py-32 overflow-hidden" style="scroll-margin-top:96px">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#3B5BFF]/[0.04] rounded-full blur-[150px] pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -2614,7 +2803,7 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- FAQ -->
     <!-- ═══════════════════════════════════════ -->
-    <section id="faq" class="relative z-10 py-24 lg:py-32">
+    <section id="faq" class="relative z-10 py-24 lg:py-32" style="scroll-margin-top:96px">
         <div class="max-w-3xl mx-auto px-6 lg:px-8">
             <div class="reveal text-center mb-16">
                 <p class="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#3B5BFF]/60 mb-4">FAQ</p>
@@ -2696,7 +2885,7 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- LEAD CAPTURE / CTA -->
     <!-- ═══════════════════════════════════════ -->
-    <section id="contact" class="relative z-10 py-24 lg:py-32">
+    <section id="contact" class="relative z-10 py-24 lg:py-32" style="scroll-margin-top:96px">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-r from-[#3B5BFF]/[0.06] via-[#3B5BFF]/[0.03] to-transparent rounded-full blur-[120px] pointer-events-none"></div>
         <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center relative">
             <p class="text-[13px] font-semibold uppercase tracking-[0.2em] text-white/30 mb-5">Get in touch</p>
@@ -2729,85 +2918,79 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- FOOTER -->
     <!-- ═══════════════════════════════════════ -->
-    <footer class="relative z-10 border-t border-white/[0.06]">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-            <div class="grid md:grid-cols-5 gap-12 mb-14">
-                <!-- Brand -->
-                <div class="md:col-span-2">
-                    <div class="flex items-center gap-2.5 mb-4">
-                        <img src="/logo-veehive-white-192.png" alt="Veehive" class="brand-logo-white h-5 w-auto opacity-80">
-                        <img src="/logo-veehive-192.png" alt="Veehive" class="brand-logo-color h-5 w-auto">
+    <!-- ═══════════════════════════════════════ -->
+    <!-- FOOTER — same bar as the product landing pages -->
+    <!-- ═══════════════════════════════════════ -->
+    <footer class="vh-footer">
+        <div class="vh-footer__wrap">
+            <div class="vh-footer__top">
+                <div>
+                    <div class="vh-footer__brand">
+                        <img src="/logo-veehive-white-192.png" alt="Veehive" loading="lazy" decoding="async">
                     </div>
-                    <p class="text-[14px] text-white/35 mb-6 max-w-xs leading-relaxed">
-                        Your agentic workforce, built in Dubai. mpliphi, Veehive Studio, SnapaPro, HiveLink, Veehive Mind &mdash; one company.
-                    </p>
-                    <div class="flex gap-2">
-                        <a href="https://linkedin.com/company/letsveehive" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center hover:bg-white/[0.08] hover:border-white/[0.12] transition-all" aria-label="LinkedIn">
-                            <svg class="w-4 h-4 text-white/50" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        </a>
-                        <a href="https://twitter.com/letsveehive" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center hover:bg-white/[0.08] hover:border-white/[0.12] transition-all" aria-label="X/Twitter">
-                            <svg class="w-4 h-4 text-white/50" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                        </a>
-                        <a href="https://youtube.com/@letsveehive" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center hover:bg-white/[0.08] hover:border-white/[0.12] transition-all" aria-label="YouTube">
-                            <svg class="w-4 h-4 text-white/50" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                        </a>
-                        <a href="https://instagram.com/letsveehive" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center hover:bg-white/[0.08] hover:border-white/[0.12] transition-all" aria-label="Instagram">
-                            <svg class="w-4 h-4 text-white/50" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                        </a>
-                        <a href="https://tiktok.com/@letsveehive" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center hover:bg-white/[0.08] hover:border-white/[0.12] transition-all" aria-label="TikTok">
-                            <svg class="w-4 h-4 text-white/50" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-                        </a>
+                    <p class="vh-footer__tagline">Your agentic workforce, built in Dubai. mpliphi, Veehive Studio, SnapaPro, HiveLink, Veehive Mind &mdash; one company.</p>
+                    <div class="vh-footer__social">
+                    <a href="https://linkedin.com/company/letsveehive" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                    <a href="https://twitter.com/letsveehive" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                    <a href="https://youtube.com/@letsveehive" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                    <a href="https://instagram.com/letsveehive" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    <a href="https://tiktok.com/@letsveehive" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
                     </div>
-                    <p class="mt-4 text-[12px] text-white/25">@letsveehive everywhere</p>
+                    <div class="vh-footer__handle">@letsveehive everywhere</div>
                 </div>
 
-                <!-- Products & Modules -->
-                <div>
-                    <h4 class="text-[12px] font-semibold uppercase tracking-[0.15em] text-white/30 mb-5">Products</h4>
-                    <ul class="space-y-3">
-                        <li><a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="footer-product-link text-[14px] text-white/45 hover:text-white transition-colors"><img src="/favicon-mpliphi-32.png?v=2" alt="" class="footer-favicon" loading="lazy" decoding="async"><span>mpliphi <span class="text-white/20 text-[11px]">AI Agents</span></span></a></li>
-                        <li><a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="footer-product-link text-[14px] text-white/45 hover:text-white transition-colors"><img src="/favicon-studio-32.png" alt="" class="footer-favicon" loading="lazy" decoding="async"><span>Veehive Studio <span class="text-white/20 text-[11px]">AI Video</span></span></a></li>
-                        <li><a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="footer-product-link text-[14px] text-white/45 hover:text-white transition-colors"><img src="/favicon-snapapro-32.png" alt="" class="footer-favicon" loading="lazy" decoding="async"><span>SnapaPro <span class="text-white/20 text-[11px]">AI Planning</span></span></a></li>
-                        <li><a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="footer-product-link text-[14px] text-white/45 hover:text-white transition-colors"><img src="/favicon-hivelink-32.png" alt="" class="footer-favicon" loading="lazy" decoding="async"><span>HiveLink <span class="text-white/20 text-[11px]">AI Distribution</span></span></a></li>
-                        <li><a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer" class="footer-product-link text-[14px] text-white/45 hover:text-white transition-colors"><img src="/favicon-mind-32.png" alt="" class="footer-favicon" loading="lazy" decoding="async"><span>Mind <span class="text-white/20 text-[11px]">AI Campaigns</span></span></a></li>
-                    </ul>
+                <div class="vh-footer__col">
+                    <h4>Products</h4>
+                    <a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-mpliphi-32.png?v=2" alt="" loading="lazy" decoding="async">mpliphi</a>
+                    <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-studio-32.png" alt="" loading="lazy" decoding="async">Veehive Studio</a>
+                    <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-snapapro-32.png" alt="" loading="lazy" decoding="async">SnapaPro</a>
+                    <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-hivelink-32.png" alt="" loading="lazy" decoding="async">HiveLink</a>
+                    <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-mind-32.png" alt="" loading="lazy" decoding="async">Veehive Mind</a>
                 </div>
 
-                <!-- Veehive Labs — sister site, services column per §7 -->
-                <div>
-                    <h4 class="text-[12px] font-semibold uppercase tracking-[0.15em] text-white/30 mb-5">Veehive Labs</h4>
-                    <ul class="space-y-3">
-                        <li><a href="https://veehivelabs.com/custom-ai-development" class="text-[14px] text-white/45 hover:text-white transition-colors">Custom AI Development</a></li>
-                        <li><a href="https://veehivelabs.com/ai-consulting" class="text-[14px] text-white/45 hover:text-white transition-colors">AI Consulting &amp; Strategy</a></li>
-                        <li><a href="https://veehivelabs.com/ai-training" class="text-[14px] text-white/45 hover:text-white transition-colors">AI Training &amp; Enablement</a></li>
-                        <li><a href="https://veehivelabs.com/embedded-ai-teams" class="text-[14px] text-white/45 hover:text-white transition-colors">Embedded AI Teams</a></li>
-                        <li><a href="https://veehivelabs.com/implementation" class="text-[14px] text-white/45 hover:text-white transition-colors">Implementation &amp; Integration</a></li>
-                    </ul>
+                <div class="vh-footer__col">
+                    <h4>Veehive Labs</h4>
+                    <a href="https://veehivelabs.com/custom-ai-development">Custom AI Development</a>
+                    <a href="https://veehivelabs.com/ai-consulting">AI Consulting &amp; Strategy</a>
+                    <a href="https://veehivelabs.com/ai-training">AI Training &amp; Enablement</a>
+                    <a href="https://veehivelabs.com/embedded-ai-teams">Embedded AI Teams</a>
+                    <a href="https://veehivelabs.com/implementation">Implementation &amp; Integration</a>
                 </div>
 
-                <!-- Company -->
-                <div>
-                    <h4 class="text-[12px] font-semibold uppercase tracking-[0.15em] text-white/30 mb-5">Company</h4>
-                    <ul class="space-y-3">
-                        <li><a href="about.html" class="text-[14px] text-white/45 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="team.html" class="text-[14px] text-white/45 hover:text-white transition-colors">Our Team</a></li>
-                        <li><a href="#contact" class="text-[14px] text-white/45 hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="privacy.html" class="text-[14px] text-white/45 hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="terms.html" class="text-[14px] text-white/45 hover:text-white transition-colors">Terms of Service</a></li>
-                    </ul>
+                <div class="vh-footer__col">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="team.html">Our Team</a>
+                    <a href="#contact">Contact</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+
+                <div class="vh-footer__ticker-wrap" aria-hidden="true">
+                    <div class="vh-footer__ticker" id="footerTicker"></div>
                 </div>
             </div>
 
-            <!-- Bottom bar -->
-            <div class="pt-8 border-t border-white/[0.06] flex flex-wrap items-center justify-between gap-4">
-                <p class="text-[13px] text-white/25">&copy; 2026 Veehive Tech FZ-LLC &middot; Dubai, United Arab Emirates</p>
-                <div class="flex items-center gap-5">
-                    <span class="flex items-center gap-1.5 text-[12px] text-white/25">
-                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+            <div class="vh-footer__map-row">
+                <div class="vh-footer__map-info">
+                    &#128205; Veehive Tech FZ-LLC &middot; in5 Tech, Dubai Internet City, Dubai, UAE<br>
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=in5+Tech+Dubai+Internet+City" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+                </div>
+                <div class="vh-footer__map-frame">
+                    <iframe title="Veehive Tech FZ-LLC location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps?q=in5+Tech,+Dubai+Internet+City,+Dubai,+UAE&amp;output=embed"></iframe>
+                </div>
+            </div>
+
+            <div class="vh-footer__bottom">
+                <p style="margin:0;">&copy; 2026 Veehive Tech FZ-LLC &middot; Dubai, United Arab Emirates</p>
+                <div class="vh-footer__badges">
+                    <span>
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
                         SOC 2 Controls Implemented
                     </span>
-                    <span class="flex items-center gap-1.5 text-[12px] text-white/25">
-                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                    <span>
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
                         ISO 27001 Aligned
                     </span>
                 </div>
@@ -2910,43 +3093,271 @@
   })();
     </script>
 
-    <!-- Hero product window — tab switcher, auto-rotates every 5s, pauses on hover/focus -->
+    <!-- NOTE: the hero tab-switcher script was removed with the tabbed product
+         window it drove. The .product-window* / .product-pane* CSS rules further
+         up are now unused too — safe to delete on the next cleanup pass. -->
+
+
+    <!-- Nav products dropdown + footer product ticker -->
     <script>
     (function(){
-        const root = document.getElementById('hero-window');
-        if (!root) return;
-        const tabs = Array.from(root.querySelectorAll('.product-window-tab'));
-        const panes = Array.from(root.querySelectorAll('.product-pane'));
-        if (!tabs.length || !panes.length) return;
+        /* ── Products mega-menu ─────────────────────────────── */
+        var menu = document.getElementById('products-menu');
+        var btn  = document.getElementById('products-menu-btn');
+        if (menu && btn) {
+            var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+            var closeTimer = null;
+            var skipFocusOpen = false;
 
-        let idx = 0;
-        let timer = null;
-        const INTERVAL = 5000;
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            function open(){
+                if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+                menu.classList.add('is-open');
+                btn.setAttribute('aria-expanded','true');
+            }
+            function close(){
+                menu.classList.remove('is-open');
+                btn.setAttribute('aria-expanded','false');
+            }
+            function toggle(){ menu.classList.contains('is-open') ? close() : open(); }
 
-        function show(n){
-            idx = ((n % tabs.length) + tabs.length) % tabs.length;
-            tabs.forEach((t, i) => {
-                const active = i === idx;
-                t.classList.toggle('is-active', active);
-                t.setAttribute('aria-selected', active ? 'true' : 'false');
+            /* Two input models, deliberately not mixed:
+               - pointer devices: hover opens, moving away closes, click only ever
+                 opens (a click-toggle here would instantly undo the hover-open);
+               - touch / no-hover: click toggles, since there is no hover to open it. */
+            if (canHover) {
+                menu.addEventListener('mouseenter', open);
+                menu.addEventListener('mouseleave', function(){
+                    closeTimer = setTimeout(close, 160);
+                });
+                btn.addEventListener('focus', function(){ if (!skipFocusOpen) open(); });
+                btn.addEventListener('click', function(e){ e.preventDefault(); open(); });
+            } else {
+                btn.addEventListener('click', function(e){ e.preventDefault(); toggle(); });
+            }
+
+            /* Keyboard: Escape closes and hands focus back to the trigger —
+               without the focus handler above immediately reopening it. */
+            document.addEventListener('keydown', function(e){
+                if (e.key === 'Escape' && menu.classList.contains('is-open')) {
+                    close();
+                    skipFocusOpen = true;
+                    btn.focus();
+                    setTimeout(function(){ skipFocusOpen = false; }, 0);
+                }
             });
-            panes.forEach((p, i) => p.classList.toggle('is-active', i === idx));
+
+            /* Click anywhere outside, or on a link inside, closes it. */
+            document.addEventListener('click', function(e){
+                if (!menu.contains(e.target)) close();
+            });
+            menu.addEventListener('click', function(e){
+                if (e.target.closest('a')) close();
+            });
+
+            /* Tabbing out of the menu closes it. */
+            menu.addEventListener('focusout', function(e){
+                if (!menu.contains(e.relatedTarget)) close();
+            });
         }
-        function next(){ show(idx + 1); }
 
-        function start(){ if (reduceMotion) return; stop(); timer = setInterval(next, INTERVAL); }
-        function stop(){ if (timer){ clearInterval(timer); timer = null; } }
+        /* ── Footer product ticker ──────────────────────────── */
+        /* Matches the vertical ticker on the product landing pages. */
+        var ticker = document.getElementById('footerTicker');
+        if (ticker) {
+            var items = [
+                { name: 'mpliphi',        icon: 'favicon-mpliphi-32.png' },
+                { name: 'Veehive Studio', icon: 'favicon-studio-32.png' },
+                { name: 'SnapaPro',       icon: 'favicon-snapapro-32.png' },
+                { name: 'HiveLink',       icon: 'favicon-hivelink-32.png' },
+                { name: 'Veehive Mind',   icon: 'favicon-mind-32.png' }
+            ];
+            /* Built twice so the -50% keyframe loops seamlessly. */
+            function build(){
+                items.forEach(function(p){
+                    var row = document.createElement('div');
+                    row.className = 'vh-footer__ticker-item';
+                    var img = document.createElement('img');
+                    img.src = p.icon; img.alt = ''; img.width = 16; img.height = 16;
+                    img.loading = 'lazy'; img.decoding = 'async';
+                    row.appendChild(img);
+                    row.appendChild(document.createTextNode(p.name));
+                    ticker.appendChild(row);
+                });
+            }
+            build(); build();
+        }
+    })();
+    </script>
 
-        tabs.forEach(t => t.addEventListener('click', () => { show(parseInt(t.dataset.tab, 10)); start(); }));
 
-        root.addEventListener('mouseenter', stop);
-        root.addEventListener('mouseleave', start);
-        root.addEventListener('focusin', stop);
-        root.addEventListener('focusout', start);
-        document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
+    <!-- Scroll progress bar, section rail, and the hero apps-panel entrance -->
+    <script>
+    (function(){
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        start();
+        /* ── Top progress bar ───────────────────────────────── */
+        var bar = document.getElementById('scrollProgress');
+
+        /* ── Section rail ───────────────────────────────────── */
+        var SECTIONS = [
+            { id:'home',      label:'Home' },
+            { id:'matcher',   label:'Find your agent' },
+            { id:'mpliphi',   label:'The apps' },
+            { id:'workforce', label:'Workforce' },
+            { id:'trust',     label:'Trust' },
+            { id:'faq',       label:'FAQ' },
+            { id:'contact',   label:'Contact' }
+        ];
+        var rail = document.getElementById('scrollspy');
+        var targets = [];
+
+        if (rail) {
+            SECTIONS.forEach(function(s, i){
+                var el = document.getElementById(s.id);
+                if (!el) return;
+                var item = document.createElement('button');
+                item.type = 'button';
+                item.className = 'vh-scrollspy-item' + (i === 0 ? ' active' : '');
+                item.setAttribute('data-target', s.id);
+                item.setAttribute('aria-label', 'Go to ' + s.label);
+                var lab = document.createElement('span');
+                lab.className = 'sslabel';
+                lab.textContent = s.label;
+                var dot = document.createElement('span');
+                dot.className = 'vh-scrollspy-dot';
+                item.appendChild(lab);
+                item.appendChild(dot);
+                item.addEventListener('click', function(){
+                    var top = el.getBoundingClientRect().top + window.scrollY - 80;
+                    window.scrollTo({ top: top, behavior: reduceMotion ? 'auto' : 'smooth' });
+                });
+                rail.appendChild(item);
+                targets.push({ id: s.id, el: el, top: 0 });
+            });
+        }
+
+        /* Positions are measured once (and on resize), never inside the scroll
+           handler — reading getBoundingClientRect on every scroll tick is what
+           causes layout thrash. */
+        function measure(){
+            for (var i = 0; i < targets.length; i++) {
+                targets[i].top = targets[i].el.getBoundingClientRect().top + window.scrollY;
+            }
+        }
+
+        var items = rail ? rail.querySelectorAll('.vh-scrollspy-item') : [];
+        function onScroll(){
+            if (bar) {
+                var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+                bar.style.width = (scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0) + '%';
+            }
+            if (!targets.length) return;
+            var line = window.scrollY + window.innerHeight * 0.35;
+            var current = targets[0].id;
+            for (var i = 0; i < targets.length; i++) {
+                if (targets[i].top <= line) current = targets[i].id; else break;
+            }
+            for (var j = 0; j < items.length; j++) {
+                items[j].classList.toggle('active', items[j].getAttribute('data-target') === current);
+            }
+        }
+
+        /* No "already queued" boolean here on purpose. If rAF is ever starved
+           — a backgrounded tab, a hidden pane — a latching flag never clears
+           and the bar and rail stay frozen for the rest of the session. rAF
+           already coalesces to one callback per paint, so queueing per event
+           costs nothing and cannot wedge. */
+        window.addEventListener('scroll', function(){
+            requestAnimationFrame(onScroll);
+        }, { passive: true });
+        /* Re-sync when the tab comes back, since scrolls while hidden are missed. */
+        document.addEventListener('visibilitychange', function(){
+            if (!document.hidden) { measure(); onScroll(); }
+        });
+
+        window.addEventListener('resize', function(){ measure(); onScroll(); });
+        /* Late-loading fonts and images shift the page — re-measure after both. */
+        window.addEventListener('load', function(){ measure(); onScroll(); });
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(function(){ measure(); onScroll(); });
+        }
+        measure();
+        onScroll();
+
+        /* ── Hero apps panel: staged entrance, replays on re-entry ── */
+        var panel = document.querySelector('.vh-apps--hero');
+        if (panel) {
+            if (reduceMotion || !('IntersectionObserver' in window)) {
+                panel.classList.add('is-in');
+            } else {
+                new IntersectionObserver(function(entries){
+                    entries.forEach(function(e){
+                        panel.classList.toggle('is-in', e.isIntersecting);
+                    });
+                }, { threshold: 0.18, rootMargin: '0px 0px -60px 0px' }).observe(panel);
+            }
+        }
+    })();
+    </script>
+
+
+    <!-- Scrolling glow blobs, matching the product landing pages -->
+    <script>
+    (function(){
+        var layer = null;
+
+        /* The layer is clipped to the footer's bottom edge so the blobs can
+           never add page height. Positions come from offsetTop/offsetHeight
+           (document-relative) rather than getBoundingClientRect()+scrollY,
+           which can be read mid scroll-restore on load. */
+        function build(){
+            if (!layer) {
+                layer = document.createElement('div');
+                layer.id = 'glowLayer';
+                layer.style.cssText = 'position:absolute; top:0; left:0; width:100%;' +
+                                      'overflow:hidden; z-index:0; pointer-events:none;';
+                document.body.insertBefore(layer, document.body.firstChild);
+            }
+            layer.style.height = '0px';   // reset first, or the layer's own size skews the measurement
+            while (layer.firstChild) layer.removeChild(layer.firstChild);
+
+            var footerEl = document.querySelector('footer');
+            var bottom = footerEl ? (footerEl.offsetTop + footerEl.offsetHeight)
+                                  : document.body.scrollHeight;
+            layer.style.height = bottom + 'px';
+
+            var spacing = 850, size = 420, side = 'right', n = 0;
+            for (var y = 40; y < bottom - size; y += spacing) {
+                var b = document.createElement('div');
+                b.className = 'vh-glow' + (n % 2 ? ' vh-glow--alt' : '');
+                b.style.top = y + 'px';
+                b.style[side] = '-140px';
+                b.setAttribute('data-base-top', y);
+                layer.appendChild(b);
+                side = (side === 'right') ? 'left' : 'right';
+                n++;
+            }
+        }
+
+        function parallax(){
+            if (!layer) return;
+            var drift = window.scrollY * 0.12;
+            var blobs = layer.children;
+            for (var i = 0; i < blobs.length; i++) {
+                blobs[i].style.top = (parseFloat(blobs[i].getAttribute('data-base-top')) + drift) + 'px';
+            }
+        }
+
+        build();
+        window.addEventListener('scroll', function(){ requestAnimationFrame(parallax); }, { passive: true });
+        window.addEventListener('resize', function(){
+            clearTimeout(window._vhGlowRs);
+            window._vhGlowRs = setTimeout(build, 300);
+        });
+        /* Late fonts and images move the footer — remeasure, or the layer is
+           sized off a stale page height and blobs stop short (or overrun). */
+        window.addEventListener('load', build);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(build);
     })();
     </script>
 

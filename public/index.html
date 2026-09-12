@@ -158,7 +158,7 @@
                 {"@type": "Offer", "itemOffered": {"@type": "SoftwareApplication", "name": "mpliphi", "url": "https://mpliphi.com", "description": "AI agents for customer conversations on WhatsApp and email"}},
                 {"@type": "Offer", "itemOffered": {"@type": "SoftwareApplication", "name": "Veehive Studio", "url": "https://veehivestudio.com", "description": "Turn documents into branded videos with AI avatars"}},
                 {"@type": "Offer", "itemOffered": {"@type": "SoftwareApplication", "name": "SnapaPro", "url": "https://snapapro.com", "description": "AI project management with three agents and natural-language tasks"}},
-                {"@type": "Offer", "itemOffered": {"@type": "SoftwareApplication", "name": "HiveLink", "url": "https://veehivelink.com", "description": "Video-first community platform — one branded destination for video, conversation, events, and CRM, with an AI agent for content and publishing"}},
+                {"@type": "Offer", "itemOffered": {"@type": "SoftwareApplication", "name": "HiveLink", "url": "https://veehivelink.com", "description": "Real-time frontline engagement platform — one AI agent delivers connected, personalized updates to every deskless worker on the device they already carry"}},
                 {"@type": "Offer", "itemOffered": {"@type": "SoftwareApplication", "name": "Veehive Mind", "url": "https://veehivemind.com", "description": "Always-on campaign hive — nine specialist AI agents collaborate from a single brief to launch and run marketing campaigns end-to-end"}}
             ]
         }
@@ -202,7 +202,7 @@
                 "name": "SnapaPro",
                 "url": "https://snapapro.com",
                 "applicationCategory": "BusinessApplication",
-                "description": "AI project management powered by three agents — Taj plans, Noor engages, Sats tracks time. Natural-language task creation, capacity planning, and dashboards.",
+                "description": "AI project management powered by three agents — Taj plans, Noor administers, Sats coordinates. Natural-language task creation, capacity planning, and dashboards.",
                 "operatingSystem": "Web",
                 "featureList": ["3 AI Agents", "Natural-Language Task Creation", "Auto Task Extraction", "Capacity Planning", "Project Dashboards", "Timesheets"],
                 "creator": {"@type": "Organization", "name": "Veehive.ai"}
@@ -213,9 +213,9 @@
                 "name": "HiveLink",
                 "url": "https://veehivelink.com",
                 "applicationCategory": "BusinessApplication",
-                "description": "Video-first community platform. One branded destination — your hive — where video, conversation, events, and CRM live together. An AI agent organises content, approves submissions, and publishes across channels automatically. White-label and on-premise ready.",
+                "description": "Real-time frontline engagement platform built for organizations where most of the workforce isn't behind a desk. One AI agent delivers connected, personalized updates to every worker on the device they actually carry — reliably, at scale, no company inbox required. White-label and on-premise ready.",
                 "operatingSystem": "Web",
-                "featureList": ["Branded Community Hub", "Video Hosting & Live Sessions", "Channels & Conversations", "Events & Calendars", "Built-in CRM", "AI Content Organisation & Approvals", "Multi-channel Publishing", "Web Plugin & Mobile SDK", "Custom Domain", "White-label & On-premise"],
+                "featureList": ["Frontline & Deskless Workforce Reach", "Personalized Updates per Role & Shift", "Mobile-first Delivery, No Company Inbox", "Channels & Conversations", "Events & Calendars", "Built-in CRM", "AI Content Organisation & Approvals", "Read Receipts & Engagement Tracking", "Web Plugin & Mobile SDK", "White-label & On-premise"],
                 "creator": {"@type": "Organization", "name": "Veehive.ai"}
             },
             {
@@ -303,7 +303,7 @@
                 "@type": "SiteNavigationElement",
                 "position": 4,
                 "name": "HiveLink",
-                "description": "Video-first community platform with AI content organisation, approvals, and multi-channel publishing",
+                "description": "Real-time frontline engagement platform — connected, personalized updates for every deskless worker",
                 "url": "https://veehivelink.com"
             },
             {
@@ -358,7 +358,7 @@
                 "name": "What products does Veehive build?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "mpliphi (customer-conversation agents at mpliphi.com), Veehive Studio (document-to-video AI at veehivestudio.com), SnapaPro (AI project management at snapapro.com), HiveLink (video-first community platform at veehivelink.com), and Veehive Mind (always-on AI campaign hive at veehivemind.com)."
+                    "text": "mpliphi (customer-conversation agents at mpliphi.com), Veehive Studio (document-to-video AI at veehivestudio.com), SnapaPro (AI project management at snapapro.com), HiveLink (frontline engagement platform at veehivelink.com), and Veehive Mind (always-on AI campaign hive at veehivemind.com)."
                 }
             },
             {
@@ -1923,6 +1923,10 @@
         .vh-glow--alt{ background:radial-gradient(circle, var(--vh-glow-b) 0%, transparent 72%); }
         @media (prefers-reduced-motion:reduce){ #glowLayer{display:none;} }
 
+        .prod-hero{font-size:20px;line-height:1.25;font-weight:700;letter-spacing:-.015em;color:#fff;margin:-6px 0 10px;text-wrap:balance;}
+        @media(min-width:768px){.prod-hero{font-size:27px;margin:-8px 0 12px;}}
+        .prod-tagline{display:block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0 0 20px;}
+    
     </style>
 </head>
 <body class="min-h-screen overflow-x-hidden antialiased" style="color: var(--text);">
@@ -1978,11 +1982,11 @@
                                         <a class="vh-apps__grid-link" href="#workforce">Meet the workforce <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></a>
                                     </div>
                                     <div class="vh-apps__grid">
-                                        <a class="vh-app" href="https://mpliphi.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-mpliphi-32.png?v=2" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">mpliphi<span class="vh-app__tag">AI customer service agent</span></span><span class="vh-app__desc">Customer conversations on WhatsApp and email, handled autonomously.</span></span></a>
-                                        <a class="vh-app" href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-studio-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">Veehive Studio<span class="vh-app__tag">Agentic content generation platform</span></span><span class="vh-app__desc">Documents, PDFs and briefs turned into branded videos with AI avatars.</span></span></a>
-                                        <a class="vh-app" href="https://snapapro.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-snapapro-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">SnapaPro<span class="vh-app__tag">Agentic project management tool</span></span><span class="vh-app__desc">Three agents that plan projects, engage the team and track time.</span></span></a>
-                                        <a class="vh-app" href="https://veehivelink.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-hivelink-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">HiveLink<span class="vh-app__tag">Internal communication &amp; engagement platform</span></span><span class="vh-app__desc">Your branded hive — video, conversation, events and CRM in one place.</span></span></a>
-                                        <a class="vh-app" href="https://veehivemind.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-mind-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">Veehive Mind<span class="vh-app__tag">AI campaign management tool</span></span><span class="vh-app__desc">Nine specialist agents running campaigns end-to-end from one brief.</span></span></a>
+                                        <a class="vh-app" href="https://mpliphi.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-mpliphi-32.png?v=2" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">mpliphi<span class="vh-app__tag">AI customer service agent</span></span><span class="vh-app__desc">Intelligent agents for customers and employees, on every channel.</span></span></a>
+                                        <a class="vh-app" href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-studio-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">Veehive Studio<span class="vh-app__tag">Agentic content generation platform</span></span><span class="vh-app__desc">Documents and product detail turned into personalized video, in 30+ languages.</span></span></a>
+                                        <a class="vh-app" href="https://snapapro.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-snapapro-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">SnapaPro<span class="vh-app__tag">Agentic project management tool</span></span><span class="vh-app__desc">Three agents that plan, administer and coordinate every project.</span></span></a>
+                                        <a class="vh-app" href="https://veehivelink.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-hivelink-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">HiveLink<span class="vh-app__tag">Internal communication &amp; engagement platform</span></span><span class="vh-app__desc">Real-time updates to every frontline worker, on the phone they carry.</span></span></a>
+                                        <a class="vh-app" href="https://veehivemind.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-mind-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">Veehive Mind<span class="vh-app__tag">AI campaign management tool</span></span><span class="vh-app__desc">Specialist agents that research, create and publish campaigns end-to-end.</span></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -2121,11 +2125,11 @@
                             <a class="vh-apps__grid-link" href="#workforce">Meet the workforce <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></a>
                         </div>
                         <div class="vh-apps__grid">
-                            <a class="vh-app" href="https://mpliphi.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-mpliphi-32.png?v=2" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">mpliphi<span class="vh-app__tag">AI customer service agent</span></span><span class="vh-app__desc">Customer conversations on WhatsApp and email, handled autonomously.</span></span></a>
-                            <a class="vh-app" href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-studio-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">Veehive Studio<span class="vh-app__tag">Agentic content generation platform</span></span><span class="vh-app__desc">Documents, PDFs and briefs turned into branded videos with AI avatars.</span></span></a>
-                            <a class="vh-app" href="https://snapapro.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-snapapro-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">SnapaPro<span class="vh-app__tag">Agentic project management tool</span></span><span class="vh-app__desc">Three agents that plan projects, engage the team and track time.</span></span></a>
-                            <a class="vh-app" href="https://veehivelink.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-hivelink-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">HiveLink<span class="vh-app__tag">Internal communication &amp; engagement platform</span></span><span class="vh-app__desc">Your branded hive — video, conversation, events and CRM in one place.</span></span></a>
-                            <a class="vh-app" href="https://veehivemind.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-mind-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">Veehive Mind<span class="vh-app__tag">AI campaign management tool</span></span><span class="vh-app__desc">Nine specialist agents running campaigns end-to-end from one brief.</span></span></a>
+                            <a class="vh-app" href="https://mpliphi.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-mpliphi-32.png?v=2" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">mpliphi<span class="vh-app__tag">AI customer service agent</span></span><span class="vh-app__desc">Intelligent agents for customers and employees, on every channel.</span></span></a>
+                            <a class="vh-app" href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-studio-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">Veehive Studio<span class="vh-app__tag">Agentic content generation platform</span></span><span class="vh-app__desc">Documents and product detail turned into personalized video, in 30+ languages.</span></span></a>
+                            <a class="vh-app" href="https://snapapro.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-snapapro-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">SnapaPro<span class="vh-app__tag">Agentic project management tool</span></span><span class="vh-app__desc">Three agents that plan, administer and coordinate every project.</span></span></a>
+                            <a class="vh-app" href="https://veehivelink.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-hivelink-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">HiveLink<span class="vh-app__tag">Internal communication &amp; engagement platform</span></span><span class="vh-app__desc">Real-time updates to every frontline worker, on the phone they carry.</span></span></a>
+                            <a class="vh-app" href="https://veehivemind.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-mind-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">Veehive Mind<span class="vh-app__tag">AI campaign management tool</span></span><span class="vh-app__desc">Specialist agents that research, create and publish campaigns end-to-end.</span></span></a>
                         </div>
                     </div>
                 </div>
@@ -2181,8 +2185,8 @@
                     <span class="block text-[17px] font-semibold text-white/85 leading-snug">&ldquo;Projects slip through the cracks.&rdquo;</span>
                 </button>
                 <button type="button" aria-pressed="false" class="problem-card trust-card card-glow card-glow-distributor rounded-xl p-6 text-left transition-all" data-product="veehive-link">
-                    <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#60A5FA">Audience &amp; community</span>
-                    <span class="block text-[17px] font-semibold text-white/85 leading-snug">&ldquo;Our audience lives on someone else&rsquo;s algorithm.&rdquo;</span>
+                    <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#60A5FA">Frontline &amp; internal comms</span>
+                    <span class="block text-[17px] font-semibold text-white/85 leading-snug">&ldquo;Half our people never see a company email.&rdquo;</span>
                 </button>
                 <button type="button" aria-pressed="false" class="problem-card trust-card card-glow card-glow-mind rounded-xl p-6 text-left transition-all" data-product="mind" style="grid-column: span 2;">
                     <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#ffb020">Campaigns &amp; execution</span>
@@ -2209,7 +2213,9 @@
                         <img src="/favicon-mpliphi-64.png?v=2" alt="mpliphi" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
                         <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#2c573e">Your AI customer service agent</p>
                         <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">mpliphi</h2>
-                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👨‍💼</span> <strong class="text-white/80">ND</strong> &mdash; mpliphi runs as your always-on customer-operations agent, handling conversations on WhatsApp and email autonomously or alongside your staff. Escalates when needed, logs to your CRM, speaks 50+ languages.</p>
+                        <p class="prod-hero">Amplify your productivity. Not headcount.</p>
+                        <span class="prod-tagline" style="color:#2c573e">Deploy. Resolve. Scale.</span>
+                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👨‍💼</span> <strong class="text-white/80">ND</strong> &mdash; deploy intelligent AI agents for your customers, employees, CXOs, and yourself, delivering real-time, connected experiences that amplify productivity, customer experience, and operational excellence across every channel, at scale.</p>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
                                 <span class="stat-icon" style="color:#2c573e" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.86 9.86 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></span>
@@ -2266,7 +2272,9 @@
                         <img src="/favicon-studio-64.png" alt="Veehive Studio" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
                         <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#A78BFA">Your agentic content generation platform</p>
                         <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">Veehive Studio</h2>
-                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👨‍🎨</span> <strong class="text-white/80">Chaks</strong> &mdash; the Studio content agent that turns your documents, PDFs, and briefs into publish-ready branded videos with AI avatars in 30+ languages. What used to take a content team a week now takes about 90 seconds.</p>
+                        <p class="prod-hero">Scale your content without losing your creativity.</p>
+                        <span class="prod-tagline" style="color:#A78BFA">Create. Localize. Distribute.</span>
+                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👨‍🎨</span> <strong class="text-white/80">Chaks</strong> &mdash; turn documents, PDFs, and product details into personalized video, instantly. 10x faster, ~95% cheaper, in 30+ languages. Generate the full cut, or step in and edit every scene yourself.</p>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
                                 <span class="stat-icon" style="color:#A78BFA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></span>
@@ -2327,7 +2335,9 @@
                         <img src="/favicon-snapapro-64.png" alt="SnapaPro" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
                         <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#F87171">Your agentic project management tool</p>
                         <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">SnapaPro</h2>
-                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👨‍💻</span> <strong class="text-white/80">Taj</strong>, <span aria-hidden="true">👩</span> <strong class="text-white/80">Noor</strong>, and <span aria-hidden="true">👨</span> <strong class="text-white/80">Sats</strong> &mdash; SnapaPro&rsquo;s three-agent system that plans your projects, engages your team, and tracks time. No manual follow-ups, no capacity blind spots.</p>
+                        <p class="prod-hero">Projects across a global team, finally on track.</p>
+                        <span class="prod-tagline" style="color:#F87171">Preemptive. Unprompted. Relentless.</span>
+                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👨‍💻</span> <strong class="text-white/80">Taj</strong>, <span aria-hidden="true">👩</span> <strong class="text-white/80">Noor</strong>, and <span aria-hidden="true">👨</span> <strong class="text-white/80">Sats</strong> &mdash; real-time agent orchestration that plans, tracks, and follows up across every project, giving you full visibility without the manual chasing.</p>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
                                 <span class="stat-icon" style="color:#F87171" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></span>
@@ -2370,7 +2380,7 @@
                             </div>
                             <div class="agent-result">
                                 <span class="agent-result-tag">3 agents working</span>
-                                Taj plans &middot; Noor engages &middot; Sats tracks
+                                Taj plans &middot; Noor administers &middot; Sats coordinates
                             </div>
                         </div>
                     </div>
@@ -2388,7 +2398,9 @@
                         <img src="/favicon-hivelink-64.png" alt="HiveLink" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
                         <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#60A5FA">Your internal communication &amp; engagement platform</p>
                         <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">HiveLink</h2>
-                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👩‍💻</span> <strong class="text-white/80">AK</strong> &mdash; the HiveLink community-growth agent that runs your branded video community end-to-end. HiveLink gives you one branded destination (your hive) where video, conversation, events, and CRM live together; AK organises content, approves submissions, and publishes across channels automatically. Embed in your app, on your website, or run it as a standalone portal. White-label and on-premise ready.</p>
+                        <p class="prod-hero">Your frontline team, finally connected.</p>
+                        <span class="prod-tagline" style="color:#60A5FA">Build. Delegate. Grow.</span>
+                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👩‍💻</span> <strong class="text-white/80">AK</strong> &mdash; HiveLink is the real-time engagement platform built for organizations where most of the workforce isn&rsquo;t behind a desk. One AI agent delivers connected, personalized updates to every worker on the device they actually carry &mdash; reliably, at scale, no company inbox required &mdash; while coordinating with the rest of your AI workforce automatically.</p>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
                                 <span class="stat-icon" style="color:#60A5FA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></span>
@@ -2413,25 +2425,25 @@
                             <span class="agent-live"><span aria-hidden="true">👩‍💻</span> AK &middot; HiveLink agent</span>
                             <div class="agent-prompt">
                                 <span class="agent-prompt-icon">U</span>
-                                <span class="agent-prompt-text">Run a campaign to <strong>increase footfall by 20% next week</strong> at our Dubai Mall store.</span>
+                                <span class="agent-prompt-text">Push the <strong>updated store safety procedure</strong> to every shift across all 40 branches.</span>
                             </div>
                             <div class="agent-steps">
                                 <div class="agent-step is-done">
                                     <span class="agent-step-mark">&check;</span>
-                                    Drafted offer &middot; 4 channel-specific variants
+                                    Rewritten per role &middot; 6 language variants
                                 </div>
                                 <div class="agent-step is-done">
                                     <span class="agent-step-mark">&check;</span>
-                                    Geo-targeted 12km radius &middot; scheduled by daypart
+                                    Delivered to personal devices &middot; timed to shift start
                                 </div>
                                 <div class="agent-step is-running">
                                     <span class="agent-step-mark">&#8635;</span>
-                                    Tracking footfall hourly &middot; reallocating spend
+                                    Tracking read receipts &middot; nudging the unopened
                                 </div>
                             </div>
                             <div class="agent-result">
-                                <span class="agent-result-tag">Day 3 of 7</span>
-                                +14% footfall vs. baseline &middot; on pace for +22%
+                                <span class="agent-result-tag">Within 1 hour</span>
+                                214 staff reached &middot; 68% engaged &middot; no company inbox needed
                             </div>
                         </div>
                     </div>
@@ -2449,7 +2461,9 @@
                         <img src="/favicon-mind-64.png" alt="Veehive Mind" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
                         <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#ffb020">Your AI campaign management tool</p>
                         <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">Veehive Mind</h2>
-                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👩‍🦰</span> <strong class="text-white/80">Mira</strong> &mdash; the Veehive Mind campaign hive. Nine specialist agents (trend intelligence, calendar, copy, creative, brand memory, compliance, publishing, learning, and orchestration) collaborate from a single brief to launch and run marketing campaigns end-to-end. Website to first campaign in minutes. One click from approval to publishing.</p>
+                        <p class="prod-hero">Launch campaigns like a team of fifty.</p>
+                        <span class="prod-tagline" style="color:#ffb020">Research. Create. Publish.</span>
+                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👩‍🦰</span> <strong class="text-white/80">Mira</strong> &mdash; Veehive Mind is a hive of specialist AI agents that scout what&rsquo;s trending in real time, write copy in your brand voice, design the creative, and orchestrate the whole campaign across your calendar &mdash; personalized at scale, then handed to you launch-ready to approve.</p>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
                                 <span class="stat-icon" style="color:#ffb020" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></span>
@@ -2533,14 +2547,14 @@
                     <div class="workforce-face is-trio" aria-hidden="true">👨‍💻 👩 👨</div>
                     <div class="workforce-name">Taj &middot; Noor &middot; Sats</div>
                     <div class="workforce-product" style="color:#F87171">SnapaPro</div>
-                    <div class="workforce-role">Plan, engage, and track</div>
+                    <div class="workforce-role">Plan, administer, and coordinate</div>
                 </div>
 
                 <div class="workforce-card">
                     <div class="workforce-face" aria-hidden="true">👩‍💻</div>
                     <div class="workforce-name">AK</div>
                     <div class="workforce-product" style="color:#60A5FA">HiveLink</div>
-                    <div class="workforce-role">Community-growth agent</div>
+                    <div class="workforce-role">Frontline-engagement agent</div>
                 </div>
 
                 <div class="workforce-card">
@@ -3032,10 +3046,10 @@
      so trusted-types / CSP-strict environments stay happy. */
   (function () {
     var PRODUCTS = {
-      'mpliphi':       { name: 'mpliphi',         color: '#2c573e', pitch: 'Deploy an AI agent to handle every customer conversation on WhatsApp and email — autonomously or alongside your staff. Escalates when needed, logs to your CRM, speaks 50+ languages.', url: 'https://mpliphi.com' },
-      'studio':        { name: 'Veehive Studio',  color: '#A78BFA', pitch: 'Turn your documents, PDFs, and briefs into publish-ready branded videos with AI avatars — in 30+ languages. What used to take a content team a week now takes about 90 seconds.', url: 'https://veehivestudio.com' },
-      'snapapro':      { name: 'SnapaPro',        color: '#F87171', pitch: 'Give your team an AI project-management agent that plans, delegates, and follows up. Three coordinated agents — Taj plans, Noor engages, Sats tracks — so no manual follow-ups, no capacity blind spots.', url: 'https://snapapro.com' },
-      'veehive-link':  { name: 'HiveLink',        color: '#60A5FA', pitch: 'Bring your audience home. HiveLink is your branded community platform — video, conversation, events, and CRM in one space your members own as much as you do. An AI agent handles content organisation, approvals, and multi-channel publishing automatically.', url: 'https://veehivelink.com' },
+      'mpliphi':       { name: 'mpliphi',         color: '#2c573e', pitch: 'Amplify your productivity, not headcount. Deploy intelligent AI agents for your customers, employees, CXOs, and yourself \u2014 delivering real-time, connected experiences across every channel, at scale.', url: 'https://mpliphi.com' },
+      'studio':        { name: 'Veehive Studio',  color: '#A78BFA', pitch: 'Scale your content without losing your creativity. Turn documents, PDFs, and product details into personalized video \u2014 10x faster, ~95% cheaper, in 30+ languages. Generate the full cut, or edit every scene yourself.', url: 'https://veehivestudio.com' },
+      'snapapro':      { name: 'SnapaPro',        color: '#F87171', pitch: 'Projects across a global team, finally on track. Real-time agent orchestration that plans, tracks, and follows up across every project \u2014 Taj plans, Noor administers, Sats coordinates \u2014 giving you full visibility without the manual chasing.', url: 'https://snapapro.com' },
+      'veehive-link':  { name: 'HiveLink',        color: '#60A5FA', pitch: 'Your frontline team, finally connected. HiveLink is the real-time engagement platform built for organizations where most of the workforce isn\u2019t behind a desk \u2014 one AI agent delivers connected, personalized updates to every worker on the device they actually carry, reliably and at scale, with no company inbox required.', url: 'https://veehivelink.com' },
       'mind':          { name: 'Veehive Mind',    color: '#ffb020', pitch: 'Launch campaigns like a team of fifty. Veehive Mind is an always-on hive of nine specialist AI agents — trend intelligence, calendar, copy, creative, brand memory, compliance, publishing, and learning — all collaborating from a single brief. Website to first campaign in minutes.', url: 'https://veehivemind.com' }
     };
     var grid = document.getElementById('problem-matcher-grid');

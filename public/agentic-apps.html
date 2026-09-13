@@ -91,11 +91,16 @@
     }
     html.light .nav{background:rgba(255,255,255,.86);}
     .nav-in{display:flex; align-items:center; gap:20px; height:64px;}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800; font-size:17px; letter-spacing:-.03em;}
-    .brand img{width:26px; height:26px;}
+    .brand{display:flex; align-items:center;}
+    .brand img{height:24px; width:auto;}
+    .brand-logo-white{display:inline-block; opacity:.9;}
+    .brand-logo-color{display:none;}
+    html.light .brand-logo-white{display:none;}
+    html.light .brand-logo-color{display:inline-block;}
     .nav-right{margin-left:auto; display:flex; align-items:center; gap:18px;}
-    .nav-right a{font-size:14px; font-weight:500; color:var(--vh-color-text-muted);}
-    .nav-right a:hover{color:var(--vh-color-text);}
+    .nav-right a{font-size:14px; font-weight:500; color:var(--vh-color-text); opacity:.78;}
+    .nav-right a:hover{opacity:1;}
+    .nav-right a.btn{opacity:1;}
     @media(max-width:760px){ .nav-right a.hide-sm{display:none;} }
 
     /* ---------- HERO ---------- */
@@ -220,9 +225,9 @@
 
 <nav class="nav">
     <div class="wrap nav-in">
-        <a class="brand" href="/">
-            <img src="/logo-veehive-192.png" alt="" width="26" height="26" loading="lazy" decoding="async">
-            Veehive<span style="color:var(--vh-color-brand)">.ai</span>
+        <a class="brand" href="/" aria-label="Veehive.ai home">
+            <img src="/logo-veehive-white-192.png" alt="Veehive" class="brand-logo-white">
+            <img src="/logo-veehive-192.png" alt="Veehive" class="brand-logo-color">
         </a>
         <div class="nav-right">
             <a href="/#apps" class="hide-sm">All apps</a>

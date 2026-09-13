@@ -1716,6 +1716,79 @@
             line-height:1.35; color:var(--vh-color-brand);
         }
         .vh-app__desc{display:block; font-size:13px; line-height:1.5; color:var(--vh-color-text-muted);}
+        /* Founder quote — deliberately a dark panel in both themes, so it reads
+           as a spotlight rather than another card. */
+        .fq{position:relative; margin:0 auto; max-width:1060px;}
+        .fq-panel{
+            position:relative; overflow:hidden; border-radius:24px; padding:48px;
+            background:linear-gradient(152deg,#0B1016 0%,#101B2B 52%,#14112B 100%);
+            border:1px solid rgba(107,130,255,.30);
+            box-shadow:0 30px 80px -40px rgba(59,91,255,.55), 0 2px 10px rgba(0,0,0,.25);
+        }
+        @media(max-width:820px){ .fq-panel{padding:32px 24px; border-radius:20px;} }
+        /* faint engineering grid + a brand bloom in the corner */
+        .fq-panel::before{
+            content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+            background-image:linear-gradient(rgba(107,130,255,.07) 1px,transparent 1px),
+                             linear-gradient(90deg,rgba(107,130,255,.07) 1px,transparent 1px);
+            background-size:52px 52px;
+            mask-image:radial-gradient(120% 90% at 82% 6%,#000 0%,transparent 72%);
+            -webkit-mask-image:radial-gradient(120% 90% at 82% 6%,#000 0%,transparent 72%);
+        }
+        .fq-panel::after{
+            content:""; position:absolute; width:420px; height:420px; right:-140px; top:-190px;
+            border-radius:50%; pointer-events:none;
+            background:radial-gradient(circle,rgba(59,91,255,.40) 0%,rgba(139,92,255,.14) 45%,transparent 70%);
+            filter:blur(18px);
+        }
+        .fq-grid{position:relative; z-index:1; display:grid; grid-template-columns:180px 1fr; gap:40px; align-items:start;}
+        @media(max-width:820px){ .fq-grid{grid-template-columns:1fr; gap:26px;} }
+
+        .fq-portrait{position:relative; width:180px;}
+        @media(max-width:820px){ .fq-portrait{width:120px;} }
+        .fq-portrait img{
+            width:100%; aspect-ratio:1/1; object-fit:cover; object-position:center top;
+            border-radius:20px; display:block; border:1px solid rgba(255,255,255,.14);
+        }
+        .fq-portrait::after{
+            content:""; position:absolute; inset:-5px; border-radius:25px; pointer-events:none;
+            background:linear-gradient(150deg,rgba(107,130,255,.85),rgba(139,92,255,.35) 45%,transparent 72%);
+            -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+            mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+            -webkit-mask-composite:xor; mask-composite:exclude; padding:1.5px;
+        }
+        .fq-tenure{
+            margin-top:16px; display:flex; flex-direction:column; gap:7px;
+        }
+        .fq-stat{display:flex; align-items:baseline; gap:8px;}
+        .fq-stat b{
+            font-family:var(--vh-font-mono); font-size:15px; font-weight:700; color:#8FA3FF;
+            font-variant-numeric:tabular-nums; min-width:32px;
+        }
+        .fq-stat span{font-size:11px; line-height:1.35; color:rgba(255,255,255,.5);}
+
+        .fq-mark{
+            font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase;
+            color:#8FA3FF; margin:0 0 18px; display:flex; align-items:center; gap:10px;
+        }
+        .fq-mark::after{content:""; height:1px; flex:1; background:linear-gradient(90deg,rgba(143,163,255,.45),transparent);}
+        .fq-quote{
+            margin:0; font-size:clamp(1.15rem,2.1vw,1.55rem); line-height:1.5; font-weight:500;
+            color:#EAF0FF; letter-spacing:-.015em;
+        }
+        .fq-quote p + p{margin-top:18px;}
+        .fq-quote em{
+            font-style:normal; font-weight:700;
+            background:linear-gradient(96deg,#8FA3FF,#C3A6FF);
+            -webkit-background-clip:text; background-clip:text; color:transparent;
+        }
+        .fq-attr{
+            margin-top:30px; padding-top:22px; border-top:1px solid rgba(255,255,255,.12);
+            display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+        }
+        .fq-attr .who{font-size:15px; font-weight:700; color:#fff;}
+        .fq-attr .role{font-size:13px; color:rgba(255,255,255,.55);}
+        .fq-attr .sep{width:4px; height:4px; border-radius:50%; background:rgba(255,255,255,.3);}
         .vh-app--more .vh-app__name{color:var(--vh-color-brand);}
         .vh-app__icon--more{
             display:grid; place-items:center; color:var(--vh-color-brand);
@@ -2830,6 +2903,47 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <div class="divider-gradient"></div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- FOUNDER QUOTE -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="relative z-10 py-16 lg:py-20">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <figure class="fq reveal">
+                <div class="fq-panel">
+                    <div class="fq-grid">
+                        <div>
+                            <div class="fq-portrait">
+                                <img src="/team-sathish.jpeg" alt="Sathish Jeyakumar, Founder and CEO of Veehive" loading="lazy" decoding="async" width="180" height="180">
+                            </div>
+                            <div class="fq-tenure">
+                                <div class="fq-stat"><b>26+</b><span>years in technology</span></div>
+                                <div class="fq-stat"><b>20+</b><span>building enterprise applications</span></div>
+                                <div class="fq-stat"><b>6</b><span>years of enterprise integration</span></div>
+                                <div class="fq-stat"><b>3+</b><span>years building agentic apps</span></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="fq-mark">From the founder</p>
+                            <blockquote class="fq-quote">
+                                <p>Twenty-six years in technology &mdash; twenty of them building enterprise applications, and the last three building agentic apps &mdash; teach you one thing above all: <em>there is far more to a build than the technology.</em></p>
+                                <p>So we didn&rsquo;t go to the extreme of full autonomy, and we didn&rsquo;t wrap an old dashboard in an LLM. We built <em>agentic apps</em> &mdash; deployed inside your organisation, with a forward-deployed engineer sitting alongside your team for three months or as long as you want, shaping the product around how you actually work.</p>
+                                <p>Customisation and enterprise integration are what decide whether any of this survives contact with a real business. <em>We have done both, consistently, for six years.</em></p>
+                            </blockquote>
+                            <figcaption class="fq-attr">
+                                <span class="who">Sathish Jeyakumar</span>
+                                <span class="sep" aria-hidden="true"></span>
+                                <span class="role">Founder &amp; CEO, Veehive</span>
+                            </figcaption>
+                        </div>
+                    </div>
+                </div>
+            </figure>
         </div>
     </section>
 

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VVGKWGPNGY"></script>
+<script>
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+    var _vhSaved=(function(){try{return localStorage.getItem('veehive-consent')}catch(e){return null}})();
+    gtag('consent','default',{
+      ad_storage: _vhSaved==='granted' ? 'granted' : 'denied',
+      ad_user_data: _vhSaved==='granted' ? 'granted' : 'denied',
+      ad_personalization: _vhSaved==='granted' ? 'granted' : 'denied',
+      analytics_storage: _vhSaved==='granted' ? 'granted' : 'denied',
+      wait_for_update: 500
+    });
+    gtag('js',new Date());
+    gtag('config','G-VVGKWGPNGY',{anonymize_ip:true});
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0F1A20">
+<link rel="icon" href="/favicon.ico?v=2" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+
+<title>Agentic Apps Store | Veehive.ai</title>
+<meta name="description" content="Dashboard apps show you the work. Fully autonomous agents do it out of sight. Veehive Agentic Apps do the work at speed inside the view, the controls and the audit trail your business already runs on. Air-gapped, your-cloud, or ERP-integrated.">
+<meta name="author" content="Veehive.ai">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://veehive.ai/agentic-apps.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://veehive.ai/agentic-apps.html">
+<meta property="og:title" content="Agentic Apps Store | Veehive.ai">
+<meta property="og:description" content="Dashboards are last generation. Autonomous agents are a risk. Agentic Apps give you both: the view and controls you know, with agents doing the work underneath.">
+<meta property="og:image" content="https://veehive.ai/og-image.png?v=3">
+<meta property="og:site_name" content="Veehive">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agentic Apps Store | Veehive.ai">
+<meta name="twitter:description" content="Dashboards are last generation. Autonomous agents are a risk. Agentic Apps give you both.">
+<meta name="twitter:image" content="https://veehive.ai/og-image.png?v=3">
+<meta name="twitter:site" content="@letsveehive">
+
+<link rel="stylesheet" href="/brand/tokens.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Satoshi:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+        margin:0; background:var(--vh-color-bg); color:var(--vh-color-text);
+        font-family:var(--vh-font-sans); font-size:16px; line-height:1.6;
+        -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    }
+    html.light body{background:#fff;}
+    h1,h2,h3,h4{margin:0; letter-spacing:-.025em; line-height:1.1; text-wrap:balance;}
+    p{margin:0;}
+    a{color:inherit; text-decoration:none;}
+    :focus-visible{outline:2px solid var(--vh-color-brand); outline-offset:3px; border-radius:4px;}
+    img{max-width:100%;}
+
+    .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+    .sec{padding:76px 0;}
+    .eyebrow{
+        font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+        color:var(--vh-color-brand); margin:0 0 14px;
+    }
+    .lede{font-size:17px; color:var(--vh-color-text-muted); line-height:1.72; max-width:66ch;}
+    .h2{font-size:clamp(1.75rem,3.4vw,2.6rem); font-weight:800;}
+    .head{margin-bottom:42px;}
+
+    .btn{
+        display:inline-flex; align-items:center; gap:9px; padding:13px 24px; border-radius:999px;
+        font-weight:600; font-size:15px; border:1px solid transparent; cursor:pointer;
+        transition:transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+    .btn:hover{transform:translateY(-1px);}
+    .btn-p{background:var(--vh-color-brand); color:#fff;}
+    .btn-p:hover{background:var(--vh-color-brand-hover);}
+    .btn-g{border-color:var(--vh-color-border-hover); color:var(--vh-color-text);}
+    .btn-g:hover{border-color:var(--vh-color-brand);}
+
+    /* ---------- NAV ---------- */
+    .nav{
+        position:sticky; top:0; z-index:60; backdrop-filter:blur(14px);
+        background:color-mix(in srgb, var(--vh-color-bg) 86%, transparent);
+        border-bottom:1px solid var(--vh-color-border);
+    }
+    html.light .nav{background:rgba(255,255,255,.86);}
+    .nav-in{display:flex; align-items:center; gap:20px; height:64px;}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; font-size:17px; letter-spacing:-.03em;}
+    .brand img{width:26px; height:26px;}
+    .nav-right{margin-left:auto; display:flex; align-items:center; gap:18px;}
+    .nav-right a{font-size:14px; font-weight:500; color:var(--vh-color-text-muted);}
+    .nav-right a:hover{color:var(--vh-color-text);}
+    @media(max-width:760px){ .nav-right a.hide-sm{display:none;} }
+
+    /* ---------- HERO ---------- */
+    .hero{padding:64px 0 20px; position:relative;}
+    .hero h1{font-size:clamp(2.3rem,5.6vw,4rem); font-weight:800; letter-spacing:-.04em;}
+    .tm{font-size:.42em; vertical-align:super; font-weight:700; letter-spacing:0; color:var(--vh-color-brand);}
+    .hero .lede{margin-top:22px; font-size:18px;}
+    .hero-btns{display:flex; gap:12px; margin-top:30px; flex-wrap:wrap;}
+
+    /* ---------- THE ARGUMENT ---------- */
+    .args{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+    @media(max-width:900px){ .args{grid-template-columns:1fr;} }
+    .arg{
+        border:1px solid var(--vh-color-border); border-radius:16px; padding:26px;
+        background:var(--vh-color-surface); display:flex; flex-direction:column; gap:12px;
+    }
+    .arg--us{border-color:var(--vh-color-brand); background:linear-gradient(160deg, rgba(59,91,255,.12), rgba(139,92,255,.06));}
+    .arg-verdict{
+        display:inline-flex; align-items:center; gap:7px; align-self:flex-start;
+        font-size:10.5px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+        padding:5px 11px; border-radius:999px;
+    }
+    .v-old{background:rgba(148,163,184,.16); color:#94A3B8;}
+    .v-risk{background:rgba(248,113,113,.15); color:#F87171;}
+    .v-us{background:var(--vh-color-brand); color:#fff;}
+    .arg h3{font-size:20px; font-weight:700;}
+    .arg p{font-size:14.5px; color:var(--vh-color-text-muted); line-height:1.65;}
+    .arg--us p{color:var(--vh-color-text); opacity:.85;}
+
+    /* ---------- OUTCOMES ---------- */
+    .outcomes{
+        display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+        background:var(--vh-color-border); border:1px solid var(--vh-color-border);
+        border-radius:16px; overflow:hidden; margin-top:34px;
+    }
+    @media(max-width:820px){ .outcomes{grid-template-columns:repeat(2,1fr);} }
+    .outcome{background:var(--vh-color-bg); padding:22px 20px;}
+    html.light .outcome{background:#fff;}
+    .outcome .k{font-size:14px; font-weight:700; margin-bottom:5px;}
+    .outcome .v{font-size:13px; color:var(--vh-color-text-muted); line-height:1.55;}
+    .outcome--rev .k{color:var(--vh-color-brand);}
+
+    /* ---------- DEPLOY ---------- */
+    .deploys{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+    @media(max-width:900px){ .deploys{grid-template-columns:1fr;} }
+    .deploy{
+        border:1px solid var(--vh-color-border); border-radius:16px; padding:26px;
+        display:flex; flex-direction:column; gap:12px; background:var(--vh-color-surface);
+    }
+    .deploy-ic{
+        width:40px; height:40px; border-radius:11px; display:grid; place-items:center;
+        background:var(--vh-color-surface-raised); border:1px solid var(--vh-color-border);
+        font-size:19px;
+    }
+    .deploy h3{font-size:18px; font-weight:700;}
+    .deploy p{font-size:14.5px; color:var(--vh-color-text-muted); line-height:1.65;}
+    .deploy .note{font-size:12px; color:var(--vh-color-brand); font-weight:600;}
+
+    /* ---------- STORE ---------- */
+    .rail{
+        display:flex; align-items:baseline; justify-content:space-between; gap:16px;
+        flex-wrap:wrap; margin:52px 0 18px; padding-bottom:12px;
+        border-bottom:1px solid var(--vh-color-border);
+    }
+    .rail h3{font-size:20px; font-weight:700;}
+    .rail p{font-size:13.5px; color:var(--vh-color-text-muted);}
+
+    .store{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+    @media(max-width:980px){ .store{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:660px){ .store{grid-template-columns:1fr;} }
+    .app{
+        border:1px solid var(--vh-color-border); border-radius:16px; padding:22px;
+        background:var(--vh-color-surface); display:flex; flex-direction:column; gap:11px;
+        transition:border-color .2s ease, transform .2s ease;
+    }
+    .app:hover{border-color:var(--vh-color-brand); transform:translateY(-2px);}
+    .app-top{display:flex; align-items:flex-start; gap:12px;}
+    .app-ic{
+        width:38px; height:38px; border-radius:10px; flex:none; display:grid; place-items:center;
+        background:var(--vh-color-surface-raised); border:1px solid var(--vh-color-border); font-size:18px;
+    }
+    .app-ic img{width:24px; height:24px; border-radius:6px;}
+    .app-name{font-size:16.5px; font-weight:700; line-height:1.25;}
+    .app-fn{font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--vh-color-brand); margin-top:3px; line-height:1.4;}
+    .app-d{font-size:14px; color:var(--vh-color-text-muted); line-height:1.6; flex:1;}
+    .app-foot{display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-top:2px;}
+    .pill{
+        display:inline-flex; align-items:center; gap:6px; font-size:10.5px; font-weight:700;
+        letter-spacing:.1em; text-transform:uppercase; padding:4px 10px; border-radius:999px;
+    }
+    .pill i{width:5px; height:5px; border-radius:50%; background:currentColor; display:block;}
+    .p-live{background:rgba(62,220,166,.14); color:#17916C;}
+    html:not(.light) .p-live{color:#3EDCA6;}
+    .p-ready{background:rgba(59,91,255,.14); color:var(--vh-color-brand);}
+    .p-build{background:rgba(255,176,32,.16); color:#9A6B00;}
+    html:not(.light) .p-build{color:#FFB020;}
+    .p-client{background:rgba(139,92,255,.15); color:#6F35E0;}
+    html:not(.light) .p-client{color:#A57CFF;}
+    .p-conv{background:rgba(148,163,184,.16); color:#64748B;}
+    html:not(.light) .p-conv{color:#94A3B8;}
+    .app-link{font-size:12.5px; font-weight:600; color:var(--vh-color-brand);}
+    .app-link:hover{text-decoration:underline;}
+
+    /* ---------- CTA + FOOTER ---------- */
+    .cta{
+        margin:76px 0 0; border:1px solid var(--vh-color-border); border-radius:20px;
+        padding:52px 32px; text-align:center;
+        background:linear-gradient(160deg, rgba(59,91,255,.10), rgba(139,92,255,.05));
+    }
+    .cta h2{font-size:clamp(1.7rem,3.6vw,2.5rem); font-weight:800;}
+    .cta .lede{margin:16px auto 0;}
+    .cta-btns{display:flex; gap:12px; justify-content:center; margin-top:28px; flex-wrap:wrap;}
+
+    .foot{border-top:1px solid var(--vh-color-border); margin-top:70px; padding:30px 0 40px;}
+    .foot-in{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13px; color:var(--vh-color-text-muted);}
+    .foot-in a{color:var(--vh-color-brand);}
+
+    @media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important;} html{scroll-behavior:auto;} }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="wrap nav-in">
+        <a class="brand" href="/">
+            <img src="/logo-veehive-192.png" alt="" width="26" height="26" loading="lazy" decoding="async">
+            Veehive<span style="color:var(--vh-color-brand)">.ai</span>
+        </a>
+        <div class="nav-right">
+            <a href="/#apps" class="hide-sm">All apps</a>
+            <a href="/#workforce" class="hide-sm">Workforce</a>
+            <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="hide-sm">Labs</a>
+            <a class="btn btn-p" href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&amp;ismsaljsauthenabled&amp;ep=plink" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+    <div class="wrap">
+        <p class="eyebrow">The Agentic Apps Store</p>
+        <h1>Agentic Apps<span class="tm">&trade;</span><br>Work that runs itself,<br>in full view.</h1>
+        <p class="lede">Dashboard apps are the last generation &mdash; they show you the state of the business and leave the work to you. Fully autonomous agents take the work but hand back no view, no control and no record. Agentic Apps give you both: the familiar picture of what is happening, the controls an enterprise actually needs, and agents doing the work underneath at the speed and scale you need.</p>
+        <div class="hero-btns">
+            <a class="btn btn-p" href="#store">Browse the store</a>
+            <a class="btn btn-g" href="#deploy">How we deploy</a>
+        </div>
+    </div>
+</header>
+
+<!-- ================= THE ARGUMENT ================= -->
+<section class="sec">
+    <div class="wrap">
+        <div class="args">
+            <div class="arg">
+                <span class="arg-verdict v-old">Last generation</span>
+                <h3>Dashboard-based apps</h3>
+                <p>They render the state of your business and stop there. Every chart is a job someone still has to do &mdash; read it, decide, open another system, act. The software watches; your people do the work.</p>
+            </div>
+            <div class="arg">
+                <span class="arg-verdict v-risk">Risky</span>
+                <h3>Fully autonomous agents</h3>
+                <p>They take the work, but out of sight. No familiar view, no approval step, no audit trail, and no way to answer the only question that matters afterwards: what did it do, and on whose authority?</p>
+            </div>
+            <div class="arg arg--us">
+                <span class="arg-verdict v-us">Agentic Apps&trade;</span>
+                <h3>Both, on purpose</h3>
+                <p>A traditional view of exactly what is happening. The controls and approvals your business and compliance teams require. And agents underneath, working at a speed and scale no team can staff for.</p>
+            </div>
+        </div>
+
+        <div class="outcomes">
+            <div class="outcome">
+                <div class="k">Productivity</div>
+                <div class="v">The same team, with the routine work already done.</div>
+            </div>
+            <div class="outcome">
+                <div class="k">Operational excellence</div>
+                <div class="v">Nothing dropped, nothing waiting on a person to notice.</div>
+            </div>
+            <div class="outcome">
+                <div class="k">Customer experience</div>
+                <div class="v">Answered in seconds, in their language, at any hour.</div>
+            </div>
+            <div class="outcome outcome--rev">
+                <div class="k">&rarr; Revenue</div>
+                <div class="v">Which is the only reason the other three matter.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= DEPLOYMENT ================= -->
+<section class="sec" id="deploy">
+    <div class="wrap">
+        <div class="head">
+            <p class="eyebrow">Why we are different</p>
+            <h2 class="h2">Deployed where your data already lives.</h2>
+            <p class="lede" style="margin-top:14px">Most agent vendors have one answer: their cloud, their model, their terms. We have three, and you pick.</p>
+        </div>
+        <div class="deploys">
+            <div class="deploy">
+                <div class="deploy-ic" aria-hidden="true">&#127970;</div>
+                <h3>Air-gapped, on your premises</h3>
+                <p>The whole stack runs inside your estate with no route to the public internet &mdash; for defence, government, banking and anyone whose data is not allowed to leave the building.</p>
+                <span class="note">Hardware and deployment support from Lenovo</span>
+            </div>
+            <div class="deploy">
+                <div class="deploy-ic" aria-hidden="true">&#9729;&#65039;</div>
+                <h3>Your cloud, your keys</h3>
+                <p>Deployed into your own tenancy, running on your own API keys. Open routing means each task goes to the model you approve &mdash; swap one out, add your own, keep everything in your region.</p>
+                <span class="note">Your tenancy &middot; your keys &middot; open router</span>
+            </div>
+            <div class="deploy">
+                <div class="deploy-ic" aria-hidden="true">&#128268;</div>
+                <h3>Connected to your systems</h3>
+                <p>Agents read from and write to the systems you already run &mdash; ERP, CRM, HRMS, document stores &mdash; over a traditional REST API or over MCP where a system supports it.</p>
+                <span class="note">Traditional API or MCP</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= THE STORE ================= -->
+<section class="sec" id="store" style="padding-top:20px">
+    <div class="wrap">
+        <div class="head">
+            <p class="eyebrow">The store</p>
+            <h2 class="h2">Every agent we run, and every one we are building.</h2>
+            <p class="lede" style="margin-top:14px">Five shipping products you can deploy this month, and the agents Veehive Labs is building with clients right now. Deploy one, or stand up several and let them hand work to each other.</p>
+        </div>
+
+        <!-- Veehive.ai products -->
+        <div class="rail">
+            <div>
+                <h3>Veehive.ai &mdash; shipping products</h3>
+                <p>Configured and run for your organisation. Live with customers today.</p>
+            </div>
+            <a class="app-link" href="/#apps">See them on the homepage &rarr;</a>
+        </div>
+
+        <div class="store">
+            <article class="app">
+                <div class="app-top">
+                    <span class="app-ic"><img src="/favicon-mpliphi-64.png?v=2" alt="" loading="lazy" decoding="async"></span>
+                    <div><div class="app-name">mpliphi</div><div class="app-fn">Customer service agent</div></div>
+                </div>
+                <p class="app-d">Handles customer conversations end to end over email, WhatsApp and a plug-in on your website. Resolves, escalates when it should, and logs everything to your CRM in 50+ languages.</p>
+                <div class="app-foot">
+                    <span class="pill p-live"><i></i>Live</span>
+                    <a class="app-link" href="https://mpliphi.com" target="_blank" rel="noopener noreferrer">mpliphi.com &rarr;</a>
+                </div>
+            </article>
+
+            <article class="app">
+                <div class="app-top">
+                    <span class="app-ic"><img src="/favicon-studio-64.png" alt="" loading="lazy" decoding="async"></span>
+                    <div><div class="app-name">Veehive Studio</div><div class="app-fn">Content creation agent</div></div>
+                </div>
+                <p class="app-d">Creates video, images and copy from your own brand collateral &mdash; documents, PDFs, product detail &mdash; with AI avatars and voiceover in 30+ languages, ready to publish.</p>
+                <div class="app-foot">
+                    <span class="pill p-live"><i></i>Live</span>
+                    <a class="app-link" href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer">veehivestudio.com &rarr;</a>
+                </div>
+            </article>
+
+            <article class="app">
+                <div class="app-top">
+                    <span class="app-ic"><img src="/favicon-snapapro-64.png" alt="" loading="lazy" decoding="async"></span>
+                    <div><div class="app-name">SnapaPro</div><div class="app-fn">Project management agent</div></div>
+                </div>
+                <p class="app-d">Creates and assigns tasks, follows them up without being asked, and turns meeting notes into a tracked plan. Taj plans, Noor administers, Sats coordinates.</p>
+                <div class="app-foot">
+                    <span class="pill p-live"><i></i>Live</span>
+                    <a class="app-link" href="https://snapapro.com" target="_blank" rel="noopener noreferrer">snapapro.com &rarr;</a>
+                </div>
+            </article>
+
+            <article class="app">
+                <div class="app-top">
+                    <span class="app-ic"><img src="/favicon-hivelink-64.png" alt="" loading="lazy" decoding="async"></span>
+                    <div><div class="app-name">HiveLink</div><div class="app-fn">Internal communication &amp; engagement</div></div>
+                </div>
+                <p class="app-d">Reaches every frontline and deskless worker on the phone they already carry &mdash; updates, training and safety notices, with read receipts and no company inbox required.</p>
+                <div class="app-foot">
+                    <span class="pill p-live"><i></i>Live</span>
+                    <a class="app-link" href="https://veehivelink.com" target="_blank" rel="noopener noreferrer">veehivelink.com &rarr;</a>
+                </div>
+            </article>
+
+            <article class="app">
+                <div class="app-top">
+                    <span class="app-ic"><img src="/favicon-mind-64.png" alt="" loading="lazy" decoding="async"></span>
+                    <div><div class="app-name">Veehive Mind</div><div class="app-fn">Campaign management agent</div></div>
+                </div>
+                <p class="app-d">Builds and runs the whole campaign from one brief &mdash; research, calendar, copy, creative &mdash; then publishes it to LinkedIn, WhatsApp and your other channels on approval.</p>
+                <div class="app-foot">
+                    <span class="pill p-live"><i></i>Live</span>
+                    <a class="app-link" href="https://veehivemind.com" target="_blank" rel="noopener noreferrer">veehivemind.com &rarr;</a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Veehive Labs -->
+        <div class="rail">
+            <div>
+                <h3>Veehive Labs &mdash; built with clients</h3>
+                <p>Agents we are building now. Some are running in production, some are weeks away.</p>
+            </div>
+            <a class="app-link" href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer">veehivelabs.com &rarr;</a>
+        </div>
+
+        <div class="store">
+            <article class="app">
+                <div class="app-top">
+                    <span class="app-ic" aria-hidden="true">&#9989;</span>
+                    <div><div class="app-name">QC Agent</div><div class="app-fn">Quality control</div></div>
+                </div>
+                <p class="app-d">Checks a submitted form against the checklist it has to satisfy, flags what fails and why, and passes the rest through. Removes the queue in front of a human reviewer.</p>
+                <div class="app-foot"><span class="pill p-ready"><i></i>Ready</span></div>
+            </article>
+
+            <article class="app">
+                <div class="app-top">
+                    <span class="app-ic" aria-hidden="true">&#128196;</span>
+                    <div><div class="app-name">OCR Reconciliation</div><div class="app-fn">Finance operations</div></div>
+                </div>
+                <p class="app-d">Reads scanned and photographed documents, extracts the line items, and reconciles them against your records &mdash; matching what should match and surfacing only the exceptions.</p>
+                <div class="app-foot"><span class="pill p-ready"><i></i>Ready</span></div>
+            </article>
+
+            <article class="app">
+                <div class="app-top">
+                    <span class="app-ic" aria-hidden="true">&#128202;</span>
+                    <div><div class="app-name">Tax, Accounts &amp; Bookkeeping</div><div class="app-fn">Finance &amp; compliance</div></div>
+                </div>
+                <p class="app-d">Keeps the books current, classifies transactions, and prepares what your accountant and the tax authority each need &mdash; instead of a quarterly scramble through receipts.</p>
+                <div class="app-foot"><span class="pill p-build"><i></i>In build</span></div>
+            </article>
+
+            <article class="app">
+                <div class="app-top">
+                    <span class="app-ic" aria-hidden="true">&#128188;</span>
+                    <div><div class="app-name">Investment Advisor</div><div class="app-fn">Wealth &amp; advisory</div></div>
+                </div>
+                <p class="app-d">An advisory agent built with our client Merlin &mdash; reading positions and context to prepare the recommendation, with the adviser still making the call.</p>
+                <div class="app-foot"><span class="pill p-client"><i></i>With client</span></div>
+            </article>
+
+            <article class="app">
+                <div class="app-top">
+                    <span class="app-ic" aria-hidden="true">&#128100;</span>
+                    <div><div class="app-name">HRMS &amp; Agentic HRMS</div><div class="app-fn">People operations</div></div>
+                </div>
+                <p class="app-d">The full HR system, and then the agentic version of it &mdash; onboarding, leave, records and the follow-ups that normally sit in an HR manager's inbox.</p>
+                <div class="app-foot"><span class="pill p-build"><i></i>Shortly</span></div>
+            </article>
+
+            <article class="app">
+                <div class="app-top">
+                    <span class="app-ic" aria-hidden="true">&#127907;</span>
+                    <div><div class="app-name">Face Recognition</div><div class="app-fn">Attractions &amp; venues</div></div>
+                </div>
+                <p class="app-d">Running today at a theme park for entry and guest recognition. The vision pipeline is in production and can be turned into an agent that acts on what it sees.</p>
+                <div class="app-foot"><span class="pill p-conv"><i></i>Convertible</span></div>
+            </article>
+
+            <article class="app">
+                <div class="app-top">
+                    <span class="app-ic" aria-hidden="true">&#128241;</span>
+                    <div><div class="app-name">Mobile Document Scan</div><div class="app-fn">Field capture</div></div>
+                </div>
+                <p class="app-d">Capture any document from a phone in the field and get it structured on the way in. In production now, and ready to become an agent that files and acts on what it captures.</p>
+                <div class="app-foot"><span class="pill p-conv"><i></i>Convertible</span></div>
+            </article>
+
+            <article class="app">
+                <div class="app-top">
+                    <span class="app-ic" aria-hidden="true">&#128296;</span>
+                    <div><div class="app-name">Built for your function</div><div class="app-fn">Veehive Labs</div></div>
+                </div>
+                <p class="app-d">If the agent your business needs is not on this page, Labs builds it &mdash; custom development, integration, implementation and training your team to run it.</p>
+                <div class="app-foot">
+                    <span class="pill p-ready"><i></i>Scoped with you</span>
+                    <a class="app-link" href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer">Talk to Labs &rarr;</a>
+                </div>
+            </article>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta">
+            <h2>Start with one function.</h2>
+            <p class="lede">Pick the part of the business that hurts most. We deploy the agent, configure it to how you actually work, and run it &mdash; in your cloud, on your premises, or air-gapped.</p>
+            <div class="cta-btns">
+                <a class="btn btn-p" href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&amp;ismsaljsauthenabled&amp;ep=plink" target="_blank" rel="noopener noreferrer">Book a product demo</a>
+                <a class="btn btn-g" href="https://wa.me/971564308275" target="_blank" rel="noopener noreferrer">WhatsApp us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="foot">
+    <div class="wrap foot-in">
+        <span>&copy; 2026 Veehive Tech FZ-LLC &middot; Dubai, United Arab Emirates</span>
+        <span><a href="/">veehive.ai</a> &middot; <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer">veehivelabs.com</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a></span>
+    </div>
+</footer>
+
+<script>
+    // Default = light, matching veehive.ai. Respect an explicit dark choice.
+    (function(){
+        try{
+            var saved = localStorage.getItem('veehive-theme');
+            if (saved !== 'dark') document.documentElement.classList.add('light');
+        }catch(e){ document.documentElement.classList.add('light'); }
+    })();
+</script>
+</body>
+</html>

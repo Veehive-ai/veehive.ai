@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0F1A20">
+<meta name="robots" content="noindex, follow">
+<title>Page not found | Veehive.ai</title>
+<link rel="icon" href="/favicon.ico?v=2" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="stylesheet" href="/brand/tokens.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+    *{box-sizing:border-box;}
+    body{
+        margin:0; min-height:100vh; display:flex; flex-direction:column;
+        align-items:center; justify-content:center; text-align:center; padding:40px 24px;
+        background:var(--vh-color-bg); color:var(--vh-color-text);
+        font-family:var(--vh-font-sans); line-height:1.6; -webkit-font-smoothing:antialiased;
+    }
+    html.light body{background:#fff;}
+    a{color:inherit; text-decoration:none;}
+    :focus-visible{outline:2px solid var(--vh-color-brand); outline-offset:3px; border-radius:4px;}
+    .logo img{height:26px; width:auto;}
+    .logo-white{display:inline-block; opacity:.9;}
+    .logo-color{display:none;}
+    html.light .logo-white{display:none;}
+    html.light .logo-color{display:inline-block;}
+    .code{
+        margin:44px 0 0; font-size:13px; font-weight:700; letter-spacing:.2em;
+        text-transform:uppercase; color:var(--vh-color-brand);
+    }
+    h1{
+        margin:14px 0 0; font-size:clamp(2rem,5vw,3rem); font-weight:800;
+        letter-spacing:-.03em; line-height:1.1;
+    }
+    p{margin:18px 0 0; color:var(--vh-color-text-muted); max-width:44ch; font-size:16px;}
+    .links{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:32px;}
+    .links a{
+        padding:11px 20px; border-radius:999px; font-size:14px; font-weight:600;
+        border:1px solid var(--vh-color-border-hover); transition:border-color .18s ease, transform .18s ease;
+    }
+    .links a:hover{border-color:var(--vh-color-brand); transform:translateY(-1px);}
+    .links a.primary{background:var(--vh-color-brand); border-color:var(--vh-color-brand); color:#fff;}
+    @media (prefers-reduced-motion:reduce){ *{transition:none!important;} }
+</style>
+</head>
+<body>
+    <a class="logo" href="/" aria-label="Veehive.ai home">
+        <img src="/logo-veehive-white-192.png" alt="Veehive" class="logo-white">
+        <img src="/logo-veehive-192.png" alt="Veehive" class="logo-color">
+    </a>
+
+    <p class="code">Error 404</p>
+    <h1>This page doesn&rsquo;t exist.</h1>
+    <p>The link may be out of date, or the page has moved. Everything below is still where you left it.</p>
+
+    <nav class="links">
+        <a class="primary" href="/">Home</a>
+        <a href="/agentic-apps.html">Agentic Apps</a>
+        <a href="/about.html">About</a>
+        <a href="/team.html">Team</a>
+    </nav>
+
+<script>
+    (function(){
+        try{
+            var saved = localStorage.getItem('veehive-theme');
+            if (saved !== 'dark') document.documentElement.classList.add('light');
+        }catch(e){ document.documentElement.classList.add('light'); }
+    })();
+</script>
+</body>
+</html>

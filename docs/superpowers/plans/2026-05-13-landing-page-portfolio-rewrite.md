@@ -126,7 +126,7 @@ Replace lines 838–914 with the following:
             <!-- Product pills (anchor links into showcases below) -->
             <div class="animate-fade-up delay-300 mt-10 flex flex-wrap gap-3">
                 <a href="#mpliphi" class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-white/[0.1] bg-white/[0.04] text-[14px] font-semibold text-white hover:bg-white/[0.08] hover:border-white/[0.18] transition-all">
-                    <span class="inline-block w-2 h-2 rounded-full" style="background:#16A34A"></span>
+                    <span class="inline-block w-2 h-2 rounded-full" style="background:#2c573e"></span>
                     mpliphi
                 </a>
                 <a href="#studio" class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-white/[0.1] bg-white/[0.04] text-[14px] font-semibold text-white hover:bg-white/[0.08] hover:border-white/[0.18] transition-all">
@@ -216,7 +216,7 @@ Replace the WHO THIS IS FOR section (from the comment line through its closing `
 
             <div class="reveal grid sm:grid-cols-2 gap-4" id="problem-matcher-grid">
                 <button type="button" class="problem-card trust-card card-glow card-glow-orchestrator rounded-xl p-6 text-left transition-all" data-product="mpliphi">
-                    <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#16A34A">Support &amp; ops</span>
+                    <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#2c573e">Support &amp; ops</span>
                     <span class="block text-[17px] font-semibold text-white/85 leading-snug">&ldquo;Customer replies are drowning us.&rdquo;</span>
                 </button>
                 <button type="button" class="problem-card trust-card card-glow card-glow-creator rounded-xl p-6 text-left transition-all" data-product="studio">
@@ -248,7 +248,7 @@ Find the existing scroll-reveal `<script>` block at the bottom of `<body>`. Sear
      so trusted-types / CSP-strict environments stay happy. */
   (function () {
     var PRODUCTS = {
-      'mpliphi':       { name: 'mpliphi',         color: '#16A34A', pitch: 'AI agents that handle customer conversations on WhatsApp and email — autonomously or as copilots alongside your team.', url: 'https://mpliphi.com' },
+      'mpliphi':       { name: 'mpliphi',         color: '#2c573e', pitch: 'AI agents that handle customer conversations on WhatsApp and email — autonomously or as copilots alongside your team.', url: 'https://mpliphi.com' },
       'studio':        { name: 'Veehive Studio',  color: '#A78BFA', pitch: 'Turn documents and PDFs into branded videos with AI avatars and voiceover. Built for training, marketing, and customer education.', url: 'https://veehivestudio.com' },
       'snapapro':      { name: 'SnapaPro',        color: '#F87171', pitch: 'AI project management powered by three agents — Taj plans, Noor engages, Sats tracks time. Natural-language task creation and capacity planning.', url: 'https://snapapro.com' },
       'veehive-link':  { name: 'Veehive Link',    color: '#60A5FA', pitch: 'Six modules in one: video hosting, social scheduling, community, events, CRM, campaigns. White-label with custom domains.', url: 'https://veehivelink.com' }
@@ -424,10 +424,10 @@ Add the following block of HTML at the insertion point identified in Step 1:
     <section id="mpliphi" class="relative z-10 py-20 lg:py-24" style="scroll-margin-top:96px">
         <div class="max-w-5xl mx-auto px-6 lg:px-8">
             <div class="reveal card-glow card-glow-orchestrator rounded-2xl p-8 md:p-12">
-                <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#16A34A">For support &amp; operations teams</p>
+                <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#2c573e">For support &amp; operations teams</p>
                 <div class="flex flex-wrap items-baseline gap-3 mb-5">
                     <h2 class="text-3xl md:text-5xl font-bold tracking-tight">mpliphi</h2>
-                    <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(22,163,74,0.15); color:#16A34A">AI Agents</span>
+                    <span class="px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em]" style="background:rgba(44,87,62,0.15); color:#2c573e">AI Agents</span>
                 </div>
                 <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed max-w-2xl mb-8">AI agents that handle customer conversations on WhatsApp and email &mdash; autonomously or as copilots alongside your team. Choose fully autonomous or human-in-the-loop. 50+ languages out of the box.</p>
                 <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
@@ -444,7 +444,7 @@ Add the following block of HTML at the insertion point identified in Step 1:
                         <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Starting / month</div>
                     </div>
                 </div>
-                <a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#16A34A">Explore mpliphi <span aria-hidden="true">&rarr;</span></a>
+                <a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#2c573e">Explore mpliphi <span aria-hidden="true">&rarr;</span></a>
             </div>
         </div>
     </section>

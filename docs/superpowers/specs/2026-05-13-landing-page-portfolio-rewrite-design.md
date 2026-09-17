@@ -44,7 +44,7 @@ Seven sections, top to bottom. Each wrapped in `reveal` class for scroll-trigger
 - Headline: **We build AI that works.**
 - Sub: **Four independent products. Pick the one for your problem.**
 - Pill row (chosen layout: neutral pills with colored dots). Each pill is an anchor link:
-  - mpliphi → `#mpliphi` (green dot `#16A34A`)
+  - mpliphi → `#mpliphi` (green dot `#2c573e`)
   - Studio → `#studio` (purple dot `#7C3AED`)
   - SnapaPro → `#snapapro` (red dot `#DC2626`)
   - Veehive Link → `#veehive-link` (blue dot `#2563EB`)

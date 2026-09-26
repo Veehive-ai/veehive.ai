@@ -1648,13 +1648,16 @@
         .vh-apps__promo > *{position:relative; z-index:1;}
         /* Solid white tile so the multicolour mark reads cleanly on the
            purple gradient — its purple petal would otherwise disappear. */
+        /* The family's tilted hex, not a rounded square. A border and a
+           box-shadow would both be sheared by the clip, so the tile carries
+           neither — the white against the panel is edge enough. */
         .vh-apps__promo-mark{
-            width:54px; height:54px; border-radius:15px; margin-bottom:8px;
-            background:#fff; border:1px solid rgba(255,255,255,.5);
+            width:58px; height:58px; margin-bottom:8px;
+            clip-path:url(#chipShape);
+            background:#fff;
             display:flex; align-items:center; justify-content:center;
-            box-shadow:0 10px 26px -10px rgba(0,0,0,.5);
         }
-        .vh-apps__promo-mark img{width:34px; height:34px;}
+        .vh-apps__promo-mark img{width:32px; height:32px;}
         .vh-apps__promo-title{
             font-family:'Satoshi','Inter',sans-serif;
             font-size:clamp(1.35rem,2.1vw,1.75rem); font-weight:700;

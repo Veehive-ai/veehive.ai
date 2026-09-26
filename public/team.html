@@ -148,6 +148,11 @@
         /* Tilted-hex chip — the family badge shape. Borderless on purpose: a
            border would be sheared by the clip. */
         .vh-hex { clip-path: url(#chipShape); border-radius: 0; }
+        /* Team portrait in the family hex. The accent ring is a second clipped
+           layer, not a border, which the clip would shear — same trick as the
+           agent badges on the landing page. currentColor is the only knob. */
+        .vh-avatar { width: 56px; height: 56px; margin: 0 auto 16px; clip-path: url(#chipShape); background: currentColor; }
+        .vh-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; clip-path: url(#chipShape); transform: scale(0.93); }
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); transition: background 0.5s cubic-bezier(0.4,0,0.2,1), color 0.4s ease; }
         .dot-pattern { background-image: radial-gradient(var(--dot-color) 1px, transparent 1px); background-size: 24px 24px; }
@@ -439,32 +444,32 @@
 
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
                 <div class="reveal trust-card rounded-2xl p-6 text-center hover:transform hover:-translate-y-1">
-                    <img src="/team-sathish.jpeg" alt="Sathish" class="w-14 h-14 mx-auto mb-4 rounded-full object-cover border border-violet-500/20">
+                    <div class="vh-avatar" style="color:#8B5CF640"><img src="/team-sathish.jpeg" alt="Sathish"></div>
                     <div class="text-[15px] font-bold">Sathish</div>
                     <div class="text-[12px] text-indigo-400/70 mt-0.5">Founder & CEO</div>
                 </div>
                 <div class="reveal trust-card rounded-2xl p-6 text-center hover:transform hover:-translate-y-1">
-                    <img src="/team-taj.jpeg" alt="Taj" class="w-14 h-14 mx-auto mb-4 rounded-full object-cover border border-emerald-500/20">
+                    <div class="vh-avatar" style="color:#10B98140"><img src="/team-taj.jpeg" alt="Taj"></div>
                     <div class="text-[15px] font-bold">Taj</div>
                     <div class="text-[12px] text-emerald-400/70 mt-0.5">Delivery & COO</div>
                 </div>
                 <div class="reveal trust-card rounded-2xl p-6 text-center hover:transform hover:-translate-y-1">
-                    <img src="/team-dixon.jpeg" alt="Dixon" class="w-14 h-14 mx-auto mb-4 rounded-full object-cover border border-amber-500/20">
+                    <div class="vh-avatar" style="color:#F59E0B40"><img src="/team-dixon.jpeg" alt="Dixon"></div>
                     <div class="text-[15px] font-bold">Dixon</div>
                     <div class="text-[12px] text-amber-400/70 mt-0.5">Product & CGO</div>
                 </div>
                 <div class="reveal trust-card rounded-2xl p-6 text-center hover:transform hover:-translate-y-1">
-                    <img src="/team-chakir.jpeg" alt="Chakir" class="w-14 h-14 mx-auto mb-4 rounded-full object-cover border border-cyan-500/20">
+                    <div class="vh-avatar" style="color:#06B6D440"><img src="/team-chakir.jpeg" alt="Chakir"></div>
                     <div class="text-[15px] font-bold">Chakir</div>
                     <div class="text-[12px] text-cyan-400/70 mt-0.5">Head of Technology</div>
                 </div>
                 <div class="reveal trust-card rounded-2xl p-6 text-center hover:transform hover:-translate-y-1">
-                    <img src="/team-fahim.jpeg" alt="Fahim" class="w-14 h-14 mx-auto mb-4 rounded-full object-cover border border-rose-500/20">
+                    <div class="vh-avatar" style="color:#F43F5E40"><img src="/team-fahim.jpeg" alt="Fahim"></div>
                     <div class="text-[15px] font-bold">Fahim</div>
                     <div class="text-[12px] text-rose-400/70 mt-0.5">Head of Engineering</div>
                 </div>
                 <div class="reveal trust-card rounded-2xl p-6 text-center hover:transform hover:-translate-y-1">
-                    <img src="/team-nitesh.jpeg" alt="Nitesh" class="w-14 h-14 mx-auto mb-4 rounded-full object-cover border border-indigo-500/20">
+                    <div class="vh-avatar" style="color:#6366F140"><img src="/team-nitesh.jpeg" alt="Nitesh"></div>
                     <div class="text-[15px] font-bold">Nitesh</div>
                     <div class="text-[12px] text-indigo-400/70 mt-0.5">AI Engineer MCP</div>
                 </div>

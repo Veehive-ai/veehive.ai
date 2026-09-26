@@ -490,47 +490,25 @@
             background-size: 28px 28px;
         }
 
-        /* Theme toggle */
+        /* Theme toggle — round icon button, matched to the product landing pages. */
         .theme-toggle {
-            width: 36px;
-            height: 20px;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.10);
-            border: 1px solid rgba(255,255,255,0.15);
-            position: relative;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            padding: 0 2px;
+            width: 34px; height: 34px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background: transparent; border: 1px solid var(--border);
+            color: var(--text-secondary); cursor: pointer; padding: 0;
+            font-family: inherit;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
         }
-        html.light .theme-toggle {
-            background: rgba(24,24,27,0.08);
-            border-color: rgba(24,24,27,0.15);
-        }
-        .theme-toggle-knob {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: #3B5BFF;
-            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-        }
-        html.light .theme-toggle-knob {
-            transform: translateX(16px);
-        }
-        .theme-icon-dark, .theme-icon-light {
-            width: 10px;
-            height: 10px;
-            transition: opacity 0.3s ease;
-        }
-        .theme-icon-dark { opacity: 1; }
-        .theme-icon-light { opacity: 0; position: absolute; }
-        html.light .theme-icon-dark { opacity: 0; }
-        html.light .theme-icon-light { opacity: 1; }
+        .theme-toggle:hover { background: var(--surface-hover); border-color: var(--border-hover); color: var(--text); }
+        .theme-toggle svg { width: 17px; height: 17px; display: block; }
+        /* Shows the icon for the mode you are in: sun in light, moon in dark. */
+        .theme-toggle .icon-sun { display: none; }
+        html.light .theme-toggle .icon-sun { display: block; }
+        html.light .theme-toggle .icon-moon { display: none; }
+
+        /* Tilted-hex chip — the family badge shape. Borderless on purpose: a
+           border would be sheared by the clip. */
+        .vh-hex { clip-path: url(#chipShape); border-radius: 0; }
 
         /* Animations */
         @keyframes fade-up { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
@@ -1889,17 +1867,6 @@
         .vh-footer__map-frame{border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.12); width:280px; height:150px; flex-shrink:0;}
         .vh-footer__map-frame iframe{width:100%; height:100%; border:0; filter:grayscale(.3) contrast(1.05);}
         .vh-footer__map-frame{position:relative;}
-        .vh-footer__map-ask{
-            position:absolute; inset:0; display:flex; flex-direction:column; align-items:center;
-            justify-content:center; gap:9px; padding:14px; text-align:center;
-            background:rgba(255,255,255,.03); cursor:pointer; border:0; width:100%; height:100%;
-            font:inherit; color:rgba(255,255,255,.6); font-size:12px; line-height:1.5;
-        }
-        html.light .vh-footer__map-ask{background:rgba(15,26,32,.04); color:rgba(24,24,27,.6);}
-        .vh-footer__map-ask:hover{background:rgba(107,130,255,.10);}
-        .vh-footer__map-ask svg{width:20px; height:20px; opacity:.55;}
-        .vh-footer__map-ask b{font-weight:600; color:#6B82FF; text-decoration:underline;}
-        .vh-footer__map-frame[data-loaded="1"] .vh-footer__map-ask{display:none;}
 
         .vh-footer__bottom{
             border-top:1px solid rgba(255,255,255,.1); margin-top:44px; padding-top:24px;
@@ -2029,6 +1996,14 @@
     </style>
 </head>
 <body class="min-h-screen overflow-x-hidden antialiased" style="color: var(--text);">
+<!-- Tilted-hex chip, shared with the product landing pages (hivelink, mpliphi).
+     clipPathUnits are fractions of each element's own box, so one path fits a
+     34px badge and a 48px tile alike. -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute"><defs>
+  <clipPath id="chipShape" clipPathUnits="objectBoundingBox">
+    <path d="M 0.9635 0.5050 Q 1.0000 0.3500 0.8815 0.2415 L 0.7362 0.1085 Q 0.6176 0.0000 0.4626 0.0465 L 0.2726 0.1035 Q 0.1176 0.1500 0.0812 0.3050 L 0.0365 0.4950 Q 0.0000 0.6500 0.1185 0.7585 L 0.2638 0.8915 Q 0.3824 1.0000 0.5374 0.9535 L 0.7274 0.8965 Q 0.8824 0.8500 0.9188 0.6950 Z"/>
+  </clipPath>
+</defs></svg>
 
     <!-- Top scroll-progress bar + right-hand section rail (same pair as the product pages) -->
     <div class="vh-scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -2098,23 +2073,13 @@
                     <a href="about.html" class="nav-link px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">About</a>
                     <div class="w-px h-4 mx-2" style="background: var(--border);"></div>
                     <!-- Theme Toggle -->
-                    <button onclick="toggleTheme()" class="theme-toggle mr-2" aria-label="Toggle light/dark mode" title="Toggle theme">
-                        <div class="theme-toggle-knob">
-                            <svg class="theme-icon-dark" viewBox="0 0 16 16" fill="none"><path d="M8 3a5 5 0 000 10 5 5 0 000-10z" fill="#0F1A20" opacity="0.7"/><circle cx="8" cy="8" r="2" fill="#0F1A20"/></svg>
-                            <svg class="theme-icon-light" viewBox="0 0 16 16" fill="none"><path d="M8 1v2m0 10v2m5-7h2M1 8h2m9.07-4.07l1.41-1.41M2.52 13.48l1.41-1.41m0-8.14L2.52 2.52m10.96 10.96l-1.41-1.41" stroke="#0F1A20" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="8" r="2.5" fill="#0F1A20"/></svg>
-                        </div>
-                    </button>
+                    <button type="button" onclick="toggleTheme()" class="theme-toggle mr-2" aria-label="Toggle light/dark mode" title="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
                     <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 text-[13px] font-medium bg-[#3B5BFF] rounded-full hover:bg-[#6B82FF] transition-all" style="color: var(--cta-text);">Book a Product Demo</a>
                 </div>
 
                 <div class="lg:hidden flex items-center gap-3">
                     <!-- Mobile theme toggle -->
-                    <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle theme">
-                        <div class="theme-toggle-knob">
-                            <svg class="theme-icon-dark" viewBox="0 0 16 16" fill="none"><path d="M8 3a5 5 0 000 10 5 5 0 000-10z" fill="#0F1A20" opacity="0.7"/><circle cx="8" cy="8" r="2" fill="#0F1A20"/></svg>
-                            <svg class="theme-icon-light" viewBox="0 0 16 16" fill="none"><path d="M8 1v2m0 10v2m5-7h2M1 8h2m9.07-4.07l1.41-1.41M2.52 13.48l1.41-1.41m0-8.14L2.52 2.52m10.96 10.96l-1.41-1.41" stroke="#0F1A20" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="8" r="2.5" fill="#0F1A20"/></svg>
-                        </div>
-                    </button>
+                    <button type="button" onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
                     <button class="p-1" style="color: var(--text-secondary);" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
                     </button>
@@ -2867,7 +2832,7 @@
                     </p>
                     <div class="flex flex-wrap gap-6">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-[#3B5BFF]/10 border border-[#3B5BFF]/15 flex items-center justify-center">
+                            <div class="w-10 h-10 vh-hex bg-[#3B5BFF]/10 flex items-center justify-center">
                                 <svg class="w-[18px] h-[18px] text-[#3B5BFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
                             </div>
                             <div>
@@ -2876,7 +2841,7 @@
                             </div>
                         </div>
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-[#3B5BFF]/10 border border-[#3B5BFF]/15 flex items-center justify-center">
+                            <div class="w-10 h-10 vh-hex bg-[#3B5BFF]/10 flex items-center justify-center">
                                 <svg class="w-[18px] h-[18px] text-[#3B5BFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
                             </div>
                             <div>
@@ -3133,11 +3098,11 @@
 
                 <div class="vh-footer__col">
                     <h4>Company</h4>
-                    <a href="about.html">About Us</a>
-                    <a href="team.html">Our Team</a>
+                    <a href="/about.html">About Us</a>
+                    <a href="/team.html">Our Team</a>
                     <a href="#contact">Contact</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms of Service</a>
                 </div>
 
                 <div class="vh-footer__ticker-wrap" aria-hidden="true">
@@ -3152,11 +3117,7 @@
                 </div>
                 <div class="vh-footer__map-frame">
                     <iframe title="Veehive Tech FZ-LLC location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                        data-vh-map-src="https://www.google.com/maps?q=in5+Tech,+Dubai+Internet+City,+Dubai,+UAE&amp;output=embed"></iframe>
-                    <button type="button" class="vh-footer__map-ask" data-vh-map-load>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-5.686-7-11a7 7 0 1114 0c0 5.314-7 11-7 11z" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg>
-                        <span>Map loads from Google.<br><b>Show map</b></span>
-                    </button>
+                        src="https://www.google.com/maps?q=in5+Tech,+Dubai+Internet+City,+Dubai,+UAE&amp;output=embed"></iframe>
                 </div>
             </div>
 
@@ -3343,11 +3304,11 @@
         var ticker = document.getElementById('footerTicker');
         if (ticker) {
             var items = [
-                { name: 'mpliphi',        icon: 'favicon-mpliphi-32.png' },
-                { name: 'Studio', icon: 'favicon-studio-32.png' },
-                { name: 'SnapaPro',       icon: 'favicon-snapapro-32.png' },
-                { name: 'HiveLink',       icon: 'favicon-hivelink-32.png' },
-                { name: 'Mind',   icon: 'favicon-mind-32.png' }
+                { name: 'mpliphi',        icon: '/favicon-mpliphi-32.png' },
+                { name: 'Studio', icon: '/favicon-studio-32.png' },
+                { name: 'SnapaPro',       icon: '/favicon-snapapro-32.png' },
+                { name: 'HiveLink',       icon: '/favicon-hivelink-32.png' },
+                { name: 'Mind',   icon: '/favicon-mind-32.png' }
             ];
             /* Built twice so the -50% keyframe loops seamlessly. */
             function build(){
@@ -3572,26 +3533,9 @@
                 });
             }
             banner.hidden=true;
-            if(state==='granted') loadMap();
         }
         banner.querySelectorAll('[data-vh-consent]').forEach(function(btn){
             btn.addEventListener('click',function(){ apply(btn.getAttribute('data-vh-consent')); });
-        });
-
-        // Third-party map embed: carries no src until the visitor consents,
-        // or asks for it with the Show map button.
-        function loadMap(){
-            var frames=document.querySelectorAll('[data-vh-map-src]');
-            for(var i=0;i<frames.length;i++){
-                var f=frames[i];
-                if(f.getAttribute('src')) continue;
-                f.setAttribute('src', f.getAttribute('data-vh-map-src'));
-                if(f.parentElement) f.parentElement.setAttribute('data-loaded','1');
-            }
-        }
-        if(saved==='granted') loadMap();
-        document.querySelectorAll('[data-vh-map-load]').forEach(function(btn){
-            btn.addEventListener('click', loadMap);
         });
     })();
     </script>

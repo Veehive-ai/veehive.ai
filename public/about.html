@@ -942,20 +942,20 @@
         }
         html.light .timeline-award-context { color: rgba(15,26,32,0.55); }
 
-        /* Award photo thumbnail — sits at the right edge of the card */
+        /* Award photo thumbnail — sits at the right edge of the card, in the
+           family hex. A border and a box-shadow would both be sheared by the
+           clip, so the hover cue is a drop-shadow on the wrapper instead. */
         .timeline-award-thumb {
             flex-shrink: 0;
             width: 64px;
             height: 64px;
-            border-radius: 10px;
+            clip-path: url(#chipShape);
             object-fit: cover;
-            border: 1px solid rgba(255,255,255,0.08);
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, filter 0.3s ease;
             -webkit-user-drag: none;
             user-select: none;
             -webkit-user-select: none;
         }
-        html.light .timeline-award-thumb { border-color: rgba(15,26,32,0.10); }
 
         /* Hover container — holds the thumb + the popover */
         .timeline-award-thumb-wrap {
@@ -968,8 +968,7 @@
         .timeline-award-thumb-wrap:hover .timeline-award-thumb,
         .timeline-award-thumb-wrap:focus-within .timeline-award-thumb {
             transform: scale(1.06);
-            border-color: rgba(59,91,255,0.45);
-            box-shadow: 0 0 0 3px rgba(59,91,255,0.15), 0 8px 20px -6px rgba(0,0,0,0.4);
+            filter: drop-shadow(0 0 6px rgba(59,91,255,0.55)) drop-shadow(0 8px 14px rgba(0,0,0,0.45));
         }
         @media (max-width: 640px) {
             .timeline-award-thumb { width: 56px; height: 56px; }
@@ -1444,7 +1443,7 @@
                                 <span class="timeline-award-context">Government-issued enterprise AI readiness certification.</span>
                             </div>
                             <span class="timeline-award-thumb-wrap" tabindex="0" aria-label="Open larger Dubai AI Seal image" oncontextmenu="return false" ondragstart="return false">
-                                <img class="timeline-award-thumb" src="/dubai-ai-seal.png" alt="Dubai AI Seal Tier E certificate" loading="lazy" decoding="async" draggable="false">
+                                <img class="timeline-award-thumb" src="/dubai-ai-seal.png" alt="Dubai AI Seal Tier E certificate" loading="lazy" decoding="async" draggable="false" style="background:#fff; object-fit:contain; padding:8px;">
                                 <img class="timeline-award-popover" src="/dubai-ai-seal.png" alt="" aria-hidden="true" loading="lazy" decoding="async" draggable="false">
                             </span>
                         </div>
@@ -1456,7 +1455,7 @@
                                 <span class="timeline-award-context">Ranked #1 by F6S &mdash; the world's largest founder network. <a href="https://www.f6s.com/letsveehive" target="_blank" rel="external noopener" style="color:#ff7a18">View F6S profile &rarr;</a></span>
                             </div>
                             <span class="timeline-award-thumb-wrap" tabindex="0" aria-label="Open larger F6S #1 AI badge" oncontextmenu="return false" ondragstart="return false">
-                                <img class="timeline-award-thumb" src="/awards/2025/f6s/badge.png" alt="F6S #1 Top Company in AI June 2025 badge" loading="lazy" decoding="async" draggable="false" style="background:#fff; object-fit:contain; padding:4px;">
+                                <img class="timeline-award-thumb" src="/awards/2025/f6s/badge.png" alt="F6S #1 Top Company in AI June 2025 badge" loading="lazy" decoding="async" draggable="false" style="background:#fff; object-fit:contain; padding:8px;">
                                 <img class="timeline-award-popover" src="/awards/2025/f6s/badge.png" alt="" aria-hidden="true" loading="lazy" decoding="async" draggable="false" style="background:#fff; object-fit:contain; padding:12px;">
                             </span>
                         </div>

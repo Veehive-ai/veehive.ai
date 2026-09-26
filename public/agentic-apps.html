@@ -153,8 +153,9 @@
     .deploy-ic{
         width:40px; height:40px; border-radius:11px; display:grid; place-items:center;
         background:var(--vh-color-surface-raised); border:1px solid var(--vh-color-border);
-        font-size:19px;
+        color:var(--vh-color-brand);
     }
+    .deploy-ic__svg{width:21px; height:21px;}
     .deploy h3{font-size:18px; font-weight:700;}
     .deploy p{font-size:14.5px; color:var(--vh-color-text-muted); line-height:1.65;}
     .deploy .note{font-size:12px; color:var(--vh-color-brand); font-weight:600;}
@@ -180,8 +181,10 @@
     .app-top{display:flex; align-items:flex-start; gap:12px;}
     .app-ic{
         width:38px; height:38px; border-radius:10px; flex:none; display:grid; place-items:center;
-        background:var(--vh-color-surface-raised); border:1px solid var(--vh-color-border); font-size:18px;
+        background:var(--vh-color-surface-raised); border:1px solid var(--vh-color-border);
+        color:var(--vh-color-brand);
     }
+    .app-ic__svg{width:20px; height:20px;}
     .app-ic img{width:24px; height:24px; border-radius:6px;}
     .app-name{font-size:16.5px; font-weight:700; line-height:1.25;}
     .app-fn{font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--vh-color-brand); margin-top:3px; line-height:1.4;}
@@ -283,6 +286,7 @@
             margin-top:36px; padding-top:28px; border-top:1px solid rgba(255,255,255,.1); flex-wrap:wrap;
         }
         .vh-footer__map-info{font-size:13px; color:rgba(255,255,255,.6); line-height:1.7;}
+        .vh-footer__pin{width:15px; height:15px; display:inline-block; vertical-align:-2px; margin-right:5px; color:#6B82FF;}
         .vh-footer__map-info a{color:#6B82FF; text-decoration:underline;}
         .vh-footer__map-frame{border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.12); width:280px; height:150px; flex-shrink:0;}
         .vh-footer__map-frame iframe{width:100%; height:100%; border:0; filter:grayscale(.3) contrast(1.05);}
@@ -376,6 +380,18 @@
   <clipPath id="chipShape" clipPathUnits="objectBoundingBox">
     <path d="M 0.9635 0.5050 Q 1.0000 0.3500 0.8815 0.2415 L 0.7362 0.1085 Q 0.6176 0.0000 0.4626 0.0465 L 0.2726 0.1035 Q 0.1176 0.1500 0.0812 0.3050 L 0.0365 0.4950 Q 0.0000 0.6500 0.1185 0.7585 L 0.2638 0.8915 Q 0.3824 1.0000 0.5374 0.9535 L 0.7274 0.8965 Q 0.8824 0.8500 0.9188 0.6950 Z"/>
   </clipPath>
+
+  <symbol id="ico-building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5.4a1.4 1.4 0 0 1 1-1.35l7.6-2.1A1.4 1.4 0 0 1 14.4 3.3V21"/><path d="M14.4 9.6h4.2A1.4 1.4 0 0 1 20 11v10M2.5 21h19M7.4 8h3.6M7.4 12h3.6M7.4 16h3.6M17 13.6h.01M17 17.2h.01"/></g></symbol>
+  <symbol id="ico-cloud" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7.2 19.2A4.7 4.7 0 0 1 6.6 9.9a6.2 6.2 0 0 1 11.8-1.4 4.3 4.3 0 0 1-.6 8.5z"/><path d="M12 12.4v6.8M9.6 15.4 12 12.4l2.4 3"/></g></symbol>
+  <symbol id="ico-plug" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2.8v5.4M15 2.8v5.4"/><path d="M6 8.2h12v3.1a6 6 0 0 1-6 6 6 6 0 0 1-6-6z"/><path d="M12 17.3V21.2"/></g></symbol>
+  <symbol id="ico-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.8"/><path d="M8.4 12.3 11 14.9l4.6-5"/></g></symbol>
+  <symbol id="ico-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></g></symbol>
+  <symbol id="ico-chart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 20.6h17.2"/><rect x="5" y="11" width="3.6" height="7"/><rect x="10.2" y="6.6" width="3.6" height="11.4"/><rect x="15.4" y="13.4" width="3.6" height="4.6"/></g></symbol>
+  <symbol id="ico-briefcase" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.8" y="7.2" width="18.4" height="13" rx="2.2"/><path d="M8.6 7.2V5.4a2 2 0 0 1 2-2h2.8a2 2 0 0 1 2 2v1.8M2.8 12.4h18.4M12 11.4v2"/></g></symbol>
+  <symbol id="ico-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4.6 20.4a7.4 7.4 0 0 1 14.8 0"/></g></symbol>
+  <symbol id="ico-face" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.2 8.4V5.6a2.4 2.4 0 0 1 2.4-2.4h2.8M15.6 3.2h2.8a2.4 2.4 0 0 1 2.4 2.4v2.8M20.8 15.6v2.8a2.4 2.4 0 0 1-2.4 2.4h-2.8M8.4 20.8H5.6a2.4 2.4 0 0 1-2.4-2.4v-2.8"/><path d="M9.4 10h.01M14.6 10h.01M9.6 14.6a3.4 3.4 0 0 0 4.8 0"/></g></symbol>
+  <symbol id="ico-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.2" y="2.4" width="11.6" height="19.2" rx="2.6"/><path d="M10.6 5.4h2.8M12 18.4h.01"/></g></symbol>
+  <symbol id="ico-wrench" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.9 6.3a4.6 4.6 0 0 0 6 6l-8.2 8.2a2.5 2.5 0 0 1-3.6-3.6z"/><path d="M14.9 6.3 9.6 11.6"/><path d="M8.2 3.2 3.4 8l2.8 2.8L11 6z"/></g></symbol>
 </defs></svg>
 
 <nav class="nav">
@@ -459,19 +475,19 @@
         </div>
         <div class="deploys">
             <div class="deploy">
-                <div class="deploy-ic vh-hex" aria-hidden="true">&#127970;</div>
+                <div class="deploy-ic vh-hex" aria-hidden="true"><svg class="deploy-ic__svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-building"/></svg></div>
                 <h3>Air-gapped, on your premises</h3>
                 <p>The whole stack runs inside your estate with no route to the public internet &mdash; for defence, government, banking and anyone whose data is not allowed to leave the building.</p>
                 <span class="note">Hardware and deployment support from Lenovo</span>
             </div>
             <div class="deploy">
-                <div class="deploy-ic vh-hex" aria-hidden="true">&#9729;&#65039;</div>
+                <div class="deploy-ic vh-hex" aria-hidden="true"><svg class="deploy-ic__svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-cloud"/></svg></div>
                 <h3>Your cloud, your keys</h3>
                 <p>Deployed into your own tenancy, running on your own API keys. Open routing means each task goes to the model you approve &mdash; swap one out, add your own, keep everything in your region.</p>
                 <span class="note">Your tenancy &middot; your keys &middot; open router</span>
             </div>
             <div class="deploy">
-                <div class="deploy-ic vh-hex" aria-hidden="true">&#128268;</div>
+                <div class="deploy-ic vh-hex" aria-hidden="true"><svg class="deploy-ic__svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-plug"/></svg></div>
                 <h3>Connected to your systems</h3>
                 <p>Agents read from and write to the systems you already run &mdash; ERP, CRM, HRMS, document stores &mdash; over a traditional REST API or over MCP where a system supports it.</p>
                 <span class="note">Traditional API or MCP</span>
@@ -572,7 +588,7 @@
         <div class="store">
             <article class="app">
                 <div class="app-top">
-                    <span class="app-ic" aria-hidden="true">&#9989;</span>
+                    <span class="app-ic" aria-hidden="true"><svg class="app-ic__svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-check"/></svg></span>
                     <div><div class="app-name">QC Agent</div><div class="app-fn">Quality control</div></div>
                 </div>
                 <p class="app-d">Checks a submitted form against the checklist it has to satisfy, flags what fails and why, and passes the rest through. Removes the queue in front of a human reviewer.</p>
@@ -581,7 +597,7 @@
 
             <article class="app">
                 <div class="app-top">
-                    <span class="app-ic" aria-hidden="true">&#128196;</span>
+                    <span class="app-ic" aria-hidden="true"><svg class="app-ic__svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-doc"/></svg></span>
                     <div><div class="app-name">OCR Reconciliation</div><div class="app-fn">Finance operations</div></div>
                 </div>
                 <p class="app-d">Reads scanned and photographed documents, extracts the line items, and reconciles them against your records &mdash; matching what should match and surfacing only the exceptions.</p>
@@ -590,7 +606,7 @@
 
             <article class="app">
                 <div class="app-top">
-                    <span class="app-ic" aria-hidden="true">&#128202;</span>
+                    <span class="app-ic" aria-hidden="true"><svg class="app-ic__svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-chart"/></svg></span>
                     <div><div class="app-name">Tax, Accounts &amp; Bookkeeping</div><div class="app-fn">Finance &amp; compliance</div></div>
                 </div>
                 <p class="app-d">Keeps the books current, classifies transactions, and prepares what your accountant and the tax authority each need &mdash; instead of a quarterly scramble through receipts.</p>
@@ -599,7 +615,7 @@
 
             <article class="app">
                 <div class="app-top">
-                    <span class="app-ic" aria-hidden="true">&#128188;</span>
+                    <span class="app-ic" aria-hidden="true"><svg class="app-ic__svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-briefcase"/></svg></span>
                     <div><div class="app-name">Investment Advisor</div><div class="app-fn">Wealth &amp; advisory</div></div>
                 </div>
                 <p class="app-d">An advisory agent built with our client Merlin &mdash; reading positions and context to prepare the recommendation, with the adviser still making the call.</p>
@@ -608,7 +624,7 @@
 
             <article class="app">
                 <div class="app-top">
-                    <span class="app-ic" aria-hidden="true">&#128100;</span>
+                    <span class="app-ic" aria-hidden="true"><svg class="app-ic__svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-user"/></svg></span>
                     <div><div class="app-name">HRMS &amp; Agentic HRMS</div><div class="app-fn">People operations</div></div>
                 </div>
                 <p class="app-d">The full HR system, and then the agentic version of it &mdash; onboarding, leave, records and the follow-ups that normally sit in an HR manager's inbox.</p>
@@ -617,7 +633,7 @@
 
             <article class="app">
                 <div class="app-top">
-                    <span class="app-ic" aria-hidden="true">&#127907;</span>
+                    <span class="app-ic" aria-hidden="true"><svg class="app-ic__svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-face"/></svg></span>
                     <div><div class="app-name">Face Recognition</div><div class="app-fn">Attractions &amp; venues</div></div>
                 </div>
                 <p class="app-d">Running today at a theme park for entry and guest recognition. The vision pipeline is in production and can be turned into an agent that acts on what it sees.</p>
@@ -626,7 +642,7 @@
 
             <article class="app">
                 <div class="app-top">
-                    <span class="app-ic" aria-hidden="true">&#128241;</span>
+                    <span class="app-ic" aria-hidden="true"><svg class="app-ic__svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-phone"/></svg></span>
                     <div><div class="app-name">Mobile Document Scan</div><div class="app-fn">Field capture</div></div>
                 </div>
                 <p class="app-d">Capture any document from a phone in the field and get it structured on the way in. In production now, and ready to become an agent that files and acts on what it captures.</p>
@@ -635,7 +651,7 @@
 
             <article class="app">
                 <div class="app-top">
-                    <span class="app-ic" aria-hidden="true">&#128296;</span>
+                    <span class="app-ic" aria-hidden="true"><svg class="app-ic__svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-wrench"/></svg></span>
                     <div><div class="app-name">Built for your function</div><div class="app-fn">Veehive Labs</div></div>
                 </div>
                 <p class="app-d">If the agent your business needs is not on this page, Labs builds it &mdash; custom development, integration, implementation and training your team to run it.</p>
@@ -710,7 +726,7 @@
 
         <div class="vh-footer__map-row">
             <div class="vh-footer__map-info">
-                &#128205; Veehive Tech FZ-LLC &middot; in5 Tech, Dubai Internet City, Dubai, UAE<br>
+                <svg class="vh-footer__pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path stroke-linejoin="round" d="M12 21.5S4.8 15.2 4.8 10a7.2 7.2 0 1 1 14.4 0c0 5.2-7.2 11.5-7.2 11.5z"/><circle cx="12" cy="9.8" r="2.6"/></svg>Veehive Tech FZ-LLC &middot; in5 Tech, Dubai Internet City, Dubai, UAE<br>
                 <a href="https://www.google.com/maps/search/?api=1&amp;query=in5+Tech+Dubai+Internet+City" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
             </div>
             <div class="vh-footer__map-frame">

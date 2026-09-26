@@ -434,6 +434,7 @@
             --logo-opacity: 0.9;
             --card-shadow-mult: 1;
             --seal-shadow: rgba(59,91,255,0.15);
+            --badge-fill: #0C141B;
             --shimmer-a: rgba(255,255,255,0);
             --shimmer-b: rgba(255,255,255,0.04);
             --shimmer-c: rgba(255,255,255,0.08);
@@ -466,6 +467,7 @@
             --logo-opacity: 1;
             --card-shadow-mult: 0.5;
             --seal-shadow: rgba(59,91,255,0.12);
+            --badge-fill: #FFFFFF;
             --shimmer-a: rgba(15,26,32,0);
             --shimmer-b: rgba(15,26,32,0.03);
             --shimmer-c: rgba(15,26,32,0.06);
@@ -867,8 +869,31 @@
         html.light .workforce-card { border-color: rgba(15,26,32,0.08); background: rgba(15,26,32,0.02); }
         .workforce-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.16); background: rgba(255,255,255,0.04); box-shadow: 0 12px 30px -12px rgba(0,0,0,0.4); }
         html.light .workforce-card:hover { border-color: rgba(15,26,32,0.16); background: rgba(15,26,32,0.04); box-shadow: 0 12px 30px -12px rgba(15,26,32,0.12); }
-        .workforce-face { font-size: 44px; line-height: 1; margin-bottom: 10px; user-select: none; }
-        .workforce-face.is-trio { font-size: 30px; letter-spacing: 4px; }
+        /* Each agent's bee sits in the family's tilted-hex chip, ringed in the
+           product accent. The ring is a second clipped layer rather than a
+           border, which the clip would shear. --wf is the only knob: it sets
+           the ring, the tint and the bee's irises. */
+        .workforce-badge {
+            width: 112px; height: 112px; margin-bottom: 14px;
+            clip-path: url(#chipShape);
+            background: var(--wf);
+            color: var(--wf);
+        }
+        .workforce-badge__inner {
+            position: relative;
+            width: 100%; height: 100%;
+            clip-path: url(#chipShape);
+            transform: scale(0.93);
+            background: var(--badge-fill);
+            display: grid; place-items: center;
+        }
+        .workforce-badge__inner::before { content: ''; position: absolute; inset: 0; background: currentColor; opacity: 0.15; }
+        .workforce-badge img { position: relative; width: 78%; height: 78%; object-fit: contain; display: block; }
+        /* The SnapaPro artwork is three bees side by side, so width is what
+           limits it, not height — it gets the full chip rather than the inset
+           the single bees sit in. The chip itself stays square like the rest. */
+        .workforce-badge img.is-wide { width: 100%; height: 100%; }
+        .workforce-card:hover .workforce-badge__inner::before { opacity: 0.24; }
         .workforce-name { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; color: #fff; }
         html.light .workforce-name { color: #0F1A20; }
         .workforce-product { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-top: 8px; }
@@ -1863,6 +1888,7 @@
             margin-top:36px; padding-top:28px; border-top:1px solid rgba(255,255,255,.1); flex-wrap:wrap;
         }
         .vh-footer__map-info{font-size:13px; color:rgba(255,255,255,.6); line-height:1.7;}
+        .vh-footer__pin{width:15px; height:15px; display:inline-block; vertical-align:-2px; margin-right:5px; color:#6B82FF;}
         .vh-footer__map-info a{color:#6B82FF; text-decoration:underline;}
         .vh-footer__map-frame{border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.12); width:280px; height:150px; flex-shrink:0;}
         .vh-footer__map-frame iframe{width:100%; height:100%; border:0; filter:grayscale(.3) contrast(1.05);}
@@ -1990,7 +2016,8 @@
         .agent-team__label{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--vh-color-text-muted);margin:0 0 10px;}
         .agent-team__row{display:flex;flex-wrap:wrap;gap:7px;align-items:center;}
         .agent-team__member{display:inline-flex;align-items:center;gap:6px;padding:5px 12px 5px 8px;border-radius:999px;border:1px solid var(--vh-color-border);background:var(--vh-color-surface-raised);font-size:13px;font-weight:500;line-height:1.35;color:var(--vh-color-text);white-space:nowrap;}
-        .agent-team__emoji{font-size:15px;line-height:1;}
+        .agent-team__ico{width:15px;height:15px;flex:none;}
+
         .agent-team__role{color:var(--vh-color-text-muted);font-weight:400;}
         .agent-team__more{font-size:12px;color:var(--vh-color-text-muted);padding-left:2px;}
     </style>
@@ -2003,6 +2030,20 @@
   <clipPath id="chipShape" clipPathUnits="objectBoundingBox">
     <path d="M 0.9635 0.5050 Q 1.0000 0.3500 0.8815 0.2415 L 0.7362 0.1085 Q 0.6176 0.0000 0.4626 0.0465 L 0.2726 0.1035 Q 0.1176 0.1500 0.0812 0.3050 L 0.0365 0.4950 Q 0.0000 0.6500 0.1185 0.7585 L 0.2638 0.8915 Q 0.3824 1.0000 0.5374 0.9535 L 0.7274 0.8965 Q 0.8824 0.8500 0.9188 0.6950 Z"/>
   </clipPath>
+
+  <symbol id="ico-bee" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.6 4.3 8.1 2.5M14.4 4.3l1.5-1.8"/><ellipse cx="12" cy="13.6" rx="4.2" ry="7.2"/><path d="M7.9 10.7h8.2M7.8 15.1h8.4"/><path d="M7.9 8.8C5.5 7.1 3.1 7.5 2.7 9.3c-.4 1.8 1.6 3.6 4 4.1M16.1 8.8c2.4-1.7 4.8-1.3 5.2.5.4 1.8-1.6 3.6-4 4.1"/></g></symbol>
+  <symbol id="ico-bot" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4.5M9 13.5h.01M15 13.5h.01M9.5 16.8h5"/><circle cx="12" cy="3.2" r="1.3"/></g></symbol>
+  <symbol id="ico-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 20v-1.6a3.6 3.6 0 0 0-3.6-3.6H6.6A3.6 3.6 0 0 0 3 18.4V20"/><circle cx="9.2" cy="7.4" r="3.4"/><path d="M21 20v-1.6a3.6 3.6 0 0 0-2.7-3.5M15.8 4.2a3.6 3.6 0 0 1 0 6.9"/></g></symbol>
+  <symbol id="ico-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></g></symbol>
+  <symbol id="ico-film" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 9.5h18M8 5v4.5M16 5v4.5"/><path d="M11 12.6v4.2l3.6-2.1z"/></g></symbol>
+  <symbol id="ico-map" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6.4v13.2L9 17.2l6 2.4 6-2.4V4l-6 2.4z"/><path d="M9 4v13.2M15 6.4v13.2"/></g></symbol>
+  <symbol id="ico-share" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15.5V3.5M8.2 7.3 12 3.5l3.8 3.8"/><path d="M4.5 14.5v3.9A2.1 2.1 0 0 0 6.6 20.5h10.8a2.1 2.1 0 0 0 2.1-2.1v-3.9"/></g></symbol>
+  <symbol id="ico-link" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13.5a4 4 0 0 0 5.9.5l2.6-2.6a4 4 0 0 0-5.7-5.7l-1.5 1.5"/><path d="M14 10.5a4 4 0 0 0-5.9-.5l-2.6 2.6a4 4 0 0 0 5.7 5.7l1.5-1.5"/></g></symbol>
+  <symbol id="ico-inbox" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12.5h4.5l1.6 2.6h5.8l1.6-2.6H21"/><path d="M5.4 4.8h13.2l2.4 7.7v4.7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4.7z"/></g></symbol>
+  <symbol id="ico-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.8"/><path d="M8.4 12.3 11 14.9l4.6-5"/></g></symbol>
+  <symbol id="ico-target" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.8"/><circle cx="12" cy="12" r="4.8"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></g></symbol>
+  <symbol id="ico-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.8" cy="10.8" r="6.6"/><path d="M15.6 15.6 20.4 20.4"/></g></symbol>
+  <symbol id="ico-pen" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16.4 3.9a2.3 2.3 0 0 1 3.3 3.3L8.4 18.5 4 20l1.5-4.4z"/><path d="M14.8 5.5 18.1 8.8"/></g></symbol>
 </defs></svg>
 
     <!-- Top scroll-progress bar + right-hand section rail (same pair as the product pages) -->
@@ -2279,10 +2320,10 @@
                         <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">mpliphi</h2>
                         <p class="prod-hero">Amplify your productivity. Not headcount.</p>
                         <span class="prod-tagline" style="color:#2c573e">Deploy. Resolve. Scale.</span>
-                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👨‍💼</span> <strong class="text-white/80">ND</strong> &mdash; deploy intelligent AI agents for your customers, employees, CXOs, and yourself, delivering real-time, connected experiences that amplify productivity, customer experience, and operational excellence across every channel, at scale.</p>
+                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <strong class="text-white/80">ND</strong> &mdash; deploy intelligent AI agents for your customers, employees, CXOs, and yourself, delivering real-time, connected experiences that amplify productivity, customer experience, and operational excellence across every channel, at scale.</p>
                         <div class="agent-team">
                             <span class="agent-team__label">Your agentic team</span>
-                            <div class="agent-team__row"><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">🤖</span>Autonomous Agent</span><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">🤝</span>Co-Pilot Agent</span><span class="agent-team__more">deployed and run for you</span></div>
+                            <div class="agent-team__row"><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-bot"/></svg>Autonomous Agent</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-users"/></svg>Co-Pilot Agent</span><span class="agent-team__more">deployed and run for you</span></div>
                         </div>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
@@ -2305,7 +2346,7 @@
                     </div>
                     <div class="showcase-demo">
                         <div class="agent-demo" data-product="mpliphi">
-                            <span class="agent-live"><span aria-hidden="true">👨‍💼</span> ND &middot; mpliphi agent</span>
+                            <span class="agent-live">ND &middot; mpliphi agent</span>
                             <div class="agent-chat">
                                 <div class="agent-msg is-customer">
                                     <div class="agent-msg-label">Customer &middot; WhatsApp</div>
@@ -2342,10 +2383,10 @@
                         <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">Studio</h2>
                         <p class="prod-hero">Scale your content without losing your creativity.</p>
                         <span class="prod-tagline" style="color:#A78BFA">Create. Localize. Distribute.</span>
-                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👨‍🎨</span> <strong class="text-white/80">Chaks</strong> &mdash; turn documents, PDFs, and product details into personalized video, instantly. 10x faster, ~95% cheaper, in 30+ languages. Generate the full cut, or step in and edit every scene yourself.</p>
+                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <strong class="text-white/80">Chaks</strong> &mdash; turn documents, PDFs, and product details into personalized video, instantly. 10x faster, ~95% cheaper, in 30+ languages. Generate the full cut, or step in and edit every scene yourself.</p>
                         <div class="agent-team">
                             <span class="agent-team__label">Your agentic team</span>
-                            <div class="agent-team__row"><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">👨‍🎨</span>Chaks</span><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">📄</span>Processes</span><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">🎬</span>Creates</span><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">🗺️</span>Maps</span><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">📤</span>Distributes</span><span class="agent-team__more">one agent, four jobs</span></div>
+                            <div class="agent-team__row"><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-bee"/></svg>Chaks</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-doc"/></svg>Processes</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-film"/></svg>Creates</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-map"/></svg>Maps</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-share"/></svg>Distributes</span><span class="agent-team__more">one agent, four jobs</span></div>
                         </div>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
@@ -2368,7 +2409,7 @@
                     </div>
                     <div class="showcase-demo">
                         <div class="agent-demo" data-product="studio">
-                            <span class="agent-live"><span aria-hidden="true">👨‍🎨</span> Chaks &middot; Studio content agent</span>
+                            <span class="agent-live">Chaks &middot; Studio content agent</span>
                             <div class="agent-prompt">
                                 <span class="agent-prompt-icon">U</span>
                                 <span class="agent-prompt-text">Turn the new <strong>policy update PDF</strong> into a 60-second Arabic explainer with our brand avatar.</span>
@@ -2409,10 +2450,10 @@
                         <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">SnapaPro</h2>
                         <p class="prod-hero">Projects across a global team, finally on track.</p>
                         <span class="prod-tagline" style="color:#F87171">Preemptive. Unprompted. Relentless.</span>
-                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👨‍💻</span> <strong class="text-white/80">Taj</strong>, <span aria-hidden="true">👩</span> <strong class="text-white/80">Noor</strong>, and <span aria-hidden="true">👨</span> <strong class="text-white/80">Sats</strong> &mdash; real-time agent orchestration that plans, tracks, and follows up across every project, giving you full visibility without the manual chasing.</p>
+                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <strong class="text-white/80">Taj</strong>, <strong class="text-white/80">Noor</strong>, and <strong class="text-white/80">Sats</strong> &mdash; real-time agent orchestration that plans, tracks, and follows up across every project, giving you full visibility without the manual chasing.</p>
                         <div class="agent-team">
                             <span class="agent-team__label">Your agentic team</span>
-                            <div class="agent-team__row"><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">🧑‍💻</span>Taj</span><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">👩</span>Noor</span><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">🧑</span>Sats</span><span class="agent-team__more">plans · administers · coordinates</span></div>
+                            <div class="agent-team__row"><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-bee"/></svg>Taj</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-bee"/></svg>Noor</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-bee"/></svg>Sats</span><span class="agent-team__more">plans · administers · coordinates</span></div>
                         </div>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
@@ -2435,7 +2476,7 @@
                     </div>
                     <div class="showcase-demo">
                         <div class="agent-demo" data-product="snapapro">
-                            <span class="agent-live"><span aria-hidden="true">👨‍💻 👩 👨</span> Taj, Noor &amp; Sats &middot; SnapaPro agents</span>
+                            <span class="agent-live">Taj, Noor &amp; Sats &middot; SnapaPro agents</span>
                             <div class="agent-prompt">
                                 <span class="agent-prompt-icon">U</span>
                                 <span class="agent-prompt-text"><strong>Plan the launch for next week</strong> &mdash; landing page, 3 social posts, email sequence.</span>
@@ -2476,10 +2517,10 @@
                         <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">HiveLink</h2>
                         <p class="prod-hero">Your frontline team, finally connected.</p>
                         <span class="prod-tagline" style="color:#60A5FA">Build. Delegate. Grow.</span>
-                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👩‍💻</span> <strong class="text-white/80">AK</strong> &mdash; HiveLink is the real-time engagement platform built for organizations where most of the workforce isn&rsquo;t behind a desk. One AI agent delivers connected, personalized updates to every worker on the device they actually carry &mdash; reliably, at scale, no company inbox required &mdash; while coordinating with the rest of your AI workforce automatically.</p>
+                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <strong class="text-white/80">AK</strong> &mdash; HiveLink is the real-time engagement platform built for organizations where most of the workforce isn&rsquo;t behind a desk. One AI agent delivers connected, personalized updates to every worker on the device they actually carry &mdash; reliably, at scale, no company inbox required &mdash; while coordinating with the rest of your AI workforce automatically.</p>
                         <div class="agent-team">
                             <span class="agent-team__label">Your agentic team</span>
-                            <div class="agent-team__row"><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">👩‍💻</span>AK</span><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">🔗</span>Coordinates</span><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">📥</span>Organizes</span><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">✅</span>Approves</span><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">📤</span>Distributes</span><span class="agent-team__more">one agent, four jobs</span></div>
+                            <div class="agent-team__row"><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-bee"/></svg>AK</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-link"/></svg>Coordinates</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-inbox"/></svg>Organizes</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-check"/></svg>Approves</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-share"/></svg>Distributes</span><span class="agent-team__more">one agent, four jobs</span></div>
                         </div>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
@@ -2502,7 +2543,7 @@
                     </div>
                     <div class="showcase-demo">
                         <div class="agent-demo" data-product="hivelink">
-                            <span class="agent-live"><span aria-hidden="true">👩‍💻</span> AK &middot; HiveLink agent</span>
+                            <span class="agent-live">AK &middot; HiveLink agent</span>
                             <div class="agent-prompt">
                                 <span class="agent-prompt-icon">U</span>
                                 <span class="agent-prompt-text">Push the <strong>updated store safety procedure</strong> to every shift across all 40 branches.</span>
@@ -2543,10 +2584,10 @@
                         <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">Mind</h2>
                         <p class="prod-hero">Launch campaigns like a team of fifty.</p>
                         <span class="prod-tagline" style="color:#ffb020">Research. Create. Publish.</span>
-                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <span aria-hidden="true">👩‍🦰</span> <strong class="text-white/80">Mira</strong> &mdash; Mind is a hive of specialist AI agents that scout what&rsquo;s trending in real time, write copy in your brand voice, design the creative, and orchestrate the whole campaign across your calendar &mdash; personalized at scale, then handed to you launch-ready to approve.</p>
+                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <strong class="text-white/80">Mira</strong> &mdash; Mind is a hive of specialist AI agents that scout what&rsquo;s trending in real time, write copy in your brand voice, design the creative, and orchestrate the whole campaign across your calendar &mdash; personalized at scale, then handed to you launch-ready to approve.</p>
                         <div class="agent-team">
                             <span class="agent-team__label">Your agentic team</span>
-                            <div class="agent-team__row"><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">🎯</span>Maya</span><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">🔍</span>Nadia</span><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">✍️</span>Leo</span><span class="agent-team__member"><span class="agent-team__emoji" aria-hidden="true">✅</span>Marcus</span><span class="agent-team__more">+ the rest of the hive</span></div>
+                            <div class="agent-team__row"><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-target"/></svg>Maya</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"/></svg>Nadia</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pen"/></svg>Leo</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-check"/></svg>Marcus</span><span class="agent-team__more">+ the rest of the hive</span></div>
                         </div>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
@@ -2569,7 +2610,7 @@
                     </div>
                     <div class="showcase-demo">
                         <div class="agent-demo" data-product="mind">
-                            <span class="agent-live"><span aria-hidden="true">👩‍🦰</span> Mira &middot; Mind campaign hive</span>
+                            <span class="agent-live">Mira &middot; Mind campaign hive</span>
                             <div class="agent-prompt">
                                 <span class="agent-prompt-icon">U</span>
                                 <span class="agent-prompt-text">Launch a <strong>Ramadan campaign</strong> for our F&amp;B brand &mdash; 30-day calendar, multi-channel, on-brand.</span>
@@ -2613,36 +2654,56 @@
             </div>
 
             <div class="reveal workforce-grid">
-                <div class="workforce-card">
-                    <div class="workforce-face" aria-hidden="true">👨‍💼</div>
+                <div class="workforce-card" style="--wf:#34D399">
+                    <div class="workforce-badge">
+                        <div class="workforce-badge__inner">
+                            <img src="/agents/bee-mpliphi.png" alt="ND, the mpliphi bee, wearing a support headset" width="220" height="202" loading="lazy" decoding="async">
+                        </div>
+                    </div>
                     <div class="workforce-name">ND</div>
                     <div class="workforce-product" style="color:#2c573e">mpliphi</div>
                     <div class="workforce-role">Customer-operations agent</div>
                 </div>
 
-                <div class="workforce-card">
-                    <div class="workforce-face" aria-hidden="true">👨‍🎨</div>
+                <div class="workforce-card" style="--wf:#A78BFA">
+                    <div class="workforce-badge">
+                        <div class="workforce-badge__inner">
+                            <img src="/agents/bee-studio.png" alt="Chaks, the Studio bee, holding a video player" width="220" height="220" loading="lazy" decoding="async">
+                        </div>
+                    </div>
                     <div class="workforce-name">Chaks</div>
                     <div class="workforce-product" style="color:#A78BFA">Studio</div>
                     <div class="workforce-role">Content-production agent</div>
                 </div>
 
-                <div class="workforce-card">
-                    <div class="workforce-face is-trio" aria-hidden="true">👨‍💻 👩 👨</div>
+                <div class="workforce-card" style="--wf:#F87171">
+                    <div class="workforce-badge">
+                        <div class="workforce-badge__inner">
+                            <img class="is-wide" src="/agents/bee-snapapro.png" alt="Taj, Noor and Sats, the three SnapaPro bees" width="320" height="137" loading="lazy" decoding="async">
+                        </div>
+                    </div>
                     <div class="workforce-name">Taj &middot; Noor &middot; Sats</div>
                     <div class="workforce-product" style="color:#F87171">SnapaPro</div>
                     <div class="workforce-role">Plan, administer, and coordinate</div>
                 </div>
 
-                <div class="workforce-card">
-                    <div class="workforce-face" aria-hidden="true">👩‍💻</div>
+                <div class="workforce-card" style="--wf:#60A5FA">
+                    <div class="workforce-badge">
+                        <div class="workforce-badge__inner">
+                            <img src="/agents/bee-hivelink.png" alt="AK, the HiveLink bee, holding a chat panel" width="221" height="220" loading="lazy" decoding="async">
+                        </div>
+                    </div>
                     <div class="workforce-name">AK</div>
                     <div class="workforce-product" style="color:#60A5FA">HiveLink</div>
                     <div class="workforce-role">Frontline-engagement agent</div>
                 </div>
 
-                <div class="workforce-card">
-                    <div class="workforce-face" aria-hidden="true">👩‍🦰</div>
+                <div class="workforce-card" style="--wf:#FFB020">
+                    <div class="workforce-badge">
+                        <div class="workforce-badge__inner">
+                            <img src="/agents/bee-mind.png" alt="Mira, the Mind bee, holding a megaphone" width="229" height="229" loading="lazy" decoding="async">
+                        </div>
+                    </div>
                     <div class="workforce-name">Mira</div>
                     <div class="workforce-product" style="color:#ffb020">Mind</div>
                     <div class="workforce-role">Campaign-execution hive (9 agents)</div>
@@ -3112,7 +3173,7 @@
 
             <div class="vh-footer__map-row">
                 <div class="vh-footer__map-info">
-                    &#128205; Veehive Tech FZ-LLC &middot; in5 Tech, Dubai Internet City, Dubai, UAE<br>
+                    <svg class="vh-footer__pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path stroke-linejoin="round" d="M12 21.5S4.8 15.2 4.8 10a7.2 7.2 0 1 1 14.4 0c0 5.2-7.2 11.5-7.2 11.5z"/><circle cx="12" cy="9.8" r="2.6"/></svg>Veehive Tech FZ-LLC &middot; in5 Tech, Dubai Internet City, Dubai, UAE<br>
                     <a href="https://www.google.com/maps/search/?api=1&amp;query=in5+Tech+Dubai+Internet+City" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
                 </div>
                 <div class="vh-footer__map-frame">

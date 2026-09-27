@@ -712,10 +712,13 @@
 
         .news-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
             gap: 16px;
         }
         .news-card {
+            /* Grid and flex items default to min-width:auto: without this the
+               publication name holds the card open past the screen. */
+            min-width: 0;
             display: flex; flex-direction: column;
             padding: 20px 22px; border-radius: 14px;
             border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02);
@@ -731,8 +734,11 @@
         html.light .news-card:hover { border-color: rgba(59,91,255,0.28); background: rgba(59,91,255,0.03); box-shadow: 0 12px 30px -12px rgba(15,26,32,0.12); }
         .news-card.is-hidden { display: none; }
 
+        /* Publication, date and badge on one row: let them wrap, or on a narrow
+           screen they hold the card open past the viewport. */
         .news-meta {
-            display: flex; align-items: center; gap: 10px;
+            min-width: 0;
+            display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
             font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;
             color: rgba(255,255,255,0.45); margin-bottom: 10px;
         }

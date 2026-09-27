@@ -1008,20 +1008,23 @@
             transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 0s;
         }
 
-        /* On narrow viewports, anchor the popover above the thumb instead of beside it */
+        /* On narrow viewports, hang the popover above the thumb and off its right
+           edge. The thumb sits at the end of the row, so centring it on the thumb
+           pushed ~40px past the viewport and gave the page a horizontal scroll. */
         @media (max-width: 760px) {
             .timeline-award-popover {
-                right: auto;
-                left: 50%;
+                right: 0;
+                left: auto;
                 top: auto;
                 bottom: calc(100% + 12px);
-                transform: translateX(-50%) scale(0.9);
+                transform: scale(0.9);
+                transform-origin: bottom right;
                 width: 220px !important;
                 height: 220px !important;
             }
             .timeline-award-thumb-wrap:hover .timeline-award-popover,
             .timeline-award-thumb-wrap:focus-within .timeline-award-popover {
-                transform: translateX(-50%) scale(1);
+                transform: scale(1);
             }
         }
 
@@ -1956,7 +1959,7 @@
     <div class="divider-gradient"></div>
 
     <!-- CTA Section -->
-    <section id="contact" class="relative z-10 py-24 lg:py-32">
+    <section id="contact" class="relative z-10 py-24 lg:py-32 overflow-hidden">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-r from-indigo-500/[0.08] via-violet-500/[0.06] to-emerald-500/[0.04] rounded-full blur-[120px] pointer-events-none"></div>
         <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center relative">
             <p class="text-[13px] font-semibold uppercase tracking-[0.2em] text-white/30 mb-5">Get In Touch</p>

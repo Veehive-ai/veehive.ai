@@ -603,6 +603,10 @@
             animation: shimmer 3s ease-in-out infinite;
         }
 
+        /* Grid and flex items default to min-width:auto, so a long line inside
+           one refuses to shrink and pushes the page wider than the screen. */
+        .problem-card { min-width: 0; }
+
         /* Trust card */
         .trust-card {
             background: var(--surface);

@@ -873,12 +873,13 @@
         html.light .workforce-card { border-color: rgba(15,26,32,0.08); background: rgba(15,26,32,0.02); }
         .workforce-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.16); background: rgba(255,255,255,0.04); box-shadow: 0 12px 30px -12px rgba(0,0,0,0.4); }
         html.light .workforce-card:hover { border-color: rgba(15,26,32,0.16); background: rgba(15,26,32,0.04); box-shadow: 0 12px 30px -12px rgba(15,26,32,0.12); }
-        /* Each agent's bee sits in the family's tilted-hex chip, ringed in the
-           product accent. The ring is a second clipped layer rather than a
-           border, which the clip would shear. --wf is the only knob: it sets
-           the ring, the tint and the bee's irises. */
+        /* Each agent's bee sits in a cell — the family's tilted hex — ringed in
+           the product accent. The ring is a second clipped layer rather than a
+           border, which the clip would shear, so its thickness is the inner
+           layer's scale. --wf is the only knob: it sets the ring, the tint and
+           the bee's irises. */
         .workforce-badge {
-            width: 112px; height: 112px; margin-bottom: 14px;
+            width: 64px; height: 64px; margin-bottom: 14px;
             clip-path: url(#chipShape);
             background: var(--wf);
             color: var(--wf);
@@ -887,7 +888,7 @@
             position: relative;
             width: 100%; height: 100%;
             clip-path: url(#chipShape);
-            transform: scale(0.93);
+            transform: scale(0.96);
             background: var(--badge-fill);
             display: grid; place-items: center;
         }
@@ -2193,7 +2194,7 @@
 
                 <!-- Subheading — function-first + outcome, names moved to product cards below -->
                 <p class="animate-fade-up delay-200 mt-10 mx-auto text-lg md:text-xl max-w-2xl font-light" style="color: var(--text-secondary); line-height: 1.75;">
-                    A specialist AI agent for every core function &mdash; <strong class="text-white/80 font-medium">support</strong>, <strong class="text-white/80 font-medium">content</strong>, <strong class="text-white/80 font-medium">projects</strong>, <strong class="text-white/80 font-medium">community</strong>, <strong class="text-white/80 font-medium">campaigns</strong> &mdash; running around the clock so your team gets their time back to create. Deploy one, or build the full workforce.
+                    An AI specialist for every core function: <strong class="text-white/80 font-medium">support</strong>, <strong class="text-white/80 font-medium">content</strong>, <strong class="text-white/80 font-medium">projects</strong>, <strong class="text-white/80 font-medium">campaigns</strong>, and <strong class="text-white/80 font-medium">frontline operations</strong>. Working around the clock, so your team gets back to the work only people can do. Start with one agent, or build your entire AI workforce.
                 </p>
 
                 <!-- Hero trust bar — Dubai AI Seal + F6S ranking as inline chips -->

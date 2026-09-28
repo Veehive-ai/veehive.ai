@@ -894,10 +894,6 @@
         }
         .workforce-badge__inner::before { content: ''; position: absolute; inset: 0; background: currentColor; opacity: 0.15; }
         .workforce-badge img { position: relative; width: 78%; height: 78%; object-fit: contain; display: block; }
-        /* The SnapaPro artwork is three bees side by side, so width is what
-           limits it, not height — it gets the full chip rather than the inset
-           the single bees sit in. The chip itself stays square like the rest. */
-        .workforce-badge img.is-wide { width: 100%; height: 100%; }
         .workforce-card:hover .workforce-badge__inner::before { opacity: 0.24; }
         .workforce-name { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; color: #fff; }
         html.light .workforce-name { color: #0F1A20; }
@@ -2698,7 +2694,7 @@
                 <div class="workforce-card" style="--wf:#F87171">
                     <div class="workforce-badge">
                         <div class="workforce-badge__inner">
-                            <img class="is-wide" src="/agents/bee-snapapro.png" alt="Taj, Noor and Sats, the three SnapaPro bees, in suits with red ties" width="638" height="295" loading="lazy" decoding="async">
+                            <img src="/agents/bee-snapapro.png" alt="Taj, Noor and Sats, the SnapaPro bee, in a suit with a red tie" width="242" height="295" loading="lazy" decoding="async">
                         </div>
                     </div>
                     <div class="workforce-name">Taj &middot; Noor &middot; Sats</div>

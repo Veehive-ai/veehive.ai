@@ -9,10 +9,10 @@
       "customer": "Emirates NBD",
       "region": "UAE",
       "industry": "Banking",
-      "product": "mpliphi",
+      "product": "Mpliphi",
       "function": "customer operations",
       "headline": "Autonomous WhatsApp resolution across retail banking",
-      "summary": "mpliphi handles customer conversations across WhatsApp, resolving routine banking queries without human handoff and escalating exceptions with full context.",
+      "summary": "Mpliphi handles customer conversations across WhatsApp, resolving routine banking queries without human handoff and escalating exceptions with full context.",
       "outcome": "Reduced average handling time; large share of inbound resolved by the agent.",
       "url": "https://veehive.ai/#customers"
     },
@@ -33,10 +33,10 @@
       "customer": "Sber (MENA)",
       "region": "MENA",
       "industry": "Financial Services",
-      "product": "Veehive Studio",
+      "product": "HiveStudio",
       "function": "content",
       "headline": "Document-to-video product education at scale",
-      "summary": "Veehive Studio converts internal policy and product docs into localized explainer videos with brand avatars and multilingual voiceovers.",
+      "summary": "HiveStudio converts internal policy and product docs into localized explainer videos with brand avatars and multilingual voiceovers.",
       "outcome": "Turnaround from days to minutes on new product launches.",
       "url": "https://veehive.ai/#customers"
     },
@@ -57,10 +57,10 @@
       "customer": "Accenture",
       "region": "Global",
       "industry": "Consulting",
-      "product": "Veehive Mind",
+      "product": "HiveMind",
       "function": "campaigns",
       "headline": "Multi-agent campaign execution",
-      "summary": "Veehive Mind orchestrates multiple product agents for always-on campaign execution — planning, publishing, and reporting run as a workforce.",
+      "summary": "HiveMind orchestrates multiple product agents for always-on campaign execution — planning, publishing, and reporting run as a workforce.",
       "outcome": "Continuous campaign cadence with a single operator in the loop.",
       "url": "https://veehive.ai/#customers"
     }

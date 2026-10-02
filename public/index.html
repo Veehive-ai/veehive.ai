@@ -406,7 +406,7 @@
     </script>
 
     <link rel="stylesheet" href="/brand/tokens.css">
-    <link rel="stylesheet" href="/tailwind.min.css">
+    <link rel="stylesheet" href="/tailwind.min.css?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Satoshi:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -1353,6 +1353,28 @@
             -webkit-backdrop-filter: saturate(180%) blur(20px);
         }
 
+        /* ── HiveMetal (air-gapped deployment) ─────────────────── */
+        .hm-diagram { width: 100%; height: auto; display: block; color: var(--text); }
+        .hm-diagram text { font-family: 'Inter', sans-serif; }
+        .hm-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+        /* Narrow screens: let the diagram keep a readable type size and scroll. */
+        @media (max-width: 640px) {
+            .hm-diagram-card { overflow-x: auto; }
+            .hm-diagram { min-width: 460px; }
+        }
+        .hm-usecases { display: flex; flex-wrap: wrap; gap: 10px; }
+        .hm-usecase {
+            display: inline-flex; align-items: center; gap: 9px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            border-radius: 999px;
+            padding: 9px 16px 9px 13px;
+            font-size: 13.5px; font-weight: 500;
+            transition: border-color .25s ease, background .25s ease;
+        }
+        .hm-usecase:hover { border-color: var(--border-hover); background: var(--surface-hover); }
+        .hm-usecase__ico { width: 16px; height: 16px; color: #3B5BFF; flex: none; }
+
         /* Divider line */
         .divider-gradient {
             height: 1px;
@@ -1472,6 +1494,7 @@
         /* Text color overrides for light mode */
         html.light .text-white { color: #18181B !important; }
         html.light .text-white\/90 { color: rgba(24,24,27,0.90) !important; }
+        html.light .text-white\/85 { color: rgba(24,24,27,0.85) !important; }
         html.light .text-white\/80 { color: rgba(24,24,27,0.80) !important; }
         html.light .text-white\/70 { color: rgba(24,24,27,0.70) !important; }
         html.light .text-white\/60 { color: rgba(24,24,27,0.60) !important; }
@@ -2730,6 +2753,147 @@
     <div class="divider-gradient"></div>
 
     <!-- ═══════════════════════════════════════ -->
+    <!-- HIVEMETAL — AIR-GAPPED DEPLOYMENT -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="hivemetal" class="relative z-10 py-20 lg:py-24 overflow-hidden" style="scroll-margin-top:96px">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#3B5BFF]/[0.04] rounded-full blur-[150px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="reveal grid lg:grid-cols-2 gap-16">
+
+                <!-- Copy -->
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#3B5BFF]/10 border border-[#3B5BFF]/15 mb-5">
+                        <svg class="w-3.5 h-3.5 text-[#3B5BFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3 4.5 6v5.6c0 4.3 3 8.3 7.5 9.4 4.5-1.1 7.5-5.1 7.5-9.4V6z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.4 12.1 11.3 14l3.4-3.7"/>
+                        </svg>
+                        <span class="text-[12px] font-semibold text-[#3B5BFF] uppercase tracking-wider">Sovereign Deployment</span>
+                    </div>
+
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-5">
+                        HiveMetal. The same hive, <span class="font-display italic text-gradient">on your own metal.</span>
+                    </h2>
+
+                    <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">
+                        Any agent from the workforce above, as an air-gapped appliance. Agents, orchestration and open-weight models on hardware you own, delivered with validated GPU servers through our <span class="text-white/70 font-medium">Lenovo</span> partnership.
+                    </p>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <div class="feature-check mt-0.5"><svg class="w-2.5 h-2.5 text-[#3B5BFF]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                            <div>
+                                <div class="text-[14px] font-semibold text-white/80">Air-gapped by default</div>
+                                <div class="text-[13px] text-white/35">No outbound calls, no third-party APIs, no telemetry.</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="feature-check mt-0.5"><svg class="w-2.5 h-2.5 text-[#3B5BFF]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                            <div>
+                                <div class="text-[14px] font-semibold text-white/80">Open-weight models, served locally</div>
+                                <div class="text-[13px] text-white/35">Run and fine-tune open-weight LLMs on your own GPUs, on your own data.</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="feature-check mt-0.5"><svg class="w-2.5 h-2.5 text-[#3B5BFF]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                            <div>
+                                <div class="text-[14px] font-semibold text-white/80">Lenovo hardware, included</div>
+                                <div class="text-[13px] text-white/35">GPU servers sized, racked and commissioned alongside the software.</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="feature-check mt-0.5"><svg class="w-2.5 h-2.5 text-[#3B5BFF]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                            <div>
+                                <div class="text-[14px] font-semibold text-white/80">Every agent, unchanged</div>
+                                <div class="text-[13px] text-white/35">Mpliphi, HiveStudio, SnapaPro, HiveLink and HiveMind, same as on our cloud.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&amp;ismsaljsauthenabled&amp;ep=plink" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 px-5 py-2.5 text-[13px] font-medium text-white/70 border border-white/[0.12] rounded-full hover:bg-white/[0.05] hover:border-white/[0.2] hover:text-white transition-all">
+                        Talk to us about HiveMetal
+                        <svg class="w-3.5 h-3.5 opacity-50 group-hover:opacity-80 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    </a>
+                </div>
+
+                <!-- Diagram -->
+                <div class="trust-card hm-diagram-card rounded-2xl p-6 md:p-8 flex flex-col justify-center">
+                    <svg class="hm-diagram" viewBox="0 0 520 438" role="img" aria-labelledby="hmDiagTitle hmDiagDesc">
+                        <title id="hmDiagTitle">HiveMetal air-gapped deployment</title>
+                        <desc id="hmDiagDesc">Inside a sealed boundary in your data center, the agent layer runs on local open-weight models on Lenovo GPU hardware. No traffic crosses the boundary.</desc>
+
+                        <!-- Outside world -->
+                        <g opacity="0.38">
+                            <path d="M196 44a20 20 0 0 1 39-6 16 16 0 0 1 22 6 18 18 0 0 1-2 36h-57a18 18 0 0 1-2-36z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+                            <text x="290" y="42" class="hm-eyebrow" fill="currentColor" font-size="10">PUBLIC INTERNET</text>
+                            <text x="290" y="58" fill="currentColor" font-size="10.5" opacity="0.75">Third-party model APIs</text>
+                        </g>
+
+                        <!-- Severed link -->
+                        <path d="M226 82v12M226 112v12" stroke="currentColor" stroke-width="1.4" opacity="0.3" stroke-linecap="round"/>
+                        <circle cx="226" cy="103" r="9" fill="none" stroke="#F87171" stroke-width="1.4" opacity="0.8"/>
+                        <path d="M222.2 99.2l7.6 7.6M229.8 99.2l-7.6 7.6" stroke="#F87171" stroke-width="1.4" stroke-linecap="round" opacity="0.8"/>
+                        <text x="246" y="107" fill="#F87171" font-size="10.5" opacity="0.85">No egress. No inbound.</text>
+
+                        <!-- Perimeter -->
+                        <rect x="14" y="132" width="492" height="292" rx="18" fill="#3B5BFF" opacity="0.03"/>
+                        <rect x="14" y="132" width="492" height="292" rx="18" fill="none" stroke="#3B5BFF" stroke-width="1.4" stroke-dasharray="7 6" opacity="0.55"/>
+                        <text x="36" y="158" class="hm-eyebrow" fill="#3B5BFF" opacity="0.9">YOUR DATA CENTER &#183; AIR-GAPPED</text>
+
+                        <!-- Agent layer -->
+                        <rect x="38" y="172" width="444" height="86" rx="13" fill="currentColor" opacity="0.035"/>
+                        <rect x="38" y="172" width="444" height="86" rx="13" fill="none" stroke="currentColor" stroke-width="1" opacity="0.14"/>
+                        <text x="58" y="196" class="hm-eyebrow" fill="currentColor" opacity="0.5">AGENT LAYER</text>
+                        <g font-size="10.5" text-anchor="middle">
+                            <g><rect x="58" y="210" width="76" height="28" rx="9" fill="#34D399" opacity="0.12"/><rect x="58" y="210" width="76" height="28" rx="9" fill="none" stroke="#34D399" stroke-width="1" opacity="0.4"/><text x="96" y="228" fill="#34D399">Mpliphi</text></g>
+                            <g><rect x="144" y="210" width="76" height="28" rx="9" fill="#A78BFA" opacity="0.12"/><rect x="144" y="210" width="76" height="28" rx="9" fill="none" stroke="#A78BFA" stroke-width="1" opacity="0.4"/><text x="182" y="228" fill="#A78BFA">Studio</text></g>
+                            <g><rect x="230" y="210" width="76" height="28" rx="9" fill="#F87171" opacity="0.12"/><rect x="230" y="210" width="76" height="28" rx="9" fill="none" stroke="#F87171" stroke-width="1" opacity="0.4"/><text x="268" y="228" fill="#F87171">SnapaPro</text></g>
+                            <g><rect x="316" y="210" width="76" height="28" rx="9" fill="#60A5FA" opacity="0.12"/><rect x="316" y="210" width="76" height="28" rx="9" fill="none" stroke="#60A5FA" stroke-width="1" opacity="0.4"/><text x="354" y="228" fill="#60A5FA">HiveLink</text></g>
+                            <g><rect x="402" y="210" width="76" height="28" rx="9" fill="#FFB020" opacity="0.12"/><rect x="402" y="210" width="76" height="28" rx="9" fill="none" stroke="#FFB020" stroke-width="1" opacity="0.4"/><text x="440" y="228" fill="#FFB020">HiveMind</text></g>
+                        </g>
+
+                        <path d="M260 258v18" stroke="#3B5BFF" stroke-width="1.3" opacity="0.45"/>
+                        <path d="M255.5 271.5l4.5 5 4.5-5" fill="none" stroke="#3B5BFF" stroke-width="1.3" opacity="0.45" stroke-linecap="round" stroke-linejoin="round"/>
+
+                        <!-- Model layer -->
+                        <rect x="38" y="280" width="444" height="62" rx="13" fill="currentColor" opacity="0.035"/>
+                        <rect x="38" y="280" width="444" height="62" rx="13" fill="none" stroke="currentColor" stroke-width="1" opacity="0.14"/>
+                        <text x="58" y="304" class="hm-eyebrow" fill="currentColor" opacity="0.5">MODEL LAYER &#183; RUNS LOCAL</text>
+                        <text x="58" y="325" fill="currentColor" font-size="11.5" opacity="0.72">Open-weight LLMs, fine-tuned on your private corpus</text>
+
+                        <path d="M260 342v18" stroke="#3B5BFF" stroke-width="1.3" opacity="0.45"/>
+                        <path d="M255.5 355.5l4.5 5 4.5-5" fill="none" stroke="#3B5BFF" stroke-width="1.3" opacity="0.45" stroke-linecap="round" stroke-linejoin="round"/>
+
+                        <!-- Hardware layer -->
+                        <rect x="38" y="364" width="444" height="46" rx="13" fill="#3B5BFF" opacity="0.07"/>
+                        <rect x="38" y="364" width="444" height="46" rx="13" fill="none" stroke="#3B5BFF" stroke-width="1" opacity="0.3"/>
+                        <g stroke="#3B5BFF" stroke-width="1.2" fill="none" opacity="0.8">
+                            <rect x="60" y="378" width="24" height="7" rx="2"/>
+                            <rect x="60" y="389" width="24" height="7" rx="2"/>
+                            <circle cx="79" cy="381.5" r="1"/>
+                            <circle cx="79" cy="392.5" r="1"/>
+                        </g>
+                        <text x="96" y="392" fill="#3B5BFF" font-size="11.5" opacity="0.95">Lenovo validated GPU servers, in your rack</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Use cases -->
+            <div class="reveal" style="margin-top:56px">
+                <p class="text-[12px] font-semibold uppercase tracking-[0.2em] text-white/30 mb-5">Built for work that cannot leave the building</p>
+                <div class="hm-usecases">
+                    <span class="hm-usecase"><svg class="hm-usecase__ico" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.5 3v6.2L4.8 17a3 3 0 0 0 2.6 4.5h9.2a3 3 0 0 0 2.6-4.5l-4.7-7.8V3M8 3h8M7.6 14.5h8.8"/></svg>Research labs</span>
+                    <span class="hm-usecase"><svg class="hm-usecase__ico" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 19.5h16M4 19.5V12m4 7.5V8m4 11.5V4m4 15.5v-6m4 6V9.5"/></svg>Experiments and fine-tunes</span>
+                    <span class="hm-usecase"><svg class="hm-usecase__ico" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3 4.5 6v5.6c0 4.3 3 8.3 7.5 9.4 4.5-1.1 7.5-5.1 7.5-9.4V6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 10.5v3.2M12 16.8h.01"/></svg>Regulated and classified data</span>
+                    <span class="hm-usecase"><svg class="hm-usecase__ico" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8.5 12 4l9 4.5-9 4.5z"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 12.8 12 17.3l9-4.5M3 16.6 12 21l9-4.4"/></svg>Edge and disconnected sites</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider-gradient"></div>
+
+    <!-- ═══════════════════════════════════════ -->
     <!-- PRESS & MEDIA TEASER -->
     <!-- ═══════════════════════════════════════ -->
     <section class="relative z-10 py-16 lg:py-20">
@@ -3423,6 +3587,7 @@
             { id:'matcher',   label:'Find your agent' },
             { id:'mpliphi',   label:'The apps' },
             { id:'workforce', label:'Workforce' },
+            { id:'hivemetal', label:'HiveMetal' },
             { id:'trust',     label:'Trust' },
             { id:'faq',       label:'FAQ' },
             { id:'contact',   label:'Contact' }

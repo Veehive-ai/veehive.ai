@@ -39,6 +39,7 @@
       else if(href.includes('veehivestudio.com'))            evName='click_product_studio';
       else if(href.includes('veehivelink.com')||href.includes('hivelink.html')) evName='click_product_hivelink';
       else if(href.includes('veehivemind.com'))              evName='click_product_mind';
+      else if(href.includes('veehivedocs.com'))              evName='click_product_hivedocs';
       else if(href.includes('veehivelabs.com'))              evName='click_custom_dev';
       else if(pathname.indexOf('/about.html')===0 && a.classList && a.classList.contains('news-card')) evName='click_press_mention';
       else if(href.indexOf('about.html#news')!==-1)          evName='click_press_teaser';
@@ -66,7 +67,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
     <title>About Veehive.ai — Your Agentic Workforce. Built for Enterprise.</title>
     <meta name="description" content="Veehive builds the agentic workforce for organizations in the Middle East and beyond. Specialized AI agents for customer operations, content production, project management, distribution, and campaign execution. Featured in Entrepreneur ME, Gulf Business, WAM, TahawulTech, Zawya, Hindu Business Line, Times of India, and Dubai One TV. Dubai AI Seal Tier E certified.">
-    <meta name="keywords" content="Veehive, Dubai AI company, agentic workforce, enterprise AI, AI development Dubai, GenAI products, AI agents, NVIDIA Inception, SnapaPro, Mpliphi, HiveStudio, HiveLink, HiveMind, frontline engagement platform, AI campaigns, Veehive press, Veehive news, Entrepreneur Middle East, Gulf Business, WAM UAE, TahawulTech, Zawya, Hindu Business Line, Red Bull Basement, CEATEC, GITEX Global, in5 Tech Dubai">
+    <meta name="keywords" content="Veehive, Dubai AI company, agentic workforce, enterprise AI, AI development Dubai, GenAI products, AI agents, NVIDIA Inception, SnapaPro, Mpliphi, HiveStudio, HiveLink, HiveMind, HiveDocs, AI document intelligence, frontline engagement platform, AI campaigns, Veehive press, Veehive news, Entrepreneur Middle East, Gulf Business, WAM UAE, TahawulTech, Zawya, Hindu Business Line, Red Bull Basement, CEATEC, GITEX Global, in5 Tech Dubai">
     <meta name="author" content="Veehive.ai">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://veehive.ai/about.html">
@@ -101,7 +102,7 @@
         "@context": "https://schema.org",
         "@type": "AboutPage",
         "name": "About Veehive",
-        "description": "Veehive.ai is a Dubai-based applied AI innovation company building GenAI products faster and smarter. Products include SnapaPro, Mpliphi, HiveStudio, HiveLink, and HiveMind.",
+        "description": "Veehive.ai is a Dubai-based applied AI innovation company building GenAI products faster and smarter. Products include SnapaPro, Mpliphi, HiveStudio, HiveLink, HiveMind, and HiveDocs.",
         "url": "https://veehive.ai/about.html",
         "dateModified": "2026-02-20",
         "inLanguage": "en",
@@ -161,7 +162,7 @@
         "@context": "https://schema.org",
         "@type": "ItemList",
         "name": "Veehive.ai AI Suite",
-        "numberOfItems": 5,
+        "numberOfItems": 6,
         "itemListElement": [
             {
                 "@type": "SoftwareApplication",
@@ -211,6 +212,16 @@
                 "applicationCategory": "BusinessApplication",
                 "description": "Always-on AI campaign hive. 11 specialist AI agents — among them trend intelligence, content calendar, copy, creative, brand memory, compliance, publishing, learning and orchestration — collaborate from a single brief to launch and run marketing campaigns end-to-end. Built on Google Gemini and Vertex AI Agent Engine.",
                 "featureList": ["11 Specialist AI Agents", "Live Trend Intelligence", "Content Calendar", "Brand Memory & Tone Preservation", "Compliance & Brand-safety Review", "One-click Multi-channel Publishing", "Performance Learning", "Enterprise Tenant Isolation"],
+                "creator": {"@type": "Organization", "name": "Veehive.ai"}
+            },
+            {
+                "@type": "SoftwareApplication",
+                "position": 6,
+                "name": "HiveDocs",
+                "url": "https://veehivedocs.com",
+                "applicationCategory": "BusinessApplication",
+                "description": "AI document intelligence. Dex, the HiveDocs agent, turns scanned images, PDFs and printed records into clean, structured, searchable data with OCR, AI field extraction and confidence-scored validation. Runs on-premise, in your cloud tenancy, or fully managed.",
+                "featureList": ["Scanner & Mobile Capture", "OCR & AI Field Extraction", "Validation & Confidence Scoring", "Search & Reporting Dashboard", "ERP Posting via API", "On-premise or Cloud Deployment"],
                 "creator": {"@type": "Organization", "name": "Veehive.ai"}
             }
         ]
@@ -345,7 +356,7 @@
                 "name": "What AI products does Veehive build?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Veehive's agentic workforce is made up of five specialized AI agents: 1) SnapaPro (snapapro.com) — AI project-management agent with natural-language intake and autonomous task creation. 2) Mpliphi (mpliphi.com) — AI customer-operations agent for WhatsApp and Email handling 50,000+ conversations monthly in 50+ languages. 3) HiveStudio (veehivestudio.com) — AI content-production agent that transforms documents into branded video with AI avatars. 4) HiveLink (veehivelink.com) — real-time frontline engagement platform for organizations with deskless staff. 5) HiveMind (veehivemind.com) — always-on AI campaign hive: 11 specialist agents collaborate from a single brief to launch and run marketing campaigns end-to-end."
+                    "text": "Veehive's agentic workforce is made up of six specialized AI agents: 1) SnapaPro (snapapro.com) — AI project-management agent with natural-language intake and autonomous task creation. 2) Mpliphi (mpliphi.com) — AI customer-operations agent for WhatsApp and Email handling 50,000+ conversations monthly in 50+ languages. 3) HiveStudio (veehivestudio.com) — AI content-production agent that transforms documents into branded video with AI avatars. 4) HiveLink (veehivelink.com) — real-time frontline engagement platform for organizations with deskless staff. 5) HiveMind (veehivemind.com) — always-on AI campaign hive: 11 specialist agents collaborate from a single brief to launch and run marketing campaigns end-to-end. 6) HiveDocs (veehivedocs.com) — AI document intelligence: turns scanned images, PDFs and printed records into clean, searchable data, on-premise or in the cloud."
                 }
             },
             {
@@ -1245,6 +1256,7 @@
                     <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] text-white/50 hover:text-white transition-colors rounded-md hover:bg-white/[0.04]"><img src="/favicon-studio-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">HiveStudio</a>
                     <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] text-white/50 hover:text-white transition-colors rounded-md hover:bg-white/[0.04]"><img src="/favicon-hivelink-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">HiveLink</a>
                     <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] text-white/50 hover:text-white transition-colors rounded-md hover:bg-white/[0.04]"><img src="/favicon-mind-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">HiveMind</a>
+                    <a href="https://veehivedocs.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-[13px] text-white/50 hover:text-white transition-colors rounded-md hover:bg-white/[0.04]"><img src="/favicon-hivedocs-32.png" alt="" class="nav-favicon" loading="lazy" decoding="async">HiveDocs</a>
                     <a href="about.html" class="px-3 py-1.5 text-[13px] text-white hover:text-white transition-colors rounded-md bg-white/[0.06]">About</a>
                     <div class="w-px h-4 bg-white/10 mx-2"></div>
                     <button type="button" onclick="toggleTheme()" class="theme-toggle mr-2" aria-label="Toggle theme" title="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
@@ -1267,6 +1279,7 @@
                 <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px] text-white/60 hover:text-white"><img src="/favicon-studio-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">HiveStudio</a>
                 <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px] text-white/60 hover:text-white"><img src="/favicon-hivelink-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">HiveLink</a>
                 <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px] text-white/60 hover:text-white"><img src="/favicon-mind-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">HiveMind</a>
+                <a href="https://veehivedocs.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px] text-white/60 hover:text-white"><img src="/favicon-hivedocs-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">HiveDocs</a>
                 <a href="about.html" class="py-2.5 text-[14px] text-white font-medium">About</a>
                 <a href="team.html" class="py-2.5 text-[14px] text-white/60 hover:text-white">Team</a>
                 <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="mt-2 py-2.5 text-[14px] font-medium text-center bg-[#3B5BFF] rounded-full" style="color: var(--cta-text);">Book a Product Demo</a>
@@ -1295,7 +1308,7 @@
             </h1>
 
             <p class="animate-fade-up delay-200 mt-8 text-lg md:text-xl text-white/40 max-w-2xl leading-relaxed font-light">
-                Veehive builds the agentic workforce for organizations in the Middle East and beyond &mdash; specialized AI agents (Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind) that each go deep on one function, and coordinate as one workforce when you deploy them together.
+                Veehive builds the agentic workforce for organizations in the Middle East and beyond &mdash; specialized AI agents (Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind, HiveDocs) that each go deep on one function, and coordinate as one workforce when you deploy them together.
             </p>
 
             <!-- Quick navigation cards -->
@@ -1924,7 +1937,7 @@
                         <svg class="w-5 h-5 text-[#3B5BFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
                     </div>
                     <h3 class="text-xl font-bold tracking-tight mb-3">Our Mission</h3>
-                    <p class="text-[15px] text-white/45 leading-relaxed">Build AI that actually ships. Each of our products &mdash; Mpliphi for customer conversations, HiveStudio for video, SnapaPro for project management, HiveLink for branded video communities, HiveMind for marketing campaigns &mdash; goes deep on one problem instead of broad on many.</p>
+                    <p class="text-[15px] text-white/45 leading-relaxed">Build AI that actually ships. Each of our products &mdash; Mpliphi for customer conversations, HiveStudio for video, SnapaPro for project management, HiveLink for branded video communities, HiveMind for marketing campaigns, HiveDocs for document intelligence &mdash; goes deep on one problem instead of broad on many.</p>
                 </div>
             </div>
         </div>
@@ -2017,7 +2030,7 @@
                     <div class="vh-footer__brand">
                         <img src="/logo-veehive-white-192.png" alt="Veehive" loading="lazy" decoding="async">
                     </div>
-                    <p class="vh-footer__tagline">Your agentic workforce, built in Dubai. Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind &mdash; one company.</p>
+                    <p class="vh-footer__tagline">Your agentic workforce, built in Dubai. Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind, HiveDocs &mdash; one company.</p>
                     <div class="vh-footer__social">
                     <a href="https://linkedin.com/company/letsveehive" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
                     <a href="https://twitter.com/letsveehive" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
@@ -2035,6 +2048,7 @@
                     <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-snapapro-32.png" alt="" loading="lazy" decoding="async">SnapaPro</a>
                     <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-hivelink-32.png" alt="" loading="lazy" decoding="async">HiveLink</a>
                     <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-mind-32.png" alt="" loading="lazy" decoding="async">HiveMind</a>
+                    <a href="https://veehivedocs.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-hivedocs-32.png" alt="" loading="lazy" decoding="async">HiveDocs</a>
                 </div>
 
                 <div class="vh-footer__col">
@@ -2144,7 +2158,8 @@
                 { name: 'HiveStudio', icon: '/favicon-studio-32.png' },
                 { name: 'SnapaPro',       icon: '/favicon-snapapro-32.png' },
                 { name: 'HiveLink',       icon: '/favicon-hivelink-32.png' },
-                { name: 'HiveMind',   icon: '/favicon-mind-32.png' }
+                { name: 'HiveMind',   icon: '/favicon-mind-32.png' },
+                { name: 'HiveDocs',   icon: '/favicon-hivedocs-32.png' }
             ];
             /* Built twice so the -50% keyframe loops seamlessly. */
             function build(){

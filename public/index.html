@@ -39,6 +39,7 @@
       else if(href.includes('veehivestudio.com'))            evName='click_product_studio';
       else if(href.includes('veehivelink.com')||href.includes('hivelink.html')) evName='click_product_hivelink';
       else if(href.includes('veehivemind.com'))              evName='click_product_mind';
+      else if(href.includes('veehivedocs.com'))              evName='click_product_hivedocs';
       else if(href.includes('veehivelabs.com'))              evName='click_custom_dev';
       else if(pathname.indexOf('/about.html')===0 && a.classList && a.classList.contains('news-card')) evName='click_press_mention';
       else if(href.indexOf('about.html#news')!==-1)          evName='click_press_teaser';
@@ -65,8 +66,8 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=2">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
     <title>Veehive.ai — Power Your Business With Bespoke Agentic Apps</title>
-    <meta name="description" content="Veehive.ai delivers ready-to-deploy AI products for enterprise. Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind — agents for customer operations, content, project management, community, and campaigns. Dubai AI Seal Tier E.">
-    <meta name="keywords" content="applied AI, AI agents, agentic workforce, AI video, AI project management, AI campaigns, Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind, Veehive Tech, Dubai AI, enterprise AI">
+    <meta name="description" content="Veehive.ai delivers ready-to-deploy AI products for enterprise. Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind, HiveDocs — agents for customer operations, content, project management, community, campaigns, and documents. Dubai AI Seal Tier E.">
+    <meta name="keywords" content="applied AI, AI agents, agentic workforce, AI video, AI project management, AI campaigns, Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind, HiveDocs, AI document intelligence, Veehive Tech, Dubai AI, enterprise AI">
     <meta name="author" content="Veehive.ai">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://veehive.ai/">
@@ -76,7 +77,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://veehive.ai/">
     <meta property="og:title" content="Veehive.ai — Power Your Business With Bespoke Agentic Apps">
-    <meta property="og:description" content="Veehive.ai delivers ready-to-deploy AI products for enterprise. Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind — agents for customer operations, content, project management, community, and campaigns. Dubai AI Seal Tier E.">
+    <meta property="og:description" content="Veehive.ai delivers ready-to-deploy AI products for enterprise. Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind, HiveDocs — agents for customer operations, content, project management, community, campaigns, and documents. Dubai AI Seal Tier E.">
     <meta property="og:image" content="https://veehive.ai/og-image.png?v=3">
     <meta property="og:site_name" content="Veehive">
     <meta property="og:locale" content="en_US">
@@ -85,7 +86,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://veehive.ai/">
     <meta name="twitter:title" content="Veehive.ai — Power Your Business With Bespoke Agentic Apps">
-    <meta name="twitter:description" content="An agentic workforce, ready to deploy. AI agents for customer operations, content production, project management, distribution, and campaign execution. Dubai AI Seal Tier E certified.">
+    <meta name="twitter:description" content="An agentic workforce, ready to deploy. AI agents for customer operations, content production, project management, distribution, campaign execution, and document intelligence. Dubai AI Seal Tier E certified.">
     <meta name="twitter:image" content="https://veehive.ai/og-image.png?v=3">
     <meta name="twitter:site" content="@letsveehive">
 
@@ -104,7 +105,7 @@
         "legalName": "Veehive Tech FZ-LLC",
         "url": "https://veehive.ai",
         "logo": "https://veehive.ai/logo.png",
-        "description": "Veehive.ai delivers ready-to-deploy AI products from Dubai. Specialized AI agents for customer operations, content production, project management, distribution, and campaign execution. Dubai AI Seal Tier E certified.",
+        "description": "Veehive.ai delivers ready-to-deploy AI products from Dubai. Specialized AI agents for customer operations, content production, project management, distribution, campaign execution, and document intelligence. Dubai AI Seal Tier E certified.",
         "foundingDate": "2023",
         "numberOfEmployees": "10",
         "areaServed": ["AE", "US", "EU", "GB", "SA", "IN"],
@@ -159,7 +160,8 @@
                 {"@type": "Offer", "itemOffered": {"@type": "SoftwareApplication", "name": "HiveStudio", "url": "https://veehivestudio.com", "description": "Turn documents into branded videos with AI avatars"}},
                 {"@type": "Offer", "itemOffered": {"@type": "SoftwareApplication", "name": "SnapaPro", "url": "https://snapapro.com", "description": "AI project management run by Taj, with natural-language tasks"}},
                 {"@type": "Offer", "itemOffered": {"@type": "SoftwareApplication", "name": "HiveLink", "url": "https://veehivelink.com", "description": "Real-time frontline engagement platform — one AI agent delivers connected, personalized updates to every deskless worker on the device they already carry"}},
-                {"@type": "Offer", "itemOffered": {"@type": "SoftwareApplication", "name": "HiveMind", "url": "https://veehivemind.com", "description": "Always-on campaign hive — 11 specialist AI agents collaborate from a single brief to launch and run marketing campaigns end-to-end"}}
+                {"@type": "Offer", "itemOffered": {"@type": "SoftwareApplication", "name": "HiveMind", "url": "https://veehivemind.com", "description": "Always-on campaign hive — 11 specialist AI agents collaborate from a single brief to launch and run marketing campaigns end-to-end"}},
+                {"@type": "Offer", "itemOffered": {"@type": "SoftwareApplication", "name": "HiveDocs", "url": "https://veehivedocs.com", "description": "AI document intelligence — turns scanned images, PDFs and printed records into clean, structured, searchable data, on-premise or in the cloud"}}
             ]
         }
     }
@@ -171,8 +173,8 @@
         "@context": "https://schema.org",
         "@type": "ItemList",
         "name": "Veehive Agentic Workforce",
-        "description": "Veehive's agentic workforce — five specialized AI agents: Mpliphi, HiveStudio, SnapaPro, HiveLink, and HiveMind.",
-        "numberOfItems": 5,
+        "description": "Veehive's agentic workforce — six specialized AI agents: Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind, and HiveDocs.",
+        "numberOfItems": 6,
         "itemListElement": [
             {
                 "@type": "SoftwareApplication",
@@ -228,6 +230,17 @@
                 "operatingSystem": "Web",
                 "featureList": ["11 Specialist AI Agents", "Live Trend Intelligence with Cited Signals", "Balanced Content Calendar", "On-brand Copy for Social, Email, Video", "Generated Creative (Images & Short-form Video)", "Brand Memory & Tone Preservation", "Compliance & Brand-safety Review", "One-click Multi-channel Publishing", "Performance Learning & Optimization", "Enterprise Tenant Isolation"],
                 "creator": {"@type": "Organization", "name": "Veehive.ai"}
+            },
+            {
+                "@type": "SoftwareApplication",
+                "position": 6,
+                "name": "HiveDocs",
+                "url": "https://veehivedocs.com",
+                "applicationCategory": "BusinessApplication",
+                "description": "AI document intelligence. Dex, the HiveDocs agent, reads operational, admin and compliance paperwork (scanned images, PDFs and printed records) with OCR and AI, tags the key fields, confidence-checks every value and makes it searchable on a web dashboard. Runs on-premise, in your cloud tenancy, or fully managed.",
+                "operatingSystem": "Web",
+                "featureList": ["Scanner & Mobile Capture", "OCR & AI Field Extraction", "Validation & Confidence Scoring", "Search, Review & Reporting Dashboard", "ERP Posting via API", "On-premise, Private Cloud or Managed"],
+                "creator": {"@type": "Organization", "name": "Veehive.ai"}
             }
         ]
     }
@@ -257,7 +270,7 @@
         "name": "Veehive.ai",
         "alternateName": "Veehive",
         "url": "https://veehive.ai",
-        "description": "Veehive.ai delivers ready-to-deploy AI products from Dubai — specialized AI agents: Mpliphi, HiveStudio, SnapaPro, HiveLink, and HiveMind.",
+        "description": "Veehive.ai delivers ready-to-deploy AI products from Dubai — specialized AI agents: Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind, and HiveDocs.",
         "publisher": {
             "@type": "Organization",
             "name": "Veehive.ai",
@@ -316,20 +329,27 @@
             {
                 "@type": "SiteNavigationElement",
                 "position": 6,
+                "name": "HiveDocs",
+                "description": "AI document intelligence — scanned paperwork into clean, searchable data",
+                "url": "https://veehivedocs.com"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "position": 7,
                 "name": "Book a Demo",
                 "description": "Schedule a live demo with the Veehive team",
                 "url": "https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink"
             },
             {
                 "@type": "SiteNavigationElement",
-                "position": 7,
+                "position": 8,
                 "name": "About Us",
                 "description": "Dubai-based applied-AI company — credentials, team, partners",
                 "url": "https://veehive.ai/about.html"
             },
             {
                 "@type": "SiteNavigationElement",
-                "position": 7,
+                "position": 9,
                 "name": "Our Team",
                 "description": "Meet the team building Veehive's agentic workforce",
                 "url": "https://veehive.ai/team.html"
@@ -350,7 +370,7 @@
                 "name": "What is Veehive.ai?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Veehive.ai delivers ready-to-deploy AI products from Dubai. We deploy specialized AI agents across an organization's core functions — customer operations, content production, project management, distribution, and campaign execution. Deploy one agent or build out the full agentic workforce."
+                    "text": "Veehive.ai delivers ready-to-deploy AI products from Dubai. We deploy specialized AI agents across an organization's core functions — customer operations, content production, project management, distribution, campaign execution, and document intelligence. Deploy one agent or build out the full agentic workforce."
                 }
             },
             {
@@ -358,7 +378,7 @@
                 "name": "What products does Veehive build?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Mpliphi (customer-conversation agents at mpliphi.com), HiveStudio (document-to-video AI at veehivestudio.com), SnapaPro (AI project management at snapapro.com), HiveLink (frontline engagement platform at veehivelink.com), and HiveMind (always-on AI campaign hive at veehivemind.com)."
+                    "text": "Mpliphi (customer-conversation agents at mpliphi.com), HiveStudio (document-to-video AI at veehivestudio.com), SnapaPro (AI project management at snapapro.com), HiveLink (frontline engagement platform at veehivelink.com), HiveMind (always-on AI campaign hive at veehivemind.com), and HiveDocs (AI document intelligence at veehivedocs.com)."
                 }
             },
             {
@@ -366,7 +386,7 @@
                 "name": "Can I buy just one Veehive product, or do I need the whole suite?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Either works. Every Veehive agent is built to stand on its own and solve one function completely, so you can start with a single one and get full value on day one. Deploy more than one and they coordinate as a single workforce, sharing context across customer operations, content, projects, community, and campaigns. Start where the pain is; expand when you're ready."
+                    "text": "Either works. Every Veehive agent is built to stand on its own and solve one function completely, so you can start with a single one and get full value on day one. Deploy more than one and they coordinate as a single workforce, sharing context across customer operations, content, projects, community, campaigns, and documents. Start where the pain is; expand when you're ready."
                 }
             },
             {
@@ -591,6 +611,8 @@
         .card-glow-distributor::before { background: linear-gradient(135deg, rgba(37,99,235,0.4), transparent 60%); }
         .card-glow-mind:hover { box-shadow: 0 0 40px -12px rgba(255,176,32,0.3); }
         .card-glow-mind::before { background: linear-gradient(135deg, rgba(255,176,32,0.4), transparent 60%); }
+        .card-glow-docs:hover { box-shadow: 0 0 40px -12px rgba(20,184,166,0.3); }
+        .card-glow-docs::before { background: linear-gradient(135deg, rgba(20,184,166,0.4), transparent 60%); }
         .card-glow-labs:hover { box-shadow: 0 0 40px -12px rgba(234,88,12,0.3); }
         .card-glow-labs::before { background: linear-gradient(135deg, rgba(234,88,12,0.4), transparent 60%); }
         .card-glow-mustard:hover { box-shadow: 0 0 40px -12px rgba(59,91,255,0.3); }
@@ -852,14 +874,16 @@
         .press-strip-divider { color: rgba(255,255,255,0.15); font-size: 11px; }
         html.light .press-strip-divider { color: rgba(15,26,32,0.15); }
 
-        /* Meet the Agentic Workforce — 5 team-style cards, fluid auto-fit grid */
+        /* Meet the Agentic Workforce — 6 team-style cards: 6 across on desktop, 3 then 2 below */
         .workforce-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            grid-template-columns: repeat(6, minmax(0, 1fr));
             gap: 20px;
         }
+        @media (max-width: 1100px) { .workforce-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        @media (max-width: 620px)  { .workforce-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
         .workforce-card {
-            padding: 64px 32px;
+            padding: 56px 16px;
             border-radius: 16px;
             border: 1px solid rgba(255,255,255,0.08);
             background: rgba(255,255,255,0.02);
@@ -1547,6 +1571,7 @@
         html.light .card-glow-creator:hover { box-shadow: 0 4px 24px -8px rgba(124,58,237,0.15); }
         html.light .card-glow-distributor:hover { box-shadow: 0 4px 24px -8px rgba(37,99,235,0.15); }
         html.light .card-glow-mind:hover { box-shadow: 0 4px 24px -8px rgba(255,176,32,0.15); }
+        html.light .card-glow-docs:hover { box-shadow: 0 4px 24px -8px rgba(20,184,166,0.15); }
         html.light .card-glow-labs:hover { box-shadow: 0 4px 24px -8px rgba(234,88,12,0.15); }
         html.light .card-glow-mustard:hover { box-shadow: 0 4px 24px -8px rgba(59,91,255,0.15); }
 
@@ -1980,6 +2005,8 @@
         .vh-apps--hero.is-in .vh-app:nth-child(3){transition-delay:.42s}
         .vh-apps--hero.is-in .vh-app:nth-child(4){transition-delay:.50s}
         .vh-apps--hero.is-in .vh-app:nth-child(5){transition-delay:.58s}
+        .vh-apps--hero.is-in .vh-app:nth-child(6){transition-delay:.66s}
+        .vh-apps--hero.is-in .vh-app:nth-child(7){transition-delay:.74s}
 
         @media (prefers-reduced-motion:reduce){
             .vh-apps--hero,
@@ -2126,7 +2153,7 @@
                                 <div class="vh-apps__promo">
                                     <div class="vh-apps__promo-mark"><img src="/favicon-192.png" alt="" loading="lazy" decoding="async"></div>
                                     <p class="vh-apps__promo-title">Introducing Veehive Agentic Apps</p>
-                                    <p class="vh-apps__promo-body">Five agentic apps, one workforce. Each one goes deep on a single business function, shaped around how your business already runs.</p>
+                                    <p class="vh-apps__promo-body">Six agentic apps, one workforce. Each one goes deep on a single business function, shaped around how your business already runs.</p>
                                     <a class="vh-apps__promo-cta" href="#matcher">Find your first agent <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></a>
                                 </div>
                                 <div class="vh-apps__grid-wrap">
@@ -2139,7 +2166,8 @@
                                         <a class="vh-app" href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-studio-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">HiveStudio<span class="vh-app__tag">Scale your content without losing your creativity.</span></span><span class="vh-app__desc">Turn any document into a branded video in about 90 seconds.</span></span></a>
                                         <a class="vh-app" href="https://snapapro.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-snapapro-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">SnapaPro<span class="vh-app__tag">Projects across a global team, finally on track.</span></span><span class="vh-app__desc">Your projects plan themselves, and chase the follow-ups for you.</span></span></a>
                                         <a class="vh-app" href="https://veehivelink.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-hivelink-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">HiveLink<span class="vh-app__tag">Your frontline team, finally connected.</span></span><span class="vh-app__desc">Reach every worker on the phone in their pocket &mdash; no email needed.</span></span></a>
-                                        <a class="vh-app" href="https://veehivemind.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-mind-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">HiveMind<span class="vh-app__tag">Launch campaigns like a team of fifty.</span></span><span class="vh-app__desc">Describe the campaign you want. Come back to it built.</span></span></a><a class="vh-app vh-app--more" href="/agentic-apps.html"><span class="vh-app__icon vh-app__icon--more" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="5" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg></span><span><span class="vh-app__name">More<span class="vh-app__tag">The Agentic Apps&trade; store</span></span><span class="vh-app__desc">Every agent we run, and every one Labs is building.</span></span></a>
+                                        <a class="vh-app" href="https://veehivemind.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-mind-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">HiveMind<span class="vh-app__tag">Launch campaigns like a team of fifty.</span></span><span class="vh-app__desc">Describe the campaign you want. Come back to it built.</span></span></a>
+                                        <a class="vh-app" href="https://veehivedocs.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-hivedocs-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">HiveDocs<span class="vh-app__tag">Your paperwork, finally searchable.</span></span><span class="vh-app__desc">Scan any document. Get clean, searchable data back.</span></span></a><a class="vh-app vh-app--more" href="/agentic-apps.html"><span class="vh-app__icon vh-app__icon--more" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="5" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg></span><span><span class="vh-app__name">More<span class="vh-app__tag">The Agentic Apps&trade; store</span></span><span class="vh-app__desc">Every agent we run, and every one Labs is building.</span></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -2174,6 +2202,7 @@
                 <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-snapapro-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">SnapaPro</a>
                 <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-hivelink-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">HiveLink</a>
                 <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-mind-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">HiveMind</a>
+                <a href="https://veehivedocs.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-hivedocs-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">HiveDocs</a>
                 <p class="vh-mobilemenu__label">Explore</p>
                 <a href="#matcher" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">Find your agent</a>
                 <a href="#workforce" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">Workforce</a>
@@ -2213,7 +2242,7 @@
 
                 <!-- Subheading — function-first + outcome, names moved to product cards below -->
                 <p class="animate-fade-up delay-200 mt-10 mx-auto text-lg md:text-xl max-w-2xl font-light" style="color: var(--text-secondary); line-height: 1.75;">
-                    Meet your hive. Five agentic apps &mdash; for <strong class="text-white/80 font-medium">support</strong>, <strong class="text-white/80 font-medium">content</strong>, <strong class="text-white/80 font-medium">projects</strong>, <strong class="text-white/80 font-medium">frontline</strong>, and <strong class="text-white/80 font-medium">campaigns</strong> &mdash; each one shaped around how your business already runs. Deploy one, or put the whole hive to work.
+                    Meet your hive. Six agentic apps &mdash; for <strong class="text-white/80 font-medium">support</strong>, <strong class="text-white/80 font-medium">content</strong>, <strong class="text-white/80 font-medium">projects</strong>, <strong class="text-white/80 font-medium">frontline</strong>, <strong class="text-white/80 font-medium">campaigns</strong>, and <strong class="text-white/80 font-medium">documents</strong> &mdash; each one shaped around how your business already runs. Deploy one, or put the whole hive to work.
                 </p>
 
                 <!-- Hero trust bar — Dubai AI Seal + F6S ranking as inline chips -->
@@ -2259,7 +2288,7 @@
                     <div class="vh-apps__promo">
                         <div class="vh-apps__promo-mark"><img src="/favicon-192.png" alt="" loading="lazy" decoding="async"></div>
                         <p class="vh-apps__promo-title">Introducing Veehive Agentic Apps</p>
-                        <p class="vh-apps__promo-body">Five agentic apps, one workforce. Each one goes deep on a single business function, shaped around how your business already runs.</p>
+                        <p class="vh-apps__promo-body">Six agentic apps, one workforce. Each one goes deep on a single business function, shaped around how your business already runs.</p>
                         <a class="vh-apps__promo-cta" href="#matcher">Find your first agent <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></a>
                     </div>
                     <div class="vh-apps__grid-wrap">
@@ -2272,7 +2301,8 @@
                             <a class="vh-app" href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-studio-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">HiveStudio<span class="vh-app__tag">Scale your content without losing your creativity.</span></span><span class="vh-app__desc">Turn any document into a branded video in about 90 seconds.</span></span></a>
                             <a class="vh-app" href="https://snapapro.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-snapapro-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">SnapaPro<span class="vh-app__tag">Projects across a global team, finally on track.</span></span><span class="vh-app__desc">Your projects plan themselves, and chase the follow-ups for you.</span></span></a>
                             <a class="vh-app" href="https://veehivelink.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-hivelink-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">HiveLink<span class="vh-app__tag">Your frontline team, finally connected.</span></span><span class="vh-app__desc">Reach every worker on the phone in their pocket &mdash; no email needed.</span></span></a>
-                            <a class="vh-app" href="https://veehivemind.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-mind-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">HiveMind<span class="vh-app__tag">Launch campaigns like a team of fifty.</span></span><span class="vh-app__desc">Describe the campaign you want. Come back to it built.</span></span></a><a class="vh-app vh-app--more" href="/agentic-apps.html"><span class="vh-app__icon vh-app__icon--more" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="5" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg></span><span><span class="vh-app__name">More<span class="vh-app__tag">The Agentic Apps&trade; store</span></span><span class="vh-app__desc">Every agent we run, and every one Labs is building.</span></span></a>
+                            <a class="vh-app" href="https://veehivemind.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-mind-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">HiveMind<span class="vh-app__tag">Launch campaigns like a team of fifty.</span></span><span class="vh-app__desc">Describe the campaign you want. Come back to it built.</span></span></a>
+                                        <a class="vh-app" href="https://veehivedocs.com" target="_blank" rel="noopener noreferrer"><img class="vh-app__icon" src="/favicon-hivedocs-32.png" alt="" loading="lazy" decoding="async"><span><span class="vh-app__name">HiveDocs<span class="vh-app__tag">Your paperwork, finally searchable.</span></span><span class="vh-app__desc">Scan any document. Get clean, searchable data back.</span></span></a><a class="vh-app vh-app--more" href="/agentic-apps.html"><span class="vh-app__icon vh-app__icon--more" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="5" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg></span><span><span class="vh-app__name">More<span class="vh-app__tag">The Agentic Apps&trade; store</span></span><span class="vh-app__desc">Every agent we run, and every one Labs is building.</span></span></a>
                         </div>
                     </div>
                 </div>
@@ -2331,9 +2361,13 @@
                     <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#60A5FA">Frontline &amp; internal comms</span>
                     <span class="block text-[17px] font-semibold text-white/85 leading-snug">&ldquo;Half our people never see a company email.&rdquo;</span>
                 </button>
-                <button type="button" aria-pressed="false" class="problem-card trust-card card-glow card-glow-mind rounded-xl p-6 text-left transition-all" data-product="mind" style="grid-column: span 2;">
+                <button type="button" aria-pressed="false" class="problem-card trust-card card-glow card-glow-mind rounded-xl p-6 text-left transition-all" data-product="mind">
                     <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#ffb020">Campaigns &amp; execution</span>
                     <span class="block text-[17px] font-semibold text-white/85 leading-snug">&ldquo;We can&rsquo;t launch campaigns fast enough.&rdquo;</span>
+                </button>
+                <button type="button" aria-pressed="false" class="problem-card trust-card card-glow card-glow-docs rounded-xl p-6 text-left transition-all" data-product="hivedocs">
+                    <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#14B8A6">Documents &amp; back office</span>
+                    <span class="block text-[17px] font-semibold text-white/85 leading-snug">&ldquo;We still re-key paperwork by hand.&rdquo;</span>
                 </button>
             </div>
 
@@ -2678,6 +2712,73 @@
         </div>
     </section>
 
+    <!-- HiveDocs -->
+    <section id="hivedocs" class="relative z-10 py-20 lg:py-24" style="scroll-margin-top:96px">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="reveal card-glow card-glow-docs rounded-2xl p-8 md:p-12">
+                <div class="showcase-grid">
+                    <div class="showcase-copy">
+                        <img src="/favicon-hivedocs-64.png" alt="HiveDocs" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
+                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#14B8A6">Your AI document intelligence platform</p>
+                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">HiveDocs</h2>
+                        <p class="prod-hero">Your paperwork, finally searchable.</p>
+                        <span class="prod-tagline" style="color:#14B8A6">Scan. Extract. Search.</span>
+                        <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <strong class="text-white/80">Dex</strong> &mdash; HiveDocs turns the operational, admin and compliance paperwork your team re-keys by hand &mdash; scanned images, PDFs and printed records &mdash; into clean, structured, searchable data. Every value is confidence-scored and checked before it posts, on your premises, in your cloud tenancy, or fully managed by us.</p>
+                        <div class="agent-team">
+                            <span class="agent-team__label">Your agentic team</span>
+                            <div class="agent-team__row"><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-bee"/></svg>Dex</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-doc"/></svg>Reads</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"/></svg>Extracts</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-check"/></svg>Validates</span><span class="agent-team__member"><svg class="agent-team__ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-share"/></svg>Posts</span><span class="agent-team__more">one agent, scan to search</span></div>
+                        </div>
+                        <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
+                            <div>
+                                <span class="stat-icon" style="color:#14B8A6" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">6</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Steps, scan &rarr; search</div>
+                            </div>
+                            <div>
+                                <span class="stat-icon" style="color:#14B8A6" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">5 wks</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Kick-off to go-live</div>
+                            </div>
+                            <div>
+                                <span class="stat-icon" style="color:#14B8A6" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg></span>
+                                <div class="text-2xl md:text-3xl font-bold text-white">On-prem</div>
+                                <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Or your cloud tenancy</div>
+                            </div>
+                        </div>
+                        <a href="https://veehivedocs.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#14B8A6">Explore HiveDocs <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                    <div class="showcase-demo">
+                        <div class="agent-demo" data-product="hivedocs">
+                            <span class="agent-live">Dex &middot; HiveDocs agent</span>
+                            <div class="agent-prompt">
+                                <span class="agent-prompt-icon">U</span>
+                                <span class="agent-prompt-text">Read today&rsquo;s <strong>inbound shipment paperwork</strong> &mdash; waybills, invoices and customs entries &mdash; into our tracker.</span>
+                            </div>
+                            <div class="agent-steps">
+                                <div class="agent-step is-done">
+                                    <span class="agent-step-mark">&check;</span>
+                                    38 documents scanned &middot; 112 pages read
+                                </div>
+                                <div class="agent-step is-done">
+                                    <span class="agent-step-mark">&check;</span>
+                                    Key fields tagged &middot; AWB, HS code, supplier, value
+                                </div>
+                                <div class="agent-step is-running">
+                                    <span class="agent-step-mark">&#8635;</span>
+                                    4 low-confidence fields sent to a reviewer
+                                </div>
+                            </div>
+                            <div class="agent-result">
+                                <span class="agent-result-tag">Same morning</span>
+                                Every shipment searchable &middot; nothing re-keyed by hand
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="divider-gradient"></div>
 
     <!-- ═══════════════════════════════════════ -->
@@ -2688,7 +2789,7 @@
             <div class="reveal text-center mb-12">
                 <p class="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#3B5BFF]/70 mb-4">The Team</p>
                 <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Meet the <span class="font-display italic text-gradient">Agentic Workforce.</span></h2>
-                <p class="mt-4 text-base text-white/45 max-w-xl mx-auto leading-relaxed">Five specialized AI agents, one coordinated team. Each with a name, a role, and a job they do around the clock.</p>
+                <p class="mt-4 text-base text-white/45 max-w-xl mx-auto leading-relaxed">Six specialized AI agents, one coordinated team. Each with a name, a role, and a job they do around the clock.</p>
             </div>
 
             <div class="reveal workforce-grid">
@@ -2745,6 +2846,17 @@
                     <div class="workforce-name">Mira</div>
                     <div class="workforce-product" style="color:#ffb020">HiveMind</div>
                     <div class="workforce-role">Campaign-execution hive (11 agents)</div>
+                </div>
+
+                <div class="workforce-card" style="--wf:#14B8A6">
+                    <div class="workforce-badge">
+                        <div class="workforce-badge__inner">
+                            <img src="/agents/bee-hivedocs.png?v=2" alt="Dex, the HiveDocs bee, in a suit with a teal tie" width="244" height="296" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <div class="workforce-name">Dex</div>
+                    <div class="workforce-product" style="color:#14B8A6">HiveDocs</div>
+                    <div class="workforce-role">Document-intelligence agent</div>
                 </div>
             </div>
         </div>
@@ -2805,7 +2917,7 @@
                             <div class="feature-check mt-0.5"><svg class="w-2.5 h-2.5 text-[#3B5BFF]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
                             <div>
                                 <div class="text-[14px] font-semibold text-white/80">Every agent, unchanged</div>
-                                <div class="text-[13px] text-white/35">Mpliphi, HiveStudio, SnapaPro, HiveLink and HiveMind, same as on our cloud.</div>
+                                <div class="text-[13px] text-white/35">Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind and HiveDocs, same as on our cloud.</div>
                             </div>
                         </div>
                     </div>
@@ -2845,11 +2957,12 @@
                         <rect x="38" y="172" width="444" height="86" rx="13" fill="none" stroke="currentColor" stroke-width="1" opacity="0.14"/>
                         <text x="58" y="196" class="hm-eyebrow" fill="currentColor" opacity="0.5">AGENT LAYER</text>
                         <g font-size="10.5" text-anchor="middle">
-                            <g><rect x="58" y="210" width="76" height="28" rx="9" fill="#34D399" opacity="0.12"/><rect x="58" y="210" width="76" height="28" rx="9" fill="none" stroke="#34D399" stroke-width="1" opacity="0.4"/><text x="96" y="228" fill="#34D399">Mpliphi</text></g>
-                            <g><rect x="144" y="210" width="76" height="28" rx="9" fill="#A78BFA" opacity="0.12"/><rect x="144" y="210" width="76" height="28" rx="9" fill="none" stroke="#A78BFA" stroke-width="1" opacity="0.4"/><text x="182" y="228" fill="#A78BFA">Studio</text></g>
-                            <g><rect x="230" y="210" width="76" height="28" rx="9" fill="#F87171" opacity="0.12"/><rect x="230" y="210" width="76" height="28" rx="9" fill="none" stroke="#F87171" stroke-width="1" opacity="0.4"/><text x="268" y="228" fill="#F87171">SnapaPro</text></g>
-                            <g><rect x="316" y="210" width="76" height="28" rx="9" fill="#60A5FA" opacity="0.12"/><rect x="316" y="210" width="76" height="28" rx="9" fill="none" stroke="#60A5FA" stroke-width="1" opacity="0.4"/><text x="354" y="228" fill="#60A5FA">HiveLink</text></g>
-                            <g><rect x="402" y="210" width="76" height="28" rx="9" fill="#FFB020" opacity="0.12"/><rect x="402" y="210" width="76" height="28" rx="9" fill="none" stroke="#FFB020" stroke-width="1" opacity="0.4"/><text x="440" y="228" fill="#FFB020">HiveMind</text></g>
+                            <g><rect x="59" y="210" width="62" height="28" rx="9" fill="#34D399" opacity="0.12"/><rect x="59" y="210" width="62" height="28" rx="9" fill="none" stroke="#34D399" stroke-width="1" opacity="0.4"/><text x="90" y="228" fill="#34D399">Mpliphi</text></g>
+                            <g><rect x="127" y="210" width="62" height="28" rx="9" fill="#A78BFA" opacity="0.12"/><rect x="127" y="210" width="62" height="28" rx="9" fill="none" stroke="#A78BFA" stroke-width="1" opacity="0.4"/><text x="158" y="228" fill="#A78BFA">Studio</text></g>
+                            <g><rect x="195" y="210" width="62" height="28" rx="9" fill="#F87171" opacity="0.12"/><rect x="195" y="210" width="62" height="28" rx="9" fill="none" stroke="#F87171" stroke-width="1" opacity="0.4"/><text x="226" y="228" fill="#F87171">SnapaPro</text></g>
+                            <g><rect x="263" y="210" width="62" height="28" rx="9" fill="#60A5FA" opacity="0.12"/><rect x="263" y="210" width="62" height="28" rx="9" fill="none" stroke="#60A5FA" stroke-width="1" opacity="0.4"/><text x="294" y="228" fill="#60A5FA">HiveLink</text></g>
+                            <g><rect x="331" y="210" width="62" height="28" rx="9" fill="#FFB020" opacity="0.12"/><rect x="331" y="210" width="62" height="28" rx="9" fill="none" stroke="#FFB020" stroke-width="1" opacity="0.4"/><text x="362" y="228" fill="#FFB020">HiveMind</text></g>
+                            <g><rect x="399" y="210" width="62" height="28" rx="9" fill="#14B8A6" opacity="0.12"/><rect x="399" y="210" width="62" height="28" rx="9" fill="none" stroke="#14B8A6" stroke-width="1" opacity="0.4"/><text x="430" y="228" fill="#14B8A6">HiveDocs</text></g>
                         </g>
 
                         <path d="M260 258v18" stroke="#3B5BFF" stroke-width="1.3" opacity="0.45"/>
@@ -3067,7 +3180,7 @@
                     <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white/30 mb-6">Built for Enterprise.</h2>
                     <p class="text-[15px] text-white/45 leading-relaxed mb-8">
                         Veehive builds the agentic workforce for organizations in the Middle East and beyond.
-                        Specialized AI agents &mdash; Mpliphi, HiveStudio, SnapaPro, HiveLink, and HiveMind &mdash;
+                        Specialized AI agents &mdash; Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind, and HiveDocs &mdash;
                         each go deep on one function, and coordinate as one workforce when you deploy them together.
                     </p>
                     <div class="flex flex-wrap gap-6">
@@ -3198,7 +3311,7 @@
                         <svg class="w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="max-h-0 overflow-hidden transition-all duration-300">
-                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Veehive.ai delivers ready-to-deploy AI products from Dubai. We deploy specialized AI agents across an organization&rsquo;s core functions &mdash; customer operations, content production, project management, distribution, and campaign execution. Deploy one agent or build out the full agentic workforce.</div>
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Veehive.ai delivers ready-to-deploy AI products from Dubai. We deploy specialized AI agents across an organization&rsquo;s core functions &mdash; customer operations, content production, project management, distribution, campaign execution, and document intelligence. Deploy one agent or build out the full agentic workforce.</div>
                     </div>
                 </div>
                 <div class="trust-card rounded-xl overflow-hidden">
@@ -3207,7 +3320,7 @@
                         <svg class="w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="max-h-0 overflow-hidden transition-all duration-300">
-                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed"><strong class="text-white/60"><a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Mpliphi</a></strong> (customer-conversation agents), <strong class="text-white/60"><a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">HiveStudio</a></strong> (document-to-video AI), <strong class="text-white/60"><a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">SnapaPro</a></strong> (AI project management), <strong class="text-white/60"><a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">HiveLink</a></strong> (frontline comms + engagement), and <strong class="text-white/60"><a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">HiveMind</a></strong> (multi-agent campaign execution).</div>
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed"><strong class="text-white/60"><a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Mpliphi</a></strong> (customer-conversation agents), <strong class="text-white/60"><a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">HiveStudio</a></strong> (document-to-video AI), <strong class="text-white/60"><a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">SnapaPro</a></strong> (AI project management), <strong class="text-white/60"><a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">HiveLink</a></strong> (frontline comms + engagement), <strong class="text-white/60"><a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">HiveMind</a></strong> (multi-agent campaign execution), and <strong class="text-white/60"><a href="https://veehivedocs.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">HiveDocs</a></strong> (AI document intelligence).</div>
                     </div>
                 </div>
                 <div class="trust-card rounded-xl overflow-hidden">
@@ -3216,7 +3329,7 @@
                         <svg class="w-4 h-4 text-white/30 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="max-h-0 overflow-hidden transition-all duration-300">
-                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Either works. Every agent is built to stand on its own and solve one function completely &mdash; so you can start with a single one and get full value on day one. Deploy more than one and they coordinate as a single workforce, sharing context across customer operations, content, projects, community, and campaigns. Start where the pain is; expand when you&rsquo;re ready.</div>
+                        <div class="px-6 pb-5 text-[14px] text-white/45 leading-relaxed">Either works. Every agent is built to stand on its own and solve one function completely &mdash; so you can start with a single one and get full value on day one. Deploy more than one and they coordinate as a single workforce, sharing context across customer operations, content, projects, community, campaigns, and documents. Start where the pain is; expand when you&rsquo;re ready.</div>
                     </div>
                 </div>
                 <div class="trust-card rounded-xl overflow-hidden">
@@ -3307,7 +3420,7 @@
                     <div class="vh-footer__brand">
                         <img src="/logo-veehive-white-192.png" alt="Veehive" loading="lazy" decoding="async">
                     </div>
-                    <p class="vh-footer__tagline">Your agentic workforce, built in Dubai. Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind &mdash; one company.</p>
+                    <p class="vh-footer__tagline">Your agentic workforce, built in Dubai. Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind, HiveDocs &mdash; one company.</p>
                     <div class="vh-footer__social">
                     <a href="https://linkedin.com/company/letsveehive" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
                     <a href="https://twitter.com/letsveehive" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
@@ -3325,6 +3438,7 @@
                     <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-snapapro-32.png" alt="" loading="lazy" decoding="async">SnapaPro</a>
                     <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-hivelink-32.png" alt="" loading="lazy" decoding="async">HiveLink</a>
                     <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-mind-32.png" alt="" loading="lazy" decoding="async">HiveMind</a>
+                    <a href="https://veehivedocs.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-hivedocs-32.png" alt="" loading="lazy" decoding="async">HiveDocs</a>
                 </div>
 
                 <div class="vh-footer__col">
@@ -3419,7 +3533,8 @@
       'studio':        { name: 'HiveStudio',  color: '#A78BFA', pitch: 'Scale your content without losing your creativity. Turn documents, PDFs, and product details into personalized video \u2014 10x faster, ~95% cheaper, in 30+ languages. Generate the full cut, or edit every scene yourself.', url: 'https://veehivestudio.com' },
       'snapapro':      { name: 'SnapaPro',        color: '#F87171', pitch: 'Projects across a global team, finally on track. Real-time agent orchestration that plans, tracks, and follows up across every project \u2014 Taj plans, tracks and follows up \u2014 giving you full visibility without the manual chasing.', url: 'https://snapapro.com' },
       'veehive-link':  { name: 'HiveLink',        color: '#60A5FA', pitch: 'Your frontline team, finally connected. HiveLink is the real-time engagement platform built for organizations where most of the workforce isn\u2019t behind a desk \u2014 one AI agent delivers connected, personalized updates to every worker on the device they actually carry, reliably and at scale, with no company inbox required.', url: 'https://veehivelink.com' },
-      'mind':          { name: 'HiveMind',    color: '#ffb020', pitch: 'Launch campaigns like a team of fifty. HiveMind is an always-on hive of 11 specialist AI agents — among them trend intelligence, calendar, copy, creative, brand memory, compliance, publishing and learning — all collaborating from a single brief. Website to first campaign in minutes.', url: 'https://veehivemind.com' }
+      'mind':          { name: 'HiveMind',    color: '#ffb020', pitch: 'Launch campaigns like a team of fifty. HiveMind is an always-on hive of 11 specialist AI agents — among them trend intelligence, calendar, copy, creative, brand memory, compliance, publishing and learning — all collaborating from a single brief. Website to first campaign in minutes.', url: 'https://veehivemind.com' },
+      'hivedocs':      { name: 'HiveDocs',        color: '#14B8A6', pitch: 'Your paperwork, finally searchable. HiveDocs reads scanned images, PDFs and printed records with OCR and AI, tags the key fields, confidence-checks every value and makes it all searchable on one dashboard \u2014 on your premises, in your cloud tenancy, or fully managed by us.', url: 'https://veehivedocs.com' }
     };
     var grid = document.getElementById('problem-matcher-grid');
     var panel = document.getElementById('problem-match-result');
@@ -3552,7 +3667,8 @@
                 { name: 'HiveStudio', icon: '/favicon-studio-32.png' },
                 { name: 'SnapaPro',       icon: '/favicon-snapapro-32.png' },
                 { name: 'HiveLink',       icon: '/favicon-hivelink-32.png' },
-                { name: 'HiveMind',   icon: '/favicon-mind-32.png' }
+                { name: 'HiveMind',   icon: '/favicon-mind-32.png' },
+                { name: 'HiveDocs',   icon: '/favicon-hivedocs-32.png' }
             ];
             /* Built twice so the -50% keyframe loops seamlessly. */
             function build(){

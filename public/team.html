@@ -308,6 +308,8 @@
         .vh-footer__social a:hover{background:rgba(255,255,255,.11); border-color:rgba(255,255,255,.2);}
         .vh-footer__social svg{width:15px; height:15px; fill:rgba(255,255,255,.6);}
         .vh-footer__handle{font-size:12.5px; color:#6B82FF; margin-top:14px; font-weight:600;}
+        .vh-footer__by{display:flex; align-items:center; gap:10px; margin-top:20px; font-size:13px; font-weight:600; color:rgba(255,255,255,.8);}
+        .vh-footer__by img{width:34px; height:34px; object-fit:contain;}
         .vh-footer__col h4{font-size:12.5px; color:#fff; font-weight:700; margin:0 0 14px; text-transform:uppercase; letter-spacing:.04em;}
         .vh-footer__col a{
             display:flex; align-items:center; gap:8px;
@@ -660,6 +662,7 @@
                     <a href="https://tiktok.com/@letsveehive" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
                     </div>
                     <div class="vh-footer__handle">@letsveehive everywhere</div>
+                    <div class="vh-footer__by"><img src="/agents/bee-veehive.png" alt="" width="128" height="128" loading="lazy" decoding="async">A Veehive product</div>
                 </div>
 
                 <div class="vh-footer__col">
@@ -688,6 +691,7 @@
                     <a href="/#contact">Contact</a>
                     <a href="/privacy.html">Privacy Policy</a>
                     <a href="/terms.html">Terms of Service</a>
+                    <a href="#" data-vh-cookie-settings>Cookie settings</a>
                 </div>
 
                 <div class="vh-footer__ticker-wrap" aria-hidden="true">
@@ -835,5 +839,16 @@
         document.querySelectorAll('[data-vh-consent="granted"]').forEach(function(b){ b.addEventListener('click', loadMap); });
     })();
 </script>
+<script>
+    /* Footer "Cookie settings": clear the stored answer and re-offer the banner. */
+    document.addEventListener('click', function (e) {
+        var a = e.target.closest('[data-vh-cookie-settings]');
+        if (!a) return;
+        e.preventDefault();
+        try { localStorage.removeItem('veehive-consent'); } catch (_) {}
+        var banner = document.getElementById('veehive-consent-banner');
+        if (banner) { banner.hidden = false; } else { location.href = '/'; }
+    });
+    </script>
 </body>
 </html>

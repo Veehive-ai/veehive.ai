@@ -929,6 +929,83 @@
             .workforce-card:hover { transform: none; }
         }
 
+        /* HiveFront: on the page, but deliberately quiet. It sits low, past
+           every product showcase, as one collapsed row rather than a section
+           of its own - no nav entry, no rail dot, no footer listing. Whoever
+           scrolls this far can open it; nobody is sold it on the way past. */
+        .hf-quiet { border-radius: 16px; border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.015); overflow: hidden; }
+        html.light .hf-quiet { border-color: rgba(15,26,32,0.07); background: rgba(15,26,32,0.015); }
+        .hf-quiet > summary { display: flex; align-items: center; gap: 12px; padding: 18px 22px; cursor: pointer; list-style: none; transition: background 0.25s ease; }
+        .hf-quiet > summary::-webkit-details-marker { display: none; }
+        .hf-quiet > summary:hover { background: rgba(255,255,255,0.02); }
+        html.light .hf-quiet > summary:hover { background: rgba(15,26,32,0.02); }
+        .hf-quiet__dot { width: 7px; height: 7px; border-radius: 2px; background: #EC4899; opacity: 0.75; flex-shrink: 0; }
+        .hf-quiet__name { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.72); letter-spacing: -0.01em; }
+        html.light .hf-quiet__name { color: rgba(15,26,32,0.78); }
+        .hf-quiet__line { font-size: 13px; color: rgba(255,255,255,0.32); }
+        html.light .hf-quiet__line { color: rgba(15,26,32,0.4); }
+        .hf-quiet__tag { font-size: 9.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; color: #EC4899; background: rgba(236,72,153,0.12); }
+        .hf-quiet__chev { margin-left: auto; width: 14px; height: 14px; color: rgba(255,255,255,0.3); transition: transform 0.25s ease; flex-shrink: 0; }
+        html.light .hf-quiet__chev { color: rgba(15,26,32,0.3); }
+        .hf-quiet[open] .hf-quiet__chev { transform: rotate(180deg); }
+        .hf-quiet__body { padding: 26px 26px 30px; border-top: 1px solid rgba(255,255,255,0.05); }
+        html.light .hf-quiet__body { border-top-color: rgba(15,26,32,0.06); }
+        @media (max-width: 640px) { .hf-quiet__line { display: none; } }
+
+        /* The window an org would actually work from: title bar, one tab per
+           app it already runs, and whatever the open tab holds. */
+        .hf-lead { font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.68); max-width: 62ch; margin: 0; }
+        html.light .hf-lead { color: rgba(15,26,32,0.72); }
+        .hf-sub { font-size: 14px; line-height: 1.65; color: rgba(255,255,255,0.36); max-width: 62ch; margin: 12px 0 0; }
+        html.light .hf-sub { color: rgba(15,26,32,0.45); }
+        .hf-grid { display: grid; grid-template-columns: 1fr; gap: 32px; margin-top: 34px; align-items: stretch; }
+        @media (min-width: 1024px) { .hf-grid { grid-template-columns: 1fr 1fr; gap: 64px; } }
+        /* The points spread to the height of the window beside them, so the
+           left half fills its space instead of stopping two-thirds down. */
+        .hf-points { display: flex; flex-direction: column; justify-content: space-between; gap: 22px; }
+
+        /* The window an org would actually work from: title bar, one tab per
+           app it already runs, and whatever the open tab holds. */
+        .hf-window { border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.02); }
+        html.light .hf-window { border-color: rgba(15,26,32,0.08); background: rgba(15,26,32,0.02); }
+        .hf-window__bar { display: flex; align-items: center; gap: 6px; padding: 11px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); color: #EC4899; }
+        html.light .hf-window__bar { border-bottom-color: rgba(15,26,32,0.07); }
+        .hf-window__dot { width: 9px; height: 9px; border-radius: 50%; background: currentColor; opacity: 0.22; }
+        .hf-window__url { margin-left: 10px; font-size: 11px; color: rgba(255,255,255,0.35); }
+        html.light .hf-window__url { color: rgba(15,26,32,0.4); }
+        .hf-tabs { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        html.light .hf-tabs { border-bottom-color: rgba(15,26,32,0.07); }
+        .hf-tab { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 999px; font-size: 11.5px; font-weight: 600; color: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.08); }
+        html.light .hf-tab { color: rgba(15,26,32,0.5); border-color: rgba(15,26,32,0.1); }
+        .hf-tab--on { color: #EC4899; border-color: rgba(236,72,153,0.45); background: rgba(236,72,153,0.12); }
+        .hf-tab__dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: 0.75; }
+        .hf-mail { padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+        .hf-mail__row { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: 11px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.015); }
+        html.light .hf-mail__row { border-color: rgba(15,26,32,0.07); background: rgba(15,26,32,0.015); }
+        .hf-mail__who { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.75); }
+        html.light .hf-mail__who { color: rgba(15,26,32,0.8); }
+        .hf-mail__sub { font-size: 11.5px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+        html.light .hf-mail__sub { color: rgba(15,26,32,0.45); }
+        .hf-mail__tag { margin-left: auto; flex-shrink: 0; font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; color: #EC4899; background: rgba(236,72,153,0.14); }
+        .hf-point { display: flex; gap: 11px; align-items: flex-start; }
+        .hf-point__tick { width: 16px; height: 16px; border-radius: 50%; background: rgba(236,72,153,0.14); display: grid; place-items: center; flex-shrink: 0; margin-top: 2px; }
+        .hf-point__tick svg { width: 9px; height: 9px; color: #EC4899; }
+        .hf-point__h { font-size: 13.5px; font-weight: 600; color: rgba(255,255,255,0.8); }
+        html.light .hf-point__h { color: rgba(15,26,32,0.82); }
+        .hf-point__p { font-size: 12.5px; color: rgba(255,255,255,0.35); line-height: 1.6; margin-top: 3px; }
+        html.light .hf-point__p { color: rgba(15,26,32,0.45); }
+
+        /* Closing row: the bee and its line on one side, the ask on the other. */
+        .hf-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; margin-top: 38px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.06); }
+        html.light .hf-foot { border-top-color: rgba(15,26,32,0.07); }
+        .hf-byline { display: flex; align-items: center; gap: 18px; }
+        .hf-bee { width: 64px; height: 64px; object-fit: contain; flex-shrink: 0; }
+        .hf-byline__t { font-size: 12.5px; line-height: 1.6; color: rgba(255,255,255,0.35); max-width: 30ch; }
+        html.light .hf-byline__t { color: rgba(15,26,32,0.45); }
+        .hf-cta { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 999px; background: #EC4899; color: #fff; font-size: 13px; font-weight: 600; transition: opacity 0.25s ease; }
+        .hf-cta:hover { opacity: 0.9; }
+        .hf-cta svg { width: 14px; height: 14px; opacity: 0.75; }
+
         /* Product-showcase 2-col grid — copy on one side, embedded agent demo on the other, alternates per card */
         .showcase-grid {
             display: grid;
@@ -1917,6 +1994,8 @@
         .vh-footer__social a:hover{background:rgba(255,255,255,.11); border-color:rgba(255,255,255,.2);}
         .vh-footer__social svg{width:15px; height:15px; fill:rgba(255,255,255,.6);}
         .vh-footer__handle{font-size:12.5px; color:#6B82FF; margin-top:14px; font-weight:600;}
+        .vh-footer__by{display:flex; align-items:center; gap:10px; margin-top:20px; font-size:13px; font-weight:600; color:rgba(255,255,255,.8);}
+        .vh-footer__by img{width:34px; height:34px; object-fit:contain;}
         .vh-footer__col h4{font-size:12.5px; color:#fff; font-weight:700; margin:0 0 14px; text-transform:uppercase; letter-spacing:.04em;}
         .vh-footer__col a{
             display:flex; align-items:center; gap:8px;
@@ -2796,7 +2875,7 @@
                 <div class="workforce-card" style="--wf:#34D399">
                     <div class="workforce-badge">
                         <div class="workforce-badge__inner">
-                            <img src="/agents/bee-mpliphi.png?v=2" alt="ND, the Mpliphi bee, in a suit with a green tie" width="242" height="295" loading="lazy" decoding="async">
+                            <img src="/agents/bee-mpliphi.png?v=3" alt="ND, the Mpliphi bee, with green wings" width="256" height="256" loading="lazy" decoding="async">
                         </div>
                     </div>
                     <div class="workforce-name">ND</div>
@@ -2807,7 +2886,7 @@
                 <div class="workforce-card" style="--wf:#A78BFA">
                     <div class="workforce-badge">
                         <div class="workforce-badge__inner">
-                            <img src="/agents/bee-studio.png?v=2" alt="Chaks, the HiveStudio bee, in a suit with a purple tie" width="243" height="296" loading="lazy" decoding="async">
+                            <img src="/agents/bee-studio.png?v=3" alt="Chaks, the HiveStudio bee, with purple wings" width="256" height="256" loading="lazy" decoding="async">
                         </div>
                     </div>
                     <div class="workforce-name">Chaks</div>
@@ -2818,7 +2897,7 @@
                 <div class="workforce-card" style="--wf:#F87171">
                     <div class="workforce-badge">
                         <div class="workforce-badge__inner">
-                            <img src="/agents/bee-snapapro.png?v=2" alt="Taj, the SnapaPro bee, in a suit with a red tie" width="242" height="295" loading="lazy" decoding="async">
+                            <img src="/agents/bee-snapapro.png?v=3" alt="Taj, the SnapaPro bee, with red wings" width="256" height="256" loading="lazy" decoding="async">
                         </div>
                     </div>
                     <div class="workforce-name">Taj</div>
@@ -2829,7 +2908,7 @@
                 <div class="workforce-card" style="--wf:#60A5FA">
                     <div class="workforce-badge">
                         <div class="workforce-badge__inner">
-                            <img src="/agents/bee-hivelink.png?v=2" alt="AK, the HiveLink bee, in a suit with a blue tie" width="244" height="296" loading="lazy" decoding="async">
+                            <img src="/agents/bee-hivelink.png?v=3" alt="AK, the HiveLink bee, with blue wings" width="256" height="256" loading="lazy" decoding="async">
                         </div>
                     </div>
                     <div class="workforce-name">AK</div>
@@ -2840,7 +2919,7 @@
                 <div class="workforce-card" style="--wf:#FFB020">
                     <div class="workforce-badge">
                         <div class="workforce-badge__inner">
-                            <img src="/agents/bee-mind.png?v=2" alt="Mira, the HiveMind bee, in a suit with a yellow tie" width="242" height="296" loading="lazy" decoding="async">
+                            <img src="/agents/bee-mind.png?v=3" alt="Mira, the HiveMind bee, with yellow wings" width="128" height="128" loading="lazy" decoding="async">
                         </div>
                     </div>
                     <div class="workforce-name">Mira</div>
@@ -2851,7 +2930,7 @@
                 <div class="workforce-card" style="--wf:#14B8A6">
                     <div class="workforce-badge">
                         <div class="workforce-badge__inner">
-                            <img src="/agents/bee-hivedocs.png?v=2" alt="Dex, the HiveDocs bee, in a suit with a teal tie" width="244" height="296" loading="lazy" decoding="async">
+                            <img src="/agents/bee-hivedocs.png?v=3" alt="Dex, the HiveDocs bee, with teal wings" width="256" height="256" loading="lazy" decoding="async">
                         </div>
                     </div>
                     <div class="workforce-name">Dex</div>
@@ -3001,6 +3080,74 @@
                     <span class="hm-usecase"><svg class="hm-usecase__ico" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8.5 12 4l9 4.5-9 4.5z"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 12.8 12 17.3l9-4.5M3 16.6 12 21l9-4.4"/></svg>Edge and disconnected sites</span>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- HIVEFRONT — low-key preview row, no nav entry and no rail dot -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="hivefront" class="relative z-10 pb-6" style="scroll-margin-top:96px">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <details class="hf-quiet">
+                <summary>
+                    <span class="hf-quiet__dot"></span>
+                    <span class="hf-quiet__name">HiveFront</span>
+                    <span class="hf-quiet__line">One front window for the whole hive</span>
+                    <span class="hf-quiet__tag">Preview</span>
+                    <svg class="hf-quiet__chev" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+
+                <div class="hf-quiet__body">
+                    <p class="hf-lead">
+                        No separate product, no separate site. An organisation signs in once and runs the day from one window: read the mail, reply to it, and open every agent it already pays for.
+                    </p>
+                    <p class="hf-sub">
+                        Built for an insurance group&rsquo;s operations floor and for Dubai Government offices, where the work sits in a dozen tools and nobody wants a dozen logins.
+                    </p>
+
+                    <div class="hf-grid">
+
+                        <div class="hf-points">
+                            <div class="hf-point"><span class="hf-point__tick"><svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span><div><div class="hf-point__h">Mail, in and out</div><div class="hf-point__p">The organisation&rsquo;s inbox, read and answered here, with the agents drafting alongside.</div></div></div>
+                            <div class="hf-point"><span class="hf-point__tick"><svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span><div><div class="hf-point__h">One pane for both, internal and external</div><div class="hf-point__p">External: the Veehive agents you already run, Mpliphi, HiveLink, SnapaPro, HiveStudio and HiveMind. Internal: your own apps and systems, wired into the same window.</div></div></div>
+                            <div class="hf-point"><span class="hf-point__tick"><svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span><div><div class="hf-point__h">One sign-in, one tenant</div><div class="hf-point__p">Your directory, your roles. People open only what they already have.</div></div></div>
+                            <div class="hf-point"><span class="hf-point__tick"><svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span><div><div class="hf-point__h">Our cloud or your metal</div><div class="hf-point__p">The same window on <a href="#hivemetal" class="underline decoration-white/20 underline-offset-2 hover:text-white/60">HiveMetal</a>, air-gapped.</div></div></div>
+                        </div>
+
+                        <div class="hf-window">
+                            <div class="hf-window__bar">
+                                <span class="hf-window__dot"></span><span class="hf-window__dot"></span><span class="hf-window__dot"></span>
+                                <span class="hf-window__url">front.yourcompany.ae</span>
+                            </div>
+                            <div class="hf-tabs">
+                                <span class="hf-tab hf-tab--on"><span class="hf-tab__dot"></span>Mail</span>
+                                <span class="hf-tab"><span class="hf-tab__dot" style="color:#34D399"></span>Mpliphi</span>
+                                <span class="hf-tab"><span class="hf-tab__dot" style="color:#F87171"></span>SnapaPro</span>
+                                <span class="hf-tab"><span class="hf-tab__dot" style="color:#60A5FA"></span>HiveLink</span>
+                                <span class="hf-tab"><span class="hf-tab__dot" style="color:#A78BFA"></span>HiveStudio</span>
+                                <span class="hf-tab"><span class="hf-tab__dot" style="color:#FFB020"></span>HiveMind</span>
+                                <span class="hf-tab"><span class="hf-tab__dot" style="color:#14B8A6"></span>HiveDocs</span>
+                            </div>
+                            <div class="hf-mail">
+                                <div class="hf-mail__row"><div><div class="hf-mail__who">Claims &middot; Motor</div><div class="hf-mail__sub">FNOL 44192, documents attached and policy verified</div></div><span class="hf-mail__tag">Drafted</span></div>
+                                <div class="hf-mail__row"><div><div class="hf-mail__who">Broker &middot; Al Safa</div><div class="hf-mail__sub">Renewal quote for 42 vehicles, due Thursday</div></div><span class="hf-mail__tag">Quoted</span></div>
+                                <div class="hf-mail__row"><div><div class="hf-mail__who">Customer service desk</div><div class="hf-mail__sub">14 enquiries answered overnight, 2 escalated</div></div><span class="hf-mail__tag">Cleared</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hf-foot">
+                        <div class="hf-byline">
+                            <img class="hf-bee" src="/agents/bee-front.png" alt="The HiveFront bee, with pink wings" width="256" height="256" loading="lazy" decoding="async">
+                            <div class="hf-byline__t">Not on the menu yet. Scope and rollout to be discussed.</div>
+                        </div>
+                        <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&amp;ismsaljsauthenabled&amp;ep=plink" target="_blank" rel="noopener noreferrer" class="hf-cta">
+                            Try this
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </details>
         </div>
     </section>
 
@@ -3429,6 +3576,7 @@
                     <a href="https://tiktok.com/@letsveehive" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
                     </div>
                     <div class="vh-footer__handle">@letsveehive everywhere</div>
+                    <div class="vh-footer__by"><img src="/agents/bee-veehive.png" alt="" width="128" height="128" loading="lazy" decoding="async">A Veehive product</div>
                 </div>
 
                 <div class="vh-footer__col">
@@ -3457,6 +3605,7 @@
                     <a href="#contact">Contact</a>
                     <a href="/privacy.html">Privacy Policy</a>
                     <a href="/terms.html">Terms of Service</a>
+                    <a href="#" data-vh-cookie-settings>Cookie settings</a>
                 </div>
 
                 <div class="vh-footer__ticker-wrap" aria-hidden="true">
@@ -3919,5 +4068,16 @@
         document.querySelectorAll('[data-vh-consent="granted"]').forEach(function(b){ b.addEventListener('click', loadMap); });
     })();
 </script>
+<script>
+    /* Footer "Cookie settings": clear the stored answer and re-offer the banner. */
+    document.addEventListener('click', function (e) {
+        var a = e.target.closest('[data-vh-cookie-settings]');
+        if (!a) return;
+        e.preventDefault();
+        try { localStorage.removeItem('veehive-consent'); } catch (_) {}
+        var banner = document.getElementById('veehive-consent-banner');
+        if (banner) { banner.hidden = false; } else { location.href = '/'; }
+    });
+    </script>
 </body>
 </html>

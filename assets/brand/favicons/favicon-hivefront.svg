@@ -7,27 +7,27 @@
 <path d="M21.3811 135.708C22.3191 136.442 22.788 136.809 23.349 136.893C23.91 136.978 24.4661 136.764 25.5781 136.338L35.7288 132.443C41.8449 130.096 44.903 128.922 47.2743 130.292C49.6456 131.662 50.1589 134.898 51.1854 141.37L52.889 152.112C53.0756 153.289 53.1689 153.877 53.5223 154.321C53.8757 154.765 54.428 154.988 55.5327 155.433L66.1078 159.698C68.895 160.821 70.2886 161.383 71.247 160.707C72.2055 160.031 72.1441 158.529 72.0214 155.525L70.5336 119.112C70.0341 106.887 69.7844 100.774 65.6782 98.402C61.572 96.0303 56.1555 98.8703 45.3224 104.55L13.0574 121.468C10.3957 122.863 9.06491 123.561 8.95873 124.73C8.85255 125.898 10.0358 126.825 12.4022 128.678L21.3811 135.708Z" fill="url(#g5)"/>
 <defs>
 <linearGradient id="g0" x1="1" y1="81" x2="151" y2="81" gradientUnits="userSpaceOnUse">
-<stop stop-color="#DB2777"/>
+<stop stop-color="#EC4899"/>
 <stop offset="1" stop-color="#BE185D"/>
 </linearGradient>
 <linearGradient id="g1" x1="1" y1="81" x2="151" y2="81" gradientUnits="userSpaceOnUse">
-<stop stop-color="#DB2777"/>
+<stop stop-color="#EC4899"/>
 <stop offset="1" stop-color="#BE185D"/>
 </linearGradient>
 <linearGradient id="g2" x1="1" y1="81" x2="151" y2="81" gradientUnits="userSpaceOnUse">
-<stop stop-color="#DB2777"/>
+<stop stop-color="#EC4899"/>
 <stop offset="1" stop-color="#BE185D"/>
 </linearGradient>
 <linearGradient id="g3" x1="1" y1="81" x2="151" y2="81" gradientUnits="userSpaceOnUse">
-<stop stop-color="#DB2777"/>
+<stop stop-color="#EC4899"/>
 <stop offset="1" stop-color="#BE185D"/>
 </linearGradient>
 <linearGradient id="g4" x1="1" y1="81" x2="151" y2="81" gradientUnits="userSpaceOnUse">
-<stop stop-color="#DB2777"/>
+<stop stop-color="#EC4899"/>
 <stop offset="1" stop-color="#BE185D"/>
 </linearGradient>
 <linearGradient id="g5" x1="1" y1="81" x2="151" y2="81" gradientUnits="userSpaceOnUse">
-<stop stop-color="#DB2777"/>
+<stop stop-color="#EC4899"/>
 <stop offset="1" stop-color="#BE185D"/>
 </linearGradient>
 </defs>

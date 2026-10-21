@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Veehive Email Signature</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBFBFC; --surface:#FFFFFF; --line:#E4E6EC; --line-soft:#EFF0F4;
+  --fg:#1A1D26; --fg-2:#5A5F6E; --fg-3:#8A8F9E; --accent:#2563EB;
+  --display:'Manrope',system-ui,sans-serif;
+  --body:'IBM Plex Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#0E1117; --surface:#161A22; --line:#262B36; --line-soft:#1E232C;
+  --fg:#EEF0F5; --fg-2:#A7AEBE; --fg-3:#6F7788; color-scheme:dark; } }
+:root[data-theme="dark"]{
+  --bg:#0E1117; --surface:#161A22; --line:#262B36; --line-soft:#1E232C;
+  --fg:#EEF0F5; --fg-2:#A7AEBE; --fg-3:#6F7788; color-scheme:dark; }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.6;margin:0}
+.wrap{max-width:780px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:52px 70px}
+h1,h2{font-family:var(--display);margin:0;letter-spacing:-.02em;text-wrap:balance}
+h1{font-size:clamp(26px,5vw,38px);font-weight:800;margin-top:18px}
+h2{font-size:19px;font-weight:800;margin-bottom:10px}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-3)}
+.lede{color:var(--fg-2);margin-top:12px;max-width:58ch;font-size:16px}
+section{margin-top:40px}
+
+/* the signature, on the white ground a mail client will give it */
+.stage{background:#FFFFFF;border:1px solid var(--line);border-radius:14px;padding:28px 26px;overflow-x:auto}
+.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}
+button{font:inherit;font-size:14px;font-weight:600;padding:9px 16px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button:active{transform:translateY(1px)}
+.said{font-size:13px;color:var(--fg-3)}
+pre{margin:0;font-family:var(--mono);font-size:12px;line-height:1.6;color:var(--fg-2);white-space:pre-wrap;word-break:break-word}
+.code{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px 18px;max-height:300px;overflow:auto}
+ol{margin:10px 0 0;padding-left:20px;color:var(--fg-2);font-size:15px;display:flex;flex-direction:column;gap:6px}
+.note{color:var(--fg-3);font-size:13px;margin-top:12px}
+code{font-family:var(--mono);font-size:12.5px}
+a{color:inherit}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<p class="eyebrow">Veehive &middot; brand kit</p>
+<h1>Email signature</h1>
+<p class="lede">Built from tables and inline styles, which is what mail clients still want. Copy it, paste it into your signature settings, then change the name, role and numbers.</p>
+
+<section>
+  <h2>The signature</h2>
+  <div class="stage">
+    <!-- SIGNATURE START -->
+    <table id="sig" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;">
+      <tr>
+        <td style="padding:0 20px 0 0;vertical-align:top;">
+          <a href="https://veehive.ai" style="text-decoration:none;"><img src="https://veehive.ai/logo-veehive-ai-92h.png" alt="Veehive.ai" width="150" height="26" style="display:block;border:0;width:150px;height:26px;"></a>
+        </td>
+        <td style="padding:0 0 0 20px;border-left:2px solid #EC4899;vertical-align:top;">
+          <div style="font-size:16px;font-weight:bold;color:#334155;line-height:1.3;">Sathish Jeyakumar</div>
+          <div style="font-size:13px;color:#5A5F6E;line-height:1.5;padding-top:2px;">Founder &amp; CEO &middot; Veehive Tech FZ-LLC</div>
+          <div style="font-size:13px;line-height:1.7;padding-top:8px;">
+            <a href="mailto:sathish@veehive.ai" style="color:#2563EB;text-decoration:none;">sathish@veehive.ai</a><span style="color:#C9CDD6;">&nbsp;&nbsp;|&nbsp;&nbsp;</span><a href="tel:+971502753576" style="color:#5A5F6E;text-decoration:none;">+971 50 275 3576</a>
+          </div>
+          <div style="font-size:13px;line-height:1.7;">
+            <a href="https://veehive.ai" style="color:#2563EB;text-decoration:none;">veehive.ai</a><span style="color:#C9CDD6;">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span style="color:#5A5F6E;">in5 Tech, Dubai Internet City</span>
+          </div>
+          <div style="font-size:11px;color:#8A8F9E;letter-spacing:.06em;padding-top:10px;">POWER YOUR BUSINESS WITH BESPOKE AGENTIC APPS.</div>
+        </td>
+      </tr>
+    </table>
+    <!-- SIGNATURE END -->
+  </div>
+  <div class="bar">
+    <button class="primary" id="copy-rich">Copy signature</button>
+    <button id="copy-html">Copy the HTML</button>
+    <span class="said" id="said"></span>
+  </div>
+</section>
+
+<section>
+  <h2>Putting it in</h2>
+  <ol>
+    <li><strong>Gmail:</strong> Settings &rarr; See all settings &rarr; Signature. Paste with <code>Cmd/Ctrl + V</code>.</li>
+    <li><strong>Outlook (web):</strong> Settings &rarr; Mail &rarr; Compose and reply &rarr; Email signature.</li>
+    <li><strong>Outlook (desktop):</strong> File &rarr; Options &rarr; Mail &rarr; Signatures.</li>
+    <li><strong>Apple Mail:</strong> Settings &rarr; Signatures, then untick &ldquo;Always match my default message font&rdquo;.</li>
+  </ol>
+  <p class="note">If a client strips the formatting, use <em>Copy the HTML</em> and paste into whatever &ldquo;edit source&rdquo; or &ldquo;HTML&rdquo; field it offers.</p>
+</section>
+
+<section>
+  <h2>The source</h2>
+  <div class="code"><pre id="src"></pre></div>
+  <p class="note">The logo loads from <code>veehive.ai</code>, so it keeps working in the recipient&rsquo;s inbox &mdash; never paste a screenshot of it, and never attach the file. The pink rule is HiveFront&rsquo;s <code>#EC4899</code>, the one accent the signature carries.</p>
+</section>
+
+</div>
+
+<script>
+(function () {
+  var sig  = document.getElementById('sig');
+  var said = document.getElementById('said');
+  var html = sig.outerHTML;
+  document.getElementById('src').textContent = html;
+
+  function say(msg) { said.textContent = msg; setTimeout(function () { said.textContent = ''; }, 2600); }
+
+  document.getElementById('copy-rich').addEventListener('click', function () {
+    // write text/html so it pastes as a formatted signature, not as markup
+    if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+      navigator.clipboard.write([new ClipboardItem({
+        'text/html':  new Blob([html], { type: 'text/html' }),
+        'text/plain': new Blob([sig.innerText], { type: 'text/plain' })
+      })]).then(function () { say('Copied — paste into your signature settings.'); })
+        .catch(function () { selectIt(); });
+    } else { selectIt(); }
+  });
+
+  function selectIt() {
+    var r = document.createRange();
+    r.selectNode(sig);
+    var s = window.getSelection();
+    s.removeAllRanges();
+    s.addRange(r);
+    try {
+      document.execCommand('copy');
+      say('Copied — paste into your signature settings.');
+    } catch (e) {
+      say('Select the signature above and copy it.');
+    }
+  }
+
+  document.getElementById('copy-html').addEventListener('click', function () {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(html).then(function () { say('HTML copied.'); })
+        .catch(function () { say('Select the source below and copy it.'); });
+    } else { say('Select the source below and copy it.'); }
+  });
+})();
+</script>
+</body>
+</html>

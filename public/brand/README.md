@@ -16,6 +16,7 @@ Everything needed to use the Veehive identity correctly. Open
 | `logo/products/` | A logotype per product, dark and white text. SVG plus PNG at 96 and 192 px tall. |
 | `mascots/` | A bee per product, plus the house bee. 256 px PNG. |
 | `business-card/` | Card artwork, front and back, with the print-ready PDF. |
+| `signature/` | The email signature, with a copy button and paste instructions. |
 | `guidelines/` | The brand guide. |
 
 ## Motion

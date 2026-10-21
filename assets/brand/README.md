@@ -17,6 +17,7 @@ Everything needed to use the Veehive identity correctly. Open
 | `mascots/` | A bee per product, plus the house bee. 256 px PNG. |
 | `business-card/` | Card artwork, front and back, with the print-ready PDF. |
 | `signature/` | The email signature, with a copy button and paste instructions. |
+| `seal/` | The Dubai AI Seal, full size and at 184 px for the signature. |
 | `guidelines/` | The brand guide. |
 
 ## Motion

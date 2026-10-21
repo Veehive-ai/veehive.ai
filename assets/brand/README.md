@@ -13,6 +13,7 @@ Everything needed to use the Veehive identity correctly. Open
 | `fonts/Manrope/` | Variable font 300–800, with OFL licence. |
 | `fonts/IBMPlexSans/` | Regular, Medium, SemiBold, Bold, with OFL licence. |
 | `loaders/` | The six loading spinners, plus the padded marks they animate. |
+| `../business-card/` | Card artwork, front and back, with the print-ready PDF. |
 | `guidelines/` | The brand guide. |
 
 ## Motion
@@ -59,6 +60,24 @@ Wordmark is `#334155` on light grounds, `#FFFFFF` on dark.
 - **IBM Plex Sans** — body copy, interface text, long-form.
 
 Both are SIL Open Font License; the licences ship beside the fonts.
+
+## Stationery and merch
+
+The business card is 3.5 x 2 in at 300 dpi, set in
+`business-card/card.html` — edit the HTML and print to PDF at that size
+with margins off, rather than rebuilding it in a layout tool.
+
+On cloth there are two placements and only two:
+
+- **Full logotype**, centred on the chest.
+- **Mark alone**, at the left chest (the wearer's left, so image-right on
+  a front view), about a hand's width below the shoulder seam.
+
+White logotype on anything darker than the mid-grey, dark logotype on
+anything lighter. No drop shadow, no outline to rescue a difficult
+colour — change the garment colour instead. Below about 60 mm wide,
+embroidery loses the pink dot over the final i: print it, or use the
+mark on its own.
 
 ## Rules
 

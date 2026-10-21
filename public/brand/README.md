@@ -14,7 +14,7 @@ Everything needed to use the Veehive identity correctly. Open
 | `fonts/IBMPlexSans/` | Regular, Medium, SemiBold, Bold, with OFL licence. |
 | `loaders/` | The six loading spinners, plus the padded marks they animate. |
 | `logo/products/` | A logotype per product, dark and white text. SVG plus PNG at 96 and 192 px tall. |
-| `../business-card/` | Card artwork, front and back, with the print-ready PDF. |
+| `business-card/` | Card artwork, front and back, with the print-ready PDF. |
 | `guidelines/` | The brand guide. |
 
 ## Motion

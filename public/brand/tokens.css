@@ -38,9 +38,8 @@
   --vh-color-hivemind:   #FFB020;
   --vh-color-hivedocs:   #0D9488;
   --vh-color-hivefront:  #EC4899;
-  /* A product's mark pairs the 600 and 700 of its colour, so HiveFront's
-     pink-500 becomes this deeper tone on the mark itself. */
-  --vh-color-hivefront-mark: #DB2777;
+  /* Every mark's light stop is the product colour itself; HiveFront is no
+     exception, so the mark starts at #EC4899 and deepens to #BE185D. */
 
   /* Gradient stops used in headline text-gradient */
   --vh-gradient-text-a:       #6B82FF;

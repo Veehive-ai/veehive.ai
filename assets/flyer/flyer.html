@@ -1,0 +1,230 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>Veehive Flyer</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<style>
+  /* A4 at 96 px/in: 794 x 1123 */
+  @page{size:A4;margin:0}
+  :root{--ink:#33373D;--muted:#6B7280;--soft:#9CA3AF;--line:#E7E8EC;--blue:#3B5BFF;--violet:#8B5CFF;--front:#EC4899;--front2:#BE185D}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#E9E6E1;color:var(--ink);font-family:'IBM Plex Sans','IBM Plex Sans Thai',sans-serif;display:flex;flex-direction:column;align-items:center;gap:40px;padding:40px}
+  .page{width:794px;height:1123px;background:#FCFCFD;position:relative;overflow:hidden;padding:36px 44px 0;display:flex;flex-direction:column;box-shadow:0 30px 60px -24px rgba(40,44,50,.3)}
+  .page.th{font-family:'IBM Plex Sans Thai','IBM Plex Sans',sans-serif}
+  .hd{font-family:'Manrope','IBM Plex Sans Thai',sans-serif}
+  .th .hd{font-family:'Manrope','IBM Plex Sans Thai',sans-serif;letter-spacing:0}
+  .bgmark{position:absolute;right:-170px;top:-130px;width:520px;opacity:.10;pointer-events:none}
+
+  /* top bar */
+  .top{display:flex;align-items:center;justify-content:space-between;position:relative}
+  .top .logo{height:34px}
+  .chips{display:flex;gap:8px}
+  .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 11px;font-size:11.5px;font-weight:500;color:var(--muted);white-space:nowrap}
+  .chip b{color:var(--ink);font-weight:600}
+
+  /* hero */
+  .hero{margin-top:18px;position:relative}
+  .eyebrow{font-size:11px;letter-spacing:.22em;font-weight:600;color:var(--muted);text-transform:uppercase}
+  .th .eyebrow{letter-spacing:.06em;font-size:12px}
+  h1{margin-top:6px;font-size:36px;line-height:1.08;font-weight:800;letter-spacing:-.025em;max-width:640px}
+  .th h1{font-size:30px;line-height:1.28;letter-spacing:0;font-weight:700}
+  h1 em{font-style:normal;background:linear-gradient(90deg,var(--blue),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{margin-top:10px;font-size:13.5px;line-height:1.55;color:#4B5058;max-width:650px}
+  .th .lede{font-size:13px;line-height:1.7}
+
+  /* HiveFront band */
+  .band{margin-top:14px;border-radius:18px;padding:16px 18px;background:linear-gradient(135deg,#FDF2F8 0%,#F5F0FF 100%);border:1px solid #F7D9EA;display:grid;grid-template-columns:60px 1fr;column-gap:16px;position:relative}
+  .band .tile{width:60px;height:60px;border-radius:15px;background:#fff;display:grid;place-items:center;box-shadow:0 6px 16px -10px rgba(190,24,93,.5)}
+  .band .tile img{width:44px}
+  .band .tag{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.16em;color:var(--front2);background:#fff;border-radius:999px;padding:3px 10px;text-transform:uppercase}
+  .th .band .tag{letter-spacing:.04em;font-size:11px}
+  .band h2{margin-top:6px;font-size:19px;line-height:1.25;font-weight:800;letter-spacing:-.01em}
+  .th .band h2{font-size:17px;line-height:1.4;font-weight:700}
+  .band h2 span{color:var(--front2)}
+  .band p{margin-top:5px;font-size:12.2px;line-height:1.55;color:#4B5058}
+  .th .band p{font-size:12px;line-height:1.65}
+  .pts{grid-column:1 / -1;margin-top:9px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .pt{background:rgba(255,255,255,.85);border-radius:10px;padding:7px 9px;font-size:11px;line-height:1.35;font-weight:500;display:flex;gap:7px;align-items:flex-start}
+  .pt svg{flex:none;width:15px;height:15px;margin-top:1px;stroke:var(--front2);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+  /* products */
+  .sec{margin-top:14px;display:flex;align-items:baseline;justify-content:space-between}
+  .sec h3{font-size:16px;font-weight:800}
+  .th .sec h3{font-weight:700}
+  .sec span{font-size:11.5px;color:var(--muted)}
+  .grid{margin-top:9px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .card{border:1px solid var(--line);border-radius:14px;background:#fff;padding:11px 12px 10px;display:flex;flex-direction:column}
+  .card .head{display:flex;align-items:center;gap:10px}
+  .card .ic{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:var(--t)}
+  .card .ic img{width:26px}
+  .card .nm{font-size:14px;font-weight:800}
+  .card .role{font-size:10.5px;color:var(--muted);margin-top:1px}
+  .card .tl{margin-top:6px;font-size:12px;font-weight:600;line-height:1.35}
+  .th .card .tl{font-size:11.8px;line-height:1.45}
+  .card .ds{margin-top:3px;font-size:11px;line-height:1.45;color:#5B616B;flex:1}
+  .th .card .ds{font-size:10.8px;line-height:1.55}
+  .stats{margin-top:6px;padding-top:6px;border-top:1px dashed var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+  .stats div{font-size:9px;line-height:1.2;color:var(--muted)}
+  .stats b{display:block;font-family:'Manrope','IBM Plex Sans Thai',sans-serif;font-size:13px;font-weight:800;color:var(--c)}
+
+  /* trust */
+  .trust{margin-top:12px;display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:center;border:1px solid var(--line);border-radius:14px;background:#fff;padding:10px 14px}
+  .trust img{width:56px;height:56px;border-radius:8px}
+  .trust .row{font-size:11.5px;font-weight:600;line-height:1.45}
+  .trust .row i{font-style:normal;color:var(--soft);margin:0 6px}
+  .trust .note{margin-top:3px;font-size:10.3px;color:var(--muted);line-height:1.5}
+  .partners{margin-top:8px;margin-bottom:10px;text-align:center;font-size:10.5px;color:var(--soft);letter-spacing:.02em}
+  .th .partners b{letter-spacing:.04em}
+  .partners b{font-weight:600;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;font-size:9.5px;margin-right:8px}
+
+  /* footer */
+  .foot{margin-top:auto;margin-left:-44px;margin-right:-44px;background:linear-gradient(90deg,var(--blue),var(--violet));color:#fff;padding:14px 44px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+  .foot h4{font-size:20px;font-weight:800;letter-spacing:-.01em}
+  .th .foot h4{font-weight:700;font-size:19px}
+  .foot p{margin-top:4px;font-size:11.8px;opacity:.92;line-height:1.55}
+  .foot .contact{margin-top:8px;display:flex;gap:18px;font-size:12.5px;font-weight:500}
+  .qr{background:#fff;border-radius:12px;padding:7px;text-align:center}
+  .qr .code svg{display:block;width:76px;height:76px}
+  .qr span{display:block;font-size:9px;color:var(--ink);margin-top:3px;font-weight:600}
+
+  body.solo{padding:0;gap:0;background:#FCFCFD}
+  body.solo .page{box-shadow:none}
+  @media print{body{padding:0;gap:0;background:none}.page{box-shadow:none;break-after:page}}
+</style></head>
+<body>
+<div id="root"></div>
+
+<script>
+const CHECK = '<svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>';
+const PRODUCTS = [
+  {k:'mpliphi',  n:'Mpliphi',    c:'#2c573e', t:'#E9F0EC'},
+  {k:'studio',   n:'HiveStudio', c:'#7C3AED', t:'#F1EBFD'},
+  {k:'snapapro', n:'SnapaPro',   c:'#DC2626', t:'#FDECEC'},
+  {k:'hivelink', n:'HiveLink',   c:'#2563EB', t:'#EAF0FD'},
+  {k:'mind',     n:'HiveMind',   c:'#F08A12', t:'#FFF3E3'},
+  {k:'hivedocs', n:'HiveDocs',   c:'#0F766E', t:'#E3F4F2'},
+];
+
+const COPY = {
+en: {
+  lang:'en',
+  chips:['<b>Dubai AI Seal</b> · Tier E','<b>#1 AI company</b> on F6S'],
+  eyebrow:'Veehive Agentic Apps',
+  h1:'Power your business with bespoke <em>agentic apps.</em>',
+  lede:'Meet your hive. Six agentic apps for support, content, projects, frontline, campaigns and documents, each shaped around how your business already runs. Deploy one, or put the whole hive to work.',
+  band:{
+    tag:'HiveFront · The harness',
+    h2:'One harness for <span>every app</span> and your whole organisation.',
+    p:'HiveFront is the front door where your people work with every Veehive agent. Set your rules once (who can use what, which data each agent may touch, what needs a person to approve) and every app inherits them. Agents share context, so they work as one workforce.',
+    pts:['One sign-in for every agent','Organisation-wide rules and guardrails','People approve what matters','Every action on the record'],
+  },
+  secT:'Meet the workforce', secS:'Each app goes deep on one business function',
+  roles:['Customer operations','Content production','Project management','Frontline engagement','Campaign execution','Document intelligence'],
+  items:[
+    {tl:'Amplify your productivity. Not headcount.', ds:'Answer every customer on WhatsApp and email, day or night.', st:[['50K+','conversations / month'],['50+','languages'],['24/7','always-on']]},
+    {tl:'Scale your content without losing your creativity.', ds:'Turn any document into a branded video in about 90 seconds.', st:[['10×','faster creation'],['30+','languages'],['~90s','to first video']]},
+    {tl:'Projects across a global team, finally on track.', ds:'Your projects plan themselves, and chase the follow-ups for you.', st:[['3','AI agents'],['NL','natural-language tasks'],['∞','capacity planning']]},
+    {tl:'Your frontline team, finally connected.', ds:'Reach every worker on the phone in their pocket. No email needed.', st:[['1','platform'],['AI','content + approvals'],['Yours','domain, brand, rules']]},
+    {tl:'Launch campaigns like a team of fifty.', ds:'Describe the campaign you want. Come back to it built.', st:[['9+','specialist agents'],['Mins','website → campaign'],['1-click','publish']]},
+    {tl:'Your paperwork, finally searchable.', ds:'Scan any document. Get clean, searchable data back.', st:[['6','steps, scan → search'],['5 wks','kick-off to go-live'],['On-prem','or your cloud']]},
+  ],
+  trust:['Dubai AI Seal, Tier E','#1 AI company on F6S (Jun 2025)','On-premise ready, private LLM, air-gapped'],
+  trustNote:'Verified by the Dubai Centre for Artificial Intelligence (DCAI) as a legitimate AI supplier. SOC 2 Type II controls implemented, ISO 27001 aligned, GDPR-ready. Your data never trains our models.',
+  partnersT:'Partners',
+  footH:'Book a product demo',
+  footP:'Start with one agent where the pain is, and expand when you are ready.',
+  scan:'Scan to visit',
+},
+th: {
+  lang:'th',
+  chips:['<b>Dubai AI Seal</b> · Tier E','<b>บริษัท AI อันดับ 1</b> บน F6S'],
+  eyebrow:'Veehive Agentic Apps',
+  h1:'ขับเคลื่อนธุรกิจของคุณด้วย <em>Agentic Apps</em><br>ที่ออกแบบมาเพื่อคุณโดยเฉพาะ',
+  lede:'พบกับทีมของคุณ Agentic Apps หกตัว สำหรับงานบริการลูกค้า คอนเทนต์ โปรเจกต์ พนักงานหน้างาน แคมเปญ และเอกสาร แต่ละตัวปรับให้เข้ากับวิธีการทำงานของธุรกิจคุณ เริ่มจากแอปเดียว หรือให้ทั้งทีมทำงานพร้อมกันก็ได้',
+  band:{
+    tag:'HiveFront · ศูนย์กลางควบคุม',
+    h2:'ศูนย์กลางเดียวที่ควบคุม<span>ทุกแอป</span>และทั้งองค์กรของคุณ',
+    p:'HiveFront คือประตูบานเดียวที่พนักงานใช้ทำงานกับเอเจนต์ทุกตัว กำหนดกฎครั้งเดียว (ใครใช้อะไรได้ เอเจนต์เข้าถึงข้อมูลใดได้ งานใดต้องให้คนอนุมัติ) แล้วทุกแอปจะทำตาม เอเจนต์แชร์บริบทร่วมกันจึงทำงานเป็นทีมเดียว',
+    pts:['ลงชื่อเข้าใช้ครั้งเดียว ใช้ได้ทุกเอเจนต์','กฎและการกำกับดูแลระดับองค์กร','ให้คนอนุมัติในเรื่องที่สำคัญ','ทุกการทำงานมีบันทึกตรวจสอบได้'],
+  },
+  secT:'พบกับทีมงานของคุณ', secS:'แต่ละแอปเชี่ยวชาญงานธุรกิจหนึ่งด้านอย่างลึกซึ้ง',
+  roles:['งานบริการลูกค้า','ผลิตคอนเทนต์','บริหารโปรเจกต์','สื่อสารกับพนักงานหน้างาน','ดำเนินแคมเปญ','จัดการเอกสารอัจฉริยะ'],
+  items:[
+    {tl:'เพิ่มผลผลิต โดยไม่ต้องเพิ่มคน', ds:'ตอบลูกค้าทุกคนทาง WhatsApp และอีเมล ได้ทั้งกลางวันและกลางคืน', st:[['50K+','บทสนทนา / เดือน'],['50+','ภาษา'],['24/7','ทำงานตลอดเวลา']]},
+    {tl:'ขยายคอนเทนต์ได้มากขึ้น โดยไม่เสียความคิดสร้างสรรค์', ds:'เปลี่ยนเอกสารใดก็ได้ให้เป็นวิดีโอในแบรนด์ของคุณ ภายในประมาณ 90 วินาที', st:[['10×','สร้างได้เร็วขึ้น'],['30+','ภาษา'],['~90 วิ','ได้วิดีโอแรก']]},
+    {tl:'โปรเจกต์ของทีมทั่วโลก เดินตามแผนเสียที', ds:'โปรเจกต์วางแผนได้เอง และคอยติดตามงานแทนคุณ', st:[['3','เอเจนต์ AI'],['NL','สั่งงานด้วยภาษาพูด'],['∞','วางแผนกำลังคน']]},
+    {tl:'ทีมหน้างานของคุณ เชื่อมถึงกันเสียที', ds:'ส่งข่าวสารถึงพนักงานทุกคนผ่านโทรศัพท์ในกระเป๋า ไม่ต้องใช้อีเมล', st:[['1','แพลตฟอร์ม'],['AI','คอนเทนต์ + การอนุมัติ'],['ของคุณ','โดเมน แบรนด์ กฎ']]},
+    {tl:'เปิดตัวแคมเปญได้เหมือนมีทีมห้าสิบคน', ds:'บอกแคมเปญที่คุณต้องการ แล้วกลับมารับงานที่สร้างเสร็จแล้ว', st:[['9+','เอเจนต์เฉพาะทาง'],['นาที','เว็บไซต์ → แคมเปญ'],['คลิกเดียว','เผยแพร่']]},
+    {tl:'เอกสารของคุณ ค้นหาได้เสียที', ds:'สแกนเอกสารใดก็ได้ รับข้อมูลที่สะอาดและค้นหาได้กลับมา', st:[['6','ขั้นตอน สแกน → ค้นหา'],['5 สัปดาห์','เริ่มต้นถึงใช้งานจริง'],['On-prem','หรือคลาวด์ของคุณ']]},
+  ],
+  trust:['Dubai AI Seal ระดับ Tier E','บริษัท AI อันดับ 1 บน F6S (มิ.ย. 2025)','ติดตั้งในองค์กรได้ LLM ส่วนตัว แยกเครือข่าย'],
+  trustNote:'ได้รับการยืนยันจาก Dubai Centre for Artificial Intelligence (DCAI) ว่าเป็นผู้ให้บริการ AI ที่ถูกต้องตามกฎหมาย มีการควบคุมตามมาตรฐาน SOC 2 Type II สอดคล้องกับ ISO 27001 และพร้อมรองรับ GDPR ข้อมูลของคุณจะไม่ถูกนำไปฝึกโมเดลของเรา',
+  partnersT:'พันธมิตร',
+  footH:'นัดหมายชมการสาธิตผลิตภัณฑ์',
+  footP:'เริ่มจากเอเจนต์ตัวเดียวในจุดที่เป็นปัญหา แล้วขยายเมื่อคุณพร้อม',
+  scan:'สแกนเพื่อเข้าชม',
+},
+};
+const PARTNERS = 'NVIDIA Inception · AWS Startups · Google Cloud for Startups · Microsoft for Startups · Lenovo AI Innovators · in5 Tech Dubai';
+
+function qrSvg(){
+  const q = qrcode(0,'M'); q.addData('https://veehive.ai'); q.make();
+  return q.createSvgTag({cellSize:3,margin:0,scalable:true});
+}
+
+function page(L){
+  const c = COPY[L];
+  return `<section class="page ${L}" id="${L === 'en' ? 'front' : 'back'}" lang="${L}">
+  <img class="bgmark" src="mark-veehive.svg" alt="">
+  <div class="top">
+    <img class="logo" src="logo-veehive-gray.svg" alt="Veehive">
+    <div class="chips"><span class="chip"><b>veehive.ai</b></span></div>
+  </div>
+  <div class="hero">
+    <div class="eyebrow">${c.eyebrow}</div>
+    <h1 class="hd">${c.h1}</h1>
+    <p class="lede">${c.lede}</p>
+  </div>
+  <div class="band">
+    <div class="tile"><img src="icon-hivefront.svg" alt="HiveFront"></div>
+    <div>
+      <span class="tag">${c.band.tag}</span>
+      <h2 class="hd">${c.band.h2}</h2>
+      <p>${c.band.p}</p>
+    </div>
+    <div class="pts">${c.band.pts.map(x=>`<div class="pt">${CHECK}<span>${x}</span></div>`).join('')}</div>
+  </div>
+  <div class="sec"><h3 class="hd">${c.secT}</h3><span>${c.secS}</span></div>
+  <div class="grid">${PRODUCTS.map((p,i)=>{const it=c.items[i];return `
+    <div class="card" style="--t:${p.t};--c:${p.c}">
+      <div class="head"><div class="ic"><img src="icon-${p.k}.svg" alt=""></div>
+        <div><div class="nm hd">${p.n}</div><div class="role">${c.roles[i]}</div></div></div>
+      <div class="tl">${it.tl}</div>
+      <div class="ds">${it.ds}</div>
+      <div class="stats">${it.st.map(s=>`<div><b>${s[0]}</b>${s[1]}</div>`).join('')}</div>
+    </div>`}).join('')}
+  </div>
+  <div class="trust">
+    <img src="dubai-ai-seal.png" alt="Dubai AI Seal - Tier E">
+    <div><div class="row">${c.trust.join('<i>·</i>')}</div>
+    <div class="note">${c.trustNote}</div></div>
+  </div>
+  <div class="partners"><b>${c.partnersT}</b>${PARTNERS}</div>
+  <div class="foot">
+    <div>
+      <h4 class="hd">${c.footH}</h4>
+      <p>${c.footP}</p>
+      <div class="contact"><span>veehive.ai</span><span>contact@veehive.ai</span><span>WhatsApp +971 56 430 8275</span></div>
+    </div>
+    <div class="qr"><div class="code">${qrSvg()}</div><span>${c.scan}</span></div>
+  </div>
+</section>`;
+}
+
+const side = location.search.slice(1);
+const langs = side === 'front' ? ['en'] : side === 'back' ? ['th'] : ['en','th'];
+if (side) document.body.classList.add('solo');
+document.getElementById('root').outerHTML = langs.map(page).join('');
+if (new URLSearchParams(location.hash.slice(1)).has('measure')) setTimeout(()=>{document.querySelectorAll('.page').forEach(p=>{const f=p.querySelector('.foot'),n=p.querySelector('.partners');document.title+=' '+p.id+':overflow='+Math.round(f.getBoundingClientRect().bottom-p.getBoundingClientRect().bottom)})},1500);
+</script>
+</body></html>

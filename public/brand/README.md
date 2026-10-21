@@ -14,6 +14,7 @@ Everything needed to use the Veehive identity correctly. Open
 | `fonts/IBMPlexSans/` | Regular, Medium, SemiBold, Bold, with OFL licence. |
 | `loaders/` | The six loading spinners, plus the padded marks they animate. |
 | `logo/products/` | A logotype per product, dark and white text. SVG plus PNG at 96 and 192 px tall. |
+| `mascots/` | A bee per product, plus the house bee. 256 px PNG. |
 | `business-card/` | Card artwork, front and back, with the print-ready PDF. |
 | `guidelines/` | The brand guide. |
 
@@ -84,6 +85,27 @@ product colour — the mark carries the colour, the name stays neutral
 
 Every product mark also spins, using the same loader classes — a
 product's own colour carries its loading state.
+
+## Mascots
+
+Every product has a bee, and every bee wears its product's colour on the
+wings. They carry the warmth the mark deliberately doesn't — use them on
+merch, in slides and anywhere the audience is people rather than
+procurement. Never on a legal page, a certificate or a contract, and
+never in place of the mark as an app icon.
+
+| Bee | Product | Colour |
+|---|---|---|
+| ND | Mpliphi | `#2C573E` |
+| Taj | SnapaPro | `#DC2626` |
+| Chaks | HiveStudio | `#7C3AED` |
+| AK | HiveLink | `#2563EB` |
+| Mira | HiveMind | `#FFB020` |
+| Dex | HiveDocs | `#0D9488` |
+| — | HiveFront | `#EC4899` |
+| — | Veehive (house) | `#334155` |
+
+HiveFront's and the house bee are unnamed so far.
 
 ## Stationery and merch
 

@@ -133,11 +133,14 @@
     </script>
 
     <link rel="stylesheet" href="/brand/tokens.css">
-    <link rel="stylesheet" href="/tailwind.min.css?v=2">
+    <link rel="stylesheet" href="/tailwind.min.css?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Satoshi:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Manrope draws every heading, per veehive.ai/brand/. */
+        h1, h2, h3, h4, h5, h6 { font-family: 'Manrope', system-ui, sans-serif; }
+
         :root {
             --bg: #0F1A20; --bg-nav: rgba(15,26,32,0.85); --bg-mobile: rgba(15,26,32,0.95);
             --text: #ffffff; --text-secondary: #A6B0C3; --text-tertiary: rgba(166,176,195,0.60);
@@ -168,7 +171,7 @@
         }
 
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); transition: background 0.5s cubic-bezier(0.4,0,0.2,1), color 0.4s ease; }
+        body { font-family: 'IBM Plex Sans', system-ui, sans-serif; background: var(--bg); color: var(--text); transition: background 0.5s cubic-bezier(0.4,0,0.2,1), color 0.4s ease; }
 
         .dot-pattern { background-image: radial-gradient(var(--dot-color) 1px, transparent 1px); background-size: 28px 28px; }
 
@@ -785,6 +788,7 @@
                     <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-hivelink-32.png" alt="" loading="lazy" decoding="async">HiveLink</a>
                     <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-mind-32.png" alt="" loading="lazy" decoding="async">HiveMind</a>
                     <a href="https://veehivedocs.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-hivedocs-32.png" alt="" loading="lazy" decoding="async">HiveDocs</a>
+                    <a href="/#hivefront"><img src="/favicon-hivefront-32.png" alt="" loading="lazy" decoding="async">HiveFront</a>
                 </div>
 
                 <div class="vh-footer__col">
@@ -883,7 +887,8 @@
                 { name: 'SnapaPro',       icon: '/favicon-snapapro-32.png' },
                 { name: 'HiveLink',       icon: '/favicon-hivelink-32.png' },
                 { name: 'HiveMind',   icon: '/favicon-mind-32.png' },
-                { name: 'HiveDocs',   icon: '/favicon-hivedocs-32.png' }
+                { name: 'HiveDocs',   icon: '/favicon-hivedocs-32.png' },
+                { name: 'HiveFront',  icon: '/favicon-hivefront-32.png' }
             ];
             /* Built twice so the -50% keyframe loops seamlessly. */
             function build(){

@@ -426,11 +426,14 @@
     </script>
 
     <link rel="stylesheet" href="/brand/tokens.css">
-    <link rel="stylesheet" href="/tailwind.min.css?v=2">
+    <link rel="stylesheet" href="/tailwind.min.css?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Satoshi:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Manrope draws every heading, per veehive.ai/brand/. */
+        h1, h2, h3, h4, h5, h6 { font-family: 'Manrope', system-ui, sans-serif; }
+
         /* ═══ THEME SYSTEM ═══ */
         :root {
             --bg: #0F1A20;
@@ -500,7 +503,7 @@
 
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', system-ui, sans-serif;
+            font-family: 'IBM Plex Sans', system-ui, sans-serif;
             background: var(--bg);
             color: var(--text);
             transition: background 0.5s cubic-bezier(0.4,0,0.2,1), color 0.4s ease;
@@ -1292,9 +1295,9 @@
 
         /* Tab dot accents — match product brand colors */
         .product-window-tab[data-product="mpliphi"] .product-window-tab-dot     { background: #4ade80; }
-        .product-window-tab[data-product="studio"] .product-window-tab-dot      { background: #A78BFA; }
-        .product-window-tab[data-product="snapapro"] .product-window-tab-dot    { background: #F87171; }
-        .product-window-tab[data-product="hivelink"] .product-window-tab-dot    { background: #60A5FA; }
+        .product-window-tab[data-product="studio"] .product-window-tab-dot      { background: #7C3AED; }
+        .product-window-tab[data-product="snapapro"] .product-window-tab-dot    { background: #DC2626; }
+        .product-window-tab[data-product="hivelink"] .product-window-tab-dot    { background: #2563EB; }
         .product-window-tab[data-product="mind"] .product-window-tab-dot        { background: #ffb020; }
 
         /* Per-product accent on result/agent message */
@@ -1456,7 +1459,7 @@
 
         /* ── HiveMetal (air-gapped deployment) ─────────────────── */
         .hm-diagram { width: 100%; height: auto; display: block; color: var(--text); }
-        .hm-diagram text { font-family: 'Inter', sans-serif; }
+        .hm-diagram text { font-family: 'IBM Plex Sans', sans-serif; }
         .hm-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
         /* Narrow screens: let the diagram keep a readable type size and scroll. */
         @media (max-width: 640px) {
@@ -1785,7 +1788,7 @@
         }
         .vh-apps__promo-mark img{width:32px; height:32px;}
         .vh-apps__promo-title{
-            font-family:'Satoshi','Inter',sans-serif;
+            font-family:'Manrope','IBM Plex Sans',sans-serif;
             font-size:clamp(1.35rem,2.1vw,1.75rem); font-weight:700;
             line-height:1.2; letter-spacing:-0.02em; color:#fff; margin:0;
         }
@@ -2429,15 +2432,15 @@
                     <span class="block text-[17px] font-semibold text-white/85 leading-snug">&ldquo;Customer replies are drowning us.&rdquo;</span>
                 </button>
                 <button type="button" aria-pressed="false" class="problem-card trust-card card-glow card-glow-creator rounded-xl p-6 text-left transition-all" data-product="studio">
-                    <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#A78BFA">Content &amp; marketing</span>
+                    <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#7C3AED">Content &amp; marketing</span>
                     <span class="block text-[17px] font-semibold text-white/85 leading-snug">&ldquo;Content takes too long to produce.&rdquo;</span>
                 </button>
                 <button type="button" aria-pressed="false" class="problem-card trust-card card-glow card-glow-planner rounded-xl p-6 text-left transition-all" data-product="snapapro">
-                    <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#F87171">Project mgmt</span>
+                    <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#DC2626">Project mgmt</span>
                     <span class="block text-[17px] font-semibold text-white/85 leading-snug">&ldquo;Projects slip through the cracks.&rdquo;</span>
                 </button>
                 <button type="button" aria-pressed="false" class="problem-card trust-card card-glow card-glow-distributor rounded-xl p-6 text-left transition-all" data-product="veehive-link">
-                    <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#60A5FA">Frontline &amp; internal comms</span>
+                    <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#2563EB">Frontline &amp; internal comms</span>
                     <span class="block text-[17px] font-semibold text-white/85 leading-snug">&ldquo;Half our people never see a company email.&rdquo;</span>
                 </button>
                 <button type="button" aria-pressed="false" class="problem-card trust-card card-glow card-glow-mind rounded-xl p-6 text-left transition-all" data-product="mind">
@@ -2445,7 +2448,7 @@
                     <span class="block text-[17px] font-semibold text-white/85 leading-snug">&ldquo;We can&rsquo;t launch campaigns fast enough.&rdquo;</span>
                 </button>
                 <button type="button" aria-pressed="false" class="problem-card trust-card card-glow card-glow-docs rounded-xl p-6 text-left transition-all" data-product="hivedocs">
-                    <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#14B8A6">Documents &amp; back office</span>
+                    <span class="block text-[12px] font-semibold uppercase tracking-[0.15em] mb-2" style="color:#0D9488">Documents &amp; back office</span>
                     <span class="block text-[17px] font-semibold text-white/85 leading-snug">&ldquo;We still re-key paperwork by hand.&rdquo;</span>
                 </button>
             </div>
@@ -2530,10 +2533,10 @@
                 <div class="showcase-grid">
                     <div class="showcase-copy">
                         <img src="/favicon-studio-64.png" alt="HiveStudio" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
-                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#A78BFA">Your agentic content generation platform</p>
+                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#7C3AED">Your agentic content generation platform</p>
                         <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">HiveStudio</h2>
                         <p class="prod-hero">Scale your content without losing your creativity.</p>
-                        <span class="prod-tagline" style="color:#A78BFA">Create. Localize. Distribute.</span>
+                        <span class="prod-tagline" style="color:#7C3AED">Create. Localize. Distribute.</span>
                         <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <strong class="text-white/80">Chaks</strong> &mdash; turn documents, PDFs, and product details into personalized video, instantly. 10x faster, ~95% cheaper, in 30+ languages. Generate the full cut, or step in and edit every scene yourself.</p>
                         <div class="agent-team">
                             <span class="agent-team__label">Your agentic team</span>
@@ -2541,22 +2544,22 @@
                         </div>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
-                                <span class="stat-icon" style="color:#A78BFA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></span>
+                                <span class="stat-icon" style="color:#7C3AED" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></span>
                                 <div class="text-2xl md:text-3xl font-bold text-white">10&times;</div>
                                 <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Faster creation</div>
                             </div>
                             <div>
-                                <span class="stat-icon" style="color:#A78BFA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18zm0 0a8.997 8.997 0 007.843-4.582M12 21a8.997 8.997 0 01-7.843-4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74 1.1-7.843 2.918m15.686 0A8.959 8.959 0 0121 12c0-.778-.099-1.533-.284-2.253m-15.432 7.835A8.959 8.959 0 013 12c0-.778.099-1.533.284-2.253m0 0A11.978 11.978 0 0112 8c2.998 0 5.74-1.1 7.843-2.918"/></svg></span>
+                                <span class="stat-icon" style="color:#7C3AED" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18zm0 0a8.997 8.997 0 007.843-4.582M12 21a8.997 8.997 0 01-7.843-4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74 1.1-7.843 2.918m15.686 0A8.959 8.959 0 0121 12c0-.778-.099-1.533-.284-2.253m-15.432 7.835A8.959 8.959 0 013 12c0-.778.099-1.533.284-2.253m0 0A11.978 11.978 0 0112 8c2.998 0 5.74-1.1 7.843-2.918"/></svg></span>
                                 <div class="text-2xl md:text-3xl font-bold text-white">30+</div>
                                 <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Languages</div>
                             </div>
                             <div>
-                                <span class="stat-icon" style="color:#A78BFA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
+                                <span class="stat-icon" style="color:#7C3AED" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
                                 <div class="text-2xl md:text-3xl font-bold text-white">~90s</div>
                                 <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Time to first video</div>
                             </div>
                         </div>
-                        <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#A78BFA">Explore HiveStudio <span aria-hidden="true">&rarr;</span></a>
+                        <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#7C3AED">Explore HiveStudio <span aria-hidden="true">&rarr;</span></a>
                     </div>
                     <div class="showcase-demo">
                         <div class="agent-demo" data-product="studio">
@@ -2597,10 +2600,10 @@
                 <div class="showcase-grid is-flipped">
                     <div class="showcase-copy">
                         <img src="/favicon-snapapro-64.png" alt="SnapaPro" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
-                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#F87171">Your agentic project management tool</p>
+                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#DC2626">Your agentic project management tool</p>
                         <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">SnapaPro</h2>
                         <p class="prod-hero">Projects across a global team, finally on track.</p>
-                        <span class="prod-tagline" style="color:#F87171">Preemptive. Unprompted. Relentless.</span>
+                        <span class="prod-tagline" style="color:#DC2626">Preemptive. Unprompted. Relentless.</span>
                         <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <strong class="text-white/80">Taj</strong> &mdash; your project manager, running real-time orchestration that plans, tracks, and follows up across every project, giving you full visibility without the manual chasing.</p>
                         <div class="agent-team">
                             <span class="agent-team__label">Your agentic team</span>
@@ -2608,22 +2611,22 @@
                         </div>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
-                                <span class="stat-icon" style="color:#F87171" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></span>
+                                <span class="stat-icon" style="color:#DC2626" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></span>
                                 <div class="text-2xl md:text-3xl font-bold text-white">3</div>
                                 <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">AI agents</div>
                             </div>
                             <div>
-                                <span class="stat-icon" style="color:#F87171" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></span>
+                                <span class="stat-icon" style="color:#DC2626" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></span>
                                 <div class="text-2xl md:text-3xl font-bold text-white">NL</div>
                                 <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Natural-language tasks</div>
                             </div>
                             <div>
-                                <span class="stat-icon" style="color:#F87171" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12a3 3 0 11-6 0 3 3 0 016 0zm0 0a3 3 0 016 0m0 0a3 3 0 11-6 0m6 0a3 3 0 116 0m-6 0a3 3 0 11-6 0"/></svg></span>
+                                <span class="stat-icon" style="color:#DC2626" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12a3 3 0 11-6 0 3 3 0 016 0zm0 0a3 3 0 016 0m0 0a3 3 0 11-6 0m6 0a3 3 0 116 0m-6 0a3 3 0 11-6 0"/></svg></span>
                                 <div class="text-2xl md:text-3xl font-bold text-white">&infin;</div>
                                 <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Capacity planning</div>
                             </div>
                         </div>
-                        <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#F87171">Explore SnapaPro <span aria-hidden="true">&rarr;</span></a>
+                        <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#DC2626">Explore SnapaPro <span aria-hidden="true">&rarr;</span></a>
                     </div>
                     <div class="showcase-demo">
                         <div class="agent-demo" data-product="snapapro">
@@ -2664,10 +2667,10 @@
                 <div class="showcase-grid">
                     <div class="showcase-copy">
                         <img src="/favicon-hivelink-64.png" alt="HiveLink" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
-                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#60A5FA">Your internal communication &amp; engagement platform</p>
+                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#2563EB">Your internal communication &amp; engagement platform</p>
                         <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">HiveLink</h2>
                         <p class="prod-hero">Your frontline team, finally connected.</p>
-                        <span class="prod-tagline" style="color:#60A5FA">Build. Delegate. Grow.</span>
+                        <span class="prod-tagline" style="color:#2563EB">Build. Delegate. Grow.</span>
                         <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <strong class="text-white/80">AK</strong> &mdash; HiveLink is the real-time engagement platform built for organizations where most of the workforce isn&rsquo;t behind a desk. One AI agent delivers connected, personalized updates to every worker on the device they actually carry &mdash; reliably, at scale, no company inbox required &mdash; while coordinating with the rest of your AI workforce automatically.</p>
                         <div class="agent-team">
                             <span class="agent-team__label">Your agentic team</span>
@@ -2675,22 +2678,22 @@
                         </div>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
-                                <span class="stat-icon" style="color:#60A5FA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></span>
+                                <span class="stat-icon" style="color:#2563EB" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></span>
                                 <div class="text-2xl md:text-3xl font-bold text-white">1</div>
                                 <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Platform, zero tab-switching</div>
                             </div>
                             <div>
-                                <span class="stat-icon" style="color:#60A5FA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg></span>
+                                <span class="stat-icon" style="color:#2563EB" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg></span>
                                 <div class="text-2xl md:text-3xl font-bold text-white">AI</div>
                                 <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Content + approvals</div>
                             </div>
                             <div>
-                                <span class="stat-icon" style="color:#60A5FA" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg></span>
+                                <span class="stat-icon" style="color:#2563EB" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg></span>
                                 <div class="text-2xl md:text-3xl font-bold text-white">Yours</div>
                                 <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Domain, brand, rules</div>
                             </div>
                         </div>
-                        <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#60A5FA">Explore HiveLink <span aria-hidden="true">&rarr;</span></a>
+                        <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#2563EB">Explore HiveLink <span aria-hidden="true">&rarr;</span></a>
                     </div>
                     <div class="showcase-demo">
                         <div class="agent-demo" data-product="hivelink">
@@ -2798,10 +2801,10 @@
                 <div class="showcase-grid">
                     <div class="showcase-copy">
                         <img src="/favicon-hivedocs-64.png" alt="HiveDocs" class="w-12 h-12 rounded-xl mb-5" loading="lazy" decoding="async">
-                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#14B8A6">Your AI document intelligence platform</p>
+                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-3" style="color:#0D9488">Your AI document intelligence platform</p>
                         <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">HiveDocs</h2>
                         <p class="prod-hero">Your paperwork, finally searchable.</p>
-                        <span class="prod-tagline" style="color:#14B8A6">Scan. Extract. Search.</span>
+                        <span class="prod-tagline" style="color:#0D9488">Scan. Extract. Search.</span>
                         <p class="text-[16px] md:text-[17px] text-white/60 leading-relaxed mb-8">Meet <strong class="text-white/80">Dex</strong> &mdash; HiveDocs turns the operational, admin and compliance paperwork your team re-keys by hand &mdash; scanned images, PDFs and printed records &mdash; into clean, structured, searchable data. Every value is confidence-scored and checked before it posts, on your premises, in your cloud tenancy, or fully managed by us.</p>
                         <div class="agent-team">
                             <span class="agent-team__label">Your agentic team</span>
@@ -2809,22 +2812,22 @@
                         </div>
                         <div class="flex flex-wrap gap-x-10 gap-y-4 mb-8">
                             <div>
-                                <span class="stat-icon" style="color:#14B8A6" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></span>
+                                <span class="stat-icon" style="color:#0D9488" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></span>
                                 <div class="text-2xl md:text-3xl font-bold text-white">6</div>
                                 <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Steps, scan &rarr; search</div>
                             </div>
                             <div>
-                                <span class="stat-icon" style="color:#14B8A6" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></span>
+                                <span class="stat-icon" style="color:#0D9488" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></span>
                                 <div class="text-2xl md:text-3xl font-bold text-white">5 wks</div>
                                 <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Kick-off to go-live</div>
                             </div>
                             <div>
-                                <span class="stat-icon" style="color:#14B8A6" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg></span>
+                                <span class="stat-icon" style="color:#0D9488" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg></span>
                                 <div class="text-2xl md:text-3xl font-bold text-white">On-prem</div>
                                 <div class="text-[12px] text-white/35 uppercase tracking-wider mt-1">Or your cloud tenancy</div>
                             </div>
                         </div>
-                        <a href="https://veehivedocs.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#14B8A6">Explore HiveDocs <span aria-hidden="true">&rarr;</span></a>
+                        <a href="https://veehivedocs.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold" style="color:#0D9488">Explore HiveDocs <span aria-hidden="true">&rarr;</span></a>
                     </div>
                     <div class="showcase-demo">
                         <div class="agent-demo" data-product="hivedocs">
@@ -2872,7 +2875,7 @@
             </div>
 
             <div class="reveal workforce-grid">
-                <div class="workforce-card" style="--wf:#34D399">
+                <div class="workforce-card" style="--wf:#2C573E">
                     <div class="workforce-badge">
                         <div class="workforce-badge__inner">
                             <img src="/agents/bee-mpliphi.png?v=3" alt="ND, the Mpliphi bee, with green wings" width="256" height="256" loading="lazy" decoding="async">
@@ -2883,36 +2886,36 @@
                     <div class="workforce-role">Customer-operations agent</div>
                 </div>
 
-                <div class="workforce-card" style="--wf:#A78BFA">
+                <div class="workforce-card" style="--wf:#7C3AED">
                     <div class="workforce-badge">
                         <div class="workforce-badge__inner">
                             <img src="/agents/bee-studio.png?v=3" alt="Chaks, the HiveStudio bee, with purple wings" width="256" height="256" loading="lazy" decoding="async">
                         </div>
                     </div>
                     <div class="workforce-name">Chaks</div>
-                    <div class="workforce-product" style="color:#A78BFA">HiveStudio</div>
+                    <div class="workforce-product" style="color:#7C3AED">HiveStudio</div>
                     <div class="workforce-role">Content-production agent</div>
                 </div>
 
-                <div class="workforce-card" style="--wf:#F87171">
+                <div class="workforce-card" style="--wf:#DC2626">
                     <div class="workforce-badge">
                         <div class="workforce-badge__inner">
                             <img src="/agents/bee-snapapro.png?v=3" alt="Taj, the SnapaPro bee, with red wings" width="256" height="256" loading="lazy" decoding="async">
                         </div>
                     </div>
                     <div class="workforce-name">Taj</div>
-                    <div class="workforce-product" style="color:#F87171">SnapaPro</div>
+                    <div class="workforce-product" style="color:#DC2626">SnapaPro</div>
                     <div class="workforce-role">Project manager &mdash; she plans, tracks and follows up</div>
                 </div>
 
-                <div class="workforce-card" style="--wf:#60A5FA">
+                <div class="workforce-card" style="--wf:#2563EB">
                     <div class="workforce-badge">
                         <div class="workforce-badge__inner">
                             <img src="/agents/bee-hivelink.png?v=3" alt="AK, the HiveLink bee, with blue wings" width="256" height="256" loading="lazy" decoding="async">
                         </div>
                     </div>
                     <div class="workforce-name">AK</div>
-                    <div class="workforce-product" style="color:#60A5FA">HiveLink</div>
+                    <div class="workforce-product" style="color:#2563EB">HiveLink</div>
                     <div class="workforce-role">Frontline-engagement agent</div>
                 </div>
 
@@ -2927,14 +2930,14 @@
                     <div class="workforce-role">Campaign-execution hive (11 agents)</div>
                 </div>
 
-                <div class="workforce-card" style="--wf:#14B8A6">
+                <div class="workforce-card" style="--wf:#0D9488">
                     <div class="workforce-badge">
                         <div class="workforce-badge__inner">
                             <img src="/agents/bee-hivedocs.png?v=3" alt="Dex, the HiveDocs bee, with teal wings" width="256" height="256" loading="lazy" decoding="async">
                         </div>
                     </div>
                     <div class="workforce-name">Dex</div>
-                    <div class="workforce-product" style="color:#14B8A6">HiveDocs</div>
+                    <div class="workforce-product" style="color:#0D9488">HiveDocs</div>
                     <div class="workforce-role">Document-intelligence agent</div>
                 </div>
             </div>
@@ -3022,9 +3025,9 @@
 
                         <!-- Severed link -->
                         <path d="M226 82v12M226 112v12" stroke="currentColor" stroke-width="1.4" opacity="0.3" stroke-linecap="round"/>
-                        <circle cx="226" cy="103" r="9" fill="none" stroke="#F87171" stroke-width="1.4" opacity="0.8"/>
-                        <path d="M222.2 99.2l7.6 7.6M229.8 99.2l-7.6 7.6" stroke="#F87171" stroke-width="1.4" stroke-linecap="round" opacity="0.8"/>
-                        <text x="246" y="107" fill="#F87171" font-size="10.5" opacity="0.85">No egress. No inbound.</text>
+                        <circle cx="226" cy="103" r="9" fill="none" stroke="#DC2626" stroke-width="1.4" opacity="0.8"/>
+                        <path d="M222.2 99.2l7.6 7.6M229.8 99.2l-7.6 7.6" stroke="#DC2626" stroke-width="1.4" stroke-linecap="round" opacity="0.8"/>
+                        <text x="246" y="107" fill="#DC2626" font-size="10.5" opacity="0.85">No egress. No inbound.</text>
 
                         <!-- Perimeter -->
                         <rect x="14" y="132" width="492" height="292" rx="18" fill="#3B5BFF" opacity="0.03"/>
@@ -3036,12 +3039,12 @@
                         <rect x="38" y="172" width="444" height="86" rx="13" fill="none" stroke="currentColor" stroke-width="1" opacity="0.14"/>
                         <text x="58" y="196" class="hm-eyebrow" fill="currentColor" opacity="0.5">AGENT LAYER</text>
                         <g font-size="10.5" text-anchor="middle">
-                            <g><rect x="59" y="210" width="62" height="28" rx="9" fill="#34D399" opacity="0.12"/><rect x="59" y="210" width="62" height="28" rx="9" fill="none" stroke="#34D399" stroke-width="1" opacity="0.4"/><text x="90" y="228" fill="#34D399">Mpliphi</text></g>
-                            <g><rect x="127" y="210" width="62" height="28" rx="9" fill="#A78BFA" opacity="0.12"/><rect x="127" y="210" width="62" height="28" rx="9" fill="none" stroke="#A78BFA" stroke-width="1" opacity="0.4"/><text x="158" y="228" fill="#A78BFA">Studio</text></g>
-                            <g><rect x="195" y="210" width="62" height="28" rx="9" fill="#F87171" opacity="0.12"/><rect x="195" y="210" width="62" height="28" rx="9" fill="none" stroke="#F87171" stroke-width="1" opacity="0.4"/><text x="226" y="228" fill="#F87171">SnapaPro</text></g>
-                            <g><rect x="263" y="210" width="62" height="28" rx="9" fill="#60A5FA" opacity="0.12"/><rect x="263" y="210" width="62" height="28" rx="9" fill="none" stroke="#60A5FA" stroke-width="1" opacity="0.4"/><text x="294" y="228" fill="#60A5FA">HiveLink</text></g>
+                            <g><rect x="59" y="210" width="62" height="28" rx="9" fill="#2C573E" opacity="0.12"/><rect x="59" y="210" width="62" height="28" rx="9" fill="none" stroke="#2C573E" stroke-width="1" opacity="0.4"/><text x="90" y="228" fill="#2C573E">Mpliphi</text></g>
+                            <g><rect x="127" y="210" width="62" height="28" rx="9" fill="#7C3AED" opacity="0.12"/><rect x="127" y="210" width="62" height="28" rx="9" fill="none" stroke="#7C3AED" stroke-width="1" opacity="0.4"/><text x="158" y="228" fill="#7C3AED">Studio</text></g>
+                            <g><rect x="195" y="210" width="62" height="28" rx="9" fill="#DC2626" opacity="0.12"/><rect x="195" y="210" width="62" height="28" rx="9" fill="none" stroke="#DC2626" stroke-width="1" opacity="0.4"/><text x="226" y="228" fill="#DC2626">SnapaPro</text></g>
+                            <g><rect x="263" y="210" width="62" height="28" rx="9" fill="#2563EB" opacity="0.12"/><rect x="263" y="210" width="62" height="28" rx="9" fill="none" stroke="#2563EB" stroke-width="1" opacity="0.4"/><text x="294" y="228" fill="#2563EB">HiveLink</text></g>
                             <g><rect x="331" y="210" width="62" height="28" rx="9" fill="#FFB020" opacity="0.12"/><rect x="331" y="210" width="62" height="28" rx="9" fill="none" stroke="#FFB020" stroke-width="1" opacity="0.4"/><text x="362" y="228" fill="#FFB020">HiveMind</text></g>
-                            <g><rect x="399" y="210" width="62" height="28" rx="9" fill="#14B8A6" opacity="0.12"/><rect x="399" y="210" width="62" height="28" rx="9" fill="none" stroke="#14B8A6" stroke-width="1" opacity="0.4"/><text x="430" y="228" fill="#14B8A6">HiveDocs</text></g>
+                            <g><rect x="399" y="210" width="62" height="28" rx="9" fill="#0D9488" opacity="0.12"/><rect x="399" y="210" width="62" height="28" rx="9" fill="none" stroke="#0D9488" stroke-width="1" opacity="0.4"/><text x="430" y="228" fill="#0D9488">HiveDocs</text></g>
                         </g>
 
                         <path d="M260 258v18" stroke="#3B5BFF" stroke-width="1.3" opacity="0.45"/>
@@ -3121,12 +3124,12 @@
                             </div>
                             <div class="hf-tabs">
                                 <span class="hf-tab hf-tab--on"><span class="hf-tab__dot"></span>Mail</span>
-                                <span class="hf-tab"><span class="hf-tab__dot" style="color:#34D399"></span>Mpliphi</span>
-                                <span class="hf-tab"><span class="hf-tab__dot" style="color:#F87171"></span>SnapaPro</span>
-                                <span class="hf-tab"><span class="hf-tab__dot" style="color:#60A5FA"></span>HiveLink</span>
-                                <span class="hf-tab"><span class="hf-tab__dot" style="color:#A78BFA"></span>HiveStudio</span>
+                                <span class="hf-tab"><span class="hf-tab__dot" style="color:#2C573E"></span>Mpliphi</span>
+                                <span class="hf-tab"><span class="hf-tab__dot" style="color:#DC2626"></span>SnapaPro</span>
+                                <span class="hf-tab"><span class="hf-tab__dot" style="color:#2563EB"></span>HiveLink</span>
+                                <span class="hf-tab"><span class="hf-tab__dot" style="color:#7C3AED"></span>HiveStudio</span>
                                 <span class="hf-tab"><span class="hf-tab__dot" style="color:#FFB020"></span>HiveMind</span>
-                                <span class="hf-tab"><span class="hf-tab__dot" style="color:#14B8A6"></span>HiveDocs</span>
+                                <span class="hf-tab"><span class="hf-tab__dot" style="color:#0D9488"></span>HiveDocs</span>
                             </div>
                             <div class="hf-mail">
                                 <div class="hf-mail__row"><div><div class="hf-mail__who">Claims &middot; Motor</div><div class="hf-mail__sub">FNOL 44192, documents attached and policy verified</div></div><span class="hf-mail__tag">Drafted</span></div>
@@ -3587,6 +3590,7 @@
                     <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-hivelink-32.png" alt="" loading="lazy" decoding="async">HiveLink</a>
                     <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-mind-32.png" alt="" loading="lazy" decoding="async">HiveMind</a>
                     <a href="https://veehivedocs.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-hivedocs-32.png" alt="" loading="lazy" decoding="async">HiveDocs</a>
+                    <a href="/#hivefront"><img src="/favicon-hivefront-32.png" alt="" loading="lazy" decoding="async">HiveFront</a>
                 </div>
 
                 <div class="vh-footer__col">
@@ -3679,11 +3683,11 @@
   (function () {
     var PRODUCTS = {
       'mpliphi':       { name: 'Mpliphi',         color: '#2c573e', pitch: 'Amplify your productivity, not headcount. Deploy intelligent AI agents for your customers, employees, CXOs, and yourself \u2014 delivering real-time, connected experiences across every channel, at scale.', url: 'https://mpliphi.com' },
-      'studio':        { name: 'HiveStudio',  color: '#A78BFA', pitch: 'Scale your content without losing your creativity. Turn documents, PDFs, and product details into personalized video \u2014 10x faster, ~95% cheaper, in 30+ languages. Generate the full cut, or edit every scene yourself.', url: 'https://veehivestudio.com' },
-      'snapapro':      { name: 'SnapaPro',        color: '#F87171', pitch: 'Projects across a global team, finally on track. Real-time agent orchestration that plans, tracks, and follows up across every project \u2014 Taj plans, tracks and follows up \u2014 giving you full visibility without the manual chasing.', url: 'https://snapapro.com' },
-      'veehive-link':  { name: 'HiveLink',        color: '#60A5FA', pitch: 'Your frontline team, finally connected. HiveLink is the real-time engagement platform built for organizations where most of the workforce isn\u2019t behind a desk \u2014 one AI agent delivers connected, personalized updates to every worker on the device they actually carry, reliably and at scale, with no company inbox required.', url: 'https://veehivelink.com' },
+      'studio':        { name: 'HiveStudio',  color: '#7C3AED', pitch: 'Scale your content without losing your creativity. Turn documents, PDFs, and product details into personalized video \u2014 10x faster, ~95% cheaper, in 30+ languages. Generate the full cut, or edit every scene yourself.', url: 'https://veehivestudio.com' },
+      'snapapro':      { name: 'SnapaPro',        color: '#DC2626', pitch: 'Projects across a global team, finally on track. Real-time agent orchestration that plans, tracks, and follows up across every project \u2014 Taj plans, tracks and follows up \u2014 giving you full visibility without the manual chasing.', url: 'https://snapapro.com' },
+      'veehive-link':  { name: 'HiveLink',        color: '#2563EB', pitch: 'Your frontline team, finally connected. HiveLink is the real-time engagement platform built for organizations where most of the workforce isn\u2019t behind a desk \u2014 one AI agent delivers connected, personalized updates to every worker on the device they actually carry, reliably and at scale, with no company inbox required.', url: 'https://veehivelink.com' },
       'mind':          { name: 'HiveMind',    color: '#ffb020', pitch: 'Launch campaigns like a team of fifty. HiveMind is an always-on hive of 11 specialist AI agents — among them trend intelligence, calendar, copy, creative, brand memory, compliance, publishing and learning — all collaborating from a single brief. Website to first campaign in minutes.', url: 'https://veehivemind.com' },
-      'hivedocs':      { name: 'HiveDocs',        color: '#14B8A6', pitch: 'Your paperwork, finally searchable. HiveDocs reads scanned images, PDFs and printed records with OCR and AI, tags the key fields, confidence-checks every value and makes it all searchable on one dashboard \u2014 on your premises, in your cloud tenancy, or fully managed by us.', url: 'https://veehivedocs.com' }
+      'hivedocs':      { name: 'HiveDocs',        color: '#0D9488', pitch: 'Your paperwork, finally searchable. HiveDocs reads scanned images, PDFs and printed records with OCR and AI, tags the key fields, confidence-checks every value and makes it all searchable on one dashboard \u2014 on your premises, in your cloud tenancy, or fully managed by us.', url: 'https://veehivedocs.com' }
     };
     var grid = document.getElementById('problem-matcher-grid');
     var panel = document.getElementById('problem-match-result');
@@ -3817,7 +3821,8 @@
                 { name: 'SnapaPro',       icon: '/favicon-snapapro-32.png' },
                 { name: 'HiveLink',       icon: '/favicon-hivelink-32.png' },
                 { name: 'HiveMind',   icon: '/favicon-mind-32.png' },
-                { name: 'HiveDocs',   icon: '/favicon-hivedocs-32.png' }
+                { name: 'HiveDocs',   icon: '/favicon-hivedocs-32.png' },
+                { name: 'HiveFront',  icon: '/favicon-hivefront-32.png' }
             ];
             /* Built twice so the -50% keyframe loops seamlessly. */
             function build(){

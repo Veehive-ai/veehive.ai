@@ -5,7 +5,7 @@
  * Update here, never inline. Consumed by both sites via
  * <link rel="stylesheet" href="https://veehive.ai/brand/tokens.css">.
  *
- * Values reflect the live veehive.ai palette.
+ * Values follow the brand kit at veehive.ai/brand/.
  * Default = dark values on :root (matches the site's untoggled state).
  * Light overrides live in html.light (the site's default class).
  * -----------------------------------------------------------
@@ -25,14 +25,30 @@
   --vh-color-border-hover:    rgba(59,91,255,0.20);
   --vh-color-cta-text:        #FFFFFF;
 
+  /* ── PRODUCT COLOUR ─────────────────────────────────────── */
+  /* One per product, per veehive.ai/brand/. Used for a product's own
+     surfaces, accents and favicon, and nothing else. Mpliphi's green is the
+     darkest of the seven: it reads quieter at small sizes, which is
+     expected — do not lighten it to compensate. */
+  --vh-color-mpliphi:    #2C573E;
+  --vh-color-hivestudio: #7C3AED;
+  --vh-color-snapapro:   #DC2626;
+  --vh-color-hivelink:   #2563EB;
+  --vh-color-hivemind:   #FFB020;
+  --vh-color-hivedocs:   #0D9488;
+  --vh-color-hivefront:  #EC4899;
+  /* HiveFront's mark is a shade deeper than its palette tone. */
+  --vh-color-hivefront-mark: #DB2777;
+
   /* Gradient stops used in headline text-gradient */
   --vh-gradient-text-a:       #6B82FF;
   --vh-gradient-text-b:       #3B5BFF;
   --vh-gradient-text-c:       #8B5CFF;
 
   /* ── TYPE ───────────────────────────────────────────────── */
-  --vh-font-sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  --vh-font-mono:  ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
+  --vh-font-sans:    'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --vh-font-display: 'Manrope', system-ui, sans-serif;
+  --vh-font-mono:    ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
 
   --vh-text-xs:    0.75rem;    /* 12px */
   --vh-text-sm:    0.875rem;   /* 14px */

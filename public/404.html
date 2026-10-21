@@ -12,8 +12,11 @@
 <link rel="stylesheet" href="/brand/tokens.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+        /* Manrope draws every heading, per veehive.ai/brand/. */
+        h1, h2, h3, h4, h5, h6 { font-family: 'Manrope', system-ui, sans-serif; }
+
     *{box-sizing:border-box;}
     body{
         margin:0; min-height:100vh; display:flex; flex-direction:column;
@@ -180,6 +183,7 @@
                 <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-hivelink-32.png" alt="" loading="lazy" decoding="async">HiveLink</a>
                 <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-mind-32.png" alt="" loading="lazy" decoding="async">HiveMind</a>
                     <a href="https://veehivedocs.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-hivedocs-32.png" alt="" loading="lazy" decoding="async">HiveDocs</a>
+                    <a href="/#hivefront"><img src="/favicon-hivefront-32.png" alt="" loading="lazy" decoding="async">HiveFront</a>
             </div>
 
             <div class="vh-footer__col">
@@ -256,7 +260,8 @@
                 { name: 'SnapaPro',       icon: '/favicon-snapapro-32.png' },
                 { name: 'HiveLink',       icon: '/favicon-hivelink-32.png' },
                 { name: 'HiveMind',   icon: '/favicon-mind-32.png' },
-                { name: 'HiveDocs',   icon: '/favicon-hivedocs-32.png' }
+                { name: 'HiveDocs',   icon: '/favicon-hivedocs-32.png' },
+                { name: 'HiveFront',  icon: '/favicon-hivefront-32.png' }
             ];
             /* Built twice so the -50% keyframe loops seamlessly. */
             function build(){

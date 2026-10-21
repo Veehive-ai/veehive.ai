@@ -4,8 +4,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif'],
-                display: ['Satoshi', 'Inter', 'sans-serif'],
+                sans: ['IBM Plex Sans', 'system-ui', 'sans-serif'],
+                display: ['Manrope', 'IBM Plex Sans', 'sans-serif'],
             },
             colors: {
                 brand: {

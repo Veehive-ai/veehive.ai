@@ -13,16 +13,16 @@
 <stop offset="1" stop-color="#991B1B"/>
 </linearGradient>
 <linearGradient id="g1" x1="1" y1="80.9998" x2="661.293" y2="80.9998" gradientUnits="userSpaceOnUse">
-<stop stop-color="#0EA5E9"/>
-<stop offset="1" stop-color="#0369A1"/>
+<stop stop-color="#0D9488"/>
+<stop offset="1" stop-color="#0F766E"/>
 </linearGradient>
 <linearGradient id="g2" x1="1" y1="80.9998" x2="661.293" y2="80.9998" gradientUnits="userSpaceOnUse">
-<stop stop-color="#16A34A"/>
-<stop offset="1" stop-color="#0D6B31"/>
+<stop stop-color="#2C573E"/>
+<stop offset="1" stop-color="#1D3928"/>
 </linearGradient>
 <linearGradient id="g3" x1="1" y1="80.9998" x2="661.293" y2="80.9998" gradientUnits="userSpaceOnUse">
-<stop stop-color="#E8BB30"/>
-<stop offset="1" stop-color="#A07A10"/>
+<stop stop-color="#FFB020"/>
+<stop offset="1" stop-color="#FF7A18"/>
 </linearGradient>
 <linearGradient id="g4" x1="1" y1="80.9998" x2="661.293" y2="80.9998" gradientUnits="userSpaceOnUse">
 <stop stop-color="#2563EB"/>

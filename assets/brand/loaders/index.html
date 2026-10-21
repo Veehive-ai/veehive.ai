@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veehive Loader</title>
+<style>
+  /* ============================================
+     VEEHIVE LOADING SPINNER — CSS ONLY
+     Copy the .veehive-loader styles below
+     into your project's CSS.
+     ============================================ */
+
+  /* Basic smooth spin */
+  .veehive-loader {
+    animation: veehive-spin 1.2s linear infinite;
+  }
+
+  /* Pulse + spin (breathes while rotating) */
+  .veehive-loader-pulse {
+    animation: veehive-spin 1.2s linear infinite,
+               veehive-pulse 2s ease-in-out infinite;
+  }
+
+  /* Slow elegant spin */
+  .veehive-loader-slow {
+    animation: veehive-spin 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  /* Fast urgent spin */
+  .veehive-loader-fast {
+    animation: veehive-spin 0.6s linear infinite;
+  }
+
+  /* Spin with ease (accelerate-decelerate) */
+  .veehive-loader-ease {
+    animation: veehive-spin 1.5s ease-in-out infinite;
+  }
+
+  /* Flip 3D effect */
+  .veehive-loader-flip {
+    animation: veehive-flip 1.5s ease-in-out infinite;
+    perspective: 600px;
+  }
+
+  @keyframes veehive-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  @keyframes veehive-pulse {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    50%      { transform: scale(0.85); opacity: 0.7; }
+  }
+
+  @keyframes veehive-flip {
+    0%   { transform: rotateY(0deg); }
+    50%  { transform: rotateY(180deg); }
+    100% { transform: rotateY(360deg); }
+  }
+
+  /* ============================================
+     DEMO PAGE STYLES (not needed in your app)
+     ============================================ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f8f9fa;
+    color: #333;
+    padding: 40px 20px;
+  }
+  h1 { text-align: center; margin-bottom: 10px; font-size: 24px; }
+  .subtitle { text-align: center; color: #666; margin-bottom: 40px; font-size: 14px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .card img { width: 64px; height: 64px; margin-bottom: 16px; }
+  .card .label { font-size: 13px; font-weight: 600; color: #555; }
+  .card .css-class { font-size: 11px; color: #999; font-family: monospace; margin-top: 4px; }
+
+  .dark-row { margin-top: 40px; }
+  .dark-row .card { background: #1a1a2e; }
+  .dark-row .card .label { color: #ccc; }
+  .dark-row .card .css-class { color: #777; }
+
+  .code-section {
+    max-width: 900px;
+    margin: 50px auto 0;
+    background: #1e1e2e;
+    border-radius: 12px;
+    padding: 24px;
+    color: #cdd6f4;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-x: auto;
+  }
+  .code-section .comment { color: #6c7086; }
+  .code-section .tag { color: #89b4fa; }
+  .code-section .attr { color: #a6e3a1; }
+  .code-section .str { color: #f9e2af; }
+</style>
+</head>
+<body>
+
+<h1>Veehive Loading Spinners</h1>
+<p class="subtitle">6 CSS animation variants — pick any, just add the class to your &lt;img&gt; tag</p>
+
+<div class="grid">
+  <div class="card">
+    <img src="favicon-veehive-192-padded.png" class="veehive-loader" alt="loader">
+    <div class="label">Smooth Spin</div>
+    <div class="css-class">.veehive-loader</div>
+  </div>
+  <div class="card">
+    <img src="favicon-veehive-192-padded.png" class="veehive-loader-pulse" alt="loader">
+    <div class="label">Pulse + Spin</div>
+    <div class="css-class">.veehive-loader-pulse</div>
+  </div>
+  <div class="card">
+    <img src="favicon-veehive-192-padded.png" class="veehive-loader-slow" alt="loader">
+    <div class="label">Slow Elegant</div>
+    <div class="css-class">.veehive-loader-slow</div>
+  </div>
+  <div class="card">
+    <img src="favicon-veehive-192-padded.png" class="veehive-loader-fast" alt="loader">
+    <div class="label">Fast Urgent</div>
+    <div class="css-class">.veehive-loader-fast</div>
+  </div>
+  <div class="card">
+    <img src="favicon-veehive-192-padded.png" class="veehive-loader-ease" alt="loader">
+    <div class="label">Ease In-Out</div>
+    <div class="css-class">.veehive-loader-ease</div>
+  </div>
+  <div class="card">
+    <img src="favicon-veehive-192-padded.png" class="veehive-loader-flip" alt="loader">
+    <div class="label">3D Flip</div>
+    <div class="css-class">.veehive-loader-flip</div>
+  </div>
+</div>
+
+<div class="grid dark-row">
+  <div class="card">
+    <img src="favicon-veehive-192-padded.png" class="veehive-loader" alt="loader">
+    <div class="label">On Dark Background</div>
+    <div class="css-class">Same class, any bg</div>
+  </div>
+  <div class="card">
+    <img src="favicon-veehive-192-padded.png" class="veehive-loader-pulse" alt="loader">
+    <div class="label">Pulse on Dark</div>
+    <div class="css-class">Great for overlays</div>
+  </div>
+</div>
+
+<div class="code-section">
+  <span class="comment">&lt;!-- Usage: just add the class to any img tag --&gt;</span><br>
+  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="str">"favicon-veehive-192-padded.png"</span><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">class</span>=<span class="str">"veehive-loader"</span><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">width</span>=<span class="str">"48"</span><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">alt</span>=<span class="str">"Loading..."</span><span class="tag">&gt;</span><br><br>
+  <span class="comment">/* Or use any product favicon: */</span><br>
+  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="str">"favicon-studio-192-padded.png"</span> <span class="attr">class</span>=<span class="str">"veehive-loader-pulse"</span> <span class="attr">width</span>=<span class="str">"48"</span><span class="tag">&gt;</span><br>
+  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="str">"favicon-snapapro-192-padded.png"</span> <span class="attr">class</span>=<span class="str">"veehive-loader-slow"</span> <span class="attr">width</span>=<span class="str">"48"</span><span class="tag">&gt;</span>
+</div>
+
+</body>
+</html>

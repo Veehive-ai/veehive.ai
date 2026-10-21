@@ -12,7 +12,27 @@ Everything needed to use the Veehive identity correctly. Open
 | `favicons/` | Seven product marks. SVG + 32 / 64 / 192 px PNG each. |
 | `fonts/Manrope/` | Variable font 300–800, with OFL licence. |
 | `fonts/IBMPlexSans/` | Regular, Medium, SemiBold, Bold, with OFL licence. |
+| `loaders/` | The six loading spinners, plus the padded marks they animate. |
 | `guidelines/` | The brand guide. |
+
+## Motion
+
+The mark is radially symmetric, so it rotates about its own centre as the
+loading state. Six CSS-only timings, no JavaScript:
+
+| Class | Timing |
+|---|---|
+| `.veehive-loader` | 1.2s linear — the default |
+| `.veehive-loader-pulse` | spin + breathe |
+| `.veehive-loader-slow` | 2.5s cubic-bezier |
+| `.veehive-loader-fast` | 0.6s linear |
+| `.veehive-loader-ease` | 1.5s ease-in-out |
+| `.veehive-loader-flip` | 1.5s 3D rotateY |
+
+Spin the padded mark, not the plain one — the padding stops the petals
+clipping at the corners. Always pair it with a
+`prefers-reduced-motion: reduce` rule that sets `animation: none`.
+Open `loaders/index.html` to see all six.
 
 ## Palette
 

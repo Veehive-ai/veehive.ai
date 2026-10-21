@@ -13,6 +13,7 @@ Everything needed to use the Veehive identity correctly. Open
 | `fonts/Manrope/` | Variable font 300–800, with OFL licence. |
 | `fonts/IBMPlexSans/` | Regular, Medium, SemiBold, Bold, with OFL licence. |
 | `loaders/` | The six loading spinners, plus the padded marks they animate. |
+| `logo/products/` | A logotype per product, dark and white text. SVG plus PNG at 96 and 192 px tall. |
 | `../business-card/` | Card artwork, front and back, with the print-ready PDF. |
 | `guidelines/` | The brand guide. |
 
@@ -60,6 +61,29 @@ Wordmark is `#334155` on light grounds, `#FFFFFF` on dark.
 - **IBM Plex Sans** — body copy, interface text, long-form.
 
 Both are SIL Open Font License; the licences ship beside the fonts.
+
+## Product logotypes
+
+Each product sets its own name beside the mark in its own colour, on the
+same geometry as Veehive.ai: Manrope ExtraBold, cap height 80.64 on a
+105.32 baseline, the mark at 0.9 scale, and the same gap from mark to
+first letter. The name is never set in another weight and never in the
+product colour — the mark carries the colour, the name stays neutral
+(`#334155` on light, `#FFFFFF` on dark).
+
+| Product | Colour |
+|---|---|
+| Mpliphi | `#2C573E` |
+| SnapaPro | `#DC2626` |
+| HiveStudio | `#7C3AED` |
+| HiveLink | `#2563EB` |
+| HiveMind | `#FFB020` |
+| HiveDocs | `#0D9488` |
+| HiveFront | `#EC4899` |
+| VeehiveLabs | `#E8BB30` |
+
+Every product mark also spins, using the same loader classes — a
+product's own colour carries its loading state.
 
 ## Stationery and merch
 

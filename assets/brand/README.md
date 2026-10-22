@@ -115,11 +115,19 @@ The business card is 3.5 x 2 in at 300 dpi, set in
 `business-card/card.html` — edit the HTML and print to PDF at that size
 with margins off, rather than rebuilding it in a layout tool.
 
+The team's cards come from `business-card/people.json`. Add a person
+there and run `python3 make-cards.py`; it writes the HTML, both faces
+and a print-ready PDF per person into `business-card/cards/`. A person
+with no phone number simply loses that line. Never hand-edit a copy of
+the card for one person — the next design change would miss it.
+
 On cloth there are two placements and only two:
 
 - **Full logotype**, centred on the chest.
 - **Mark alone**, at the left chest (the wearer's left, so image-right on
   a front view), about a hand's width below the shoulder seam.
+- **Mascot**, above a small wordmark on the front, or large and alone on
+  a hoodie back.
 
 White logotype on anything darker than the mid-grey, dark logotype on
 anything lighter. No drop shadow, no outline to rescue a difficult

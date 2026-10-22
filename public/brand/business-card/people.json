@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "sathish-jeyakumar",
+    "name": "Sathish Jeyakumar",
+    "role": "Founder &amp; CEO",
+    "email": "sathish@veehive.ai",
+    "phone": "+971 50 275 3576"
+  },
+  {
+    "slug": "chakir-qatab",
+    "name": "Chakir Qatab",
+    "role": "Head of Technology",
+    "email": "chakir@veehive.ai",
+    "phone": ""
+  },
+  {
+    "slug": "fahim-ak",
+    "name": "Fahim AK",
+    "role": "Head of Engineering",
+    "email": "fahim@veehive.ai",
+    "phone": ""
+  },
+  {
+    "slug": "raheela-taj",
+    "name": "Raheela Taj",
+    "role": "Chief Operations Officer",
+    "email": "raheela@veehive.ai",
+    "phone": ""
+  },
+  {
+    "slug": "nitesh-duraivel",
+    "name": "Nitesh Duraivel",
+    "role": "AI/LLM Engineer",
+    "email": "nitesh@veehive.ai",
+    "phone": ""
+  }
+]

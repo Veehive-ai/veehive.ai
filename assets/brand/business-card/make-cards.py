@@ -9,11 +9,13 @@ that differ between people. Add someone to people.json and re-run.
 Writes cards/<slug>.html, cards/<slug>-front.png, cards/<slug>-back.png and
 cards/<slug>.pdf. A person with no phone simply loses that line.
 """
-import json, os, re, shutil, subprocess, sys
+import json, os, pathlib, re, shutil, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, 'cards')
-CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+# Override with CHROME=... where Chrome lives elsewhere (e.g. Windows).
+CHROME = os.environ.get('CHROME',
+                        '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')
 
 TEMPLATE = open(os.path.join(HERE, 'card.html')).read()
 PEOPLE = json.load(open(os.path.join(HERE, 'people.json')))
@@ -51,7 +53,7 @@ def render(slug, path):
     subprocess.run([CHROME, '--headless', '--disable-gpu', '--hide-scrollbars',
                     '--force-device-scale-factor=2', '--window-size=1170,1380',
                     '--screenshot=' + page, '--virtual-time-budget=7000',
-                    'file://' + path], capture_output=True)
+                    pathlib.Path(path).as_uri()], capture_output=True)
     from PIL import Image
     im = Image.open(page)
     im.crop((120, 120, 2220, 1320)).save(os.path.join(OUT, '%s-front.png' % slug))
@@ -59,7 +61,7 @@ def render(slug, path):
     os.remove(page)
     subprocess.run([CHROME, '--headless', '--disable-gpu', '--no-pdf-header-footer',
                     '--print-to-pdf=' + os.path.join(OUT, '%s.pdf' % slug),
-                    '--virtual-time-budget=9000', 'file://' + path],
+                    '--virtual-time-budget=9000', pathlib.Path(path).as_uri()],
                    capture_output=True)
 
 

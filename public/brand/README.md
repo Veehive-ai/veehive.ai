@@ -115,11 +115,15 @@ The business card is 3.5 x 2 in at 300 dpi, set in
 `business-card/card.html` — edit the HTML and print to PDF at that size
 with margins off, rather than rebuilding it in a layout tool.
 
-The team's cards come from `business-card/people.json`. Add a person
-there and run `python3 make-cards.py`; it writes the HTML, both faces
-and a print-ready PDF per person into `business-card/cards/`. A person
-with no phone number simply loses that line. Never hand-edit a copy of
-the card for one person — the next design change would miss it.
+The team's cards come from `business-card/people.json`:
+
+    python3 make-cards.py && python3 sync-kit.py
+
+The first writes the HTML, both faces and a print-ready PDF per person
+into `business-card/cards/`; the second rebuilds the guide's carousel
+and download chips to match. A person with no phone number simply loses
+that line. Never hand-edit a copy of the card for one person — the next
+design change would miss it.
 
 On cloth there are two placements and only two:
 

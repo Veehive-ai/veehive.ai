@@ -33,5 +33,12 @@
     "role": "AI/LLM Engineer",
     "email": "nitesh@veehive.ai",
     "phone": ""
+  },
+  {
+    "slug": "kelvin-jebastin",
+    "name": "Kelvin Jebastin",
+    "role": "Intern AI/LLM Engineer",
+    "email": "kelvin@veehive.ai",
+    "phone": ""
   }
 ]

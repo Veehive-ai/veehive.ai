@@ -12,6 +12,7 @@ Everything needed to use the Veehive identity correctly. Open
 | `favicons/` | Seven product marks. SVG + 32 / 64 / 192 px PNG each. |
 | `fonts/Manrope/` | Variable font 300–800, with OFL licence. |
 | `fonts/IBMPlexSans/` | Regular, Medium, SemiBold, Bold, with OFL licence. |
+| `fonts/IBMPlexMono/` | Regular and Medium, with OFL licence. |
 | `loaders/` | The six loading spinners, plus the padded marks they animate. |
 | `logo/products/` | A logotype per product, dark and white text. SVG plus PNG at 96 and 192 px tall. |
 | `mascots/` | A bee per product, plus the house bee. 256 px PNG. |
@@ -52,8 +53,10 @@ Open `loaders/index.html` to see all six.
 | HiveFront | `#EC4899` |
 
 The six product colours sit in the mark's six petals, in a fixed
-arrangement. HiveFront's pink is also the logotype accent — the dot over
-the final "i" in Veehive.ai.
+arrangement. HiveFront is the seventh mark but not a seventh app: it is
+the harness the other six run on, so it has a colour and a mark without
+a petal. Its pink is also the logotype accent — the dot over the final
+"i" in Veehive.ai.
 
 Wordmark is `#334155` on light grounds, `#FFFFFF` on dark.
 
@@ -62,6 +65,8 @@ Wordmark is `#334155` on light grounds, `#FFFFFF` on dark.
 - **Manrope ExtraBold (800)** — the logotype and all headings.
   The logotype is set at a tracking of −4.07 per gap.
 - **IBM Plex Sans** — body copy, interface text, long-form.
+- **IBM Plex Mono** — small uppercase labels: eyebrows, captions,
+  hex codes, file paths.
 
 Both are SIL Open Font License; the licences ship beside the fonts.
 

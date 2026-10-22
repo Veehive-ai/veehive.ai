@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Veehive Design System</title>
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://veehive.ai/brand/system/">
+<meta property="og:title" content="Veehive Design System">
+<meta property="og:description" content="The tokens every Veehive interface is built from — colour, type, space, shape, motion and focus — read live from tokens.css.">
+<meta property="og:image" content="https://veehive.ai/brand/og-brand-kit.png?v=1">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- the real thing, not a copy: this page cannot drift from what the products load -->
+<link rel="stylesheet" href="../tokens.css">
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:var(--vh-color-bg);color:var(--vh-color-text);
+     font-family:var(--vh-font-sans);line-height:var(--vh-leading-normal)}
+.wrap{max-width:980px;margin:0 auto;
+      padding-left:max(16px,env(safe-area-inset-left,0px));
+      padding-right:max(16px,env(safe-area-inset-right,0px));
+      padding-block:48px 80px}
+h1,h2,h3{font-family:var(--vh-font-display);margin:0;letter-spacing:-.02em;text-wrap:balance}
+h1{font-size:clamp(28px,5vw,42px);font-weight:var(--vh-weight-extrabold);margin-top:16px}
+h2{font-size:24px;font-weight:var(--vh-weight-extrabold)}
+h3{font-size:15px;font-weight:var(--vh-weight-semibold);margin-bottom:10px}
+p{margin:0}
+.eyebrow{font-family:var(--vh-font-mono);font-size:11px;letter-spacing:.14em;
+         text-transform:uppercase;color:var(--vh-color-text-muted)}
+.lede{color:var(--vh-color-text-muted);margin-top:12px;max-width:62ch;font-size:var(--vh-text-lg)}
+section{padding-block:40px;border-top:1px solid var(--vh-color-border)}
+.sec-h{margin-bottom:20px}
+.sec-h p{color:var(--vh-color-text-muted);max-width:66ch;margin-top:8px;font-size:var(--vh-text-base)}
+
+/* the live-token grid */
+.toks{display:grid;grid-template-columns:repeat(auto-fill,minmax(216px,1fr));gap:10px}
+.tok{border:1px solid var(--vh-color-border);border-radius:var(--vh-radius-md);
+     background:var(--vh-color-surface);overflow:hidden;min-width:0}
+.tok .chip{height:54px;border-bottom:1px solid var(--vh-color-border)}
+.tok .meta{padding:10px 12px;display:flex;flex-direction:column;gap:3px}
+.tok .n{font-family:var(--vh-font-mono);font-size:11.5px;word-break:break-all}
+.tok .v{font-family:var(--vh-font-mono);font-size:11px;color:var(--vh-color-text-muted)}
+.tok .u{font-size:11.5px;color:var(--vh-color-text-muted);line-height:1.4}
+
+/* type specimens */
+.spec{border:1px solid var(--vh-color-border);border-radius:var(--vh-radius-md);
+      background:var(--vh-color-surface);padding:18px 20px;margin-bottom:10px}
+.scale div{display:flex;gap:16px;align-items:baseline;padding:7px 0;
+           border-bottom:1px solid var(--vh-color-border)}
+.scale div:last-child{border-bottom:0}
+.scale .lbl{font-family:var(--vh-font-mono);font-size:11px;color:var(--vh-color-text-muted);
+            min-width:130px;flex:none}
+
+/* space + radius rulers */
+.ruler{display:flex;flex-direction:column;gap:7px}
+.ruler div{display:flex;align-items:center;gap:14px}
+.ruler .bar{height:14px;background:var(--vh-color-brand);border-radius:3px}
+.ruler .lbl{font-family:var(--vh-font-mono);font-size:11px;color:var(--vh-color-text-muted);min-width:150px}
+.radii{display:flex;gap:14px;flex-wrap:wrap}
+.radii div{width:92px;height:68px;border:1px solid var(--vh-color-border);
+           background:var(--vh-color-surface-raised);display:grid;place-items:end center;
+           padding-bottom:7px;font-family:var(--vh-font-mono);font-size:10.5px;
+           color:var(--vh-color-text-muted)}
+
+/* buttons - the first component */
+.btn{font:inherit;font-weight:var(--vh-weight-semibold);font-size:var(--vh-text-sm);
+     padding:10px 18px;border-radius:var(--vh-radius-sm);border:1px solid transparent;
+     cursor:pointer;display:inline-flex;align-items:center;gap:8px;
+     transition:background var(--vh-duration) var(--vh-ease),
+                border-color var(--vh-duration) var(--vh-ease),
+                color var(--vh-duration) var(--vh-ease)}
+.btn:focus-visible{outline:var(--vh-focus-width) solid var(--vh-focus-ring);
+                   outline-offset:var(--vh-focus-offset)}
+.btn--primary{background:var(--vh-color-brand);color:var(--vh-color-cta-text)}
+.btn--primary:hover{background:var(--vh-color-brand-hover)}
+.btn--secondary{background:transparent;color:var(--vh-color-text);
+                border-color:var(--vh-color-border-hover)}
+.btn--secondary:hover{border-color:var(--vh-color-brand)}
+.btn--ghost{background:transparent;color:var(--vh-color-text-muted)}
+.btn--ghost:hover{color:var(--vh-color-text);background:var(--vh-color-surface)}
+.btn--danger{background:var(--vh-color-danger);color:#0F1A20}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn--sm{padding:7px 13px;font-size:var(--vh-text-xs)}
+.btn--lg{padding:13px 24px;font-size:var(--vh-text-base)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.row + .row{margin-top:12px}
+
+/* state messages */
+.note{display:flex;gap:11px;align-items:flex-start;padding:12px 14px;
+      border-radius:var(--vh-radius-sm);font-size:var(--vh-text-sm);margin-bottom:9px}
+.note .dot{width:9px;height:9px;border-radius:50%;flex:none;margin-top:6px}
+.note--success{background:var(--vh-color-success-bg);color:var(--vh-color-success)}
+.note--warning{background:var(--vh-color-warning-bg);color:var(--vh-color-warning)}
+.note--danger{background:var(--vh-color-danger-bg);color:var(--vh-color-danger)}
+.note--info{background:var(--vh-color-info-bg);color:var(--vh-color-info)}
+
+.cp{cursor:pointer;border:0;background:none;padding:0;font:inherit;color:inherit;text-align:left;
+    text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);
+       background:var(--vh-color-text);color:var(--vh-color-bg);font-family:var(--vh-font-mono);
+       font-size:12px;padding:8px 14px;border-radius:9px;opacity:0;pointer-events:none;
+       transition:opacity .18s;z-index:9}
+.toast.on{opacity:1}
+.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:18px}
+code{font-family:var(--vh-font-mono);font-size:12.5px}
+a{color:var(--vh-color-brand)}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+@media(max-width:620px){.rules{grid-template-columns:1fr}}
+.rules div{border:1px solid var(--vh-color-border);border-radius:var(--vh-radius-md);
+           padding:16px 18px;background:var(--vh-color-surface)}
+.rules ul{margin:0;padding-left:17px;display:flex;flex-direction:column;gap:6px}
+.rules li{font-size:var(--vh-text-sm);color:var(--vh-color-text-muted)}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<p class="eyebrow">Veehive &middot; brand</p>
+<h1>Design system</h1>
+<p class="lede">Every value on this page is read from <code>brand/tokens.css</code> as the page loads &mdash; the same file the website and the products link. Change the token and this page changes with it, which is the only way a system like this stays honest.</p>
+<div class="bar">
+  <button class="btn btn--secondary" id="theme">Switch to light</button>
+  <a class="btn btn--ghost" href="../">Back to the brand kit</a>
+</div>
+
+<section>
+  <div class="sec-h"><p class="eyebrow">Using it</p><h2>One line, then never a raw value</h2>
+  <p>Link the stylesheet once and every token is available. The rule that makes it worth doing: no hex codes, pixel sizes or durations written by hand in a product. If a value is missing, add a token rather than an exception.</p></div>
+  <div class="spec"><code>&lt;link rel="stylesheet" href="https://veehive.ai/brand/tokens.css"&gt;</code></div>
+  <div class="rules">
+    <div><h3>Do</h3><ul>
+      <li><code>color: var(--vh-color-text)</code></li>
+      <li><code>padding: var(--vh-space-4)</code></li>
+      <li>Let the theme flip the value; never branch on it yourself.</li>
+      <li>Add a token when one is missing, and say what it is for.</li>
+    </ul></div>
+    <div><h3>Don't</h3><ul>
+      <li><code>color: #FFFFFF</code> &mdash; it will be wrong in one theme.</li>
+      <li>A product colour to mean a state, or a state colour to brand.</li>
+      <li>Removing the focus outline. Replace it with something louder or leave it.</li>
+      <li>New radii, durations or spacing steps invented per screen.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-h"><p class="eyebrow">Colour</p><h2>Ground, brand, state</h2>
+  <p>Swatches below are painted with the token itself, and the value beside each is read back from the stylesheet at load. Flip the theme and watch them move.</p></div>
+  <h3>Ground and text</h3>
+  <div class="toks" id="c-ground"></div>
+  <h3 style="margin-top:24px">Brand</h3>
+  <div class="toks" id="c-brand"></div>
+  <h3 style="margin-top:24px">State</h3>
+  <div class="toks" id="c-state"></div>
+  <div style="margin-top:16px">
+    <div class="note note--success"><span class="dot" style="background:var(--vh-color-success)"></span><span>Saved. Eleven documents indexed.</span></div>
+    <div class="note note--warning"><span class="dot" style="background:var(--vh-color-warning)"></span><span>Two agents are paused and will not pick up work.</span></div>
+    <div class="note note--danger"><span class="dot" style="background:var(--vh-color-danger)"></span><span>The connection to WhatsApp was refused.</span></div>
+    <div class="note note--info"><span class="dot" style="background:var(--vh-color-info)"></span><span>HiveFront runs the six apps on one login.</span></div>
+  </div>
+  <h3 style="margin-top:24px">Product</h3>
+  <div class="toks" id="c-product"></div>
+</section>
+
+<section>
+  <div class="sec-h"><p class="eyebrow">Type</p><h2>Three faces, one scale</h2>
+  <p>Manrope for the logotype and headings, IBM Plex Sans for everything someone reads, IBM Plex Mono for labels, hex codes and paths.</p></div>
+  <div class="spec scale" id="t-scale"></div>
+  <div class="spec scale" id="t-weight"></div>
+</section>
+
+<section>
+  <div class="sec-h"><p class="eyebrow">Space</p><h2>One ladder, no in-between</h2>
+  <p>Every gap, pad and margin comes from this ladder. A value that is not on it is a value nobody can match later.</p></div>
+  <div class="ruler" id="s-ruler"></div>
+</section>
+
+<section>
+  <div class="sec-h"><p class="eyebrow">Shape &amp; depth</p><h2>Three radii, two shadows</h2></div>
+  <div class="radii" id="r-radii"></div>
+  <div class="toks" id="r-shadow" style="margin-top:16px"></div>
+</section>
+
+<section>
+  <div class="sec-h"><p class="eyebrow">Motion &amp; focus</p><h2>One curve, one ring</h2>
+  <p>A single duration and easing, so nothing in the hive moves at its own speed. The focus ring is not decoration: it is how anyone navigating by keyboard knows where they are. Tab through the buttons below to see it.</p></div>
+  <div class="toks" id="m-tokens"></div>
+</section>
+
+<section>
+  <div class="sec-h"><p class="eyebrow">Components</p><h2>Buttons</h2>
+  <p>Built only from the tokens above. Four intents, three sizes, and every one shows the focus ring when reached by keyboard.</p></div>
+  <div class="row">
+    <button class="btn btn--primary">Book a demo</button>
+    <button class="btn btn--secondary">See how it works</button>
+    <button class="btn btn--ghost">Cancel</button>
+    <button class="btn btn--danger">Delete agent</button>
+  </div>
+  <div class="row">
+    <button class="btn btn--primary btn--sm">Small</button>
+    <button class="btn btn--primary">Default</button>
+    <button class="btn btn--primary btn--lg">Large</button>
+    <button class="btn btn--primary" disabled>Disabled</button>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var toast = document.createElement('div');
+  toast.className = 'toast';
+  document.body.appendChild(toast);
+  var t;
+  function say(m) {
+    toast.textContent = m; toast.classList.add('on');
+    clearTimeout(t); t = setTimeout(function () { toast.classList.remove('on'); }, 1700);
+  }
+  function copy(v) {
+    var ta = document.createElement('textarea');
+    ta.value = v; ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:-9999px;opacity:0';
+    document.body.appendChild(ta); ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    return ok;
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('.cp');
+    if (!b) return;
+    var v = b.dataset.copy || b.textContent.trim();
+    say(copy(v) ? v + ' copied' : 'Select it and copy');
+  });
+
+  function val(name) {
+    return getComputedStyle(root).getPropertyValue(name).trim();
+  }
+
+  // every swatch paints itself with the token and prints what the sheet says
+  function colours(id, list) {
+    var host = document.getElementById(id);
+    if (!host) return;
+    host.innerHTML = list.map(function (t) {
+      return '<div class="tok">'
+        + '<span class="chip" style="background:var(' + t[0] + ')"></span>'
+        + '<span class="meta">'
+        + '<button class="cp n" data-copy="var(' + t[0] + ')">' + t[0] + '</button>'
+        + '<span class="v" data-live="' + t[0] + '"></span>'
+        + '<span class="u">' + t[1] + '</span>'
+        + '</span></div>';
+    }).join('');
+  }
+
+  colours('c-ground', [
+    ['--vh-color-bg', 'The page itself.'],
+    ['--vh-color-surface', 'A panel lifted off the page.'],
+    ['--vh-color-surface-raised', 'A panel on a panel.'],
+    ['--vh-color-text', 'Anything someone reads.'],
+    ['--vh-color-text-muted', 'Secondary, captions, labels.'],
+    ['--vh-color-border', 'Hairlines and dividers.'],
+    ['--vh-color-border-hover', 'The same line, under a pointer.']
+  ]);
+  colours('c-brand', [
+    ['--vh-color-brand', 'Primary action, links.'],
+    ['--vh-color-brand-hover', 'That action, under a pointer.'],
+    ['--vh-color-accent', 'The violet end of the headline gradient.'],
+    ['--vh-color-cta-text', 'Text on a brand fill.']
+  ]);
+  colours('c-state', [
+    ['--vh-color-success', 'It worked.'],
+    ['--vh-color-warning', 'It will bite later.'],
+    ['--vh-color-danger', 'It failed, or it destroys something.'],
+    ['--vh-color-info', 'Worth knowing, nothing is wrong.']
+  ]);
+  colours('c-product', [
+    ['--vh-color-mpliphi', 'Mpliphi'], ['--vh-color-snapapro', 'SnapaPro'],
+    ['--vh-color-hivestudio', 'HiveStudio'], ['--vh-color-hivelink', 'HiveLink'],
+    ['--vh-color-hivemind', 'HiveMind'], ['--vh-color-hivedocs', 'HiveDocs'],
+    ['--vh-color-hivefront', 'HiveFront']
+  ]);
+  colours('r-shadow', [
+    ['--vh-shadow-sm', 'A card at rest.'],
+    ['--vh-shadow-md', 'A card lifted, or a menu.']
+  ]);
+  // shadows are not fills: show them cast, not painted
+  ['--vh-shadow-sm', '--vh-shadow-md'].forEach(function (n) {
+    var chip = document.querySelector('[data-live="' + n + '"]');
+    if (!chip) return;
+    var box = chip.closest('.tok').querySelector('.chip');
+    box.style.background = 'var(--vh-color-surface-raised)';
+    box.style.boxShadow = 'var(' + n + ')';
+  });
+
+  var SCALE = ['xs', 'sm', 'base', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl'];
+  document.getElementById('t-scale').innerHTML = SCALE.map(function (s) {
+    var n = '--vh-text-' + s;
+    return '<div><span class="lbl">' + n + '</span>'
+      + '<span style="font-size:var(' + n + ');font-family:var(--vh-font-display);'
+      + 'font-weight:var(--vh-weight-extrabold)">Power your business</span>'
+      + '<span class="lbl" data-live="' + n + '" style="min-width:0"></span></div>';
+  }).join('');
+
+  var WEIGHTS = [['regular', 'IBM Plex Sans carries body copy'],
+                 ['medium', 'Medium, for emphasis in running text'],
+                 ['semibold', 'Semibold, for buttons and labels'],
+                 ['bold', 'Bold, where Sans needs to shout'],
+                 ['extrabold', 'Manrope ExtraBold sets every heading']];
+  document.getElementById('t-weight').innerHTML = WEIGHTS.map(function (w) {
+    var n = '--vh-weight-' + w[0];
+    var fam = w[0] === 'extrabold' ? '--vh-font-display' : '--vh-font-sans';
+    return '<div><span class="lbl">' + n + '</span>'
+      + '<span style="font-weight:var(' + n + ');font-family:var(' + fam + ');font-size:16px">'
+      + w[1] + '</span>'
+      + '<span class="lbl" data-live="' + n + '" style="min-width:0"></span></div>';
+  }).join('');
+
+  var STEPS = [1, 2, 3, 4, 5, 6, 8, 10, 12, 16];
+  document.getElementById('s-ruler').innerHTML = STEPS.map(function (s) {
+    var n = '--vh-space-' + s;
+    return '<div><span class="lbl">' + n + '</span>'
+      + '<span class="bar" style="width:var(' + n + ')"></span>'
+      + '<span class="lbl" data-live="' + n + '" style="min-width:0"></span></div>';
+  }).join('');
+
+  document.getElementById('r-radii').innerHTML = ['sm', 'md', 'lg'].map(function (r) {
+    var n = '--vh-radius-' + r;
+    return '<div style="border-radius:var(' + n + ')">' + n.replace('--vh-radius-', '') + '</div>';
+  }).join('');
+
+  colours('m-tokens', [
+    ['--vh-duration', 'How long anything takes.'],
+    ['--vh-ease', 'The curve everything moves on.'],
+    ['--vh-focus-ring', 'The ring, on :focus-visible.'],
+    ['--vh-focus-width', 'How thick.'],
+    ['--vh-focus-offset', 'How far off the edge.']
+  ]);
+  // these four are not colours; blank the swatch rather than paint a lie
+  ['--vh-duration', '--vh-ease', '--vh-focus-width', '--vh-focus-offset'].forEach(function (n) {
+    var el = document.querySelector('[data-live="' + n + '"]');
+    if (el) el.closest('.tok').querySelector('.chip').style.display = 'none';
+  });
+
+  function refresh() {
+    [].forEach.call(document.querySelectorAll('[data-live]'), function (el) {
+      el.textContent = val(el.dataset.live) || '—';
+    });
+  }
+  refresh();
+
+  var btn = document.getElementById('theme');
+  btn.addEventListener('click', function () {
+    root.classList.toggle('light');
+    btn.textContent = root.classList.contains('light') ? 'Switch to dark' : 'Switch to light';
+    refresh();   // the values change with the theme, so re-read them
+  });
+})();
+</script>
+</body>
+</html>

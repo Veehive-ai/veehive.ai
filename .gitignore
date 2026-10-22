@@ -14,3 +14,7 @@ node_modules/
 # Playwright
 test-results/
 playwright-report/
+
+# scratch files that keep getting swept in by `git add -A`
+assets/favicons/_tmp_*
+assets/favicons/veehive-loaders.zip

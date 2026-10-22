@@ -3,6 +3,32 @@
 Everything needed to use the Veehive identity correctly. Open
 `guidelines/veehive-brand-kit.html` in a browser for the full guide.
 
+## Brand architecture
+
+One company, two ways to buy.
+
+- **Veehive Tech FZ-LLC** — the legal entity, for contracts and invoices.
+  Not a brand for slides.
+- **Veehive.ai** — the products. Buy and deploy the agentic apps.
+- **Veehive Labs** — the services. Custom work that belongs to the client,
+  and the training to run it. `veehivelabs.com`
+- **HiveFront** — the harness: one interface the six apps run on. It has a
+  mark and a colour but is not a seventh app, which is why the mark has six
+  petals and the kit has seven product marks.
+- **The six apps** — Mpliphi, SnapaPro, HiveStudio, HiveLink, HiveMind,
+  HiveDocs.
+
+### Writing the names
+
+| Correct | Not |
+|---|---|
+| Veehive.ai | VeeHive.ai, Veehive AI |
+| Veehive Labs | VeehiveLabs, Veehive labs |
+| Veehive Tech FZ-LLC | Veehive Tech LLC |
+| Mpliphi | mpliphi, MPliphi |
+| HiveStudio | Hive Studio, Veehive Studio |
+| HiveFront | Hive Front, Hivefront |
+
 ## Folders
 
 | Path | Contents |

@@ -3,6 +3,32 @@
 Everything needed to use the Veehive identity correctly. Open
 `guidelines/veehive-brand-kit.html` in a browser for the full guide.
 
+## Messaging
+
+The lines the site and card already carry, pinned so they stop drifting.
+
+- **The noun** — agentic apps. Not "AI products", not "AI agents".
+- **The line** — Power your business with bespoke agentic apps.
+- **The shape** — Six agentic apps. One harness.
+- **The paragraph** — Six agentic apps — for support, content, projects,
+  frontline, campaigns and documents — each one shaped around how your
+  business already runs. Deploy one, or put the whole hive to work.
+
+One line per app:
+
+| App | Line |
+|---|---|
+| Mpliphi | Amplify your productivity. Not headcount. |
+| SnapaPro | Projects across a global team, finally on track. |
+| HiveStudio | Scale your content without losing your creativity. |
+| HiveLink | Your frontline team, finally connected. |
+| HiveMind | Launch campaigns like a team of fifty. |
+| HiveDocs | Your paperwork, finally searchable. |
+
+Don't say: AI products, AI agents as the headline noun, solutions,
+platform, cutting-edge, revolutionary. Don't claim replacing people,
+seven apps, or any certification beyond Dubai AI Seal Tier E.
+
 ## Brand architecture
 
 One company, two ways to buy.

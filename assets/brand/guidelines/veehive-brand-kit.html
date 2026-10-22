@@ -279,6 +279,28 @@ padding:11px 8px;display:flex;flex-direction:column;align-items:center;gap:7px;t
 color:var(--fg-3);font-weight:500;white-space:nowrap}
 .naming td.wrong{color:var(--fg-3);text-decoration:line-through}
 .naming td.right{font-weight:600}
+
+/* messaging */
+.say{border:1px solid var(--line);border-radius:12px;background:var(--surface);
+padding:18px 20px;display:flex;flex-direction:column;gap:7px;min-width:0}
+.say + .say{margin-top:12px}
+.say .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3)}
+.say .v{font-family:var(--display);font-weight:800;font-size:23px;letter-spacing:-.02em;line-height:1.25}
+.say .v--sm{font-size:17px;font-weight:600;font-family:var(--body);letter-spacing:0;line-height:1.5;color:var(--fg)}
+.say .why{font-size:13px;color:var(--fg-3);line-height:1.5}
+.say .cp{font:inherit;color:inherit;text-align:left}
+.lines{width:100%;border-collapse:collapse;font-size:13.5px}
+.lines th,.lines td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+.lines th{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--fg-3);font-weight:500;white-space:nowrap}
+.lines td.p{font-weight:600;white-space:nowrap}
+.lines td.l{color:var(--fg-2)}
+.nope{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media(max-width:620px){.nope{grid-template-columns:1fr}}
+.nope div{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--surface);min-width:0}
+.nope h3{font-size:14px;font-weight:700;margin-bottom:9px}
+.nope ul{margin:0;padding-left:17px;display:flex;flex-direction:column;gap:6px}
+.nope li{font-size:13.5px;color:var(--fg-2)}
 </style>
 <div class="wrap">
 <header>
@@ -316,6 +338,36 @@ color:var(--fg-3);font-weight:500;white-space:nowrap}
     <thead><tr><th>Correct</th><th>Not</th></tr></thead>
     <tbody><tr><td class="right">Veehive.ai</td><td class="wrong">VeeHive.ai, Veehive AI, veehive.ai in prose</td></tr><tr><td class="right">Veehive Labs</td><td class="wrong">VeehiveLabs, Veehive labs</td></tr><tr><td class="right">Veehive Tech FZ-LLC</td><td class="wrong">Veehive Tech LLC, Veehive FZ LLC</td></tr><tr><td class="right">Mpliphi</td><td class="wrong">mpliphi, MPliphi</td></tr><tr><td class="right">HiveStudio</td><td class="wrong">Hive Studio, Veehive Studio</td></tr><tr><td class="right">HiveFront</td><td class="wrong">Hive Front, Hivefront</td></tr></tbody>
   </table></div>
+</section>
+
+<section>
+  <div class="sec-h"><p class="eyebrow">Messaging</p><h2>What we say</h2>
+  <p>Not new writing &mdash; the lines the site and the card already carry, pinned so they stop drifting. Veehive currently describes itself three ways across four surfaces: <em>agentic apps</em> on the site and the card, <em>AI products</em> in the link preview, <em>AI agents</em> in the email signature. One of them has to win. Click any line to copy it.</p></div>
+
+  <div class="say"><span class="k">The noun</span><button class="cp v" data-copy="agentic apps">agentic apps</button><span class="why">On the site, the card and the CTA already. Specific where &ldquo;AI products&rdquo; could be anyone, and it names what someone buys rather than what is inside it.</span></div>
+  <div class="say"><span class="k">The line</span><button class="cp v" data-copy="Power your business with bespoke agentic apps.">Power your business with bespoke agentic apps.</button><span class="why">The homepage h1, the card tagline and the link-preview title. Three surfaces already agree &mdash; this is the one that has earned it.</span></div>
+  <div class="say"><span class="k">The shape</span><button class="cp v" data-copy="Six agentic apps. One harness.">Six agentic apps. One harness.</button><span class="why">From the back of the card. The shortest true statement of the architecture, and it heads off the six-versus-seven question before it is asked.</span></div>
+  <div class="say"><span class="k">The paragraph</span><button class="cp v v--sm" data-copy="Six agentic apps — for support, content, projects, frontline, campaigns and documents — each one shaped around how your business already runs. Deploy one, or put the whole hive to work.">Six agentic apps — for support, content, projects, frontline, campaigns and documents — each one shaped around how your business already runs. Deploy one, or put the whole hive to work.</button><span class="why">For bios, directories and link previews. Lifted from the homepage subhead, trimmed of &ldquo;Meet your hive&rdquo;, which only works with the page around it.</span></div>
+
+  <p class="eyebrow" style="margin-top:34px">One line per app</p>
+  <p style="color:var(--fg-2);max-width:62ch;font-size:15px;margin:6px 0 10px">Already on the site, and already good. Use them as they are rather than writing a fresh one for every deck.</p>
+  <div class="tw"><table class="lines"><tbody><tr><td class="p">Mpliphi</td><td class="l"><button class="cp" data-copy="Amplify your productivity. Not headcount.">Amplify your productivity. Not headcount.</button></td></tr><tr><td class="p">SnapaPro</td><td class="l"><button class="cp" data-copy="Projects across a global team, finally on track.">Projects across a global team, finally on track.</button></td></tr><tr><td class="p">HiveStudio</td><td class="l"><button class="cp" data-copy="Scale your content without losing your creativity.">Scale your content without losing your creativity.</button></td></tr><tr><td class="p">HiveLink</td><td class="l"><button class="cp" data-copy="Your frontline team, finally connected.">Your frontline team, finally connected.</button></td></tr><tr><td class="p">HiveMind</td><td class="l"><button class="cp" data-copy="Launch campaigns like a team of fifty.">Launch campaigns like a team of fifty.</button></td></tr><tr><td class="p">HiveDocs</td><td class="l"><button class="cp" data-copy="Your paperwork, finally searchable.">Your paperwork, finally searchable.</button></td></tr></tbody></table></div>
+
+  <p class="eyebrow" style="margin-top:34px">What we don&rsquo;t say</p>
+  <div class="nope">
+    <div><h3>Not these words</h3><ul>
+      <li><strong>AI products</strong> &mdash; true of anyone. Agentic apps is ours.</li>
+      <li><strong>AI agents</strong> as the headline noun &mdash; it describes the parts, not what someone buys.</li>
+      <li><strong>Solutions</strong>, <strong>platform</strong>, <strong>cutting-edge</strong>, <strong>revolutionary</strong>.</li>
+      <li><strong>Veehive AI</strong> or <strong>VeeHive</strong> &mdash; see the naming table.</li>
+    </ul></div>
+    <div><h3>Not these claims</h3><ul>
+      <li>Replacing people. The apps are shaped around how a business already runs.</li>
+      <li>Seven apps. Six apps and a harness.</li>
+      <li>Anything about model providers or benchmarks &mdash; we sell the outcome.</li>
+      <li>Certification beyond what we hold: Dubai AI Seal, Tier&nbsp;E.</li>
+    </ul></div>
+  </div>
 </section>
 
 <section>

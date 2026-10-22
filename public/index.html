@@ -933,6 +933,49 @@
             .workforce-card:hover { transform: none; }
         }
 
+        /* Sats, the HiveFront bee, is the harness the other six run on, so he
+           sits above the grid with a wire dropping into every card. It is a
+           stem to a rail to six drops rather than a six-way fan: the drops
+           reuse the grid's own columns and gap, so they stay on the cards'
+           centres at any width without measuring anything. */
+        .wf-hub { display: flex; justify-content: center; }
+        .wf-hub .workforce-card { width: min(320px, 100%); padding: 36px 24px; }
+        .wf-wire {
+            position: relative; height: 76px;
+            --wire: 59,91,255;
+            filter: drop-shadow(0 0 6px rgba(var(--wire),0.45));
+        }
+        .wf-wire__stem, .wf-wire__node, .wf-wire__rail { position: absolute; display: block; }
+        .wf-wire__stem {
+            left: 50%; top: 0; width: 2px; height: 38px; transform: translateX(-50%);
+            background: linear-gradient(180deg, #EC4899, rgb(var(--wire)));
+        }
+        .wf-wire__node {
+            left: 50%; top: 38px; width: 9px; height: 9px; margin: -4px 0 0 -4px;
+            border-radius: 50%; background: rgb(var(--wire));
+        }
+        .wf-wire__rail {
+            left: 0; right: 0; top: 37px; height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(var(--wire),0.55) 10%,
+                        rgba(var(--wire),0.8) 50%, rgba(var(--wire),0.55) 90%, transparent);
+        }
+        .wf-wire__drops {
+            position: absolute; left: 0; right: 0; top: 38px; bottom: 0;
+            display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 20px;
+        }
+        .wf-wire__drops span {
+            justify-self: center; width: 2px; height: 100%;
+            background: linear-gradient(180deg, rgba(var(--wire),0.8), rgba(var(--wire),0.3));
+        }
+        html.light .wf-wire { filter: drop-shadow(0 0 5px rgba(var(--wire),0.3)); }
+        /* Below 1100px the grid wraps to two rows, so a rail would point at
+           nothing. The stem alone still reads as "everything hangs off Sats". */
+        @media (max-width: 1100px) {
+            .wf-wire { height: 40px; }
+            .wf-wire__stem { height: 100%; }
+            .wf-wire__node, .wf-wire__rail, .wf-wire__drops { display: none; }
+        }
+
         /* HiveFront: on the page, but deliberately quiet. It sits low, past
            every product showcase, as one collapsed row rather than a section
            of its own - no nav entry, no rail dot, no footer listing. Whoever
@@ -2875,7 +2918,27 @@
             <div class="reveal text-center mb-12">
                 <p class="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#3B5BFF]/70 mb-4">The Team</p>
                 <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Meet the <span class="font-display italic text-gradient">Agentic Workforce.</span></h2>
-                <p class="mt-4 text-base text-white/45 max-w-xl mx-auto leading-relaxed">Six specialized AI agents, one coordinated team. Each with a name, a role, and a job they do around the clock.</p>
+                <p class="mt-4 text-base text-white/45 max-w-xl mx-auto leading-relaxed">Six specialized AI agents, one coordinated team &mdash; and Sats, the harness every one of them runs on.</p>
+            </div>
+
+            <div class="reveal wf-hub">
+                <div class="workforce-card" style="--wf:#EC4899">
+                    <div class="workforce-badge">
+                        <div class="workforce-badge__inner">
+                            <img src="/agents/bee-front.png?v=1" alt="Sats, the HiveFront bee, with pink wings" width="256" height="256" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <div class="workforce-name">Sats</div>
+                    <div class="workforce-product">HiveFront</div>
+                    <div class="workforce-role">The harness &mdash; every agent runs on it</div>
+                </div>
+            </div>
+
+            <div class="wf-wire" aria-hidden="true">
+                <span class="wf-wire__stem"></span>
+                <span class="wf-wire__rail"></span>
+                <span class="wf-wire__node"></span>
+                <div class="wf-wire__drops"><span></span><span></span><span></span><span></span><span></span><span></span></div>
             </div>
 
             <div class="reveal workforce-grid">

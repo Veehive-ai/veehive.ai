@@ -883,30 +883,25 @@
             grid-template-columns: repeat(6, minmax(0, 1fr));
             gap: 20px;
         }
-        @media (max-width: 1100px) { .workforce-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-        @media (max-width: 620px)  { .workforce-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (max-width: 1100px) { .workforce-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 48px; } }
+        @media (max-width: 620px)  { .workforce-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 44px; } }
         .workforce-card {
-            padding: 56px 16px;
-            border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.08);
-            background: rgba(255,255,255,0.02);
+            padding: 0 8px 8px;
             text-align: center;
-            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 4px;
         }
-        html.light .workforce-card { border-color: rgba(15,26,32,0.08); background: rgba(15,26,32,0.02); }
-        .workforce-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.16); background: rgba(255,255,255,0.04); box-shadow: 0 12px 30px -12px rgba(0,0,0,0.4); }
-        html.light .workforce-card:hover { border-color: rgba(15,26,32,0.16); background: rgba(15,26,32,0.04); box-shadow: 0 12px 30px -12px rgba(15,26,32,0.12); }
+        .workforce-card:hover { transform: translateY(-4px); }
         /* Each agent's bee sits in a cell — the family's tilted hex — ringed in
            the product accent. The ring is a second clipped layer rather than a
            border, which the clip would shear, so its thickness is the inner
            layer's scale. --wf is the only knob: it sets the ring, the tint and
            the bee's irises. */
         .workforce-badge {
-            width: 96px; height: 96px; margin-bottom: 22px;
+            width: 96px; height: 96px; margin-bottom: 16px;
             clip-path: url(#chipShape);
             background: var(--wf);
             color: var(--wf);
@@ -940,7 +935,7 @@
            drops sit on the card centres and the rail stops dead on the outer
            two, at any width, with nothing measured and no JavaScript. */
         .wf-hub { display: flex; justify-content: center; }
-        .wf-hub .workforce-card { width: min(320px, 100%); padding: 36px 24px; }
+        .wf-hub .workforce-card { width: min(320px, 100%); padding: 0 24px; }
         .wf-wire {
             position: relative; height: 84px;
             --wire: 59,91,255;
@@ -1066,10 +1061,13 @@
         }
         /* Below 1100px the grid wraps to two rows, so a rail would point at
            nothing. The stem alone still reads as "everything hangs off Sats". */
+        /* Below 1100px the cards wrap to two rows. With the frames gone the
+           first row starts at the cells, so a stem would run straight into
+           whichever agent sits in the middle column. Drop the wire and let
+           the spacing carry it. */
         @media (max-width: 1100px) {
-            .wf-wire { height: 40px; }
-            .wf-wire__stem { height: 100%; }
-            .wf-wire__node, .wf-wire__grid { display: none; }
+            .wf-wire { display: none; }
+            .wf-hub + .wf-wire + .workforce-grid { margin-top: 56px; }
         }
         @media (prefers-reduced-motion: reduce) {
             .wf-wire__stem, .wf-wire__node, .wf-wire__rail, .wf-wire__drop {

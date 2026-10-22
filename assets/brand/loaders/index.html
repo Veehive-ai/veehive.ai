@@ -110,9 +110,19 @@
   .code-section .tag { color: #89b4fa; }
   .code-section .attr { color: #a6e3a1; }
   .code-section .str { color: #f9e2af; }
+
+.vh-nav{display:flex;gap:4px;flex-wrap:wrap;align-items:center;
+  margin:0 0 26px;padding:0 0 14px;border-bottom:1px solid rgba(128,128,128,.22)}
+.vh-nav a{font-family:ui-monospace,'IBM Plex Mono',monospace;font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
+  padding:6px 11px;border-radius:7px;color:inherit;opacity:.55}
+.vh-nav a:hover{opacity:1;background:rgba(128,128,128,.12)}
+.vh-nav a[aria-current="page"]{opacity:1;background:rgba(128,128,128,.16);font-weight:600}
 </style>
 </head>
 <body>
+<nav class="vh-nav"><a href="https://veehive.ai/brand/" aria-current="page">Brand kit</a><a href="https://veehive.ai/brand/system/">Design system</a><a href="https://veehive.ai/sales/">Sales kit</a></nav>
+
 
 <h1>Veehive Loading Spinners</h1>
 <p class="subtitle">6 CSS animation variants — pick any, just add the class to your &lt;img&gt; tag</p>

@@ -90,10 +90,20 @@ code{font-family:var(--vh-font-mono);font-size:12.5px}
 .faq .q{font-weight:var(--vh-weight-semibold);font-size:var(--vh-text-sm)}
 .faq .a{color:var(--vh-color-text-muted);font-size:13.5px;margin-top:5px;line-height:1.55}
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
+
+.vh-nav{display:flex;gap:4px;flex-wrap:wrap;align-items:center;
+  margin:0 0 26px;padding:0 0 14px;border-bottom:1px solid rgba(128,128,128,.22)}
+.vh-nav a{font-family:ui-monospace,'IBM Plex Mono',monospace;font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
+  padding:6px 11px;border-radius:7px;color:inherit;opacity:.55}
+.vh-nav a:hover{opacity:1;background:rgba(128,128,128,.12)}
+.vh-nav a[aria-current="page"]{opacity:1;background:rgba(128,128,128,.16);font-weight:600}
 </style>
 </head>
 <body>
 <div class="wrap">
+
+<nav class="vh-nav"><a href="/brand/">Brand kit</a><a href="/brand/system/">Design system</a><a href="/sales/" aria-current="page">Sales kit</a></nav>
 
 <p class="eyebrow">Veehive &middot; internal</p>
 <h1>Sales kit</h1>

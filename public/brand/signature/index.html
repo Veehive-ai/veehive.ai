@@ -47,10 +47,20 @@ ol{margin:10px 0 0;padding-left:20px;color:var(--fg-2);font-size:15px;display:fl
 .note{color:var(--fg-3);font-size:13px;margin-top:12px}
 code{font-family:var(--mono);font-size:12.5px}
 a{color:inherit}
+
+.vh-nav{display:flex;gap:4px;flex-wrap:wrap;align-items:center;
+  margin:0 0 26px;padding:0 0 14px;border-bottom:1px solid rgba(128,128,128,.22)}
+.vh-nav a{font-family:ui-monospace,'IBM Plex Mono',monospace;font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
+  padding:6px 11px;border-radius:7px;color:inherit;opacity:.55}
+.vh-nav a:hover{opacity:1;background:rgba(128,128,128,.12)}
+.vh-nav a[aria-current="page"]{opacity:1;background:rgba(128,128,128,.16);font-weight:600}
 </style>
 </head>
 <body>
 <div class="wrap">
+
+<nav class="vh-nav"><a href="/brand/" aria-current="page">Brand kit</a><a href="/brand/system/">Design system</a><a href="/sales/">Sales kit</a></nav>
 
 <p class="eyebrow">Veehive &middot; brand kit</p>
 <h1>Email signature</h1>

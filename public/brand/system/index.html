@@ -119,10 +119,20 @@ a{color:var(--vh-color-brand)}
 .rules ul{margin:0;padding-left:17px;display:flex;flex-direction:column;gap:6px}
 .rules li{font-size:var(--vh-text-sm);color:var(--vh-color-text-muted)}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+
+.vh-nav{display:flex;gap:4px;flex-wrap:wrap;align-items:center;
+  margin:0 0 26px;padding:0 0 14px;border-bottom:1px solid rgba(128,128,128,.22)}
+.vh-nav a{font-family:ui-monospace,'IBM Plex Mono',monospace;font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
+  padding:6px 11px;border-radius:7px;color:inherit;opacity:.55}
+.vh-nav a:hover{opacity:1;background:rgba(128,128,128,.12)}
+.vh-nav a[aria-current="page"]{opacity:1;background:rgba(128,128,128,.16);font-weight:600}
 </style>
 </head>
 <body>
 <div class="wrap">
+
+<nav class="vh-nav"><a href="/brand/">Brand kit</a><a href="/brand/system/" aria-current="page">Design system</a><a href="/sales/">Sales kit</a></nav>
 
 <p class="eyebrow">Veehive &middot; brand</p>
 <h1>Design system</h1>

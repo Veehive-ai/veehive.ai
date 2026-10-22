@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Veehive Sales Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/brand/tokens.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:var(--vh-color-bg);color:var(--vh-color-text);
+     font-family:var(--vh-font-sans);line-height:var(--vh-leading-normal)}
+.wrap{max-width:980px;margin:0 auto;
+      padding-left:max(16px,env(safe-area-inset-left,0px));
+      padding-right:max(16px,env(safe-area-inset-right,0px));
+      padding-block:48px 80px}
+h1,h2,h3{font-family:var(--vh-font-display);margin:0;letter-spacing:-.02em;text-wrap:balance}
+h1{font-size:clamp(28px,5vw,42px);font-weight:var(--vh-weight-extrabold);margin-top:16px}
+h2{font-size:24px;font-weight:var(--vh-weight-extrabold)}
+h3{font-size:14.5px;font-weight:var(--vh-weight-semibold)}
+p{margin:0}
+.eyebrow{font-family:var(--vh-font-mono);font-size:11px;letter-spacing:.14em;
+         text-transform:uppercase;color:var(--vh-color-text-muted)}
+.lede{color:var(--vh-color-text-muted);margin-top:12px;max-width:62ch;font-size:var(--vh-text-lg)}
+section{padding-block:38px;border-top:1px solid var(--vh-color-border)}
+.sec-h{margin-bottom:18px}
+.sec-h p{color:var(--vh-color-text-muted);max-width:66ch;margin-top:8px}
+
+.card{border:1px solid var(--vh-color-border);border-radius:var(--vh-radius-md);
+      background:var(--vh-color-surface);padding:16px 18px;min-width:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:760px){.grid2,.grid3{grid-template-columns:1fr}}
+
+/* the pitch: copyable lines */
+.say{border:1px solid var(--vh-color-border);border-radius:var(--vh-radius-md);
+     background:var(--vh-color-surface);padding:16px 18px;margin-bottom:10px}
+.say .k{font-family:var(--vh-font-mono);font-size:10.5px;letter-spacing:.1em;
+        text-transform:uppercase;color:var(--vh-color-text-muted);display:block;margin-bottom:6px}
+.say .v{font-family:var(--vh-font-display);font-weight:var(--vh-weight-extrabold);
+        font-size:21px;letter-spacing:-.02em;line-height:1.3}
+.say .v--sm{font-family:var(--vh-font-sans);font-weight:400;font-size:15.5px;
+            letter-spacing:0;line-height:1.55}
+
+table{width:100%;border-collapse:collapse;font-size:var(--vh-text-sm)}
+.tw{overflow-x:auto}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--vh-color-border);vertical-align:top}
+th{font-family:var(--vh-font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+   color:var(--vh-color-text-muted);font-weight:500;white-space:nowrap}
+td.p{font-weight:var(--vh-weight-semibold);white-space:nowrap}
+
+/* case studies, rendered from the live json */
+.cs{border:1px solid var(--vh-color-border);border-radius:var(--vh-radius-md);
+    background:var(--vh-color-surface);padding:16px 18px;display:flex;flex-direction:column;gap:7px;min-width:0}
+.cs .who{font-family:var(--vh-font-display);font-weight:var(--vh-weight-extrabold);font-size:17px}
+.cs .meta{font-family:var(--vh-font-mono);font-size:10.5px;letter-spacing:.08em;
+          text-transform:uppercase;color:var(--vh-color-text-muted)}
+.cs .head{font-size:var(--vh-text-sm);font-weight:var(--vh-weight-semibold)}
+.cs .out{font-size:13.5px;color:var(--vh-color-text-muted);line-height:1.5}
+.pill{display:inline-block;padding:2px 8px;border-radius:99px;font-family:var(--vh-font-mono);
+      font-size:10px;letter-spacing:.06em;text-transform:uppercase}
+
+.dl{display:inline-flex;gap:6px;align-items:center;font-family:var(--vh-font-mono);font-size:10.5px;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--vh-color-text-muted);text-decoration:none;
+    border:1px solid var(--vh-color-border);border-radius:7px;padding:5px 9px;white-space:nowrap}
+.dl:hover{color:var(--vh-color-text);border-color:var(--vh-color-border-hover)}
+.dl-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+
+.cp{cursor:pointer;border:0;background:none;padding:0;font:inherit;color:inherit;text-align:left;
+    text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);
+       background:var(--vh-color-text);color:var(--vh-color-bg);font-family:var(--vh-font-mono);
+       font-size:12px;padding:8px 14px;border-radius:9px;opacity:0;pointer-events:none;
+       transition:opacity .18s;z-index:9}
+.toast.on{opacity:1}
+.gap{border:1px dashed var(--vh-color-border-hover);border-radius:var(--vh-radius-md);
+     padding:16px 18px;background:transparent}
+.gap h3{color:var(--vh-color-warning)}
+.gap ul{margin:8px 0 0;padding-left:17px;display:flex;flex-direction:column;gap:5px}
+.gap li{font-size:var(--vh-text-sm);color:var(--vh-color-text-muted)}
+a{color:var(--vh-color-brand)}
+code{font-family:var(--vh-font-mono);font-size:12.5px}
+.faq{border-bottom:1px solid var(--vh-color-border);padding:12px 0}
+.faq:last-child{border-bottom:0}
+.faq .q{font-weight:var(--vh-weight-semibold);font-size:var(--vh-text-sm)}
+.faq .a{color:var(--vh-color-text-muted);font-size:13.5px;margin-top:5px;line-height:1.55}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<p class="eyebrow">Veehive &middot; internal</p>
+<h1>Sales kit</h1>
+<p class="lede">Everything to answer a buyer with, in one place: what we say, who we have done it for, what to leave behind, and what to send afterwards. Nothing here is written for this page &mdash; it is the same wording the site carries and the same files the brand kit ships, so a deck built from it cannot contradict the website.</p>
+
+<section>
+  <div class="sec-h"><p class="eyebrow">The pitch</p><h2>Say it the same way every time</h2>
+  <p>Click any line to copy it. These are the canonical forms &mdash; a deck or an email that uses different words makes the next conversation harder.</p></div>
+
+  <div class="say"><span class="k">In one line</span>
+    <button class="cp v" data-copy="Power your business with bespoke agentic apps.">Power your business with bespoke agentic apps.</button></div>
+  <div class="say"><span class="k">The shape of it</span>
+    <button class="cp v" data-copy="Six agentic apps. One harness.">Six agentic apps. One harness.</button></div>
+  <div class="say"><span class="k">In a paragraph</span>
+    <button class="cp v v--sm" data-copy="Six agentic apps — for support, content, projects, frontline, campaigns and documents — each one shaped around how your business already runs. Deploy one, or put the whole hive to work.">Six agentic apps &mdash; for support, content, projects, frontline, campaigns and documents &mdash; each one shaped around how your business already runs. Deploy one, or put the whole hive to work.</button></div>
+  <div class="say"><span class="k">The two ways to buy</span>
+    <button class="cp v v--sm" data-copy="Same company, two ways to buy. Veehive.ai is where you deploy our products and we configure them to your business. Veehive Labs builds what belongs to you, and trains your team to run it.">Same company, two ways to buy. Veehive.ai is where you deploy our products and we configure them to your business. Veehive Labs builds what belongs to you, and trains your team to run it.</button></div>
+
+  <h3 style="margin-top:22px">One line per app</h3>
+  <div class="tw"><table><tbody id="apps"></tbody></table></div>
+</section>
+
+<section>
+  <div class="sec-h"><p class="eyebrow">Proof</p><h2>Who we have done it for</h2>
+  <p>Read live from <code>/api/case-studies.json</code>, the same file veehivelabs.com reads. If a name here is wrong or an outcome has changed, fix the JSON and every surface follows.</p></div>
+  <div class="grid2" id="cases"></div>
+  <div class="dl-row"><a class="dl" href="/api/case-studies.json">THE RAW JSON</a></div>
+</section>
+
+<section>
+  <div class="sec-h"><p class="eyebrow">Leave-behinds</p><h2>What to hand over</h2>
+  <p>Print-ready. Send the PDF, not a screenshot of it.</p></div>
+  <div class="grid3">
+    <div class="card"><h3>The A4 leaflet</h3>
+      <p style="color:var(--vh-color-text-muted);font-size:13.5px;margin-top:5px">Both sides, the six apps and the seal. For a meeting or a stand.</p>
+      <div class="dl-row"><a class="dl" href="/sales/veehive-flyer-A4.pdf" download>PDF</a></div></div>
+    <div class="card"><h3>Business cards</h3>
+      <p style="color:var(--vh-color-text-muted);font-size:13.5px;margin-top:5px">One per person, 3.5 &times; 2 in at 300&nbsp;dpi, ready for a printer.</p>
+      <div class="dl-row" id="cards"></div></div>
+    <div class="card"><h3>Logos and marks</h3>
+      <p style="color:var(--vh-color-text-muted);font-size:13.5px;margin-top:5px">For a partner deck or a co-branded page. Use the SVG wherever it will scale.</p>
+      <div class="dl-row"><a class="dl" href="/brand/">THE BRAND KIT</a><a class="dl" href="/brand/logo/veehive-ai-logo.svg" download>LOGO SVG</a></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-h"><p class="eyebrow">Credibility</p><h2>What to cite, and how</h2></div>
+  <div class="grid2">
+    <div class="card"><h3>Dubai AI Seal &mdash; Tier E</h3>
+      <p style="color:var(--vh-color-text-muted);font-size:13.5px;margin-top:5px">Say &ldquo;Dubai AI Seal Tier E certified&rdquo;. Do not round it up, and do not claim a tier we do not hold.</p>
+      <div class="dl-row"><a class="dl" href="/brand/seal/dubai-ai-seal.png" download>THE SEAL</a></div></div>
+    <div class="card"><h3>Press</h3>
+      <p style="color:var(--vh-color-text-muted);font-size:13.5px;margin-top:5px">Entrepreneur ME, Gulf Business, WAM, TahawulTech, Zawya, Hindu Business Line, Times of India, Dubai One TV.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-h"><p class="eyebrow">Objections</p><h2>The questions that actually come up</h2>
+  <p>Taken from the site&rsquo;s own FAQ, so what a buyer reads online and what they hear from you are the same answer.</p></div>
+  <div id="faq"></div>
+</section>
+
+<section>
+  <div class="sec-h"><p class="eyebrow">Honest gaps</p><h2>What this kit does not have yet</h2>
+  <p>Listed rather than quietly missing, so nobody promises a buyer something that does not exist.</p></div>
+  <div class="gap"><h3>Not built</h3>
+    <ul>
+      <li><strong>A pitch deck.</strong> No slide template exists yet; decks are being built from scratch each time, which is how wording drifts.</li>
+      <li><strong>A price list.</strong> Nothing published. Pricing conversations are bespoke today &mdash; do not quote a figure from memory.</li>
+      <li><strong>Battle cards.</strong> No written comparison against named competitors.</li>
+      <li><strong>A proposal template.</strong> The card and leaflet are the only print pieces.</li>
+      <li><strong>Written case-study PDFs.</strong> The five above are one-paragraph entries, not leave-behinds.</li>
+    </ul></div>
+</section>
+
+</div>
+
+<script>
+(function () {
+  var toast = document.createElement('div');
+  toast.className = 'toast';
+  document.body.appendChild(toast);
+  var t;
+  function say(m) {
+    toast.textContent = m; toast.classList.add('on');
+    clearTimeout(t); t = setTimeout(function () { toast.classList.remove('on'); }, 1700);
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('.cp');
+    if (!b) return;
+    var v = b.dataset.copy || b.textContent.trim();
+    var ta = document.createElement('textarea');
+    ta.value = v; ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:-9999px;opacity:0';
+    document.body.appendChild(ta); ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (err) {}
+    document.body.removeChild(ta);
+    say(ok ? 'Copied' : 'Select it and copy');
+  });
+
+  var APPS = [
+    ['Mpliphi', 'hivemind-no', 'Amplify your productivity. Not headcount.', '--vh-color-mpliphi'],
+    ['SnapaPro', '', 'Projects across a global team, finally on track.', '--vh-color-snapapro'],
+    ['HiveStudio', '', 'Scale your content without losing your creativity.', '--vh-color-hivestudio'],
+    ['HiveLink', '', 'Your frontline team, finally connected.', '--vh-color-hivelink'],
+    ['HiveMind', '', 'Launch campaigns like a team of fifty.', '--vh-color-hivemind'],
+    ['HiveDocs', '', 'Your paperwork, finally searchable.', '--vh-color-hivedocs']
+  ];
+  document.getElementById('apps').innerHTML = APPS.map(function (a) {
+    return '<tr><td class="p" style="color:var(' + a[3] + ')">' + a[0] + '</td>'
+      + '<td><button class="cp" data-copy="' + a[2] + '">' + a[2] + '</button></td></tr>';
+  }).join('');
+
+  var PEOPLE = ['sathish-jeyakumar', 'chakir-qatab', 'fahim-ak', 'raheela-taj',
+                'nitesh-duraivel', 'kelvin-jebastin'];
+  document.getElementById('cards').innerHTML = PEOPLE.map(function (p) {
+    return '<a class="dl" href="/brand/business-card/cards/' + p + '.pdf" download>'
+      + p.split('-')[0].toUpperCase() + '</a>';
+  }).join('');
+
+  var COLOUR = {Mpliphi: '--vh-color-mpliphi', SnapaPro: '--vh-color-snapapro',
+                HiveStudio: '--vh-color-hivestudio', HiveLink: '--vh-color-hivelink',
+                HiveMind: '--vh-color-hivemind', HiveDocs: '--vh-color-hivedocs'};
+  fetch('/api/case-studies.json').then(function (r) { return r.json(); }).then(function (d) {
+    var host = document.getElementById('cases');
+    host.innerHTML = (d.case_studies || []).map(function (c) {
+      var col = COLOUR[c.product] || '--vh-color-brand';
+      return '<div class="cs">'
+        + '<span class="who">' + c.customer + '</span>'
+        + '<span class="meta">' + [c.industry, c.region].filter(Boolean).join(' &middot; ') + '</span>'
+        + '<span class="head">' + (c.headline || '') + '</span>'
+        + '<span class="out">' + (c.outcome || c.summary || '') + '</span>'
+        + '<span><span class="pill" style="color:var(' + col + ');border:1px solid var(' + col + ')">'
+        + c.product + '</span></span>'
+        + '</div>';
+    }).join('');
+  }).catch(function () {
+    document.getElementById('cases').innerHTML =
+      '<div class="card">Could not load the case studies. The file is at <code>/api/case-studies.json</code>.</div>';
+  });
+
+  // the FAQ comes from the homepage's own structured data, so the two cannot diverge
+  fetch('/').then(function (r) { return r.text(); }).then(function (html) {
+    var blocks = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g) || [];
+    for (var i = 0; i < blocks.length; i++) {
+      var json = blocks[i].replace(/<\/?script[^>]*>/g, '');
+      var data;
+      try { data = JSON.parse(json); } catch (e) { continue; }
+      if (data['@type'] !== 'FAQPage') continue;
+      document.getElementById('faq').innerHTML = data.mainEntity.map(function (q) {
+        return '<div class="faq"><div class="q">' + q.name + '</div>'
+          + '<div class="a">' + q.acceptedAnswer.text + '</div></div>';
+      }).join('');
+      return;
+    }
+  }).catch(function () {});
+})();
+</script>
+</body>
+</html>

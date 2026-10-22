@@ -55,12 +55,19 @@ a{color:inherit}
   padding:6px 11px;border-radius:7px;color:inherit;opacity:.55}
 .vh-nav a:hover{opacity:1;background:rgba(128,128,128,.12)}
 .vh-nav a[aria-current="page"]{opacity:1;background:rgba(128,128,128,.16);font-weight:600}
+
+.vh-url{margin-left:auto;font-family:ui-monospace,'IBM Plex Mono',monospace;font-size:11px;
+  letter-spacing:.04em;color:inherit;opacity:.5;background:none;border:0;cursor:pointer;
+  padding:6px 9px;border-radius:7px}
+.vh-url:hover{opacity:1;background:rgba(128,128,128,.12)}
+.vh-url.done{opacity:1}
+@media(max-width:560px){.vh-url{margin-left:0;padding-left:0}}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<nav class="vh-nav"><a href="https://veehive.ai/brand/" aria-current="page">Brand kit</a><a href="https://veehive.ai/brand/system/">Design system</a><a href="https://veehive.ai/sales/">Sales kit</a></nav>
+<nav class="vh-nav"><a href="https://veehive.ai/brand/" aria-current="page">Brand kit</a><a href="https://veehive.ai/brand/system/">Design system</a><a href="https://veehive.ai/sales/">Sales kit</a><button class="vh-url" type="button" data-url="veehive.ai/brand/signature/" title="Copy this page's link">veehive.ai/brand/signature/</button></nav>
 
 <p class="eyebrow">Veehive &middot; brand kit</p>
 <h1>Email signature</h1>
@@ -165,6 +172,27 @@ a{color:inherit}
       navigator.clipboard.writeText(html).then(function () { say('HTML copied.'); })
         .catch(function () { say('Select the source below and copy it.'); });
     } else { say('Select the source below and copy it.'); }
+  });
+})();
+</script>
+
+<script>
+(function () {
+  var b = document.querySelector('.vh-url');
+  if (!b) return;
+  b.addEventListener('click', function () {
+    var ta = document.createElement('textarea');
+    ta.value = 'https://' + b.dataset.url;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:-9999px;opacity:0';
+    document.body.appendChild(ta); ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    var was = b.textContent;
+    b.textContent = ok ? 'link copied' : 'select and copy';
+    b.classList.add('done');
+    setTimeout(function () { b.textContent = was; b.classList.remove('done'); }, 1600);
   });
 })();
 </script>

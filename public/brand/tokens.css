@@ -46,10 +46,29 @@
   --vh-gradient-text-b:       #3B5BFF;
   --vh-gradient-text-c:       #8B5CFF;
 
+  /* ── STATE ──────────────────────────────────────────────── */
+  /* Not product colours. A product colour never signals a state, and a state
+     colour never brands anything. All four clear 4.5:1 on this ground. */
+  --vh-color-success:    #22C55E;
+  --vh-color-warning:    #FB923C;
+  --vh-color-danger:     #F87171;
+  --vh-color-info:       #60A5FA;
+  --vh-color-success-bg: rgba(34,197,94,0.12);
+  --vh-color-warning-bg: rgba(251,146,60,0.12);
+  --vh-color-danger-bg:  rgba(248,113,113,0.12);
+  --vh-color-info-bg:    rgba(96,165,250,0.12);
+
+  /* ── FOCUS ──────────────────────────────────────────────── */
+  /* Every interactive element shows this on :focus-visible. Never remove it
+     without putting something at least as visible in its place. */
+  --vh-focus-ring:       #6B82FF;
+  --vh-focus-width:      2px;
+  --vh-focus-offset:     2px;
+
   /* ── TYPE ───────────────────────────────────────────────── */
   --vh-font-sans:    'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --vh-font-display: 'Manrope', system-ui, sans-serif;
-  --vh-font-mono:    ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
+  --vh-font-mono:    'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace;
 
   --vh-text-xs:    0.75rem;    /* 12px */
   --vh-text-sm:    0.875rem;   /* 14px */
@@ -63,7 +82,9 @@
 
   --vh-weight-regular: 400;
   --vh-weight-medium:  500;
+  --vh-weight-semibold:    600;
   --vh-weight-bold:    700;
+  --vh-weight-extrabold:    800;   /* Manrope: the logotype and headings */
 
   --vh-leading-tight:  1.15;
   --vh-leading-normal: 1.55;
@@ -107,6 +128,16 @@ html[data-theme="light"] {
   --vh-color-text-muted:      rgba(15,26,32,0.60);
   --vh-color-border:          rgba(59,91,255,0.10);
   --vh-color-border-hover:    rgba(59,91,255,0.18);
+
+  /* state, re-tuned for a white ground - same roles, AA on this side too */
+  --vh-color-success:    #15803D;
+  --vh-color-warning:    #B45309;
+  --vh-color-danger:     #B91C1C;
+  --vh-color-info:       #1D4ED8;
+  --vh-color-success-bg: rgba(21,128,61,0.10);
+  --vh-color-warning-bg: rgba(180,83,9,0.10);
+  --vh-color-danger-bg:  rgba(185,28,28,0.10);
+  --vh-color-info-bg:    rgba(29,78,216,0.10);
 
   --vh-shadow-sm: 0 1px 3px rgba(15,26,32,0.06), 0 1px 2px rgba(15,26,32,0.04);
   --vh-shadow-md: 0 8px 24px -8px rgba(15,26,32,0.12), 0 2px 6px rgba(15,26,32,0.06);

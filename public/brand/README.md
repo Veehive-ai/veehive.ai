@@ -144,7 +144,7 @@ product colour — the mark carries the colour, the name stays neutral
 | HiveMind | `#FFB020` |
 | HiveDocs | `#0D9488` |
 | HiveFront | `#EC4899` |
-| VeehiveLabs | `#E8BB30` |
+| Veehive Labs | `#E8BB30` |
 
 Every product mark also spins, using the same loader classes — a
 product's own colour carries its loading state.

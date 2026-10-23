@@ -967,7 +967,7 @@
 
         /* One wire layer: the orbit and the seven spokes, drawn in units of
            R and scaled by the viewBox. non-scaling-stroke keeps every line
-           exactly as thick on a phone as on a desktop, and pathLength="100"
+           exactly as thick on a phone as on a desktop, and
            makes the draw-in and the signal travel the same fraction of each
            spoke whatever its length. */
         .wf-wires {
@@ -987,25 +987,34 @@
             transition: opacity 0.6s ease 0.1s, transform 0.8s cubic-bezier(0.22,1,0.36,1) 0.1s;
         }
         .wf-orbit.visible .wf-orbit__ring { opacity: 1; transform: none; }
+        /* No dash here. A non-scaling stroke measures stroke-dasharray in
+           screen pixels, so buys nothing and any spoke longer
+           than the dash is drawn with its tail missing. Opacity cannot be
+           measured in the wrong units. */
         .wf-spoke {
             stroke: currentColor; stroke-width: 2; stroke-opacity: 0.75;
-            stroke-dasharray: 100; stroke-dashoffset: 100;
-            transition: stroke-dashoffset 0.55s cubic-bezier(0.22,1,0.36,1) var(--draw);
+            opacity: 0;
+            transition: opacity 0.5s ease var(--draw);
         }
-        .wf-orbit.visible .wf-spoke { stroke-dashoffset: 0; }
+        .wf-orbit.visible .wf-spoke { opacity: 1; }
+        /* Lighter line on a light ground, so the full-strength pulse still
+           reads as a moving head rather than a break in the wire. */
+        html.light .wf-spoke { stroke-opacity: 0.4; }
         /* Once drawn, a signal runs out along every spoke on a loop. */
         .wf-pulse {
             stroke: #fff; stroke-width: 2.5; stroke-linecap: round;
-            stroke-dasharray: 12 88; stroke-dashoffset: 12; opacity: 0;
+            /* px, like the stroke: one short dash and a gap long enough
+               that a second never appears on the longest spoke. */
+            stroke-dasharray: 14px 500px; stroke-dashoffset: 14px; opacity: 0;
         }
         html.light .wf-pulse { stroke: rgb(var(--wire)); }
         .wf-orbit.visible .wf-pulse { animation: wfRun 3s linear var(--pulse) infinite; }
         @keyframes wfRun {
-            0%   { stroke-dashoffset: 12; opacity: 0; }
+            0%   { stroke-dashoffset: 14px; opacity: 0; }
             6%   { opacity: 1; }
-            24%  { opacity: 1; }
-            30%  { stroke-dashoffset: -100; opacity: 0; }
-            100% { stroke-dashoffset: -100; opacity: 0; }
+            26%  { opacity: 1; }
+            32%  { stroke-dashoffset: -260px; opacity: 0; }
+            100% { stroke-dashoffset: -260px; opacity: 0; }
         }
 
         /* Hub — its bee dead centre, its label hanging into the open wedge. */
@@ -1094,7 +1103,6 @@
         }
         @media (prefers-reduced-motion: reduce) {
             .wf-orbit__ring, .wf-spoke, .wf-node { transition: none; opacity: 1; transform: none; }
-            .wf-spoke { stroke-dashoffset: 0; }
             .wf-pulse, .wf-orbit__hub .workforce-badge::after { display: none; }
         }
 
@@ -3103,20 +3111,20 @@
                 <div class="wf-orbit__stage">
                     <svg class="wf-wires" viewBox="-100 -100 200 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
                         <circle class="wf-orbit__ring" r="100"/>
-                    <line class="wf-spoke" pathLength="100" style="--draw:0.30s" x1="-19.3" y1="23.0" x2="-50.1" y2="59.8"/>
-                    <line class="wf-pulse" pathLength="100" style="--pulse:0.95s" x1="-19.3" y1="23.0" x2="-50.1" y2="59.8"/>
-                    <line class="wf-spoke" pathLength="100" style="--draw:0.36s" x1="-29.9" y1="1.7" x2="-77.9" y2="4.5"/>
-                    <line class="wf-pulse" pathLength="100" style="--pulse:1.06s" x1="-29.9" y1="1.7" x2="-77.9" y2="4.5"/>
-                    <line class="wf-spoke" pathLength="100" style="--draw:0.42s" x1="-21.8" y1="-20.6" x2="-56.7" y2="-53.5"/>
-                    <line class="wf-pulse" pathLength="100" style="--pulse:1.17s" x1="-21.8" y1="-20.6" x2="-56.7" y2="-53.5"/>
-                    <line class="wf-spoke" pathLength="100" style="--draw:0.48s" x1="-0.0" y1="-30.0" x2="-0.0" y2="-78.0"/>
-                    <line class="wf-pulse" pathLength="100" style="--pulse:1.28s" x1="-0.0" y1="-30.0" x2="-0.0" y2="-78.0"/>
-                    <line class="wf-spoke" pathLength="100" style="--draw:0.54s" x1="21.8" y1="-20.6" x2="56.7" y2="-53.5"/>
-                    <line class="wf-pulse" pathLength="100" style="--pulse:1.39s" x1="21.8" y1="-20.6" x2="56.7" y2="-53.5"/>
-                    <line class="wf-spoke" pathLength="100" style="--draw:0.60s" x1="29.9" y1="1.7" x2="77.9" y2="4.5"/>
-                    <line class="wf-pulse" pathLength="100" style="--pulse:1.50s" x1="29.9" y1="1.7" x2="77.9" y2="4.5"/>
-                    <line class="wf-spoke" pathLength="100" style="--draw:0.66s" x1="19.3" y1="23.0" x2="50.1" y2="59.8"/>
-                    <line class="wf-pulse" pathLength="100" style="--pulse:1.61s" x1="19.3" y1="23.0" x2="50.1" y2="59.8"/>
+                    <line class="wf-spoke" style="--draw:0.30s" x1="-16.3" y1="19.4" x2="-51.2" y2="61.0"/>
+                    <line class="wf-pulse" style="--pulse:0.95s" x1="-16.3" y1="19.4" x2="-51.2" y2="61.0"/>
+                    <line class="wf-spoke" style="--draw:0.36s" x1="-21.4" y1="1.2" x2="-82.7" y2="4.8"/>
+                    <line class="wf-pulse" style="--pulse:1.06s" x1="-21.4" y1="1.2" x2="-82.7" y2="4.8"/>
+                    <line class="wf-spoke" style="--draw:0.42s" x1="-17.8" y1="-16.8" x2="-58.5" y2="-55.2"/>
+                    <line class="wf-pulse" style="--pulse:1.17s" x1="-17.8" y1="-16.8" x2="-58.5" y2="-55.2"/>
+                    <line class="wf-spoke" style="--draw:0.48s" x1="-0.0" y1="-30.0" x2="-0.0" y2="-76.0"/>
+                    <line class="wf-pulse" style="--pulse:1.28s" x1="-0.0" y1="-30.0" x2="-0.0" y2="-76.0"/>
+                    <line class="wf-spoke" style="--draw:0.54s" x1="17.8" y1="-16.8" x2="58.5" y2="-55.2"/>
+                    <line class="wf-pulse" style="--pulse:1.39s" x1="17.8" y1="-16.8" x2="58.5" y2="-55.2"/>
+                    <line class="wf-spoke" style="--draw:0.60s" x1="21.4" y1="1.2" x2="82.7" y2="4.8"/>
+                    <line class="wf-pulse" style="--pulse:1.50s" x1="21.4" y1="1.2" x2="82.7" y2="4.8"/>
+                    <line class="wf-spoke" style="--draw:0.66s" x1="16.3" y1="19.4" x2="51.2" y2="61.0"/>
+                    <line class="wf-pulse" style="--pulse:1.61s" x1="16.3" y1="19.4" x2="51.2" y2="61.0"/>
                     </svg>
 
                     <div class="wf-orbit__hub">

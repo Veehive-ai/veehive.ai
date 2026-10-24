@@ -125,9 +125,10 @@
         #success h2 { font-size: 20px; margin: 0 0 8px; }
         #success p { color: var(--text-dim); font-size: 14px; margin: 0; }
 
+        .aside-bee { width: 56px; height: 56px; display: block; margin-bottom: 16px; }
         .demo-aside h3 { font-size: 20px; font-weight: 700; margin: 0 0 8px; }
         .demo-aside > .sub { margin-bottom: 24px; }
-        .expect { list-style: none; margin: 0; padding: 0; counter-reset: expect; display: flex; flex-direction: column; gap: 20px; }
+        .expect { list-style: none; margin: 0 0 28px; padding: 0; counter-reset: expect; display: flex; flex-direction: column; gap: 20px; }
         .expect li { counter-increment: expect; display: flex; gap: 14px; }
         .expect li::before {
             content: counter(expect);
@@ -144,6 +145,32 @@
         }
         .expect li strong { display: block; font-size: 14px; margin-bottom: 3px; }
         .expect li span { color: var(--text-dim); font-size: 13.5px; line-height: 1.5; }
+        .resource-cards { display: flex; flex-direction: column; gap: 10px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .resource-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            transition: border-color 0.2s;
+        }
+        .resource-card:hover { border-color: var(--accent); }
+        .resource-card .ico {
+            flex: 0 0 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--accent-tint);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+        }
+        .resource-card strong { display: block; font-size: 13.5px; }
+        .resource-card span { display: block; font-size: 12.5px; color: var(--text-dim); }
+        .trust-line { margin: 18px 0 0; font-size: 12px; color: var(--text-dim); text-align: center; }
 
         /* ── Footer (reused from index.html) ─────────────────── */
         .vh-footer{background:#0a0a0b; color:rgba(255,255,255,.7); padding:64px 0 32px; position:relative; overflow:hidden;}
@@ -227,6 +254,7 @@
                 </div>
             </div>
             <aside class="demo-aside">
+                <img src="/brand/mascots/mascot-veehive.png" alt="" class="aside-bee">
                 <h3>What the 30 minutes covers</h3>
                 <p class="sub">Veehive runs six agentic apps on one harness — Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind and HiveDocs. Here's what we'll walk through.</p>
                 <ol class="expect">
@@ -243,6 +271,21 @@
                         <span>What onboarding looks like, what it costs, and what the first 30 days look like if you move forward.</span>
                     </li>
                 </ol>
+                <div class="resource-cards">
+                    <a class="resource-card" href="mailto:raheela@veehive.ai">
+                        <span class="ico">✉️</span>
+                        <span><strong>Rather just email?</strong><span>raheela@veehive.ai</span></span>
+                    </a>
+                    <a class="resource-card" href="/agentic-apps.html">
+                        <span class="ico">⚙️</span>
+                        <span><strong>See all six apps</strong><span>The full agentic apps store</span></span>
+                    </a>
+                    <a class="resource-card" href="/#faq">
+                        <span class="ico">❓</span>
+                        <span><strong>Have questions first?</strong><span>Read the FAQ</span></span>
+                    </a>
+                </div>
+                <p class="trust-line">SOC 2 Controls Implemented &middot; ISO 27001 Aligned</p>
             </aside>
         </div>
     </main>

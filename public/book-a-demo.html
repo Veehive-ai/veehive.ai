@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google Analytics (GA4) with Consent Mode v2 — same stream as the rest of veehive.ai -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VVGKWGPNGY"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+var _vhSaved=(function(){try{return localStorage.getItem('veehive-consent')}catch(e){return null}})();
+gtag('consent','default',{
+  ad_storage: _vhSaved==='granted' ? 'granted' : 'denied',
+  ad_user_data: _vhSaved==='granted' ? 'granted' : 'denied',
+  ad_personalization: _vhSaved==='granted' ? 'granted' : 'denied',
+  analytics_storage: _vhSaved==='granted' ? 'granted' : 'denied',
+  wait_for_update: 500
+});
+gtag('js',new Date());
+gtag('config','G-VVGKWGPNGY',{anonymize_ip:true});
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Demo · Veehive.ai</title>
+<meta name="description" content="See Veehive's agentic apps in action. Book a 30-minute walkthrough with our team and we will show you your own agent, running on your own use case.">
+<link rel="canonical" href="https://veehive.ai/book-a-demo">
+<link rel="icon" href="/favicon.ico?v=2" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<meta property="og:title" content="Book a Demo · Veehive.ai">
+<meta property="og:description" content="See Veehive's agentic apps in action. A 30-minute walkthrough, built around your use case.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://veehive.ai/book-a-demo">
+<meta name="robots" content="noindex, follow">
+
+<script>
+  // read theme BEFORE first paint — prevents the white flash dark-mode users would otherwise see
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('veehive-theme'); } catch (e) {}
+    var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (dark) document.documentElement.classList.add('dark-mode');
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff; --ink:#0a0a0b; --ink-soft:#63645d; --ink-faint:#8c8d86; --hairline:#e8e7e1;
+    --accent:#3B5BFF; --accent-dark:#2A45CC; --accent-tint:#e9ecff;
+    --display:'Manrope', sans-serif; --body:'IBM Plex Sans', sans-serif;
+    --nav-bg:rgba(255,255,255,.9); --surface-alt:#fbfbfa; --surface-raised:#ffffff;
+    --field-bg:#ffffff; --field-line:#cfcec6;
+  }
+  html.dark-mode{
+    --bg:#0F1A20; --ink:#f5f5f4; --ink-soft:#a8a9a2; --ink-faint:#727369; --hairline:rgba(255,255,255,.12);
+    --accent:#3B5BFF; --accent-dark:#6B82FF; --accent-tint:rgba(59,91,255,.16);
+    --nav-bg:rgba(15,26,32,.85); --surface-alt:#141822; --surface-raised:#182028;
+    --field-bg:#141822; --field-line:rgba(255,255,255,.18);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:auto;}
+  body{background-color:var(--bg); color:var(--ink); font-family:var(--body); -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+  .skip-link{position:absolute; top:-100px; left:8px; background:var(--accent); color:#fff; padding:10px 18px; border-radius:8px; z-index:300; font-size:14px; font-weight:700; transition:top .15s ease;}
+  .skip-link:focus{top:8px;}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+  html.dark-mode a:focus-visible, html.dark-mode button:focus-visible,
+  html.dark-mode input:focus-visible, html.dark-mode textarea:focus-visible{outline-color:var(--accent-dark);}
+
+  /* NAV */
+  nav{position:fixed; top:0; left:0; right:0; z-index:100; background:var(--nav-bg); backdrop-filter:blur(10px); border-bottom:1px solid var(--hairline);}
+  .navrow{display:flex; align-items:center; justify-content:space-between; max-width:1180px; margin:0 auto; padding:14px 32px; gap:24px;}
+  .nav-left{display:flex; align-items:center; gap:14px;}
+  .wordmark{display:flex; align-items:center; gap:9px; font-family:var(--display); font-weight:800; font-size:17px; padding:10px 0; margin:-10px 0;}
+  .wordmark img{width:24px; height:24px;}
+  .nav-switcher{display:flex; align-items:center; gap:26px; padding-left:18px; border-left:1px solid var(--hairline);}
+  .nav-switcher a{display:flex; align-items:center; gap:6px; font-size:13px; color:var(--ink-faint); opacity:.7; transition:opacity .15s ease; white-space:nowrap; padding:10px 0; margin:-10px 0;}
+  .nav-switcher a:hover{opacity:1;}
+  .nav-right{display:flex; align-items:center; gap:16px;}
+  .navcta{font-size:13.5px; font-weight:700; color:#fff; background:var(--accent); padding:10px 20px; border-radius:100px; white-space:nowrap;}
+  html.dark-mode .navcta{color:#fff;}
+  .theme-toggle{width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:transparent; border:1px solid var(--hairline); cursor:pointer; color:var(--ink-soft); padding:0; font-family:inherit; transition:background .2s ease, color .2s ease, border-color .2s ease;}
+  .theme-toggle:hover{background:var(--surface-alt); color:var(--ink);}
+  .theme-toggle svg{width:18px; height:18px; display:block;}
+  .theme-toggle .icon-moon{display:none;}
+  html.dark-mode .theme-toggle .icon-sun{display:none;}
+  html.dark-mode .theme-toggle .icon-moon{display:block;}
+  .hamburger{display:none; flex-direction:column; align-items:center; justify-content:center; gap:4px; width:44px; height:44px; cursor:pointer; background:none; border:none; padding:0;}
+  .hamburger span{display:block; width:22px; height:2px; background:var(--ink); border-radius:2px; transition:transform .2s ease, opacity .2s ease;}
+  .hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+  .mobile-nav-overlay{position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:150; opacity:0; pointer-events:none; transition:opacity .2s ease;}
+  .mobile-nav-overlay.open{opacity:1; pointer-events:auto;}
+  .mobile-nav-panel{position:fixed; top:0; right:0; height:100%; width:min(280px,80vw); background:var(--bg); z-index:151;
+    transform:translateX(100%); transition:transform .25s cubic-bezier(.22,1,.36,1); padding:80px 24px 24px;
+    display:flex; flex-direction:column; gap:4px; box-shadow:-8px 0 30px -10px rgba(0,0,0,.2);}
+  .mobile-nav-panel.open{transform:translateX(0);}
+  .mobile-nav-panel a{display:flex; align-items:center; gap:10px; padding:14px 8px; font-size:15px; font-weight:600; color:var(--ink); border-bottom:1px solid var(--hairline);}
+  @media (max-width:900px){ .nav-switcher{display:none;} .hamburger{display:flex;} }
+  @media (max-width:420px){ .navcta{font-size:12px; padding:11px 14px;} .nav-right{gap:10px;} }
+  @media (max-width:400px){ .navrow{padding-left:16px; padding-right:16px; gap:12px;} }
+
+  /* ---- DEMO PAGE ---- */
+  .demo{padding:104px 32px 72px;}
+  .demo-grid{display:grid; grid-template-columns:1.15fr .9fr; align-items:stretch; max-width:1140px; margin:0 auto;
+    background:var(--surface-raised); border:1px solid var(--hairline); border-radius:28px; overflow:hidden;
+    box-shadow:0 40px 90px -48px rgba(0,0,0,.28);}
+  html.dark-mode .demo-grid{box-shadow:0 40px 90px -48px rgba(0,0,0,.6);}
+  .demo-main{padding:52px 48px; width:100%;}
+  .demo-aside{padding:52px 44px; background:var(--surface-alt); border-left:1px solid var(--hairline);}
+  @media (max-width:980px){
+    .demo{padding:88px 16px 56px;}
+    .demo-grid{grid-template-columns:1fr; border-radius:20px;}
+    .demo-main{padding:36px 28px 32px;}
+    .demo-aside{padding:32px 28px 40px; border-left:none; border-top:1px solid var(--hairline);}
+  }
+  @media (max-width:480px){ .demo{padding:84px 0 0;} .demo-grid{border-radius:0; border-left:none; border-right:none;} }
+
+  .demo-back{display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:600; color:var(--ink-faint); margin-bottom:18px; transition:color .15s ease;}
+  .demo-back:hover{color:var(--ink);}
+  .demo-back svg{width:14px; height:14px;}
+  .demo-eyebrow{font-size:13px; color:var(--accent-dark); font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin-bottom:10px;}
+  .demo h1{font-family:var(--display); font-size:clamp(28px,3.4vw,38px); font-weight:800; letter-spacing:-.02em; line-height:1.12;}
+  .demo-lede{font-size:14.5px; line-height:1.6; color:var(--ink-soft); margin-top:12px; max-width:46ch;}
+
+  form.demo-form{margin-top:26px; display:grid; gap:16px;}
+  .field label{display:block; font-size:13px; font-weight:700; color:var(--ink); margin-bottom:7px;}
+  .field .opt{font-weight:500; color:var(--ink-faint); margin-left:5px;}
+  .field input, .field textarea{
+    width:100%; font-family:inherit; font-size:15px; color:var(--ink); background:var(--field-bg);
+    border:1px solid var(--field-line); border-radius:12px; padding:13px 15px; transition:border-color .15s ease, box-shadow .15s ease;}
+  .field textarea{resize:vertical; min-height:88px; line-height:1.55;}
+  .field input::placeholder, .field textarea::placeholder{color:var(--ink-faint);}
+  .field input:hover, .field textarea:hover{border-color:var(--ink-soft);}
+  .field input:focus, .field textarea:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-tint);}
+  html.dark-mode .field input:focus, html.dark-mode .field textarea:focus{border-color:var(--accent-dark);}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:560px){ .field-row{grid-template-columns:1fr;} }
+  /* honeypot: real people never see it, bots fill it and get dropped */
+  .hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;}
+
+  .demo-submit{justify-self:start; background:var(--accent); color:#fff; font-family:inherit; font-size:15px; font-weight:700;
+    padding:14px 30px; border:none; border-radius:100px; cursor:pointer; transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;}
+  .demo-submit:hover:not(:disabled){transform:translateY(-1px); box-shadow:0 8px 20px -8px var(--accent);}
+  .demo-submit:disabled{opacity:.6; cursor:progress; transform:none; box-shadow:none;}
+  .demo-note{font-size:12.5px; color:var(--ink-faint); line-height:1.6;}
+  .demo-error{font-size:13.5px; color:#b3261e; line-height:1.6;}
+  html.dark-mode .demo-error{color:#ff8a80;}
+  .demo-error:empty{display:none;}
+
+  /* success panel swaps in where the form was, so the page does not jump */
+  .demo-done{margin-top:26px; border:1px solid var(--hairline); background:var(--surface-alt); border-radius:18px; padding:28px 26px;}
+  .demo-done .tick{width:44px; height:44px; border-radius:50%; background:var(--accent); color:#fff; display:grid; place-items:center; margin-bottom:16px;}
+  html.dark-mode .demo-done .tick{color:#fff; background:var(--accent-dark);}
+  .demo-done .tick svg{width:22px; height:22px;}
+  .demo-done h2{font-family:var(--display); font-size:22px; font-weight:800; letter-spacing:-.01em;}
+  .demo-done p{font-size:14.5px; color:var(--ink-soft); line-height:1.65; margin-top:10px;}
+  .demo-done a.again{display:inline-block; margin-top:16px; font-size:13.5px; font-weight:700; color:var(--accent-dark); border-bottom:1px solid currentColor;}
+  [hidden]{display:none !important;}
+
+  /* aside */
+  .aside-bee{width:56px; height:56px; display:block; margin-bottom:14px;}
+  .demo-aside h2{font-family:var(--display); font-size:19px; font-weight:800; letter-spacing:-.01em;}
+  .demo-aside .sub{font-size:13.5px; color:var(--ink-soft); line-height:1.6; margin-top:8px;}
+  .expect{list-style:none; margin-top:18px; display:grid; gap:12px;}
+  .expect li{display:flex; gap:11px; font-size:14px; line-height:1.55; color:var(--ink-soft);}
+  .expect .n{flex:0 0 22px; height:22px; border-radius:50%; background:var(--accent-tint); color:var(--accent-dark); font-size:11.5px; font-weight:800; display:grid; place-items:center; margin-top:1px;}
+  .expect strong{color:var(--ink); font-weight:700;}
+  .res{margin-top:22px; display:grid; gap:10px;}
+  .res-card{display:flex; gap:12px; align-items:flex-start; background:var(--surface-raised); border:1px solid var(--hairline); border-radius:14px; padding:14px 16px;
+    transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease;}
+  .res-card:hover{transform:translateY(-2px); border-color:var(--accent-tint); box-shadow:0 14px 28px -20px rgba(0,0,0,.35);}
+  .res-card .ic{width:28px; height:28px; flex:0 0 28px; margin-top:2px; display:grid; place-items:center; color:var(--accent-dark);}
+  .res-card .ic svg{width:22px; height:22px;}
+  .res-card h3{font-family:var(--display); font-size:15px; font-weight:800; line-height:1.3;}
+  .res-card p{font-size:13px; color:var(--ink-soft); line-height:1.55; margin-top:5px;}
+  .aside-trust{margin-top:18px; font-size:12px; color:var(--ink-faint); line-height:1.55;}
+
+  /* FOOTER — veehive.ai's own footer, verbatim from index.html */
+  .vh-footer{background:#0a0a0b; color:rgba(255,255,255,.7); padding:64px 0 32px; position:relative; overflow:hidden;}
+  .vh-footer__wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+  .vh-footer__top{display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr 0.8fr; gap:36px;}
+  .vh-footer__brand{display:flex; align-items:center; gap:9px; margin-bottom:16px;}
+  .vh-footer__brand img{height:20px; width:auto;}
+  .vh-footer__tagline{font-size:13.5px; line-height:1.6; max-width:32ch; color:rgba(255,255,255,.7); margin:0;}
+  .vh-footer__social{display:flex; gap:8px; margin-top:18px;}
+  .vh-footer__social a{display:flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:50%; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); transition:all .2s;}
+  .vh-footer__social a:hover{background:rgba(255,255,255,.11); border-color:rgba(255,255,255,.2);}
+  .vh-footer__social svg{width:15px; height:15px; fill:rgba(255,255,255,.6);}
+  .vh-footer__handle{font-size:12.5px; color:#6B82FF; margin-top:14px; font-weight:600;}
+  .vh-footer__by{display:flex; align-items:center; gap:10px; margin-top:20px; font-size:13px; font-weight:600; color:rgba(255,255,255,.8);}
+  .vh-footer__by img{width:34px; height:34px; object-fit:contain;}
+  .vh-footer__col h4{font-size:12.5px; color:#fff; font-weight:700; margin:0 0 14px; text-transform:uppercase; letter-spacing:.04em;}
+  .vh-footer__col a{display:flex; align-items:center; gap:8px; color:rgba(255,255,255,.6); text-decoration:none; font-size:13.5px; margin-bottom:12px;}
+  .vh-footer__col a:hover{color:#fff;}
+  .vh-footer__col a img{width:15px; height:15px; flex-shrink:0;}
+  .vh-footer__ticker-wrap{position:relative; height:160px; overflow:hidden; mask-image:linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent); -webkit-mask-image:linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);}
+  .vh-footer__ticker{display:flex; flex-direction:column; gap:14px; animation:vhTickerScroll 14s linear infinite;}
+  .vh-footer__ticker-item{display:flex; align-items:center; gap:8px; font-size:12.5px; color:rgba(255,255,255,.55); white-space:nowrap;}
+  .vh-footer__ticker-item img{width:16px; height:16px;}
+  @keyframes vhTickerScroll{ from{transform:translateY(0);} to{transform:translateY(-50%);} }
+  @media (prefers-reduced-motion:reduce){ .vh-footer__ticker{animation:none;} }
+  .vh-footer__map-row{display:flex; align-items:center; justify-content:space-between; gap:24px; margin-top:48px; padding-top:32px; border-top:1px solid rgba(255,255,255,.08);}
+  .vh-footer__map-info{font-size:13px; color:rgba(255,255,255,.6); line-height:1.7;}
+  .vh-footer__pin{width:15px; height:15px; display:inline-block; vertical-align:-2px; margin-right:5px; color:#6B82FF;}
+  .vh-footer__map-info a{color:#6B82FF; text-decoration:underline;}
+  .vh-footer__map-frame{border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.12); width:280px; height:150px; flex-shrink:0; position:relative;}
+  .vh-footer__map-frame iframe{width:100%; height:100%; border:0; filter:grayscale(.3) contrast(1.05);}
+  .vh-footer__map-ask{position:absolute; inset:0; display:flex; align-items:center; gap:10px; padding:0 16px; background:rgba(10,10,11,.92); border:0; color:rgba(255,255,255,.75); font-size:12px; text-align:left; cursor:pointer; font-family:inherit;}
+  .vh-footer__map-ask:hover{background:rgba(107,130,255,.12);}
+  .vh-footer__map-ask svg{width:20px; height:20px; opacity:.55;}
+  .vh-footer__map-ask b{font-weight:600; color:#6B82FF; text-decoration:underline;}
+  .vh-footer__map-frame[data-loaded="1"] .vh-footer__map-ask{display:none;}
+  .vh-footer__bottom{display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-top:32px; padding-top:24px; border-top:1px solid rgba(255,255,255,.08); font-size:13px; color:rgba(255,255,255,.4);}
+  .vh-footer__badges{display:flex; align-items:center; gap:20px; flex-wrap:wrap;}
+  .vh-footer__badges span{display:inline-flex; align-items:center; gap:6px; font-size:12px; color:rgba(255,255,255,.35);}
+  .vh-footer__badges svg{width:14px; height:14px;}
+  @media (max-width:980px){ .vh-footer__top{grid-template-columns:1fr 1fr 1fr;} .vh-footer__ticker-wrap{display:none;} }
+  @media (max-width:640px){
+    .vh-footer__top{grid-template-columns:1fr 1fr;}
+    .vh-footer__map-row{flex-direction:column; align-items:flex-start;}
+    .vh-footer__map-frame{width:100%;}
+    .vh-footer__bottom{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+<a href="#demo-main" class="skip-link">Skip to main content</a>
+
+<nav><div class="navrow">
+  <div class="nav-left">
+    <a class="wordmark" href="/" aria-label="Veehive.ai, back to the home page"><img width="24" height="24" src="/favicon-veehive.svg" alt="">Veehive.ai</a>
+    <div class="nav-switcher">
+      <a href="/agentic-apps.html">Agentic Apps</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/about.html">About</a>
+    </div>
+  </div>
+  <div class="nav-right">
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNavPanel"><span></span><span></span><span></span></button>
+    <button type="button" class="theme-toggle" id="darkToggle" aria-label="Switch to dark mode"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+    <a class="navcta" href="/" data-cta="nav-explore-apps">Explore Apps</a>
+  </div>
+</div></nav>
+
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+<div class="mobile-nav-panel" id="mobileNavPanel" aria-label="Mobile navigation">
+  <a href="/agentic-apps.html">Agentic Apps</a>
+  <a href="/#faq">FAQ</a>
+  <a href="/about.html">About</a>
+</div>
+
+<section class="demo">
+ <div class="demo-grid">
+
+  <div class="demo-main" id="demo-main" tabindex="-1">
+    <a class="demo-back" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back to Veehive.ai</a>
+    <div class="demo-eyebrow">Book a demo</div>
+    <h1>Let's find your team's first agent.</h1>
+    <p class="demo-lede">Tell us a little about your business and we'll come back within one working day with a 30-minute walkthrough — built around whichever of our six apps fits your workflow. No slides, no credit card, no obligation.</p>
+
+    <form class="demo-form" id="demoForm" novalidate>
+      <!-- Posts to the shared mpliphi-api demo-request endpoint. The route emails the lead to
+           sathish@veehive.ai and raheela@veehive.ai and sends the person a confirmation. The
+           _honey field below is the spam trap: it is off screen, so only a bot fills it in. -->
+      <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+      <input type="hidden" name="product" value="veehive">
+
+      <div class="field-row">
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Jane Doe">
+        </div>
+        <div class="field">
+          <label for="f-company">Company</label>
+          <input id="f-company" name="company" type="text" required autocomplete="organization" placeholder="Acme Inc.">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="f-email">Work email</label>
+        <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="jane@acme.com">
+      </div>
+
+      <div class="field">
+        <label for="f-message">What would you like to see?<span class="opt">optional</span></label>
+        <textarea id="f-message" name="message" placeholder="e.g. We handle support, content and project work across three teams and want to know where an agent fits first."></textarea>
+      </div>
+
+      <button class="demo-submit" type="submit" id="demoSubmit">Request my demo</button>
+      <p class="demo-error" id="demoError" role="alert"></p>
+      <p class="demo-note">We'll only use these details to arrange your demo. No newsletter, no reselling — read our <a href="/privacy.html" style="text-decoration:underline;">privacy policy</a>.</p>
+    </form>
+
+    <div class="demo-done" id="demoDone" hidden tabindex="-1">
+      <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <h2>Thanks — that's with us.</h2>
+      <p>Taj and the Veehive team will reach out within one working day to find a slot. If it's urgent, email <a href="mailto:raheela@veehive.ai" style="text-decoration:underline;">raheela@veehive.ai</a> and we'll pick it up straight away.</p>
+      <a class="again" href="/book-a-demo.html">Send another request</a>
+    </div>
+  </div>
+
+  <aside class="demo-aside">
+    <img class="aside-bee" src="/brand/mascots/mascot-veehive.png" width="56" height="56" alt="" loading="lazy" decoding="async">
+    <h2>What the 30 minutes look like</h2>
+    <p class="sub">A working session, not a pitch. Come with one real workflow and you'll leave knowing exactly what it would take to automate it.</p>
+    <ol class="expect">
+      <li><span class="n">1</span><span><strong>Which app fits your workflow.</strong> Support, content, projects, frontline, campaigns or documents — we map your process to the right agent first.</span></li>
+      <li><span class="n">2</span><span><strong>A live run on your own task.</strong> We bring a task from your actual process, not a canned script, and show the agent working it end to end.</span></li>
+      <li><span class="n">3</span><span><strong>Rollout, pricing and next steps.</strong> A straight answer on deployment time, cost, and what the first 30 days look like.</span></li>
+    </ol>
+
+    <div class="res">
+      <a class="res-card" href="mailto:raheela@veehive.ai?subject=Veehive%20demo" data-cta="demo-email">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span>
+        <div><h3>Rather just email?</h3><p>Write to raheela@veehive.ai and we'll reply with a few slots.</p></div>
+      </a>
+      <a class="res-card" href="/agentic-apps.html" data-cta="demo-apps">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+        <div><h3>See all six apps</h3><p>Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind and HiveDocs, on one harness.</p></div>
+      </a>
+      <a class="res-card" href="/#faq" data-cta="demo-faq">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+        <div><h3>Read the FAQ</h3><p>Deployment time, languages, model choice, data residency and security.</p></div>
+      </a>
+    </div>
+
+    <p class="aside-trust">Dubai AI Seal · Tier E&nbsp;&nbsp;·&nbsp;&nbsp;#1 AI Company on F6S, Jun 2025<br>SOC 2 controls implemented · practices aligned to ISO 27001.</p>
+  </aside>
+
+ </div>
+</section>
+
+<footer class="vh-footer">
+    <div class="vh-footer__wrap">
+        <div class="vh-footer__top">
+            <div>
+                <div class="vh-footer__brand">
+                    <img src="/logo-veehive-ai-white-92h.png" alt="Veehive.ai" loading="lazy" decoding="async">
+                </div>
+                <p class="vh-footer__tagline">Your agentic workforce, built in Dubai. Mpliphi, HiveStudio, SnapaPro, HiveLink, HiveMind, HiveDocs &mdash; one company.</p>
+                <div class="vh-footer__social">
+                <a href="https://linkedin.com/company/letsveehive" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                <a href="https://twitter.com/letsveehive" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a href="https://youtube.com/@letsveehive" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="https://instagram.com/letsveehive" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                <a href="https://tiktok.com/@letsveehive" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+                </div>
+                <div class="vh-footer__handle">@letsveehive everywhere</div>
+                <div class="vh-footer__by"><img src="/agents/bee-veehive.png" alt="" width="128" height="128" loading="lazy" decoding="async">A Veehive product</div>
+            </div>
+
+            <div class="vh-footer__col">
+                <h4>Products</h4>
+                <a href="https://mpliphi.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-mpliphi-32.png?v=2" alt="" loading="lazy" decoding="async">Mpliphi</a>
+                <a href="https://veehivestudio.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-studio-32.png" alt="" loading="lazy" decoding="async">HiveStudio</a>
+                <a href="https://snapapro.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-snapapro-32.png" alt="" loading="lazy" decoding="async">SnapaPro</a>
+                <a href="https://veehivelink.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-hivelink-32.png" alt="" loading="lazy" decoding="async">HiveLink</a>
+                <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-mind-32.png" alt="" loading="lazy" decoding="async">HiveMind</a>
+                <a href="https://veehivedocs.com" target="_blank" rel="noopener noreferrer"><img src="/favicon-hivedocs-32.png" alt="" loading="lazy" decoding="async">HiveDocs</a>
+                <a href="/#hivefront"><img src="/favicon-hivefront-32.png" alt="" loading="lazy" decoding="async">HiveFront</a>
+            </div>
+
+            <div class="vh-footer__col">
+                <h4>Veehive Labs</h4>
+                <a href="https://veehivelabs.com/custom-ai-development">Custom AI Development</a>
+                <a href="https://veehivelabs.com/ai-consulting">AI Consulting &amp; Strategy</a>
+                <a href="https://veehivelabs.com/ai-training">AI Training &amp; Enablement</a>
+                <a href="https://veehivelabs.com/embedded-ai-teams">Embedded AI Teams</a>
+                <a href="https://veehivelabs.com/implementation">Implementation &amp; Integration</a>
+            </div>
+
+            <div class="vh-footer__col">
+                <h4>Company</h4>
+                <a href="/about.html">About Us</a>
+                <a href="/team.html">Our Team</a>
+                <a href="/#contact">Contact</a>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="#" data-vh-cookie-settings>Cookie settings</a>
+            </div>
+
+            <div class="vh-footer__ticker-wrap" aria-hidden="true">
+                <div class="vh-footer__ticker" id="footerTicker"></div>
+            </div>
+        </div>
+
+        <div class="vh-footer__map-row">
+            <div class="vh-footer__map-info">
+                <svg class="vh-footer__pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path stroke-linejoin="round" d="M12 21.5S4.8 15.2 4.8 10a7.2 7.2 0 1 1 14.4 0c0 5.2-7.2 11.5-7.2 11.5z"/><circle cx="12" cy="9.8" r="2.6"/></svg>Veehive Tech FZ-LLC &middot; in5 Tech, Dubai Internet City, Dubai, UAE<br>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=in5+Tech+Dubai+Internet+City" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+            </div>
+            <div class="vh-footer__map-frame">
+                <iframe title="Veehive Tech FZ-LLC location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    data-vh-map-src="https://www.google.com/maps?q=in5+Tech,+Dubai+Internet+City,+Dubai,+UAE&amp;output=embed"></iframe>
+                <button type="button" class="vh-footer__map-ask" data-vh-map-load>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-5.686-7-11a7 7 0 1114 0c0 5.314-7 11-7 11z" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg>
+                    <span>Map loads from Google.<br><b>Show map</b></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="vh-footer__bottom">
+            <p style="margin:0;">&copy; 2026 Veehive Tech FZ-LLC &middot; Dubai, United Arab Emirates</p>
+            <div class="vh-footer__badges">
+                <span>
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                    SOC 2 Controls Implemented
+                </span>
+                <span>
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                    ISO 27001 Aligned
+                </span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+  // mobile hamburger nav — open/close panel, close on overlay click or link tap
+  (function () {
+    const btn = document.getElementById('hamburgerBtn');
+    const panel = document.getElementById('mobileNavPanel');
+    const overlay = document.getElementById('mobileNavOverlay');
+    if (!btn || !panel || !overlay) return;
+    function closeMenu() {
+      btn.classList.remove('open'); btn.setAttribute('aria-expanded', 'false');
+      panel.classList.remove('open'); overlay.classList.remove('open');
+    }
+    btn.addEventListener('click', () => {
+      panel.classList.contains('open') ? closeMenu()
+        : (btn.classList.add('open'), btn.setAttribute('aria-expanded', 'true'), panel.classList.add('open'), overlay.classList.add('open'));
+    });
+    overlay.addEventListener('click', closeMenu);
+    panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  })();
+
+  // dark mode toggle — same storage key as the rest of veehive.ai, so the choice carries across pages
+  (function () {
+    const html = document.documentElement;
+    const toggleEl = document.getElementById('darkToggle');
+    function setDark(on) {
+      html.classList.toggle('dark-mode', on);
+      toggleEl.setAttribute('aria-label', on ? 'Switch to light mode' : 'Switch to dark mode');
+      try { localStorage.setItem('veehive-theme', on ? 'dark' : 'light'); } catch (e) {}
+    }
+    setDark(html.classList.contains('dark-mode'));
+    toggleEl.addEventListener('click', () => setDark(!html.classList.contains('dark-mode')));
+  })();
+
+  // Demo form. Posts to the shared mpliphi-api middleware, which emails the lead and confirms back.
+  (function () {
+    const form = document.getElementById('demoForm');
+    const err = document.getElementById('demoError');
+    const done = document.getElementById('demoDone');
+    const btn = document.getElementById('demoSubmit');
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      err.textContent = '';
+      // novalidate is on so we can show the browser's own messages only when we ask for them
+      if (!form.reportValidity()) return;
+
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      try {
+        const res = await fetch('https://mpliphi-api-835361883890.me-central1.run.app/api/demo-request', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        });
+        if (!res.ok) throw new Error(res.status);
+        form.hidden = true;
+        done.hidden = false;
+        done.focus();
+        if (window.gtag) gtag('event', 'generate_lead', { link_text: 'Request my demo', page_location: window.location.pathname });
+      } catch (_) {
+        // Never swallow it silently: the whole page exists to start a conversation,
+        // so a failure has to hand them the address that always works.
+        btn.disabled = false;
+        btn.textContent = 'Request my demo';
+        err.textContent = 'That did not send. Please email raheela@veehive.ai and we will pick it up.';
+      }
+    });
+  })();
+
+  // Footer product ticker — matches the one on index.html.
+  (function(){
+    var ticker = document.getElementById('footerTicker');
+    if (!ticker) return;
+    var items = [
+      { name: 'Mpliphi',    icon: '/favicon-mpliphi-32.png' },
+      { name: 'HiveStudio', icon: '/favicon-studio-32.png' },
+      { name: 'SnapaPro',   icon: '/favicon-snapapro-32.png' },
+      { name: 'HiveLink',   icon: '/favicon-hivelink-32.png' },
+      { name: 'HiveMind',   icon: '/favicon-mind-32.png' },
+      { name: 'HiveDocs',   icon: '/favicon-hivedocs-32.png' },
+      { name: 'HiveFront',  icon: '/favicon-hivefront-32.png' }
+    ];
+    function build(){
+      items.forEach(function(p){
+        var row = document.createElement('div');
+        row.className = 'vh-footer__ticker-item';
+        var img = document.createElement('img');
+        img.src = p.icon; img.alt = ''; img.width = 16; img.height = 16;
+        img.loading = 'lazy'; img.decoding = 'async';
+        row.appendChild(img);
+        row.appendChild(document.createTextNode(p.name));
+        ticker.appendChild(row);
+      });
+    }
+    build(); build();
+  })();
+
+  // Third-party map embed: no src until the visitor consents, or asks for it.
+  (function(){
+    function loadMap(){
+      var frames=document.querySelectorAll('[data-vh-map-src]');
+      for(var i=0;i<frames.length;i++){
+        var f=frames[i];
+        if(f.getAttribute('src')) continue;
+        f.setAttribute('src', f.getAttribute('data-vh-map-src'));
+        if(f.parentElement) f.parentElement.setAttribute('data-loaded','1');
+      }
+    }
+    var saved=null;
+    try{ saved=localStorage.getItem('veehive-consent'); }catch(e){}
+    if(saved==='granted') loadMap();
+    document.querySelectorAll('[data-vh-map-load]').forEach(function(b){ b.addEventListener('click', loadMap); });
+  })();
+
+  // Footer "Cookie settings": no consent banner on this page, so send back home to manage it.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-vh-cookie-settings]');
+    if (!a) return;
+    e.preventDefault();
+    try { localStorage.removeItem('veehive-consent'); } catch (_) {}
+    location.href = '/';
+  });
+</script>
+</body>
+</html>

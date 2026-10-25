@@ -13,6 +13,12 @@
         "type": 301
       }
     ],
+    "rewrites": [
+      {
+        "source": "/book-a-demo",
+        "destination": "/book-a-demo.html"
+      }
+    ],
     "headers": [
       {
         "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|ico)",

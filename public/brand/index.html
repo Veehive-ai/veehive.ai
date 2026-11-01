@@ -379,6 +379,18 @@ section[hidden]{display:none}
 .dp .n{font-family:var(--display);font-weight:800;font-size:15px}
 .dp .u{font-size:12.5px;color:var(--fg-3);line-height:1.45}
 
+
+/* A preview beside every row of the set, so the table is not just filenames. */
+.soc th.pv, .soc td.pv { width: 92px; padding-right: 4px; }
+.soc td.pv img { display: block; width: 84px; height: 48px; object-fit: contain;
+  object-position: left center; background: #0E1117; border: 1px solid var(--line-soft);
+  border-radius: 3px; cursor: zoom-in; }
+.soc td.pv img:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+@media (max-width: 700px) {
+  .soc th.pv, .soc td.pv { width: 62px; }
+  .soc td.pv img { width: 56px; height: 34px; }
+}
+
 /* ── lightbox ───────────────────────────────────────────────────────────── */
 /* Previews are scaled right down in the grid; this opens the real pixels. */
 .shots img, .slide img { cursor: zoom-in; }
@@ -669,8 +681,8 @@ section[hidden]{display:none}
 
   <h3 style="font-size:14px;font-weight:700;margin-bottom:8px">The set</h3>
   <div class="tw"><table class="soc">
-    <thead><tr><th>Kind</th><th>Where</th><th>Size</th><th>File</th></tr></thead>
-    <tbody><tr><td class="k">Avatar</td><td>Every platform</td><td class="w">400 / 640 / 1080 square</td><td><a class="dl" href="social/avatar-dark-640.png" download>PNG</a><a class="dl" href="social/avatar-light-640.png" download>ON LIGHT</a></td></tr><tr><td class="k">Banner</td><td>LinkedIn page</td><td class="w">1128 &times; 191</td><td><a class="dl" href="social/banner-linkedin.png" download>PNG</a></td></tr><tr><td class="k">Banner</td><td>X header</td><td class="w">1500 &times; 500</td><td><a class="dl" href="social/banner-x.png" download>PNG</a></td></tr><tr><td class="k">Banner</td><td>Facebook cover</td><td class="w">820 &times; 312</td><td><a class="dl" href="social/banner-facebook.png" download>PNG</a></td></tr><tr><td class="k">Banner</td><td>YouTube channel</td><td class="w">2560 &times; 1440, safe 1546 &times; 423</td><td><a class="dl" href="social/banner-youtube.png" download>PNG</a></td></tr><tr><td class="k">Post</td><td>Square — feed</td><td class="w">1080 &times; 1080</td><td><a class="dl" href="social/post-square.png" download>PNG</a></td></tr><tr><td class="k">Post</td><td>Portrait — feed</td><td class="w">1080 &times; 1350</td><td><a class="dl" href="social/post-portrait.png" download>PNG</a></td></tr><tr><td class="k">Post</td><td>Story / Reel / TikTok</td><td class="w">1080 &times; 1920</td><td><a class="dl" href="social/post-story.png" download>PNG</a></td></tr></tbody>
+    <thead><tr><th class="pv">Preview</th><th>Kind</th><th>Where</th><th>Size</th><th>File</th></tr></thead>
+    <tbody><tr><td class="pv"><img src="social/avatar-dark-640.png" alt="Avatar on dark" loading="lazy"></td><td class="k">Avatar</td><td>Every platform</td><td class="w">400 / 640 / 1080 square</td><td><a class="dl" href="social/avatar-dark-640.png" download>PNG</a><a class="dl" href="social/avatar-light-640.png" download>ON LIGHT</a></td></tr><tr><td class="pv"><img src="social/banner-linkedin.png" alt="LinkedIn page banner" loading="lazy"></td><td class="k">Banner</td><td>LinkedIn page</td><td class="w">1128 &times; 191</td><td><a class="dl" href="social/banner-linkedin.png" download>PNG</a></td></tr><tr><td class="pv"><img src="social/banner-x.png" alt="X header banner" loading="lazy"></td><td class="k">Banner</td><td>X header</td><td class="w">1500 &times; 500</td><td><a class="dl" href="social/banner-x.png" download>PNG</a></td></tr><tr><td class="pv"><img src="social/banner-facebook.png" alt="Facebook cover banner" loading="lazy"></td><td class="k">Banner</td><td>Facebook cover</td><td class="w">820 &times; 312</td><td><a class="dl" href="social/banner-facebook.png" download>PNG</a></td></tr><tr><td class="pv"><img src="social/banner-youtube.png" alt="YouTube channel banner" loading="lazy"></td><td class="k">Banner</td><td>YouTube channel</td><td class="w">2560 &times; 1440, safe 1546 &times; 423</td><td><a class="dl" href="social/banner-youtube.png" download>PNG</a></td></tr><tr><td class="pv"><img src="social/post-square.png" alt="Square feed post" loading="lazy"></td><td class="k">Post</td><td>Square — feed</td><td class="w">1080 &times; 1080</td><td><a class="dl" href="social/post-square.png" download>PNG</a></td></tr><tr><td class="pv"><img src="social/post-portrait.png" alt="Portrait feed post" loading="lazy"></td><td class="k">Post</td><td>Portrait — feed</td><td class="w">1080 &times; 1350</td><td><a class="dl" href="social/post-portrait.png" download>PNG</a></td></tr><tr><td class="pv"><img src="social/post-story.png" alt="Story, Reel and TikTok post" loading="lazy"></td><td class="k">Post</td><td>Story / Reel / TikTok</td><td class="w">1080 &times; 1920</td><td><a class="dl" href="social/post-story.png" download>PNG</a></td></tr></tbody>
   </table></div>
 
   <div class="shots">
@@ -890,7 +902,7 @@ section[hidden]{display:none}
 /* Click a preview to see it at full size. The grid shows these at a few hundred
    pixels wide; the files behind them are up to 2560 across. */
 (function () {
-  var SEL = '.shots img, .slide img';
+  var SEL = '.shots img, .slide img, .soc td.pv img';
   var lb = document.createElement('div');
   lb.className = 'vhlb';
   lb.hidden = true;

@@ -220,10 +220,17 @@ code{font-family:var(--vh-font-mono);font-size:12.5px}
     ['HiveMind', '', 'Launch campaigns like a team of fifty.', '--vh-color-hivemind'],
     ['HiveDocs', '', 'Your paperwork, finally searchable.', '--vh-color-hivedocs']
   ];
+  var HARNESS = ['HiveFront', '', 'One front window for the whole hive.', '--vh-color-hivefront'];
   document.getElementById('apps').innerHTML = APPS.map(function (a) {
     return '<tr><td class="p" style="color:var(' + a[3] + ')">' + a[0] + '</td>'
       + '<td><button class="cp" data-copy="' + a[2] + '">' + a[2] + '</button></td></tr>';
-  }).join('');
+  }).join('')
+  // the harness is not a seventh app, so it sits below the six with its own note
+  + '<tr><td class="p" style="color:var(' + HARNESS[3] + ')">' + HARNESS[0] + '</td>'
+  + '<td><button class="cp" data-copy="' + HARNESS[2] + '">' + HARNESS[2] + '</button>'
+  + '<div style="color:var(--vh-color-text-muted);font-size:12.5px;margin-top:4px">'
+  + 'Not a seventh app \u2014 the window the six run in. One sign-in, one day, one place.'
+  + '</div></td></tr>';
 
   var PEOPLE = ['sathish-jeyakumar', 'chakir-qatab', 'fahim-ak', 'raheela-taj',
                 'nitesh-duraivel', 'kelvin-jebastin'];

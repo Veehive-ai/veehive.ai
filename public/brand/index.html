@@ -366,6 +366,18 @@ section[hidden]{display:none}
 .shots img{display:block;width:100%;height:auto}
 .shots figcaption{padding:9px 12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;
   text-transform:uppercase;color:var(--fg-3);border-top:1px solid var(--line-soft)}
+
+/* profile pictures, shown the way a platform crops them */
+.dps{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:4px}
+@media(max-width:560px){.dps{grid-template-columns:1fr}}
+.dp{border:1px solid var(--line);border-radius:12px;background:var(--surface);
+  padding:18px;display:flex;gap:16px;align-items:center;min-width:0}
+.dp .pic{width:92px;height:92px;border-radius:50%;flex:none;overflow:hidden;
+  border:1px solid var(--line-soft)}
+.dp .pic img{display:block;width:100%;height:100%;object-fit:cover}
+.dp .side{min-width:0;display:flex;flex-direction:column;gap:7px}
+.dp .n{font-family:var(--display);font-weight:800;font-size:15px}
+.dp .u{font-size:12.5px;color:var(--fg-3);line-height:1.45}
 </style>
 <div class="wrap">
 
@@ -632,6 +644,8 @@ section[hidden]{display:none}
   <div class="sec-h"><p class="eyebrow">Social</p><h2>One hive, six windows</h2>
   <p>Avatars, banners and post templates at the size each platform actually wants, plus the bio for each, inside its character limit. Everything here is rendered by <code style="font-family:var(--mono);font-size:12.5px">social/make-social.py</code> from the mark and the logotype next door &mdash; when the brand changes, re-run it rather than editing a PNG.</p></div>
 
+  <p class="eyebrow" style="margin-top:4px">Profile picture</p><p style="color:var(--fg-2);max-width:62ch;font-size:15px;margin:6px 0 12px">The mark alone, never the logotype &mdash; every platform crops a profile picture to a circle, and the wordmark disappears. Shown below as it will actually appear. White is the default: the mark is six colours and needs a neutral behind it. Neither file is transparent &mdash; a platform composites a transparent PNG onto a ground you cannot predict, and six colours on an unknown ground is a gamble.</p><div class="dps"><div class="dp"><span class="pic"><img src="social/avatar-light-640.png" alt="Profile picture, on white - the default"></span><span class="side"><span class="n">On white &mdash; the default</span><span class="u">All six petals hold against a neutral. On a dark ground the deep green and the violet go muddy.</span><span class="dl-row" style="margin-top:2px"><a class="dl" href="social/avatar-light-400.png" download>400</a><a class="dl" href="social/avatar-light-640.png" download>640</a><a class="dl" href="social/avatar-light-1080.png" download>1080</a></span></span></div><div class="dp"><span class="pic"><img src="social/avatar-dark-640.png" alt="Profile picture, on dark - the alternate"></span><span class="side"><span class="n">On dark &mdash; the alternate</span><span class="u">Only where a platform&rsquo;s own chrome is pale enough that a white circle disappears into it.</span><span class="dl-row" style="margin-top:2px"><a class="dl" href="social/avatar-dark-400.png" download>400</a><a class="dl" href="social/avatar-dark-640.png" download>640</a><a class="dl" href="social/avatar-dark-1080.png" download>1080</a></span></span></div></div>
+
   <h3 style="font-size:14px;font-weight:700;margin-bottom:8px">The set</h3>
   <div class="tw"><table class="soc">
     <thead><tr><th>Kind</th><th>Where</th><th>Size</th><th>File</th></tr></thead>
@@ -651,7 +665,7 @@ section[hidden]{display:none}
   <p class="eyebrow" style="margin-top:30px">Rules</p>
   <div class="rules" style="margin-top:8px">
     <div><h3><span class="tick ok">&#10003;</span>Do</h3><ul>
-      <li>Use the mark alone as the avatar. The logotype is unreadable in a circle.</li>
+      <li>Use the mark alone as the avatar, on white. The logotype is unreadable in a circle.</li>
       <li>Keep anything that matters in the middle third of a banner &mdash; phones crop the ends.</li>
       <li>Edit <code style="font-family:var(--mono);font-size:12px">post-*.html</code> and re-render, rather than typing over a PNG.</li>
       <li>Keep the handle the same everywhere: <code style="font-family:var(--mono);font-size:12px">@letsveehive</code>.</li>

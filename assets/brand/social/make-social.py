@@ -50,8 +50,11 @@ def shot(html, path, w, h):
 # ── avatars ────────────────────────────────────────────────────────────────
 # One square mark, generous margin so a circular crop never clips a petal.
 def avatar(ground, size):
+    # 74% of the square puts the mark's ink at ~74% of the circle's width and
+    # ~79% of its height: big enough to read in a comment thread or a story
+    # ring, with the petal tips still well clear of the round crop.
     css = ("body{background:%s;display:grid;place-items:center}"
-           "img{width:66%%;height:auto;display:block}" % ground)
+           "img{width:74%%;height:auto;display:block}" % ground)
     return page("<img src='../mark/veehive-mark.svg' alt=''>", css, size, size)
 
 

@@ -378,6 +378,27 @@ section[hidden]{display:none}
 .dp .side{min-width:0;display:flex;flex-direction:column;gap:7px}
 .dp .n{font-family:var(--display);font-weight:800;font-size:15px}
 .dp .u{font-size:12.5px;color:var(--fg-3);line-height:1.45}
+
+/* ── lightbox ───────────────────────────────────────────────────────────── */
+/* Previews are scaled right down in the grid; this opens the real pixels. */
+.shots img, .slide img { cursor: zoom-in; }
+.shots img:focus-visible, .slide img:focus-visible {
+  outline: 2px solid var(--fg); outline-offset: 3px; }
+.lb { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center;
+  padding: 28px; background: rgba(6, 8, 13, .94); backdrop-filter: blur(6px); }
+.lb[hidden] { display: none; }
+.lb-in { margin: 0; display: flex; flex-direction: column; align-items: center;
+  gap: 14px; max-width: 100%; }
+.lb-in img { display: block; max-width: min(96vw, 1680px); max-height: 82vh;
+  width: auto; height: auto; border-radius: 6px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .6); background: #0E1117; }
+.lb-in figcaption { font-family: var(--mono); font-size: 12px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--fg-3); text-align: center; }
+.lb-x { position: fixed; top: 18px; right: 20px; width: 40px; height: 40px;
+  border-radius: 50%; border: 1px solid var(--line); background: var(--surface);
+  color: var(--fg); font-size: 22px; line-height: 1; cursor: pointer; }
+.lb-x:hover { border-color: var(--fg-3); }
+@media (max-width: 700px) { .lb { padding: 14px; } .lb-in img { max-height: 74vh; } }
 </style>
 <div class="wrap">
 
@@ -861,6 +882,59 @@ section[hidden]{display:none}
   window.addEventListener('hashchange', function () {
     var k = location.hash.slice(1);
     if (buttons.some(function (b) { return b.dataset.tab === k; })) show(k, false);
+  });
+})();
+</script>
+
+<script>
+/* Click a preview to see it at full size. The grid shows these at a few hundred
+   pixels wide; the files behind them are up to 2560 across. */
+(function () {
+  var SEL = '.shots img, .slide img';
+  var lb = document.createElement('div');
+  lb.className = 'lb';
+  lb.hidden = true;
+  lb.innerHTML = '<button class="lb-x" type="button" aria-label="Close">\u00d7</button>' +
+    '<figure class="lb-in"><img alt=""><figcaption></figcaption></figure>';
+  document.body.appendChild(lb);
+  var big = lb.querySelector('img'), cap = lb.querySelector('figcaption'), from = null;
+
+  function open(node) {
+    var fig = node.closest('figure');
+    var c = fig && fig.querySelector('figcaption');
+    var label = c ? c.textContent.trim() : (node.alt || '');
+    from = node;
+    cap.textContent = label;
+    big.onload = function () {
+      cap.textContent = label + ' \u00b7 ' + big.naturalWidth + ' \u00d7 ' + big.naturalHeight;
+    };
+    big.src = node.currentSrc || node.src;
+    lb.hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+    lb.querySelector('.lb-x').focus();
+  }
+
+  function close() {
+    lb.hidden = true;
+    big.removeAttribute('src');
+    document.documentElement.style.overflow = '';
+    if (from) { from.focus(); from = null; }
+  }
+
+  document.addEventListener('click', function (e) {
+    var hit = e.target.closest && e.target.closest(SEL);
+    if (hit) { open(hit); return; }
+    if (!lb.hidden && (e.target === lb || (e.target.closest && e.target.closest('.lb-x')))) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !lb.hidden) close();
+  });
+  Array.prototype.forEach.call(document.querySelectorAll(SEL), function (n) {
+    n.tabIndex = 0;
+    n.setAttribute('role', 'button');
+    n.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); n.click(); }
+    });
   });
 })();
 </script>

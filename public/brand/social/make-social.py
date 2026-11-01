@@ -81,21 +81,32 @@ def fit_script(budget):
             "document.documentElement.dataset.fit=fs;});</script>" % budget)
 
 
-def banner(w, h, safe_h):
+def banner(w, h, safe_h, safe_w=0):
+    """safe_w is the width a phone is guaranteed to show, 0 = derive it.
+
+    On most banners the whole canvas is the safe area and the content is kept
+    well inside it. YouTube is the exception: the canvas is 2560x1440 but only
+    a 1546x423 strip in the middle survives every crop, so there the content is
+    scaled against that strip rather than against the canvas, which is what
+    stops it reading as a small island in a lot of black.
+    """
     # a 191px strip cannot hold the long line legibly; short strips get the
     # short line, and the fit script keeps either one off the edges
     line = ('Six agentic apps. One harness.' if safe_h < 260
             else 'Power your business with bespoke agentic apps.')
-    avail = int(safe_h * 0.80)          # vertical budget inside the safe strip
-    logo_h = int(avail * 0.34)
-    gap = max(8, int(avail * 0.08))
+    wide = bool(safe_w)
+    box = safe_w if wide else int(w * 0.62)
+    avail = int(safe_h * (0.88 if wide else 0.80))
+    logo_h = int(avail * (0.44 if wide else 0.34))
+    gap = max(8, int(avail * (0.09 if wide else 0.08)))
     css = ("body{background:%s;display:grid;place-items:center}"
            ".in{width:%dpx;display:flex;flex-direction:column;align-items:center;"
            "gap:%dpx;text-align:center}"
            ".in img{height:%dpx;width:auto;flex:none}"
            ".t{font-family:'Manrope',sans-serif;font-weight:800;color:#EEF0F5;"
            "font-size:%dpx;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}"
-           % (DARK, int(w * 0.62), gap, logo_h, max(15, int(avail * 0.26))))
+           % (DARK, box, gap, logo_h,
+              max(15, int(avail * (0.30 if wide else 0.26)))))
     body = ("<div class='in'><img src='../logo/veehive-ai-logo-white.svg' alt=''>"
             "<div class='t'>%s</div></div>%s"
             % (line, fit_script(avail - logo_h - gap)))
@@ -133,11 +144,12 @@ def post(w, h, headline, kicker):
 AVATARS = [('light', '#FFFFFF'), ('dark', DARK)]
 AVATAR_SIZES = [400, 640, 1080]
 
+# name, w, h, safe strip height, safe strip width (0 = derive from w)
 BANNERS = [
-    ('linkedin', 1128, 191, 191),
-    ('x',        1500, 500, 500),
-    ('facebook',  820, 312, 312),
-    ('youtube',  2560, 1440, 423),   # safe strip is 1546 x 423 in the middle
+    ('linkedin', 1128, 191, 191, 0),
+    ('x',        1500, 500, 500, 0),
+    ('facebook',  820, 312, 312, 0),
+    ('youtube',  2560, 1440, 423, 1546),  # only this strip survives every crop
 ]
 
 POSTS = [
@@ -155,9 +167,9 @@ if __name__ == '__main__':
             if shot(avatar(ground, s), f, s, s):
                 made += 1; print('  avatar  %-28s %dx%d' % (os.path.basename(f), s, s))
 
-    for name, w, h, safe in BANNERS:
+    for name, w, h, safe, sw in BANNERS:
         f = os.path.join(OUT, 'banner-%s.png' % name)
-        if shot(banner(w, h, safe), f, w, h):
+        if shot(banner(w, h, safe, sw), f, w, h):
             made += 1; print('  banner  %-28s %dx%d' % (os.path.basename(f), w, h))
 
     for name, w, h, head, kick in POSTS:

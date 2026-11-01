@@ -55,26 +55,50 @@ def avatar(ground, size):
     return page("<img src='../mark/veehive-mark.svg' alt=''>", css, size, size)
 
 
-# ── banners ────────────────────────────────────────────────────────────────
+# ── banners ────────────────────────────────────────────────
 # Wide strips. Everything that matters sits in the middle, because every
-# platform crops the ends differently on phones.
+# platform crops the ends differently on phones, so the logo and the line are
+# sized against the safe strip rather than against the full canvas.
+#
+# The headline is fitted at render time instead of guessed. A size derived from
+# the strip height alone, on a nowrap line, once ran straight off the edge of
+# three of these four banners, so FIT shrinks the type until it fits the text
+# budget; a longer headline later costs a re-render and nothing else.
+#
+# Two things that look like details and are not. It waits for the load event as
+# well as the fonts, because on fonts.ready alone the logo has no width yet and
+# the budget is measured against a phantom. And it tests offsetHeight against a
+# fixed budget rather than scrollHeight against clientHeight: line-height 1.15
+# is tighter than Manrope's natural line box, so scrollHeight sits a few pixels
+# above clientHeight at every size and that comparison never converges.
+def fit_script(budget):
+    return ("<script>Promise.all([document.fonts.ready,new Promise(function(r){"
+            "if(document.readyState==='complete')r();else addEventListener('load',r)})])"
+            ".then(function(){var t=document.querySelector('.t');"
+            "var fs=parseFloat(getComputedStyle(t).fontSize);"
+            "while(fs>8&&(t.offsetHeight>%d||t.scrollWidth>t.clientWidth+1)){"
+            "fs-=1;t.style.fontSize=fs+'px';}"
+            "document.documentElement.dataset.fit=fs;});</script>" % budget)
+
+
 def banner(w, h, safe_h):
-    # a 191px strip cannot hold the long line on two lines; short strips get
-    # the short line, and nothing is allowed to wrap and clip
+    # a 191px strip cannot hold the long line legibly; short strips get the
+    # short line, and the fit script keeps either one off the edges
     line = ('Six agentic apps. One harness.' if safe_h < 260
             else 'Power your business with bespoke agentic apps.')
-    pad = max(28, int(h * 0.18))
-    logo_h = min(int(safe_h * 0.42), int(h * 0.34))
-    css = ("body{background:%s;display:grid;place-items:center;padding:%dpx}"
-           ".in{display:flex;flex-direction:column;align-items:center;gap:%dpx;"
-           "max-width:%dpx;text-align:center}"
-           ".in img{height:%dpx;width:auto}"
+    avail = int(safe_h * 0.80)          # vertical budget inside the safe strip
+    logo_h = int(avail * 0.34)
+    gap = max(8, int(avail * 0.08))
+    css = ("body{background:%s;display:grid;place-items:center}"
+           ".in{width:%dpx;display:flex;flex-direction:column;align-items:center;"
+           "gap:%dpx;text-align:center}"
+           ".in img{height:%dpx;width:auto;flex:none}"
            ".t{font-family:'Manrope',sans-serif;font-weight:800;color:#EEF0F5;"
-           "font-size:%dpx;letter-spacing:-.02em;line-height:1.15;white-space:nowrap}"
-           % (DARK, pad, max(10, int(h * 0.07)), int(w * 0.62), logo_h,
-              max(15, int(safe_h * 0.21))))
+           "font-size:%dpx;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}"
+           % (DARK, int(w * 0.62), gap, logo_h, max(15, int(avail * 0.26))))
     body = ("<div class='in'><img src='../logo/veehive-ai-logo-white.svg' alt=''>"
-            "<div class='t'>%s</div></div>" % line)
+            "<div class='t'>%s</div></div>%s"
+            % (line, fit_script(avail - logo_h - gap)))
     return page(body, css, w, h)
 
 

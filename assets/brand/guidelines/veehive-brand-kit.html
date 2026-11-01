@@ -367,21 +367,21 @@ section[hidden]{display:none}
 .shots img, .slide img { cursor: zoom-in; }
 .shots img:focus-visible, .slide img:focus-visible {
   outline: 2px solid var(--fg); outline-offset: 3px; }
-.lb { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center;
+.vhlb { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center;
   padding: 28px; background: rgba(6, 8, 13, .94); backdrop-filter: blur(6px); }
-.lb[hidden] { display: none; }
-.lb-in { margin: 0; display: flex; flex-direction: column; align-items: center;
+.vhlb[hidden] { display: none; }
+.vhlb-in { margin: 0; display: flex; flex-direction: column; align-items: center;
   gap: 14px; max-width: 100%; }
-.lb-in img { display: block; max-width: min(96vw, 1680px); max-height: 82vh;
+.vhlb-in img { display: block; max-width: min(96vw, 1680px); max-height: 82vh;
   width: auto; height: auto; border-radius: 6px;
   box-shadow: 0 24px 80px rgba(0, 0, 0, .6); background: #0E1117; }
-.lb-in figcaption { font-family: var(--mono); font-size: 12px; letter-spacing: .12em;
+.vhlb-in figcaption { font-family: var(--mono); font-size: 12px; letter-spacing: .12em;
   text-transform: uppercase; color: var(--fg-3); text-align: center; }
-.lb-x { position: fixed; top: 18px; right: 20px; width: 40px; height: 40px;
+.vhlb-x { position: fixed; top: 18px; right: 20px; width: 40px; height: 40px;
   border-radius: 50%; border: 1px solid var(--line); background: var(--surface);
   color: var(--fg); font-size: 22px; line-height: 1; cursor: pointer; }
-.lb-x:hover { border-color: var(--fg-3); }
-@media (max-width: 700px) { .lb { padding: 14px; } .lb-in img { max-height: 74vh; } }
+.vhlb-x:hover { border-color: var(--fg-3); }
+@media (max-width: 700px) { .vhlb { padding: 14px; } .vhlb-in img { max-height: 74vh; } }
 </style>
 <div class="wrap">
 
@@ -875,10 +875,10 @@ section[hidden]{display:none}
 (function () {
   var SEL = '.shots img, .slide img';
   var lb = document.createElement('div');
-  lb.className = 'lb';
+  lb.className = 'vhlb';
   lb.hidden = true;
-  lb.innerHTML = '<button class="lb-x" type="button" aria-label="Close">\u00d7</button>' +
-    '<figure class="lb-in"><img alt=""><figcaption></figcaption></figure>';
+  lb.innerHTML = '<button class="vhlb-x" type="button" aria-label="Close">\u00d7</button>' +
+    '<figure class="vhlb-in"><img alt=""><figcaption></figcaption></figure>';
   document.body.appendChild(lb);
   var big = lb.querySelector('img'), cap = lb.querySelector('figcaption'), from = null;
 
@@ -894,7 +894,7 @@ section[hidden]{display:none}
     big.src = node.currentSrc || node.src;
     lb.hidden = false;
     document.documentElement.style.overflow = 'hidden';
-    lb.querySelector('.lb-x').focus();
+    lb.querySelector('.vhlb-x').focus();
   }
 
   function close() {
@@ -907,7 +907,7 @@ section[hidden]{display:none}
   document.addEventListener('click', function (e) {
     var hit = e.target.closest && e.target.closest(SEL);
     if (hit) { open(hit); return; }
-    if (!lb.hidden && (e.target === lb || (e.target.closest && e.target.closest('.lb-x')))) close();
+    if (!lb.hidden && (e.target === lb || (e.target.closest && e.target.closest('.vhlb-x')))) close();
   });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !lb.hidden) close();

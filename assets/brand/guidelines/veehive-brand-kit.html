@@ -889,7 +889,9 @@ section[hidden]{display:none}
     from = node;
     cap.textContent = label;
     big.onload = function () {
-      cap.textContent = label + ' \u00b7 ' + big.naturalWidth + ' \u00d7 ' + big.naturalHeight;
+      // most captions already carry the size; don't say it twice
+      cap.textContent = /\d\s*[\u00d7x]\s*\d/.test(label) ? label
+        : label + ' \u00b7 ' + big.naturalWidth + ' \u00d7 ' + big.naturalHeight;
     };
     big.src = node.currentSrc || node.src;
     lb.hidden = false;

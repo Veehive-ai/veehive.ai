@@ -1,6 +1,9 @@
 # Firebase
 .firebase/
 
+# Local secrets (see .env.example)
+.env
+
 # Claude Code
 .claude/
 .superpowers/

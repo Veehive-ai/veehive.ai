@@ -1,5 +1,7 @@
 {
   "hosting": {
+    "predeploy": "bash scripts/inject-widget-key.sh inject",
+    "postdeploy": "bash scripts/inject-widget-key.sh restore",
     "public": "public",
     "ignore": [
       "firebase.json",

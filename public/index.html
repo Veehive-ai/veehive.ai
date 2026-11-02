@@ -4400,9 +4400,12 @@
     })();
 </script>
 
-<!-- Mpliphi web widget: Phi chat for this landing page -->
+<!-- Mpliphi web widget: Phi chat for this landing page.
+     data-api-key is a placeholder; scripts/inject-widget-key.sh swaps it for
+     the real MPLIPHI_API_KEY env var around `firebase deploy`, so the key
+     isn't checked into git. -->
 <script src="https://mpliphi.com/widget.js"
         data-product-id="262aa81c-5659-4bf5-8151-603a0362ca3e"
-        data-api-key="mk_5a09aa57f32173692e15d177e36762406d18c4e1"></script>
+        data-api-key="__MPLIPHI_API_KEY__"></script>
 </body>
 </html>

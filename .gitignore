@@ -18,3 +18,4 @@ playwright-report/
 # scratch files that keep getting swept in by `git add -A`
 assets/favicons/_tmp_*
 assets/favicons/veehive-loaders.zip
+firebase-debug.log

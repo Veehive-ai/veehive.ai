@@ -29,7 +29,7 @@
       var pathname=window.location.pathname;
 
       // Route to a specific event name
-      if(href.includes('outlook.office.com/bookwithme'))     evName='click_book_demo';
+      if(href.includes('/book-a-demo'))                      evName='click_book_demo';
       else if(href.includes('wa.me'))                        evName='click_whatsapp';
       else if(href.indexOf('mailto:')===0)                   evName='click_email';
       else if(href.includes('f6s.com/letsveehive'))          evName='click_f6s';
@@ -471,7 +471,7 @@
                     <a href="about.html" class="px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">About</a>
                     <div class="w-px h-4 mx-2" style="background: var(--border);"></div>
                     <button type="button" onclick="toggleTheme()" class="theme-toggle mr-2" aria-label="Toggle light/dark mode" title="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
-                    <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 text-[13px] font-medium bg-[#3B5BFF] rounded-full hover:bg-[#6B82FF] transition-all" style="color: var(--cta-text);">Book a Product Demo</a>
+                    <a href="/book-a-demo" class="px-4 py-1.5 text-[13px] font-medium bg-[#3B5BFF] rounded-full hover:bg-[#6B82FF] transition-all" style="color: var(--cta-text);">Book a Demo</a>
                 </div>
                 <div class="lg:hidden flex items-center gap-3">
                     <button type="button" onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
@@ -490,7 +490,7 @@
                 <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-mind-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">HiveMind</a>
                 <a href="https://veehivedocs.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-hivedocs-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">HiveDocs</a>
                 <a href="about.html" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">About</a>
-                <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="mt-2 py-2.5 text-[14px] font-medium text-center bg-[#3B5BFF] rounded-full" style="color: var(--cta-text);">Book a Product Demo</a>
+                <a href="/book-a-demo" class="mt-2 py-2.5 text-[14px] font-medium text-center bg-[#3B5BFF] rounded-full" style="color: var(--cta-text);">Book a Demo</a>
             </div>
         </div>
     </nav>

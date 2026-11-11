@@ -122,7 +122,7 @@
 
     /* ---------- THE ARGUMENT ---------- */
     .args{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
-    @media(max-width:900px){ .args{grid-template-columns:1fr;} }
+    @media(max-width:900px){ .args{grid-template-columns:1fr; gap:10px;} }
     .arg{
         border:1px solid var(--vh-color-border); border-radius:16px; padding:26px;
         background:var(--vh-color-surface); display:flex; flex-direction:column; gap:12px;
@@ -155,7 +155,7 @@
 
     /* ---------- DEPLOY ---------- */
     .deploys{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
-    @media(max-width:900px){ .deploys{grid-template-columns:1fr;} }
+    @media(max-width:900px){ .deploys{grid-template-columns:1fr; gap:10px;} }
     .deploy{
         border:1px solid var(--vh-color-border); border-radius:16px; padding:26px;
         display:flex; flex-direction:column; gap:12px; background:var(--vh-color-surface);
@@ -181,7 +181,7 @@
 
     .store{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
     @media(max-width:980px){ .store{grid-template-columns:repeat(2,1fr);} }
-    @media(max-width:660px){ .store{grid-template-columns:1fr;} }
+    @media(max-width:660px){ .store{grid-template-columns:1fr; gap:10px;} }
     .app{
         border:1px solid var(--vh-color-border); border-radius:16px; padding:22px;
         background:var(--vh-color-surface); display:flex; flex-direction:column; gap:11px;
@@ -427,7 +427,7 @@
             <a href="/#workforce" class="hide-sm">Workforce</a>
             <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer" class="hide-sm">Labs</a>
             <button type="button" onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
-            <a class="btn btn-p hide-sm" href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&amp;ismsaljsauthenabled&amp;ep=plink" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+            <a class="btn btn-p hide-sm" href="/book-a-demo">Book a Demo</a>
             <button type="button" class="nav-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-mobile-panel" onclick="var p=document.getElementById('nav-mobile-panel'),o=p.classList.toggle('is-open');this.setAttribute('aria-expanded',o?'true':'false')">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
@@ -437,7 +437,7 @@
         <a href="/#apps">All apps</a>
         <a href="/#workforce">Workforce</a>
         <a href="https://veehivelabs.com" target="_blank" rel="noopener noreferrer">Labs</a>
-        <a class="btn btn-p" style="margin-top:6px; text-align:center;" href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&amp;ismsaljsauthenabled&amp;ep=plink" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+        <a class="btn btn-p" style="margin-top:6px; text-align:center;" href="/book-a-demo">Book a Demo</a>
     </div>
 </nav>
 
@@ -710,7 +710,7 @@
             <h2>Start with one function.</h2>
             <p class="lede">Pick the part of the business that hurts most. We deploy the agent, configure it to how you actually work, and run it &mdash; in your cloud, on your premises, or air-gapped.</p>
             <div class="cta-btns">
-                <a class="btn btn-p" href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&amp;ismsaljsauthenabled&amp;ep=plink" target="_blank" rel="noopener noreferrer">Book a product demo</a>
+                <a class="btn btn-p" href="/book-a-demo">Book a Demo</a>
                 <a class="btn btn-g" href="https://wa.me/971564308275" target="_blank" rel="noopener noreferrer">WhatsApp us</a>
             </div>
         </div>

@@ -1635,10 +1635,10 @@
         .hm-diagram { width: 100%; height: auto; display: block; color: var(--text); }
         .hm-diagram text { font-family: 'IBM Plex Sans', sans-serif; }
         .hm-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
-        /* Narrow screens: let the diagram keep a readable type size and scroll. */
+        /* Narrow screens: scale the whole diagram down to fit, no side-scroll. */
         @media (max-width: 640px) {
-            .hm-diagram-card { overflow-x: auto; }
-            .hm-diagram { min-width: 460px; }
+            .hm-diagram text { font-size: 13px; }
+            .hm-eyebrow { font-size: 11.5px; }
         }
         .hm-usecases { display: flex; flex-wrap: wrap; gap: 10px; }
         .hm-usecase {

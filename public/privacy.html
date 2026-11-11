@@ -29,7 +29,7 @@
       var pathname=window.location.pathname;
 
       // Route to a specific event name
-      if(href.includes('outlook.office.com/bookwithme'))     evName='click_book_demo';
+      if(href.includes('/book-a-demo'))                      evName='click_book_demo';
       else if(href.includes('wa.me'))                        evName='click_whatsapp';
       else if(href.indexOf('mailto:')===0)                   evName='click_email';
       else if(href.includes('f6s.com/letsveehive'))          evName='click_f6s';
@@ -133,7 +133,7 @@
     </script>
 
     <link rel="stylesheet" href="/brand/tokens.css">
-    <link rel="stylesheet" href="/tailwind.min.css?v=3">
+    <link rel="stylesheet" href="/tailwind.min.css?v=5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -151,7 +151,7 @@
             --orb-primary: rgba(59,91,255,0.08); --orb-primary-sm: rgba(59,91,255,0.04); --orb-accent: rgba(139,92,255,0.05);
             --logo-filter: brightness(0) invert(1); --logo-opacity: 0.9;
             --shimmer-a: rgba(255,255,255,0); --shimmer-b: rgba(255,255,255,0.04); --shimmer-c: rgba(255,255,255,0.08);
-            --divider: rgba(59,91,255,0.08);
+            --divider: rgba(59,91,255,0.18);
             --gradient-text-a: #6B82FF; --gradient-text-b: #3B5BFF; --gradient-text-c: #8B5CFF;
             --cta-text: #ffffff;
         }
@@ -165,7 +165,7 @@
             --orb-primary: rgba(59,91,255,0.06); --orb-primary-sm: rgba(59,91,255,0.03); --orb-accent: rgba(139,92,255,0.04);
             --logo-filter: none; --logo-opacity: 1;
             --shimmer-a: rgba(15,26,32,0); --shimmer-b: rgba(15,26,32,0.03); --shimmer-c: rgba(15,26,32,0.06);
-            --divider: rgba(59,91,255,0.08);
+            --divider: rgba(59,91,255,0.18);
             --gradient-text-a: #3B5BFF; --gradient-text-b: #2A45CC; --gradient-text-c: #6B3FA0;
             --cta-text: #ffffff;
         }
@@ -471,7 +471,7 @@
                     <a href="about.html" class="px-3 py-1.5 text-[13px] rounded-md transition-colors" style="color: var(--text-secondary);">About</a>
                     <div class="w-px h-4 mx-2" style="background: var(--border);"></div>
                     <button type="button" onclick="toggleTheme()" class="theme-toggle mr-2" aria-label="Toggle light/dark mode" title="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
-                    <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 text-[13px] font-medium bg-[#3B5BFF] rounded-full hover:bg-[#6B82FF] transition-all" style="color: var(--cta-text);">Book a Product Demo</a>
+                    <a href="/book-a-demo" class="px-4 py-1.5 text-[13px] font-medium bg-[#3B5BFF] rounded-full hover:bg-[#6B82FF] transition-all" style="color: var(--cta-text);">Book a Demo</a>
                 </div>
                 <div class="lg:hidden flex items-center gap-3">
                     <button type="button" onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
@@ -490,13 +490,13 @@
                 <a href="https://veehivemind.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-mind-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">HiveMind</a>
                 <a href="https://veehivedocs.com" target="_blank" rel="noopener noreferrer" class="py-2.5 text-[14px]" style="color: var(--text-secondary);"><img src="/favicon-hivedocs-32.png" alt="" class="nav-favicon-mobile" loading="lazy" decoding="async">HiveDocs</a>
                 <a href="about.html" class="py-2.5 text-[14px]" style="color: var(--text-secondary);">About</a>
-                <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="mt-2 py-2.5 text-[14px] font-medium text-center bg-[#3B5BFF] rounded-full" style="color: var(--cta-text);">Book a Product Demo</a>
+                <a href="/book-a-demo" class="mt-2 py-2.5 text-[14px] font-medium text-center bg-[#3B5BFF] rounded-full" style="color: var(--cta-text);">Book a Demo</a>
             </div>
         </div>
     </nav>
 
     <!-- HERO / PAGE HEADER -->
-    <section class="relative z-10 pt-32 pb-16 lg:pt-40 lg:pb-20">
+    <section class="relative z-10 pt-20 pb-12 md:pt-32 md:pb-16 lg:pt-40 lg:pb-20">
         <div class="max-w-4xl mx-auto px-6 lg:px-8">
             <nav class="animate-fade-up mb-8 flex items-center gap-2 text-[13px]" aria-label="Breadcrumb">
                 <a href="/" class="text-white/35 hover:text-white/70 transition-colors">Home</a>
@@ -534,7 +534,7 @@
     <div class="divider-gradient"></div>
 
     <!-- POLICY CONTENT -->
-    <section class="relative z-10 py-16 lg:py-24">
+    <section class="relative z-10 py-10 md:py-16 lg:py-24">
         <div class="max-w-4xl mx-auto px-6 lg:px-8">
             <div class="grid gap-6">
 

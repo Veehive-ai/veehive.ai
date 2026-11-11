@@ -29,7 +29,7 @@
       var pathname=window.location.pathname;
 
       // Route to a specific event name
-      if(href.includes('outlook.office.com/bookwithme'))     evName='click_book_demo';
+      if(href.includes('/book-a-demo'))                      evName='click_book_demo';
       else if(href.includes('wa.me'))                        evName='click_whatsapp';
       else if(href.indexOf('mailto:')===0)                   evName='click_email';
       else if(href.includes('f6s.com/letsveehive'))          evName='click_f6s';
@@ -99,7 +99,7 @@
     </script>
 
     <link rel="stylesheet" href="/brand/tokens.css">
-    <link rel="stylesheet" href="/tailwind.min.css?v=3">
+    <link rel="stylesheet" href="/tailwind.min.css?v=5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -114,7 +114,7 @@
             --text-muted: rgba(166,176,195,0.40); --text-faint: rgba(166,176,195,0.25);
             --border: rgba(59,91,255,0.10); --border-hover: rgba(59,91,255,0.20);
             --surface: rgba(59,91,255,0.04); --surface-hover: rgba(59,91,255,0.08); --surface-raised: rgba(59,91,255,0.06);
-            --dot-color: rgba(59,91,255,0.06); --divider: rgba(59,91,255,0.08);
+            --dot-color: rgba(59,91,255,0.06); --divider: rgba(59,91,255,0.18);
             --logo-filter: brightness(0) invert(1); --logo-opacity: 0.9;
             --gradient-text-a: #6B82FF; --gradient-text-b: #3B5BFF; --gradient-text-c: #8B5CFF;
             --cta-text: #ffffff;
@@ -126,7 +126,7 @@
             --text-muted: rgba(15,26,32,0.30); --text-faint: rgba(15,26,32,0.15);
             --border: rgba(59,91,255,0.10); --border-hover: rgba(59,91,255,0.18);
             --surface: rgba(15,26,32,0.03); --surface-hover: rgba(15,26,32,0.06); --surface-raised: rgba(15,26,32,0.05);
-            --dot-color: rgba(15,26,32,0.04); --divider: rgba(15,26,32,0.08);
+            --dot-color: rgba(15,26,32,0.04); --divider: rgba(15,26,32,0.18);
             --logo-filter: none; --logo-opacity: 1;
             --gradient-text-a: #3B5BFF; --gradient-text-b: #2A45CC; --gradient-text-c: #6B3FA0;
             --cta-text: #ffffff;
@@ -437,7 +437,7 @@
                     <a href="team.html" class="px-3 py-1.5 text-[13px] text-white hover:text-white transition-colors rounded-md bg-white/[0.06]">Team</a>
                     <div class="w-px h-4 bg-white/10 mx-2"></div>
                     <button type="button" onclick="toggleTheme()" class="theme-toggle mr-2" aria-label="Toggle theme" title="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
-                    <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 text-[13px] font-medium text-white bg-white/[0.08] border border-white/[0.1] rounded-full hover:bg-white/[0.14] transition-all">Book a Product Demo</a>
+                    <a href="/book-a-demo" class="px-4 py-1.5 text-[13px] font-medium text-white bg-white/[0.08] border border-white/[0.1] rounded-full hover:bg-white/[0.14] transition-all">Book a Demo</a>
                 </div>
                 <div class="md:hidden flex items-center gap-3">
                     <button type="button" onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
@@ -452,13 +452,13 @@
                 <a href="/" class="py-2.5 text-[14px] text-white/60 hover:text-white">Home</a>
                 <a href="about.html" class="py-2.5 text-[14px] text-white/60 hover:text-white">About</a>
                 <a href="team.html" class="py-2.5 text-[14px] text-white font-medium">Team</a>
-                <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="mt-2 py-2.5 text-[14px] font-medium text-center text-white bg-white/[0.08] border border-white/[0.1] rounded-full">Book a Product Demo</a>
+                <a href="/book-a-demo" class="mt-2 py-2.5 text-[14px] font-medium text-center text-white bg-white/[0.08] border border-white/[0.1] rounded-full">Book a Demo</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="relative z-10 pt-32 pb-16 lg:pt-40 lg:pb-20">
+    <section class="relative z-10 pt-20 pb-12 md:pt-32 md:pb-16 lg:pt-40 lg:pb-20">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="animate-fade-up mb-6">
                 <a href="about.html" class="inline-flex items-center gap-2 text-[13px] text-white/40 hover:text-white/60 transition-colors">
@@ -478,7 +478,7 @@
     <div class="divider-gradient"></div>
 
     <!-- Core Team -->
-    <section class="relative z-10 py-24 lg:py-32">
+    <section class="relative z-10 py-14 md:py-24 lg:py-32">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="reveal mb-12">
                 <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#3B5BFF]/10 border border-[#3B5BFF]/15 mb-5">
@@ -544,7 +544,7 @@
     <div class="divider-gradient"></div>
 
     <!-- Extended Team Model -->
-    <section class="relative z-10 py-24 lg:py-32">
+    <section class="relative z-10 py-14 md:py-24 lg:py-32">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="reveal mb-12">
                 <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-3">How We Scale for Enterprise</h2>
@@ -580,7 +580,7 @@
     <div class="divider-gradient"></div>
 
     <!-- Testimonials -->
-    <section class="relative z-10 py-24 lg:py-32">
+    <section class="relative z-10 py-14 md:py-24 lg:py-32">
         <div class="max-w-5xl mx-auto px-6 lg:px-8">
             <div class="reveal text-center mb-16">
                 <p class="text-[13px] font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-4">Testimonials</p>
@@ -606,7 +606,7 @@
     <div class="divider-gradient"></div>
 
     <!-- FAQ -->
-    <section id="faq" class="relative z-10 py-24 lg:py-32">
+    <section id="faq" class="relative z-10 py-14 md:py-24 lg:py-32">
         <div class="max-w-3xl mx-auto px-6 lg:px-8">
             <div class="reveal text-center mb-16">
                 <p class="text-[13px] font-semibold uppercase tracking-[0.2em] text-violet-400 mb-4">FAQ</p>
@@ -677,7 +677,7 @@
     <div class="divider-gradient"></div>
 
     <!-- CTA Section -->
-    <section class="relative z-10 py-24 lg:py-32 overflow-hidden">
+    <section class="relative z-10 py-14 md:py-24 lg:py-32 overflow-hidden">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-r from-indigo-500/[0.08] via-violet-500/[0.06] to-emerald-500/[0.04] rounded-full blur-[120px] pointer-events-none"></div>
         <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center relative">
             <p class="text-[13px] font-semibold uppercase tracking-[0.2em] text-white/30 mb-5">Ready to Get Started</p>
@@ -688,7 +688,7 @@
                 Book a demo with our team and discover how Veehive's agentic AI can transform your marketing execution.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-3">
-                <a href="https://outlook.office.com/bookwithme/user/4b235448860a484991237c062357501e@veehive.ai?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer"
+                <a href="/book-a-demo"
                    class="group inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#3B5BFF] text-white text-[14px] font-semibold rounded-full hover:bg-[#6B82FF] hover:-translate-y-0.5 transition-all shadow-lg shadow-[#3B5BFF]/20">
                     Book a Demo
                     <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>

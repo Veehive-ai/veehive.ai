@@ -426,7 +426,7 @@
     </script>
 
     <link rel="stylesheet" href="/brand/tokens.css">
-    <link rel="stylesheet" href="/tailwind.min.css?v=3">
+    <link rel="stylesheet" href="/tailwind.min.css?v=4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -461,7 +461,7 @@
             --shimmer-a: rgba(255,255,255,0);
             --shimmer-b: rgba(255,255,255,0.04);
             --shimmer-c: rgba(255,255,255,0.08);
-            --divider: rgba(59,91,255,0.08);
+            --divider: rgba(59,91,255,0.18);
             --gradient-text-a: #6B82FF;
             --gradient-text-b: #3B5BFF;
             --gradient-text-c: #8B5CFF;
@@ -494,7 +494,7 @@
             --shimmer-a: rgba(15,26,32,0);
             --shimmer-b: rgba(15,26,32,0.03);
             --shimmer-c: rgba(15,26,32,0.06);
-            --divider: rgba(59,91,255,0.08);
+            --divider: rgba(59,91,255,0.18);
             --gradient-text-a: #3B5BFF;
             --gradient-text-b: #2A45CC;
             --gradient-text-c: #6B3FA0;
@@ -2035,6 +2035,11 @@
             box-shadow:0 30px 80px -40px rgba(59,91,255,.55), 0 2px 10px rgba(0,0,0,.25);
         }
         @media(max-width:820px){ .fq-panel{padding:32px 24px; border-radius:20px;} }
+        html.light .fq-panel{
+            background:linear-gradient(152deg,#F4F6FF 0%,#EDF1FF 52%,#F3EEFF 100%);
+            border-color:rgba(59,91,255,.22);
+            box-shadow:0 24px 60px -40px rgba(59,91,255,.30), 0 2px 10px rgba(15,26,32,.05);
+        }
         /* faint engineering grid + a brand bloom in the corner */
         .fq-panel::before{
             content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
@@ -2076,29 +2081,38 @@
             font-variant-numeric:tabular-nums; min-width:32px;
         }
         .fq-stat span{font-size:11px; line-height:1.35; color:rgba(255,255,255,.5);}
+        html.light .fq-stat span{color:rgba(15,26,32,.55);}
 
         .fq-mark{
             font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase;
             color:#8FA3FF; margin:0 0 18px; display:flex; align-items:center; gap:10px;
         }
+        html.light .fq-mark{color:#2A45CC;}
         .fq-mark::after{content:""; height:1px; flex:1; background:linear-gradient(90deg,rgba(143,163,255,.45),transparent);}
+        html.light .fq-mark::after{background:linear-gradient(90deg,rgba(42,69,204,.35),transparent);}
         .fq-quote{
             margin:0; font-size:clamp(1.15rem,2.1vw,1.55rem); line-height:1.5; font-weight:500;
             color:#EAF0FF; letter-spacing:-.015em;
         }
+        html.light .fq-quote{color:#0F1A20;}
         .fq-quote p + p{margin-top:18px;}
         .fq-quote em{
             font-style:normal; font-weight:700;
             background:linear-gradient(96deg,#8FA3FF,#C3A6FF);
             -webkit-background-clip:text; background-clip:text; color:transparent;
         }
+        html.light .fq-quote em{background:linear-gradient(96deg,#3B5BFF,#6B3FA0); -webkit-background-clip:text; background-clip:text;}
         .fq-attr{
             margin-top:30px; padding-top:22px; border-top:1px solid rgba(255,255,255,.12);
             display:flex; align-items:center; gap:14px; flex-wrap:wrap;
         }
+        html.light .fq-attr{border-top-color:rgba(15,26,32,.12);}
         .fq-attr .who{font-size:15px; font-weight:700; color:#fff;}
+        html.light .fq-attr .who{color:#0F1A20;}
         .fq-attr .role{font-size:13px; color:rgba(255,255,255,.55);}
+        html.light .fq-attr .role{color:rgba(15,26,32,.55);}
         .fq-attr .sep{width:4px; height:4px; border-radius:50%; background:rgba(255,255,255,.3);}
+        html.light .fq-attr .sep{background:rgba(15,26,32,.25);}
         .vh-app--more .vh-app__name{color:var(--vh-color-brand);}
         .vh-app__icon--more{
             display:grid; place-items:center; color:var(--vh-color-brand);
@@ -2696,7 +2710,7 @@
     <!-- ═══════════════════════════════════════ -->
 
     <!-- mpliphi -->
-    <section id="mpliphi" class="relative z-10 py-20 lg:py-24" style="scroll-margin-top:96px">
+    <section id="mpliphi" class="relative z-10 py-12 md:py-20 lg:py-24" style="scroll-margin-top:96px">
         <div class="max-w-6xl mx-auto px-6 lg:px-8">
             <div class="reveal card-glow card-glow-orchestrator rounded-2xl p-8 md:p-12">
                 <div class="showcase-grid is-flipped">
@@ -2759,7 +2773,7 @@
     </section>
 
     <!-- HiveStudio -->
-    <section id="studio" class="relative z-10 py-20 lg:py-24" style="scroll-margin-top:96px">
+    <section id="studio" class="relative z-10 py-12 md:py-20 lg:py-24" style="scroll-margin-top:96px">
         <div class="max-w-6xl mx-auto px-6 lg:px-8">
             <div class="reveal card-glow card-glow-creator rounded-2xl p-8 md:p-12">
                 <div class="showcase-grid">
@@ -2826,7 +2840,7 @@
     </section>
 
     <!-- SnapaPro -->
-    <section id="snapapro" class="relative z-10 py-20 lg:py-24" style="scroll-margin-top:96px">
+    <section id="snapapro" class="relative z-10 py-12 md:py-20 lg:py-24" style="scroll-margin-top:96px">
         <div class="max-w-6xl mx-auto px-6 lg:px-8">
             <div class="reveal card-glow card-glow-planner rounded-2xl p-8 md:p-12">
                 <div class="showcase-grid is-flipped">
@@ -2893,7 +2907,7 @@
     </section>
 
     <!-- HiveLink -->
-    <section id="veehive-link" class="relative z-10 py-20 lg:py-24" style="scroll-margin-top:96px">
+    <section id="veehive-link" class="relative z-10 py-12 md:py-20 lg:py-24" style="scroll-margin-top:96px">
         <div class="max-w-6xl mx-auto px-6 lg:px-8">
             <div class="reveal card-glow card-glow-distributor rounded-2xl p-8 md:p-12">
                 <div class="showcase-grid">
@@ -2961,7 +2975,7 @@
     </section>
 
     <!-- HiveMind -->
-    <section id="mind" class="relative z-10 py-20 lg:py-24" style="scroll-margin-top:96px">
+    <section id="mind" class="relative z-10 py-12 md:py-20 lg:py-24" style="scroll-margin-top:96px">
         <div class="max-w-6xl mx-auto px-6 lg:px-8">
             <div class="reveal card-glow card-glow-mind rounded-2xl p-8 md:p-12">
                 <div class="showcase-grid is-flipped">
@@ -3028,7 +3042,7 @@
     </section>
 
     <!-- HiveDocs -->
-    <section id="hivedocs" class="relative z-10 py-20 lg:py-24" style="scroll-margin-top:96px">
+    <section id="hivedocs" class="relative z-10 py-12 md:py-20 lg:py-24" style="scroll-margin-top:96px">
         <div class="max-w-6xl mx-auto px-6 lg:px-8">
             <div class="reveal card-glow card-glow-docs rounded-2xl p-8 md:p-12">
                 <div class="showcase-grid">
@@ -3241,7 +3255,7 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- HIVEMETAL — AIR-GAPPED DEPLOYMENT -->
     <!-- ═══════════════════════════════════════ -->
-    <section id="hivemetal" class="relative z-10 py-20 lg:py-24 overflow-hidden" style="scroll-margin-top:96px">
+    <section id="hivemetal" class="relative z-10 py-12 md:py-20 lg:py-24 overflow-hidden" style="scroll-margin-top:96px">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#3B5BFF]/[0.04] rounded-full blur-[150px] pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -3450,7 +3464,7 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- PRESS & MEDIA TEASER -->
     <!-- ═══════════════════════════════════════ -->
-    <section class="relative z-10 py-16 lg:py-20">
+    <section class="relative z-10 py-10 md:py-16 lg:py-20">
         <div class="max-w-5xl mx-auto px-6 lg:px-8">
             <div class="reveal text-center mb-6">
                 <p class="text-[12px] font-semibold uppercase tracking-[0.2em] text-white/30 mb-3">As Featured In</p>
@@ -3487,7 +3501,7 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- RECOGNITION TEASER -->
     <!-- ═══════════════════════════════════════ -->
-    <section class="relative z-10 py-16 lg:py-20">
+    <section class="relative z-10 py-10 md:py-16 lg:py-20">
         <div class="max-w-4xl mx-auto px-6 lg:px-8">
             <div class="reveal text-center mb-8">
                 <p class="text-[12px] font-semibold uppercase tracking-[0.2em] text-white/30 mb-3">Recognized Globally</p>
@@ -3545,7 +3559,7 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- DUBAI AI SEAL -->
     <!-- ═══════════════════════════════════════ -->
-    <section id="trust" class="relative z-10 py-24 lg:py-32 overflow-hidden" style="scroll-margin-top:96px">
+    <section id="trust" class="relative z-10 py-14 md:py-24 lg:py-32 overflow-hidden" style="scroll-margin-top:96px">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#3B5BFF]/[0.04] rounded-full blur-[150px] pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -3612,7 +3626,7 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- BUILT IN DUBAI -->
     <!-- ═══════════════════════════════════════ -->
-    <section class="relative z-10 py-24 lg:py-32">
+    <section class="relative z-10 py-14 md:py-24 lg:py-32">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="reveal grid lg:grid-cols-2 gap-16 items-center">
                 <div>
@@ -3670,7 +3684,7 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- FOUNDER QUOTE -->
     <!-- ═══════════════════════════════════════ -->
-    <section class="relative z-10 py-16 lg:py-20">
+    <section class="relative z-10 py-10 md:py-16 lg:py-20">
         <div class="max-w-6xl mx-auto px-6 lg:px-8">
             <figure class="fq reveal">
                 <div class="fq-panel">
@@ -3711,7 +3725,7 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- ABOUT PROMO -->
     <!-- ═══════════════════════════════════════ -->
-    <section class="relative z-10 py-16 lg:py-20">
+    <section class="relative z-10 py-10 md:py-16 lg:py-20">
         <div class="max-w-5xl mx-auto px-6 lg:px-8">
             <a href="about.html" class="reveal group block card-glow card-glow-mustard rounded-2xl p-8 md:p-10">
                 <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
@@ -3736,7 +3750,7 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- FAQ -->
     <!-- ═══════════════════════════════════════ -->
-    <section id="faq" class="relative z-10 py-24 lg:py-32" style="scroll-margin-top:96px">
+    <section id="faq" class="relative z-10 py-14 md:py-24 lg:py-32" style="scroll-margin-top:96px">
         <div class="max-w-3xl mx-auto px-6 lg:px-8">
             <div class="reveal text-center mb-16">
                 <p class="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#3B5BFF]/60 mb-4">FAQ</p>
@@ -3818,7 +3832,7 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- LEAD CAPTURE / CTA -->
     <!-- ═══════════════════════════════════════ -->
-    <section id="contact" class="relative z-10 py-24 lg:py-32 overflow-hidden" style="scroll-margin-top:96px">
+    <section id="contact" class="relative z-10 py-14 md:py-24 lg:py-32 overflow-hidden" style="scroll-margin-top:96px">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-r from-[#3B5BFF]/[0.06] via-[#3B5BFF]/[0.03] to-transparent rounded-full blur-[120px] pointer-events-none"></div>
         <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center relative">
             <p class="text-[13px] font-semibold uppercase tracking-[0.2em] text-white/30 mb-5">Get in touch</p>

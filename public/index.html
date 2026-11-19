@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Theme init — must run before first paint to avoid a dark-theme flash (default = light). -->
+    <script>
+        if (localStorage.getItem('veehive-theme') !== 'dark') {
+            document.documentElement.classList.add('light');
+        }
+    </script>
     <!-- Google Analytics (GA4) with Consent Mode v2 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVGKWGPNGY"></script>
     <script>
@@ -3963,14 +3969,6 @@
             localStorage.setItem('veehive-theme', isLight ? 'light' : 'dark');
             setTimeout(() => html.classList.remove('theme-transitioning'), 500);
         }
-
-        // Default = light. Respect the user's explicit toggle choice only when they've picked dark.
-        (function() {
-            const saved = localStorage.getItem('veehive-theme');
-            if (saved !== 'dark') {
-                document.documentElement.classList.add('light');
-            }
-        })();
 
   /* Problem Matcher click-to-reveal. Uses DOM methods (no innerHTML)
      so trusted-types / CSP-strict environments stay happy. */
